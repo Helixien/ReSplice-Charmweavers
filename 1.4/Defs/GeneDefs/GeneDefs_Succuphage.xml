@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<GeneDef ParentName="LibidoBase">
+		<defName>RX_Libido_Extreme</defName>
+		<label>extreme libido</label>
+		<description>Carriers of this gene are extremely likely to engage in lovin' with their partner.</description>
+		<customEffectDescriptions>
+			<li>Highly increases the chance of lovin'.</li>
+		</customEffectDescriptions>
+		<iconPath>UI/Icons/Genes/Gene_ExtremeLibido</iconPath>
+		<displayOrderInCategory>20</displayOrderInCategory>
+		<lovinMTBFactor>0.1</lovinMTBFactor>
+	</GeneDef>
+</Defs>

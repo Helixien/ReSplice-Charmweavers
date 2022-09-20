@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Rare Xenotpyes: Succubus</name>
+	<author>Helixien</author>
+	<description>text.todo</description>
+	<modVersion>1.0a</modVersion>
+	<supportedVersions>
+		<li>1.4</li>
+	</supportedVersions>
+	<packageId>hlx.RX.Succubus</packageId>
+	<url/>
+	<modDependencies>
+		<li>
+			<packageId>Ludeon.RimWorld.Biotech</packageId>
+			<displayName>Boitech</displayName>
+			<steamWorkshopUrl/>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>brrainz.harmony</li>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+	</loadAfter>
+</ModMetaData>
