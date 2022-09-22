@@ -14,17 +14,21 @@
 		<genes>
 			<li>Ageless</li>
 			<li>TotalHealing</li>
-			<li>PsychicAbility_Enhanced</li>
+			<li>PsychicAbility_Extreme</li>
+			<li>Sterile</li>
 			<li>Coagulate</li>
 			<li>Mood_Sanguine</li>
 			<li>RX_Libido_Extreme</li>
+			<li>RX_Tail_Demonic</li>
+			<li>RX_Headbone_DemonicHorns</li>
+			<li>RX_Wing_Demonic</li>
 			<li>Immunity_SuperStrong</li>
 			<li>DiseaseFree</li>
+			<li>Sleepy</li>
 			<li>MeleeDamage_Strong</li>
 			<li>AptitudeStrong_Social</li>
 			<li>FireWeakness</li>
 			<li>Beauty_Beautiful</li>
-			<li>Headbone_MiniHorns</li>
 			<li>Body_Standard</li>
 			<li>Delicate</li>
 			<li>MinTemp_LargeDecrease</li>

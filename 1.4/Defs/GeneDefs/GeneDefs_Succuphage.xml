@@ -11,4 +11,98 @@
 		<displayOrderInCategory>20</displayOrderInCategory>
 		<lovinMTBFactor>0.1</lovinMTBFactor>
 	</GeneDef>
+	<GeneDef ParentName="GeneTailBase">
+		<defName>RX_Tail_Demonic</defName>
+		<label>demonic tail</label>
+		<description>text.todo</description>
+		<iconPath>UI/Icons/Genes/Gene_TailDemonic</iconPath>
+		<iconColor>(0.75, 0.75, 0.75)</iconColor>
+		<displayOrderInCategory>1000</displayOrderInCategory>
+		<capMods>
+			<li>
+				<capacity>Manipulation</capacity>
+				<offset>0.1</offset>
+			</li>
+		</capMods>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+		<graphicData>
+			<graphicPath>Things/Pawn/Humanlike/BodyAttachments/DemonicTail/DemonicTail</graphicPath>
+			<colorType>Skin</colorType>
+			<drawOffsetNorth>(0.1, 0, -0.50)</drawOffsetNorth>
+			<drawOffsetSouth>(-0.1, -0.1, -0.25)</drawOffsetSouth>
+			<drawOffsetEast>(-0.5, -0.1, -0.15)</drawOffsetEast>
+		</graphicData>
+	</GeneDef>
+	<GeneDef ParentName="GeneHeadboneBase">
+		<defName>RX_Headbone_DemonicHorns</defName>
+		<label>demonic-horns</label>
+		<description>text.todo</description>
+		<iconPath>UI/Icons/Genes/Gene_DemonicHorns</iconPath>
+		<graphicData>
+			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/DemonicHorns/DemonicHorns</graphicPath>
+			<color>(255, 255, 255)</color>
+			<layer>PostHeadgear</layer>
+		</graphicData>
+		<symbolPack>
+			<prefixSymbols>
+				<li>
+					<symbol>horn</symbol>
+				</li>
+				<li>
+					<symbol>devil</symbol>
+				</li>
+				<li>
+					<symbol>demon</symbol>
+				</li>
+				<li>
+					<symbol>luci</symbol>
+				</li>
+				<li>
+					<symbol>beelze</symbol>
+				</li>
+				<li>
+					<symbol>hell</symbol>
+				</li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>horn</symbol>
+				</li>
+				<li>
+					<symbol>vil</symbol>
+				</li>
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+	<GeneDef Name="RX_GeneWingBase" Abstract="True">
+		<displayCategory>Miscellaneous</displayCategory>
+		<exclusionTags>
+			<li>Wing</li>
+			<li>Wings</li>
+		</exclusionTags>
+		<graphicData>
+			<drawLoc>Tailbone</drawLoc>
+		</graphicData>
+	</GeneDef>
+	<GeneDef ParentName="RX_GeneWingBase">
+		<defName>RX_Wing_Demonic</defName>
+		<label>demonic-wings</label>
+		<description>text.todo</description>
+		<iconPath>UI/Icons/Genes/Gene_DemonicWings</iconPath>
+		<iconColor>(0.75, 0.75, 0.75)</iconColor>
+		<displayOrderInCategory>1000</displayOrderInCategory>
+		<statOffsets>
+			<ComfyTemperatureMin>-5</ComfyTemperatureMin>
+		</statOffsets>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+		<graphicData>
+			<graphicPath>Things/Pawn/Humanlike/BodyAttachments/DemonicWing/DemonicWing</graphicPath>
+			<colorType>Skin</colorType>
+			<drawOffsetNorth>(0,0.2,-0.2)</drawOffsetNorth>
+			<drawOffsetSouth>(0,-0.2,0)</drawOffsetSouth>
+			<drawOffsetEast>(0,0.3,0)</drawOffsetEast>
+		</graphicData>
+	</GeneDef>
 </Defs>
