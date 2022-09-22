@@ -12,6 +12,8 @@
 		<combatPowerFactor>1.5</combatPowerFactor>
 		<displayPriority>-900</displayPriority>
 		<genes>
+			<li>RX_Oxytocin</li>
+			<li>RX_Matrianic</li>
 			<li>Ageless</li>
 			<li>TotalHealing</li>
 			<li>PsychicAbility_Extreme</li>

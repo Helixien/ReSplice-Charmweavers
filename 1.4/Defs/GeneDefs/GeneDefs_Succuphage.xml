@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<GeneDef ParentName="LibidoBase">
 		<defName>RX_Libido_Extreme</defName>
@@ -105,4 +105,46 @@
 			<drawOffsetEast>(0,0.3,0)</drawOffsetEast>
 		</graphicData>
 	</GeneDef>
+
+	<GeneDef>
+		<defName>RX_Oxytocin</defName>
+		<label>oxytocin</label>
+		<description>Carriers of this gene have a reserve of biological strength powered by a resource called hemogen. The resource can be gained and spent in various ways, all of which are unlocked by other genes.\n\nCarriers lose 2 hemogen per day from biological entropy.</description>
+		<geneClass>RareXenotypesSuccubus.Gene_Oxytocin</geneClass>
+		<resourceGizmoType>RareXenotypesSuccubus.GeneGizmo_ResourceOxytocin</resourceGizmoType>
+		<resourceLabel>oxytocin</resourceLabel>
+		<resourceGizmoThresholds>
+			<li>0.25</li>
+			<li>0.5</li>
+			<li>0.75</li>
+		</resourceGizmoThresholds>
+		<showGizmoOnWorldView>true</showGizmoOnWorldView>
+		<resourceDescription>A reserve of biological strength which can be gained and spent in a variety of ways.\n\nHemogen can be increased by bloodfeeding from a human or consuming hemogen packs. You can obtain hemogen packs using the 'extract hemogen pack' medical operation on a non-hemogenic human.\n\nIf hemogen reaches zero, {PAWN_nameDef} will become very unhappy.</resourceDescription>
+		<iconPath>UI/Icons/Genes/Gene_Hemogenic</iconPath>
+		<selectionWeight>0</selectionWeight>
+		<displayCategory>Hemogen</displayCategory>
+		<displayOrderInCategory>-2</displayOrderInCategory>
+		<customEffectDescriptions>
+			<li>Gives hemogen supply.</li>
+		</customEffectDescriptions>
+		<symbolPack>
+			<prefixSymbols>
+				<li><symbol>hemo</symbol></li>
+			</prefixSymbols>
+		</symbolPack>
+		<minAgeActive>3</minAgeActive>
+		<resourceLossPerDay>0.02</resourceLossPerDay>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>1</biostatMet>
+	</GeneDef>
+	
+  <GeneDef>
+    <defName>RX_Matrianic</defName>
+    <label>matrianic</label>
+    <description>Offspring of the carrier of this gene are 90% of the time the same gender as the mother.</description>
+    <iconPath>UI/Icons/Genes/Gene_Darkvision</iconPath>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>60</displayOrderInCategory>
+    <biostatMet>-1</biostatMet>
+  </GeneDef>
 </Defs>
