@@ -92,6 +92,12 @@
 		<iconPath>UI/Icons/Genes/Gene_DemonicWings</iconPath>
 		<iconColor>(0.75, 0.75, 0.75)</iconColor>
 		<displayOrderInCategory>1000</displayOrderInCategory>
+		<abilities>
+			<li>RX_DemonicWings</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>RX_DemonicWings</AbilityDef>
+		</descriptionHyperlinks>
 		<statOffsets>
 			<ComfyTemperatureMin>-5</ComfyTemperatureMin>
 		</statOffsets>
