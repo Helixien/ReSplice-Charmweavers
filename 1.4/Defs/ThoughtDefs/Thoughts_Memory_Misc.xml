@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ================ Sold Master================ -->
+	<ThoughtDef>
+		<defName>RX_SoldMyMaster</defName>
+		<durationDays>6</durationDays>
+		<stackLimit>5</stackLimit>
+		<doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+		<stages>
+			<li>
+				<label>master sold</label>
+				<description>This colony sold my master into slavery. That's outrageous!</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!-- ================ Sold Thrall================ -->
+	<ThoughtDef>
+		<defName>RX_SoldMyThrall</defName>
+		<durationDays>2</durationDays>
+		<stackLimit>5</stackLimit>
+		<doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+		<stages>
+			<li>
+				<label>thrall sold</label>
+				<description>This colony sold my thrall into slavery. That's annoying!</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<PawnRelationDef>
+		<defName>RX_Master</defName>
+		<label>master</label>
+		<importance>185</importance>
+		<diedThought>RX_MyMasterDied</diedThought>
+		<killedThought>RX_KilledMyMaster</killedThought>
+		<lostThought>RX_MyMasterLost</lostThought>
+		<lostThoughtFemale>RX_MyMasterLostFemale</lostThoughtFemale>
+		<soldThoughts>
+			<li>RX_SoldMyMaster</li>
+		</soldThoughts>
+		<opinionOffset>85</opinionOffset>
+		<generationChanceFactor>0</generationChanceFactor>
+		<romanceChanceFactor>1</romanceChanceFactor>
+		<incestOpinionOffset>-100</incestOpinionOffset>
+		<implied>false</implied>
+		<familyByBloodRelation>false</familyByBloodRelation>
+	</PawnRelationDef>
+	<PawnRelationDef>
+		<defName>RX_Thrall</defName>
+		<label>thrall</label>
+		<importance>185</importance>
+		<diedThought>RX_MyThrallDied</diedThought>
+		<killedThought>RX_KilledMyThrall</killedThought>
+		<lostThought>RX_MyThrallLost</lostThought>
+		<lostThoughtFemale>RX_MyThrallLostFemale</lostThoughtFemale>
+		<soldThoughts>
+			<li>RX_SoldMyThrall</li>
+		</soldThoughts>
+		<opinionOffset>25</opinionOffset>
+		<generationChanceFactor>0</generationChanceFactor>
+		<romanceChanceFactor>1</romanceChanceFactor>
+		<incestOpinionOffset>-100</incestOpinionOffset>
+		<implied>false</implied>
+		<familyByBloodRelation>false</familyByBloodRelation>
+	</PawnRelationDef>
+</Defs>

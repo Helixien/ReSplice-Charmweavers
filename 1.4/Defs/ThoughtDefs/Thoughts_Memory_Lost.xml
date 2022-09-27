@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ================ Base ================ -->
+	<ThoughtDef Name="RX_LostMemoryThrall" ParentName="LostMemory" Abstract="True">
+		<durationDays>30.0</durationDays>
+		<stackLimit>10</stackLimit>
+		<showBubble>true</showBubble>
+		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+	</ThoughtDef>
+	<!-- ================ Master Lost ================ -->
+	<ThoughtDef ParentName="RX_LostMemoryThrall">
+		<defName>RX_MyMasterLost</defName>
+		<stages>
+			<li>
+				<label>my master {0} lost</label>
+				<description>My master has gone lost. I cant be without him!</description>
+				<baseMoodEffect>-60</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef ParentName="RX_LostMemoryThrall">
+		<defName>RX_MyMasterLostFemale</defName>
+		<stages>
+			<li>
+				<label>my master {0} lost</label>
+				<description>My master has gone lost. I cant be without her!</description>
+				<baseMoodEffect>-60</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!-- ================ Thrall Lost ================ -->
+	<ThoughtDef ParentName="RX_LostMemoryThrall">
+		<defName>RX_MyThrallLost</defName>
+		<stages>
+			<li>
+				<label>my thrall {0} lost</label>
+				<description>My thrall has gone lost. I hope he will get back to us someday!</description>
+				<baseMoodEffect>-3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef ParentName="RX_LostMemoryThrall">
+		<defName>RX_MyThrallLostFemale</defName>
+		<stages>
+			<li>
+				<label>my thrall {0} lost</label>
+				<description>My thrall has gone lost. I hope he will get back to us someday!</description>
+				<baseMoodEffect>-3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>

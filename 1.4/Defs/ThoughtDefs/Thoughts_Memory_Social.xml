@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ================ Master Killed ================ -->
+	<ThoughtDef>
+		<defName>RX_KilledMyMaster</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>120</durationDays>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>killed my master</label>
+				<baseOpinionOffset>-80</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!-- ================ Thrall Killed ================ -->
+	<ThoughtDef>
+		<defName>RX_KilledMyThrall</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>120</durationDays>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>killed my thrall</label>
+				<baseOpinionOffset>-10</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!-- ================ Thrall Lovin ================ -->
+  <ThoughtDef>
+    <defName>RX_GotSomeLovinThrall</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <developmentalStageFilter>Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>got some lovin'</label>
+        <description>There's nothing like a tumble between the sheets with my master.</description>
+        <baseMoodEffect>12</baseMoodEffect>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+ 	<!-- ================ Became ================ -->
+   <ThoughtDef>
+    <defName>RX_BecameThrallMood</defName>
+    <durationDays>5</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+    <developmentalStageFilter>Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>{0} became my master</label>
+        <description>I never saw them for what they are, of course I should serve them!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>
