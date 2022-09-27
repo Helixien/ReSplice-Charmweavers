@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-  <AbilityDef ParentName="LongJump">
-    <defName>RX_DemonicWings</defName>
-    <label>demonic wings</label>
-    <description>Jump to a distant location using super-strong hemogen-powered legs.</description>
-    <iconPath>UI/Abilities/Longjump</iconPath>
-    <comps Inherit="False">
-      <li Class="RareXenotypesSuccubus.CompProperties_AbilityOxytocinCost">
-        <oxytocinCost>0.05</oxytocinCost>
-      </li>
-    </comps>
-  </AbilityDef>
-
+	<AbilityDef ParentName="LongJump">
+		<defName>RX_DemonicWings</defName>
+		<label>wing jump</label>
+		<description>Jump to a distant location using wings.</description>
+		<iconPath>UI/Abilities/Longjump</iconPath>
+		<comps Inherit="False">
+			<li Class="RareXenotypesSuccubus.CompProperties_AbilityOxytocinCost">
+				<oxytocinCost>0.05</oxytocinCost>
+			</li>
+		</comps>
+	</AbilityDef>
 </Defs>

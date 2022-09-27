@@ -29,10 +29,10 @@
 				</li>
 			</prefixSymbols>
 		</symbolPack>
-		<minAgeActive>3</minAgeActive>
+		<minAgeActive>14</minAgeActive>
 		<resourceLossPerDay>0.02</resourceLossPerDay>
-		<biostatCpx>1</biostatCpx>
 		<biostatMet>1</biostatMet>
+		<biostatArc>1</biostatArc>
 	</GeneDef>
 	<GeneDef>
 		<defName>RX_Matrianic</defName>
@@ -42,6 +42,7 @@
 		<displayCategory>Archite</displayCategory>
 		<displayOrderInCategory>60</displayOrderInCategory>
 		<biostatMet>-1</biostatMet>
+		<biostatArc>1</biostatArc>
 		<exclusionTags>
 			<li>Fertility</li>
 		</exclusionTags>
