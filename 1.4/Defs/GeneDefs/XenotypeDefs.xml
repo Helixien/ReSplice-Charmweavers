@@ -19,10 +19,13 @@
 			<li>PsychicAbility_Extreme</li>
 			<li>Sterile</li>
 			<li>Coagulate</li>
+			<li>Ears_Pointed</li>
 			<li>Mood_Sanguine</li>
 			<li>RX_Libido_Extreme</li>
 			<li>RX_Tail_Demonic</li>
-			<li>RX_Headbone_DemonicHorns</li>
+			<li>RX_Headbone_RamHorns</li>
+			<li>RX_Headbone_DevilHorns</li>
+			<li>RX_Headbone_DemonHorns</li>
 			<li>RX_Wing_Demonic</li>
 			<li>Immunity_SuperStrong</li>
 			<li>DiseaseFree</li>
