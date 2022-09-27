@@ -15,7 +15,7 @@
 		</resourceGizmoThresholds>
 		<showGizmoOnWorldView>true</showGizmoOnWorldView>
 		<resourceDescription>A reserve of biological strength which can be gained and spent in a variety of ways.\n\nHemogen can be increased by bloodfeeding from a human or consuming hemogen packs. You can obtain hemogen packs using the 'extract hemogen pack' medical operation on a non-hemogenic human.\n\nIf hemogen reaches zero, {PAWN_nameDef} will become very unhappy.</resourceDescription>
-		<iconPath>UI/Icons/Genes/Gene_Hemogenic</iconPath>
+		<iconPath>UI/Icons/Genes/Gene_Oxytocin</iconPath>
 		<selectionWeight>0</selectionWeight>
 		<displayCategory>Hemogen</displayCategory>
 		<displayOrderInCategory>-2</displayOrderInCategory>
@@ -38,20 +38,23 @@
 		<defName>RX_Matrianic</defName>
 		<label>matrianic</label>
 		<description>Offspring of the carrier of this gene are 90% of the time the same gender as the mother.</description>
-		<iconPath>UI/Icons/Genes/Gene_Darkvision</iconPath>
-		<displayCategory>Miscellaneous</displayCategory>
+		<iconPath>UI/Icons/Genes/Gene_Matrianic</iconPath>
+		<displayCategory>Archite</displayCategory>
 		<displayOrderInCategory>60</displayOrderInCategory>
 		<biostatMet>-1</biostatMet>
+		<exclusionTags>
+			<li>Fertility</li>
+		</exclusionTags>
 	</GeneDef>
 	<!-- ================ Normal Genes ================ -->
 	<GeneDef ParentName="LibidoBase">
 		<defName>RX_Libido_Extreme</defName>
-		<label>extreme libido</label>
+		<label>insatiable libido</label>
 		<description>Carriers of this gene are extremely likely to engage in lovin' with their partner.</description>
 		<customEffectDescriptions>
 			<li>Highly increases the chance of lovin'.</li>
 		</customEffectDescriptions>
-		<iconPath>UI/Icons/Genes/Gene_ExtremeLibido</iconPath>
+		<iconPath>UI/Icons/Genes/Gene_InsatiableLibido</iconPath>
 		<displayOrderInCategory>20</displayOrderInCategory>
 		<lovinMTBFactor>0.1</lovinMTBFactor>
 	</GeneDef>
