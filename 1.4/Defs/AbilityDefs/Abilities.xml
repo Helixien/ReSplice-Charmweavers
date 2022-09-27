@@ -4,7 +4,7 @@
 		<defName>RX_DemonicWings</defName>
 		<label>wing jump</label>
 		<description>Jump to a distant location using wings.</description>
-		<iconPath>UI/Abilities/Longjump</iconPath>
+		<iconPath>UI/Abilities/WingJump</iconPath>
 		<comps Inherit="False">
 			<li Class="RareXenotypesSuccubus.CompProperties_AbilityOxytocinCost">
 				<oxytocinCost>0.05</oxytocinCost>
