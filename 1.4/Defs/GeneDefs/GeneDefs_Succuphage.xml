@@ -47,6 +47,22 @@
 			<li>Fertility</li>
 		</exclusionTags>
 	</GeneDef>
+	
+	<GeneDef>
+		<defName>RX_Menticide</defName>
+		<label>menticide</label>
+		<description>text.todo</description>
+		<iconPath>UI/Icons/Genes/Menticide</iconPath>
+		<displayCategory>Archite</displayCategory>
+		<abilities>
+			<li>RX_Menticide</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>RX_Menticide</AbilityDef>
+		</descriptionHyperlinks>
+		<biostatArc>1</biostatArc>
+	</GeneDef>
+  
 	<!-- ================ Normal Genes ================ -->
 	<GeneDef ParentName="LibidoBase">
 		<defName>RX_Libido_Extreme</defName>

@@ -18,6 +18,7 @@
 		<implied>false</implied>
 		<familyByBloodRelation>false</familyByBloodRelation>
 	</PawnRelationDef>
+	
 	<PawnRelationDef>
 		<defName>RX_Thrall</defName>
 		<label>thrall</label>

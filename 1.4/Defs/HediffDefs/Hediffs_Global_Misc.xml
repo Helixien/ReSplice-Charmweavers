@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<HediffDef>
+		<defName>RX_LoveThrall</defName>
+		<label>love thrall</label>
+		<description>text.todo.</description>
+		<hediffClass>RareXenotypesSuccubus.Hediff_LoveThrall</hediffClass>
+		<isBad>false</isBad>
+		<makesSickThought>false</makesSickThought>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<stages>
+			<li>
+				<statOffsets>
+					<MentalBreakThreshold>0.15</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

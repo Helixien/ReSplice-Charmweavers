@@ -295,13 +295,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompAbilityEffect_Menticide.cs" />
     <Compile Include="CompAbilityEffect_OxytocinCost.cs" />
     <Compile Include="GeneGizmo_ResourceOxytocin.cs" />
     <Compile Include="Gene_Oxytocin.cs" />
+    <Compile Include="Hediff_LoveThrall.cs" />
     <Compile Include="OxytocinDrainUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RX_DefOf.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="HarmonyPatches.cs" />
+    <Compile Include="ThoughtWorker_ThrallAmount.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Publicizer">

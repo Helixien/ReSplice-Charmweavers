@@ -1,8 +1,40 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
+	<AbilityCategoryDef>
+		<defName>RX_Succuphage</defName>
+		<displayOrder>1000</displayOrder>
+	</AbilityCategoryDef>
+
+	<AbilityDef>
+		<defName>RX_Menticide</defName>
+		<label>menticide</label>
+		<description>text.todo</description>
+		<iconPath>UI/Abilities/Menticide</iconPath>
+		<cooldownTicksRange>420000</cooldownTicksRange>
+		<category>RX_Succuphage</category>
+		<displayOrder>200</displayOrder>
+		<aiCanUse>false</aiCanUse>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>10</range>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetBuildings>False</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="RareXenotypesSuccubus.CompProperties_AbilityOxytocinCost">
+				<oxytocinCost>0.1</oxytocinCost>
+			</li>
+			<li Class="RareXenotypesSuccubus.CompProperties_Menticide"></li>
+		</comps>
+	</AbilityDef>
+
 	<AbilityDef ParentName="LongJump">
 		<defName>RX_DemonicWings</defName>
 		<label>wing jump</label>
+		<category>RX_Succuphage</category>
 		<description>Jump to a distant location using wings.</description>
 		<iconPath>UI/Abilities/WingJump</iconPath>
 		<comps Inherit="False">
@@ -11,4 +43,5 @@
 			</li>
 		</comps>
 	</AbilityDef>
+
 </Defs>

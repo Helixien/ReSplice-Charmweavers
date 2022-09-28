@@ -55,9 +55,47 @@
     <stages>
       <li>
         <label>{0} became my master</label>
-        <description>I never saw them for what they are, of course I should serve them!</description>
+        <description>I never saw {0_objective} for what {0_pronoun} is, of course I should serve {0_objective}!</description>
         <baseMoodEffect>8</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>
+  
+	<ThoughtDef>
+		<defName>RX_ThrallAmount</defName>
+		<workerClass>RareXenotypesSuccubus.ThoughtWorker_ThrallAmount</workerClass>
+		<stages>
+			<li>
+				<label>No thrall</label>
+				<description>I don't have any thrall!</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+
+			<li>
+				<label>One thrall</label>
+				<description>I have just one thrall, it's not enough for me!</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>Two thralls</label>
+				<description>I have only two thralls, it's something I guess.</description>
+				<baseMoodEffect>0</baseMoodEffect>
+			</li>
+			<li>
+				<label>Three thrals</label>
+				<description>That's nice to have them at my disposal.</description>
+				<baseMoodEffect>5</baseMoodEffect>
+			</li>
+			<li>
+				<label>Four thralls</label>
+				<description>Life is getting better little by little.</description>
+				<baseMoodEffect>10</baseMoodEffect>
+			</li>
+			<li>
+				<label>A lot of thralls</label>
+				<description>It makes me so happy to have them all!</description>
+				<baseMoodEffect>15</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
 </Defs>
