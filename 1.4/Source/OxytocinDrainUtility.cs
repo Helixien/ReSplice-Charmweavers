@@ -9,12 +9,10 @@ namespace RareXenotypesSuccubus
         public static void OffsetOxytocin(Pawn pawn, float offset, bool applyStatFactor = true)
         {
             Gene_Oxytocin gene_Oxytocin = pawn.genes?.GetFirstGeneOfType<Gene_Oxytocin>();
-            Log.Message("gene_Oxytocin.Value: " + gene_Oxytocin.Value);
             if (gene_Oxytocin != null)
             {
                 gene_Oxytocin.Value += offset;
             }
-            Log.Message("gene_Oxytocin.Value: " + gene_Oxytocin.Value);
         }
         public static void TickResourceDrain(IGeneResourceDrain drain)
         {
