@@ -11,37 +11,6 @@ using Verse.AI;
 
 namespace RareXenotypesSuccubus
 {
-    [StaticConstructorOnStartup]
-    public static class HarmonyPatches
-    {
-        static HarmonyPatches()
-        {
-            new Harmony("RareXenotypesSuccubus.Mod").PatchAll();
-        }
-
-        public static float OxytocinOffsetAfterLovin = 0.1f;
-        public static Color SuccubColor = new ColorInt(198, 122, 211).ToColor;
-        public static bool IsLoveThrall(this Pawn pawn)
-        {
-            return IsLoveThrall(pawn, out _);
-        }
-
-        public static bool IsLoveThrall(this Pawn pawn, out Pawn master)
-        {
-            var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(RX_DefOf.RX_LoveThrall) as Hediff_LoveThrall;
-            if (hediff != null)
-            {
-                master = hediff.master;
-                return true;
-            }
-            else
-            {
-                master = null;
-                return false;
-            }
-        }
-    }
-
     [HarmonyPatch(typeof(PregnancyUtility), "ApplyBirthOutcome")]
     public static class PregnancyUtility_ApplyBirthOutcome_Patch
     {
@@ -105,12 +74,12 @@ namespace RareXenotypesSuccubus
             var thrallHediff = jobDriver.pawn.health.hediffSet.GetFirstHediffOfDef(RX_DefOf.RX_LoveThrall) as Hediff_LoveThrall;
             if (thrallHediff != null && jobDriver.TargetA.Pawn == thrallHediff.master)
             {
-                OxytocinUtility.OffsetOxytocin(jobDriver.TargetA.Pawn, HarmonyPatches.OxytocinOffsetAfterLovin * 2f);
+                OxytocinUtility.OffsetOxytocin(jobDriver.TargetA.Pawn, Core.OxytocinOffsetAfterLovin * 2f);
                 thoughtDef = (Thought_Memory)ThoughtMaker.MakeThought(RX_DefOf.RX_GotSomeLovinThrall);
             }
             else if (jobDriver.TargetA.Pawn.genes.GetFirstGeneOfType<Gene_Oxytocin>() != null)
             {
-                OxytocinUtility.OffsetOxytocin(jobDriver.TargetA.Pawn, HarmonyPatches.OxytocinOffsetAfterLovin);
+                OxytocinUtility.OffsetOxytocin(jobDriver.TargetA.Pawn, Core.OxytocinOffsetAfterLovin);
             }
         }
     }
@@ -175,14 +144,30 @@ namespace RareXenotypesSuccubus
         }
     }
 
+    [HarmonyPatch(typeof(InteractionWorker_Breakup), "RandomSelectionWeight")]
+    public static class InteractionWorker_Breakup_RandomSelectionWeight_Patch
+    {
+        public static void Postfix(ref float __result, Pawn initiator, Pawn recipient)
+        {
+            if (initiator.IsLoveThrall(out var master) && recipient == master)
+            {
+                __result = 0f;
+            }
+            else if (recipient.IsLoveThrall(out var master2) && initiator == master2)
+            {
+                __result = 0f;
+            }
+        }
+    }
+
     [HarmonyPatch(typeof(PawnNameColorUtility), "PawnNameColorOf")]
     public static class PawnNameColorUtility_PawnNameColorOf_Patch
     {
-        private static void Postfix(ref Color __result, Pawn pawn)
+        public static void Postfix(ref Color __result, Pawn pawn)
         {
             if (pawn.IsLoveThrall())
             {
-                __result = HarmonyPatches.SuccubColor;
+                __result = Core.SuccubColor;
             }
         }
     }
@@ -190,7 +175,6 @@ namespace RareXenotypesSuccubus
     [HarmonyPatch(typeof(ColonistBarColonistDrawer), "DrawIcons")]
     public static class ColonistBarColonistDrawer_DrawIcons_Patch
     {
-        public static Texture2D LoveThrallIcon = ContentFinder<Texture2D>.Get("UI/Icons/Thrall");
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var codes = instructions.ToList();
@@ -211,7 +195,7 @@ namespace RareXenotypesSuccubus
         {
             if (pawn.IsLoveThrall(out var master))
             {
-                ColonistBarColonistDrawer.tmpIconsToDraw.Add(new ColonistBarColonistDrawer.IconDrawCall(LoveThrallIcon, "RX.ThrallOf".Translate(master.Named("PAWN"))));
+                ColonistBarColonistDrawer.tmpIconsToDraw.Add(new ColonistBarColonistDrawer.IconDrawCall(Core.LoveThrallIcon, "RX.ThrallOf".Translate(master.Named("PAWN"))));
             }
         }
     }
@@ -221,7 +205,7 @@ namespace RareXenotypesSuccubus
     {
         public static void Postfix(Pawn __instance, DamageInfo? dinfo, Hediff exactCulprit = null)
         {
-            if (__instance.Dead)
+            if (__instance.Dead && __instance.RaceProps.Humanlike && __instance.relations != null)
             {
                 foreach (var relation in __instance.relations.DirectRelations)
                 {
@@ -235,6 +219,73 @@ namespace RareXenotypesSuccubus
                         }
                     }
                 }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(PawnColumnWorker_Label), "DoCell")]
+    public static class PawnColumnWorker_Label_DoCell_Patch
+    {
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> codeInstructions)
+        {
+            var isLoveThrallInfo = AccessTools.Method(typeof(Core), nameof(Core.IsLoveThrall), new Type[] {typeof(Pawn)});
+            var get_IsSlaveInfo = AccessTools.PropertyGetter(typeof(Pawn), nameof(Pawn.IsSlave));
+            var codes = codeInstructions.ToList();
+            for (var i = 0; i < codes.Count; i++)
+            {
+                yield return codes[i];
+                if (i > 0 && codes[i].opcode == OpCodes.Brtrue_S && codes[i - 1].Calls(get_IsSlaveInfo))
+                {
+                    yield return new CodeInstruction(OpCodes.Ldarg_2);
+                    yield return new CodeInstruction(OpCodes.Call, isLoveThrallInfo);
+                    yield return new CodeInstruction(OpCodes.Brtrue_S, codes[i].operand);
+                }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(TransferableUIUtility), "DoExtraIcons")]
+    public static class TransferableUIUtility_DoExtraIcons_Patch
+    {
+        private static float BondIconWidth = 24f;
+        public static void Postfix(Transferable trad, Rect rect, ref float curX)
+        {
+            if (trad.AnyThing is Pawn pawn && pawn.IsLoveThrall(out var master))
+            {
+                var iconRect = new Rect(curX - BondIconWidth, (rect.height - BondIconWidth) / 2f, BondIconWidth, BondIconWidth);
+                GUI.DrawTexture(iconRect, Core.LoveThrallIcon);
+                if (Mouse.IsOver(iconRect))
+                {
+                    TooltipHandler.TipRegion(iconRect, "RX.ThrallOf".Translate(master.Named("PAWN")));
+                }
+                curX -= BondIconWidth;
+            }
+        }
+    }
+    [HarmonyPatch(typeof(TransferableOneWayWidget), "DoRow")]
+    public static class TransferableOneWayWidget_DoRow_Patch
+    {
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> codeInstructions)
+        {
+            var codes = codeInstructions.ToList();
+            for (var i = 0; i < codes.Count; i++)
+            {
+                var code = codes[i];
+                yield return code;
+                if (code.opcode == OpCodes.Stloc_S && code.operand is LocalBuilder lb && lb.LocalType == typeof(Color))
+                {
+                    yield return new CodeInstruction(OpCodes.Ldloc_2);
+                    yield return new CodeInstruction(OpCodes.Ldloca_S, lb.LocalIndex);
+                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(TransferableOneWayWidget_DoRow_Patch), nameof(TrySetColor)));
+                }
+            }
+        }
+
+        public static void TrySetColor(Pawn pawn, ref Color color)
+        {
+            if (pawn.IsLoveThrall())
+            {
+                color = Core.SuccubColor;
             }
         }
     }

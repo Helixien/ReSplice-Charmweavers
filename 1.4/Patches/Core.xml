@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/PawnTableDef[defName="Work" or defName="Assign" or defName="Restrict"]/columns/li[text()="LabelShortWithIcon"]</xpath>
+				<order>Append</order>
+				<value>
+					<li>RX_Thrall</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

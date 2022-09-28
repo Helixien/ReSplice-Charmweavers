@@ -15,14 +15,27 @@ namespace RareXenotypesSuccubus
             base.PostAdd(dinfo);
             master.relations.AddDirectRelation(RX_DefOf.RX_Thrall, pawn);
             pawn.relations.AddDirectRelation(RX_DefOf.RX_Master, master);
-            foreach (var lover in LovePartnerRelationUtility.ExistingLovePartners(pawn))
+            foreach (var loveRel in LovePartnerRelationUtility.ExistingLovePartners(pawn))
             {
-                pawn.interactions.TryInteractWith(lover.otherPawn, RX_DefOf.Breakup);
+                if (loveRel.otherPawn != master)
+                {
+                    pawn.interactions.TryInteractWith(loveRel.otherPawn, RX_DefOf.Breakup);
+                }
             }
-            master.relations.AddDirectRelation(RX_DefOf.RX_Thrall, pawn);
-            pawn.relations.AddDirectRelation(RX_DefOf.RX_Master, master);
-            master.relations.AddDirectRelation(PawnRelationDefOf.Lover, pawn);
-            pawn.relations.AddDirectRelation(PawnRelationDefOf.Lover, master);
+            if (master.relations.DirectRelationExists(PawnRelationDefOf.Lover, pawn) is false)
+            {
+                master.relations.AddDirectRelation(PawnRelationDefOf.Lover, pawn);
+            }
+            if (pawn.relations.DirectRelationExists(PawnRelationDefOf.Lover, master) is false)
+            {
+                pawn.relations.AddDirectRelation(PawnRelationDefOf.Lover, master);
+            }
+
+            FleckMaker.Static(master.Position, master.Map, FleckDefOf.PsycastAreaEffect, 1.5f);
+            FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.PsycastAreaEffect, 1.5f);
+
+            Find.LetterStack.ReceiveLetter("RX.NewThrall".Translate(pawn.Named("PAWN")), "RX.NewThrallDesc".Translate(master.Named("CASTER"), pawn.Named("TARGET")),
+                LetterDefOf.NeutralEvent, pawn);
         }
 
         public void MakeBerserk()

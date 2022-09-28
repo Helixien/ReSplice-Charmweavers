@@ -13,7 +13,7 @@ namespace RareXenotypesSuccubus
         public float ResourceLossPerDay => def.resourceLossPerDay;
         public override float InitialResourceMax => 1f;
         public override float MinLevelForAlert => 0.15f;
-        public override Color BarColor => HarmonyPatches.SuccubColor;
+        public override Color BarColor => Core.SuccubColor;
         public bool CanOffset => true;
         public override void PostAdd()
         {
