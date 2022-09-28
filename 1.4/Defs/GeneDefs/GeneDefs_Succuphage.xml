@@ -17,7 +17,7 @@
 		<resourceDescription>A reserve of biological strength which can be gained and spent in a variety of ways.\n\nHemogen can be increased by bloodfeeding from a human or consuming hemogen packs. You can obtain hemogen packs using the 'extract hemogen pack' medical operation on a non-hemogenic human.\n\nIf hemogen reaches zero, {PAWN_nameDef} will become very unhappy.</resourceDescription>
 		<iconPath>UI/Icons/Genes/Gene_Oxytocin</iconPath>
 		<selectionWeight>0</selectionWeight>
-		<displayCategory>Hemogen</displayCategory>
+		<displayCategory>RX_Oxytocin</displayCategory>
 		<displayOrderInCategory>-2</displayOrderInCategory>
 		<customEffectDescriptions>
 			<li>Gives hemogen supply.</li>
