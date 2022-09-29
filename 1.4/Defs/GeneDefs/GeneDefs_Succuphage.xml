@@ -31,8 +31,7 @@
 		</symbolPack>
 		<minAgeActive>14</minAgeActive>
 		<resourceLossPerDay>0.02</resourceLossPerDay>
-		<biostatMet>1</biostatMet>
-		<biostatArc>1</biostatArc>
+		<biostatMet>2</biostatMet>
 	</GeneDef>
 	<GeneDef>
 		<defName>RX_Matrianic</defName>
@@ -52,15 +51,15 @@
 		<defName>RX_Menticide</defName>
 		<label>menticide</label>
 		<description>text.todo</description>
-		<iconPath>UI/Icons/Genes/Menticide</iconPath>
-		<displayCategory>Archite</displayCategory>
+		<iconPath>UI/Icons/Genes/Gene_Menticide</iconPath>
+		<displayCategory>RX_Oxytocin</displayCategory>
 		<abilities>
 			<li>RX_Menticide</li>
 		</abilities>
 		<descriptionHyperlinks>
 			<AbilityDef>RX_Menticide</AbilityDef>
 		</descriptionHyperlinks>
-		<biostatArc>1</biostatArc>
+		<biostatMet>-1</biostatMet>
 	</GeneDef>
   
 	<!-- ================ Normal Genes ================ -->
