@@ -29,27 +29,29 @@ namespace RareXenotypesSuccubus
 
         public override IEnumerable<Gizmo> GetGizmos()
         {
-            foreach (Gizmo gizmo in base.GetGizmos())
+            foreach (var gizmo in base.GetGizmos())
             {
                 yield return gizmo;
             }
-            foreach (Gizmo resourceDrainGizmo in OxytocinUtility.GetResourceDrainGizmos(this))
+            foreach (var resourceDrainGizmo in OxytocinUtility.GetResourceDrainGizmos(this))
             {
                 yield return resourceDrainGizmo;
             }
         }
 
-        public override float Value 
-        { 
+        public override float Value
+        {
             get => base.Value;
             set
             {
                 base.Value = value;
-                if (this.Value <= 0)
+                if (Value <= 0)
                 {
-                    this.pawn.Kill(null);
+                    pawn.Kill(null);
                 }
             }
         }
+
+        public override Color BarHighlightColor => new ColorInt(145, 42, 42).ToColor;
     }
 }
