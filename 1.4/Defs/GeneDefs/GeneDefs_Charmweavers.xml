@@ -2,7 +2,7 @@
 <Defs>
 	<!-- ================ Archnite Genes ================ -->
 	<GeneDef>
-		<defName>RX_Oxytocin</defName>
+		<defName>RS_Oxytocin</defName>
 		<label>oxytocin</label>
 		<description>Carriers of this gene have a reserve of biological strength powered by a resource called hemogen. The resource can be gained and spent in various ways, all of which are unlocked by other genes.\n\nCarriers lose 2 hemogen per day from biological entropy.</description>
 		<geneClass>RareXenotypesSuccubus.Gene_Oxytocin</geneClass>
@@ -34,7 +34,7 @@
 		<biostatMet>2</biostatMet>
 	</GeneDef>
 	<GeneDef>
-		<defName>RX_Matrianic</defName>
+		<defName>RS_Matrianic</defName>
 		<label>matrianic</label>
 		<description>Offspring of the carrier of this gene are 90% of the time the same gender as the mother.</description>
 		<iconPath>UI/Icons/Genes/Gene_Matrianic</iconPath>
@@ -48,7 +48,7 @@
 	</GeneDef>
 	
 	<GeneDef>
-		<defName>RX_Menticide</defName>
+		<defName>RS_Menticide</defName>
 		<label>menticide</label>
 		<description>text.todo</description>
 		<iconPath>UI/Icons/Genes/Gene_Menticide</iconPath>
@@ -64,7 +64,7 @@
   
 	<!-- ================ Normal Genes ================ -->
 	<GeneDef ParentName="LibidoBase">
-		<defName>RX_Libido_Extreme</defName>
+		<defName>RS_Libido_Extreme</defName>
 		<label>insatiable libido</label>
 		<description>Carriers of this gene are extremely likely to engage in lovin' with their partner.</description>
 		<customEffectDescriptions>

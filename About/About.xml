@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Rare Xenotpyes: Succubus</name>
+	<name>ReSplice: Charmweavers</name>
 	<author>Helixien</author>
 	<description>text.todo</description>
-	<modVersion>1.0a</modVersion>
+	<modVersion>1.0-Lurelings-rev1</modVersion>
 	<supportedVersions>
 		<li>1.4</li>
 	</supportedVersions>
-	<packageId>hlx.RX.Succubus</packageId>
+	<packageId>ReSplice.XPTR.Charmweavers</packageId>
 	<url/>
 	<modDependencies>
 		<li>
@@ -19,9 +19,6 @@
 	<loadAfter>
 		<li>brrainz.harmony</li>
 		<li>Ludeon.RimWorld</li>
-		<li>Ludeon.RimWorld.Royalty</li>
-		<li>Ludeon.RimWorld.Ideology</li>
-		<li>Ludeon.RimWorld.Biotech</li>
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
 	</loadAfter>
 </ModMetaData>
