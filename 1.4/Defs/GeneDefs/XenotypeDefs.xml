@@ -12,41 +12,7 @@
 		<combatPowerFactor>1.2</combatPowerFactor>
 		<displayPriority>-950</displayPriority>
 		<genes>
-			<li>RX_Oxytocin</li>
-			<li>RX_Matrianic</li>
-			<li>RX_Menticide</li>
-			<li>Ageless</li>
-			<li>TotalHealing</li>
-			<li>PsychicAbility_Extreme</li>
-			<li>Sterile</li>
-			<li>Coagulate</li>
-			<li>Ears_Pointed</li>
-			<li>Mood_Sanguine</li>
-			<li>RX_Libido_Extreme</li>
-			<li>RX_Tail_Demonic</li>
-			<li>RX_Headbone_RamHorns</li>
-			<li>RX_Headbone_DevilHorns</li>
-			<li>RX_Headbone_DemonHorns</li>
-			<li>RX_Wing_Demonic</li>
-			<li>Immunity_SuperStrong</li>
-			<li>DiseaseFree</li>
-			<li>Sleepy</li>
-			<li>MeleeDamage_Strong</li>
-			<li>AptitudeStrong_Social</li>
-			<li>FireWeakness</li>
-			<li>Beauty_Beautiful</li>
-			<li>Body_Standard</li>
-			<li>Delicate</li>
-			<li>MinTemp_LargeDecrease</li>
-			<li>MaxTemp_LargeIncrease</li>
-			<li>NakedSpeed</li>
-			<li>Learning_Slow</li>
-			<li>Instability_Mild</li>
-			<li>AptitudePoor_Shooting</li>
-			<li>Pain_Extra</li>
-			<li>Skin_Orange</li>
-			<li>Skin_Blue</li>
-			<li>Skin_Purple</li>
+
 		</genes>
 	</XenotypeDef>
 </Defs>

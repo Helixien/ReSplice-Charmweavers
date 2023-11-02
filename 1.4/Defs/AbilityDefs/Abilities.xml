@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
-	<AbilityCategoryDef>
-		<defName>RX_Succuphage</defName>
-		<displayOrder>1000</displayOrder>
-	</AbilityCategoryDef>
-
 	<AbilityDef>
-		<defName>RX_Menticide</defName>
+		<defName>RS_Menticide</defName>
 		<label>menticide</label>
 		<description>text.todo</description>
 		<iconPath>UI/Abilities/Menticide</iconPath>
 		<cooldownTicksRange>420000</cooldownTicksRange>
-		<category>RX_Succuphage</category>
+		<category>Sanguophage</category>
 		<displayOrder>200</displayOrder>
 		<aiCanUse>false</aiCanUse>
 		<verbProperties>
@@ -24,24 +18,22 @@
 			</targetParams>
 		</verbProperties>
 		<comps>
-			<li Class="RareXenotypesSuccubus.CompProperties_AbilityOxytocinCost">
-				<oxytocinCost>0.1</oxytocinCost>
+			<li Class="CompProperties_AbilityHemogenCost">
+				<hemogenCost>0.5</hemogenCost>
 			</li>
-			<li Class="RareXenotypesSuccubus.CompProperties_Menticide"></li>
+			<li Class="RareXenotypesSuccubus.CompProperties_Menticide"/>
 		</comps>
 	</AbilityDef>
-
 	<AbilityDef ParentName="LongJump">
-		<defName>RX_DemonicWings</defName>
+		<defName>RS_WingJump</defName>
 		<label>wing jump</label>
-		<category>RX_Succuphage</category>
+		<category>Sanguophage</category>
 		<description>Jump to a distant location using wings.</description>
 		<iconPath>UI/Abilities/WingJump</iconPath>
 		<comps Inherit="False">
-			<li Class="RareXenotypesSuccubus.CompProperties_AbilityOxytocinCost">
-				<oxytocinCost>0.05</oxytocinCost>
+			<li Class="CompProperties_AbilityHemogenCost">
+				<hemogenCost>0.035</hemogenCost>
 			</li>
 		</comps>
 	</AbilityDef>
-
 </Defs>
