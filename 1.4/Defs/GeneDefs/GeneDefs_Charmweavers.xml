@@ -4,70 +4,89 @@
 	<GeneDef>
 		<defName>RS_Matrianic</defName>
 		<label>matrianic</label>
-		<description>Offspring of the carrier of this gene are 90% of the time the same gender as the mother.</description>
+		<description>Carriers of this gene are extremely likely to have offspring that are the same sex as them.</description>
 		<iconPath>UI/Icons/Genes/Gene_Matrianic</iconPath>
 		<displayCategory>Archite</displayCategory>
-		<biostatMet>-1</biostatMet>
+		<biostatMet>0</biostatMet>
+		<biostatCpx>2</biostatCpx>
 		<biostatArc>1</biostatArc>
 	</GeneDef>
 	<GeneDef>
 		<defName>RS_Superfecundation</defName>
-		<label>menticide</label>
-		<description>text.todo</description>
+		<label>superfecundation</label>
+		<description>Carriers of this gene have archites in their womb that allows them to have multiple pregnancies in different stages at the same time.</description>
 		<iconPath>UI/Icons/Genes/Gene_Superfecundation</iconPath>
 		<displayCategory>Archite</displayCategory>
+		<biostatMet>0</biostatMet>
+		<biostatCpx>4</biostatCpx>
+		<biostatArc>1</biostatArc>
+	</GeneDef>
+	<GeneDef>
+		<defName>RS_Isothermalskin</defName>
+		<label>isothermalskin</label>
+		<description>Carriers of this gene have archites in the outer layer of their skin which continuously adapt it to the climate around them. They are comfortable even in extremely cold and hot temperatures.</description>
+		<iconPath>UI/Icons/Genes/Gene_IsothermalSkin</iconPath>
+		<displayCategory>Archite</displayCategory>
+		<biostatMet>0</biostatMet>
+		<biostatCpx>6</biostatCpx>
+		<biostatArc>1</biostatArc>
 	</GeneDef>
 	<!-- ================ Libido ================ -->
 	<GeneDef ParentName="LibidoBase">
 		<defName>RS_Libido_Extreme</defName>
 		<label>insatiable libido</label>
-		<description>Carriers of this gene are extremely likely to engage in lovin' with their partner.</description>
+		<description>Carriers of this gene are obsessed with lovin' and are extremely likely to engage in lovin' with their partner.</description>
 		<iconPath>UI/Icons/Genes/Gene_InsatiableLibido</iconPath>
 		<customEffectDescriptions>
-			<li>Highly increases the chance of lovin'.</li>
+			<li>Extremely increases the chance of lovin'.</li>
 		</customEffectDescriptions>
 		<displayOrderInCategory>20</displayOrderInCategory>
 		<lovinMTBFactor>0.1</lovinMTBFactor>
+		<biostatMet>3</biostatMet>
+		<biostatCpx>1</biostatCpx>
 	</GeneDef>
 	<GeneDef ParentName="LibidoBase">
 		<defName>RS_Libido_None</defName>
 		<label>no libido</label>
-		<description>Carriers of this gene are extremely likely to engage in lovin' with their partner.</description>
+		<description>Carriers of this gene have no interest in lovin' and will never engage in lovin' with their partner or anyone else.</description>
 		<iconPath>UI/Icons/Genes/Gene_InsatiableLibido</iconPath>
 		<customEffectDescriptions>
-			<li>Highly increases the chance of lovin'.</li>
+			<li>No chance of lovin'.</li>
 		</customEffectDescriptions>
+		<biostatMet>-3</biostatMet>
+		<biostatCpx>1</biostatCpx>
 	</GeneDef>
 	<!-- ================ Beauty ================ -->
 	<GeneDef ParentName="GeneBeautyBase">
 		<defName>RS_Beauty_Angelic</defName>
 		<label>extremely attractive</label>
-		<description>Carriers of this gene have remarkably precise and symmetrical faces. Their features are distinctive and strong without being exaggerated, and their skin is nearly perfect. They are generally seen as beautiful.</description>
+		<description>Carriers of this gene are inhumanly perfect in every way. Their features, skin and physique mirror those of old divine beings of old religions and tales.They are universally seen as angelic and considered irresistible.</description>
 		<iconPath>UI/Icons/Genes/Gene_Extremely attractive</iconPath>
 		<displayOrderInCategory>30</displayOrderInCategory>
 		<statOffsets>
-			<PawnBeauty>2</PawnBeauty>
+			<PawnBeauty>3</PawnBeauty>
 		</statOffsets>
-		<biostatMet>-2</biostatMet>
+		<biostatMet>-3</biostatMet>
+		<biostatCpx>1</biostatCpx>
 		<symbolPack>
 			<prefixSymbols>
 				<li>
-					<symbol>charm</symbol>
+					<symbol>angelic</symbol>
 				</li>
 				<li>
-					<symbol>ele</symbol>
+					<symbol>ethereal</symbol>
 				</li>
 				<li>
-					<symbol>grace</symbol>
+					<symbol>inhuman</symbol>
 				</li>
 				<li>
-					<symbol>neat</symbol>
+					<symbol>perfect</symbol>
 				</li>
 				<li>
-					<symbol>cute</symbol>
+					<symbol>stunning</symbol>
 				</li>
 				<li>
-					<symbol>beauti</symbol>
+					<symbol>breathtaking</symbol>
 				</li>
 				<li>
 					<symbol>smooth</symbol>
@@ -80,7 +99,7 @@
 		<defName>RS_LoveFeed</defName>
 		<label>love feed</label>
 		<labelShortAdj>draining</labelShortAdj>
-		<description>text.todo</description>
+		<description>Carriers of this gene have special glands in their mouth that allows them to feed more effectively while they are engaged in lovin’ with another person.</description>
 		<resourceLabel>hemogen</resourceLabel>
 		<geneClass>Gene_HemogenDrain</geneClass>
 		<iconPath>UI/Icons/Genes/Gene_HemogenDrain</iconPath>
@@ -88,7 +107,7 @@
 		<resourceLossPerDay>0.08</resourceLossPerDay>
 		<displayCategory>Hemogen</displayCategory>
 		<displayOrderInCategory>-1</displayOrderInCategory>
-		<minAgeActive>3</minAgeActive>
+		<minAgeActive>14</minAgeActive>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>6</biostatMet>
 	</GeneDef>
