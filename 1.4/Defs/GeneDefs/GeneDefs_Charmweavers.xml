@@ -7,44 +7,108 @@
 		<description>Offspring of the carrier of this gene are 90% of the time the same gender as the mother.</description>
 		<iconPath>UI/Icons/Genes/Gene_Matrianic</iconPath>
 		<displayCategory>Archite</displayCategory>
-		<displayOrderInCategory>60</displayOrderInCategory>
 		<biostatMet>-1</biostatMet>
 		<biostatArc>1</biostatArc>
-		<exclusionTags>
-			<li>Fertility</li>
-		</exclusionTags>
 	</GeneDef>
-	
+	<GeneDef>
+		<defName>RS_Superfecundation</defName>
+		<label>menticide</label>
+		<description>text.todo</description>
+		<iconPath>UI/Icons/Genes/Gene_Superfecundation</iconPath>
+		<displayCategory>Archite</displayCategory>
+	</GeneDef>
+	<!-- ================ Libido ================ -->
+	<GeneDef ParentName="LibidoBase">
+		<defName>RS_Libido_Extreme</defName>
+		<label>insatiable libido</label>
+		<description>Carriers of this gene are extremely likely to engage in lovin' with their partner.</description>
+		<iconPath>UI/Icons/Genes/Gene_InsatiableLibido</iconPath>
+		<customEffectDescriptions>
+			<li>Highly increases the chance of lovin'.</li>
+		</customEffectDescriptions>
+		<displayOrderInCategory>20</displayOrderInCategory>
+		<lovinMTBFactor>0.1</lovinMTBFactor>
+	</GeneDef>
+	<GeneDef ParentName="LibidoBase">
+		<defName>RS_Libido_None</defName>
+		<label>no libido</label>
+		<description>Carriers of this gene are extremely likely to engage in lovin' with their partner.</description>
+		<iconPath>UI/Icons/Genes/Gene_InsatiableLibido</iconPath>
+		<customEffectDescriptions>
+			<li>Highly increases the chance of lovin'.</li>
+		</customEffectDescriptions>
+	</GeneDef>
+	<!-- ================ Beauty ================ -->
+	<GeneDef ParentName="GeneBeautyBase">
+		<defName>RS_Beauty_Angelic</defName>
+		<label>extremely attractive</label>
+		<description>Carriers of this gene have remarkably precise and symmetrical faces. Their features are distinctive and strong without being exaggerated, and their skin is nearly perfect. They are generally seen as beautiful.</description>
+		<iconPath>UI/Icons/Genes/Gene_Extremely attractive</iconPath>
+		<displayOrderInCategory>30</displayOrderInCategory>
+		<statOffsets>
+			<PawnBeauty>2</PawnBeauty>
+		</statOffsets>
+		<biostatMet>-2</biostatMet>
+		<symbolPack>
+			<prefixSymbols>
+				<li>
+					<symbol>charm</symbol>
+				</li>
+				<li>
+					<symbol>ele</symbol>
+				</li>
+				<li>
+					<symbol>grace</symbol>
+				</li>
+				<li>
+					<symbol>neat</symbol>
+				</li>
+				<li>
+					<symbol>cute</symbol>
+				</li>
+				<li>
+					<symbol>beauti</symbol>
+				</li>
+				<li>
+					<symbol>smooth</symbol>
+				</li>
+			</prefixSymbols>
+		</symbolPack>
+	</GeneDef>
+	<!-- ================ Hemogenic ================ -->
+	<GeneDef>
+		<defName>RS_LoveFeed</defName>
+		<label>love feed</label>
+		<labelShortAdj>draining</labelShortAdj>
+		<description>text.todo</description>
+		<resourceLabel>hemogen</resourceLabel>
+		<geneClass>Gene_HemogenDrain</geneClass>
+		<iconPath>UI/Icons/Genes/Gene_HemogenDrain</iconPath>
+		<prerequisite>Hemogenic</prerequisite>
+		<resourceLossPerDay>0.08</resourceLossPerDay>
+		<displayCategory>Hemogen</displayCategory>
+		<displayOrderInCategory>-1</displayOrderInCategory>
+		<minAgeActive>3</minAgeActive>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>6</biostatMet>
+	</GeneDef>
 	<GeneDef>
 		<defName>RS_Menticide</defName>
 		<label>menticide</label>
 		<description>text.todo</description>
 		<iconPath>UI/Icons/Genes/Gene_Menticide</iconPath>
-		<displayCategory>RX_Oxytocin</displayCategory>
+		<displayCategory>Hemogen</displayCategory>
 		<abilities>
-			<li>RX_Menticide</li>
+			<li>RS_Menticide</li>
 		</abilities>
 		<descriptionHyperlinks>
-			<AbilityDef>RX_Menticide</AbilityDef>
+			<AbilityDef>RS_Menticide</AbilityDef>
 		</descriptionHyperlinks>
 		<biostatMet>-1</biostatMet>
 	</GeneDef>
-  
-	<!-- ================ Normal Genes ================ -->
-	<GeneDef ParentName="LibidoBase">
-		<defName>RS_Libido_Extreme</defName>
-		<label>insatiable libido</label>
-		<description>Carriers of this gene are extremely likely to engage in lovin' with their partner.</description>
-		<customEffectDescriptions>
-			<li>Highly increases the chance of lovin'.</li>
-		</customEffectDescriptions>
-		<iconPath>UI/Icons/Genes/Gene_InsatiableLibido</iconPath>
-		<displayOrderInCategory>20</displayOrderInCategory>
-		<lovinMTBFactor>0.1</lovinMTBFactor>
-	</GeneDef>
 	<!-- ================ Cosmetic Genes ================ -->
-	<!-- ================ Horns Base ================ -->
-	<GeneDef ParentName="GeneHeadboneBase" Name="RX_DemonicHornsBase" Abstract="True">
+	<!-- ================ Horns ================ -->
+	<GeneDef ParentName="GeneHeadboneBase" Name="RS_HornsBase" Abstract="True">
 		<graphicData>
 			<color>(255, 255, 255)</color>
 			<layer>PostHeadgear</layer>
@@ -80,38 +144,35 @@
 			</suffixSymbols>
 		</symbolPack>
 	</GeneDef>
-	<!-- ================ Ram Horns ================ -->
-	<GeneDef ParentName="RX_DemonicHornsBase">
-		<defName>RX_Headbone_RamHorns</defName>
-		<label>demonic-horns</label>
+	<GeneDef ParentName="RS_HornsBase">
+		<defName>RS_Headbone_RamHorns</defName>
+		<label>ram-horns</label>
 		<description>text.todo</description>
 		<iconPath>UI/Icons/Genes/Gene_RamHorns</iconPath>
 		<graphicData>
 			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/RamHorns/RamHorns</graphicPath>
 		</graphicData>
 	</GeneDef>
-	<!-- ================ Devil Horns ================ -->
-	<GeneDef ParentName="RX_DemonicHornsBase">
-		<defName>RX_Headbone_DevilHorns</defName>
-		<label>demonic-horns</label>
+	<GeneDef ParentName="RS_HornsBase">
+		<defName>RS_Headbone_MediumHorns</defName>
+		<label>medium-horns</label>
 		<description>text.todo</description>
-		<iconPath>UI/Icons/Genes/Gene_DevilHorns</iconPath>
+		<iconPath>UI/Icons/Genes/Gene_MediumHorns</iconPath>
 		<graphicData>
 			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/DevilHorns/DevilHorns</graphicPath>
 		</graphicData>
 	</GeneDef>
-	<!-- ================ Demon Horns ================ -->
-	<GeneDef ParentName="RX_DemonicHornsBase">
-		<defName>RX_Headbone_DemonHorns</defName>
-		<label>demonic-horns</label>
+	<GeneDef ParentName="RS_HornsBase">
+		<defName>RS_Headbone_LargeHorns</defName>
+		<label>large-horns</label>
 		<description>text.todo</description>
-		<iconPath>UI/Icons/Genes/Gene_DemonHorns</iconPath>
+		<iconPath>UI/Icons/Genes/Gene_LargeHorns</iconPath>
 		<graphicData>
 			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/DemonHorns/DemonHorns</graphicPath>
 		</graphicData>
 	</GeneDef>
-	<!-- ================ Wings Base ================ -->
-	<GeneDef Name="RX_GeneWingBase" Abstract="True">
+	<!-- ================ Wings ================ -->
+	<GeneDef Name="RS_GeneWingBase" Abstract="True">
 		<displayCategory>Miscellaneous</displayCategory>
 		<exclusionTags>
 			<li>Wing</li>
@@ -121,19 +182,18 @@
 			<drawLoc>Tailbone</drawLoc>
 		</graphicData>
 	</GeneDef>
-	<!-- ================ Demonic Wings ================ -->
-	<GeneDef ParentName="RX_GeneWingBase">
-		<defName>RX_Wing_Demonic</defName>
-		<label>demonic-wings</label>
+	<GeneDef ParentName="RS_GeneWingBase">
+		<defName>RS_Wing_Batlike</defName>
+		<label>bat-wings</label>
 		<description>text.todo</description>
-		<iconPath>UI/Icons/Genes/Gene_DemonicWings</iconPath>
+		<iconPath>UI/Icons/Genes/Gene_BatWings</iconPath>
 		<iconColor>(0.75, 0.75, 0.75)</iconColor>
 		<displayOrderInCategory>1000</displayOrderInCategory>
 		<abilities>
-			<li>RX_DemonicWings</li>
+			<li>RS_WingJump</li>
 		</abilities>
 		<descriptionHyperlinks>
-			<AbilityDef>RX_DemonicWings</AbilityDef>
+			<AbilityDef>RS_WingJump</AbilityDef>
 		</descriptionHyperlinks>
 		<statOffsets>
 			<ComfyTemperatureMin>-5</ComfyTemperatureMin>
@@ -148,12 +208,12 @@
 			<drawOffsetEast>(0,0.3,0)</drawOffsetEast>
 		</graphicData>
 	</GeneDef>
-	<!-- ================ Demonic Tail ================ -->
+	<!-- ================ Tails ================ -->
 	<GeneDef ParentName="GeneTailBase">
-		<defName>RX_Tail_Demonic</defName>
-		<label>demonic tail</label>
+		<defName>RS_Tail_Spiked</defName>
+		<label>spiked tail</label>
 		<description>text.todo</description>
-		<iconPath>UI/Icons/Genes/Gene_TailDemonic</iconPath>
+		<iconPath>UI/Icons/Genes/Gene_SpikedTail</iconPath>
 		<iconColor>(0.75, 0.75, 0.75)</iconColor>
 		<displayOrderInCategory>1000</displayOrderInCategory>
 		<capMods>
@@ -170,6 +230,20 @@
 			<drawOffsetNorth>(0.1, 0, -0.50)</drawOffsetNorth>
 			<drawOffsetSouth>(-0.1, -0.1, -0.25)</drawOffsetSouth>
 			<drawOffsetEast>(-0.5, -0.1, -0.15)</drawOffsetEast>
+		</graphicData>
+	</GeneDef>
+	<!-- ================ Eyes ================ -->
+	<GeneDef ParentName="GeneEyeColor">
+		<defName>RS_Eyes_Pink</defName>
+		<label>pink eyes</label>
+		<labelShortAdj>pink-eyed</labelShortAdj>
+		<description>Carriers of this gene have deeply pink-pigmented eyes.</description>
+		<iconPath>UI/Icons/Genes/Gene_PinkEyes</iconPath>
+		<displayOrderInCategory>0</displayOrderInCategory>
+		<graphicData>
+			<drawScale>0.28</drawScale>
+			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/RedEyes/Male/RedEyes_Male</graphicPath>
+			<graphicPathFemale>Things/Pawn/Humanlike/HeadAttachments/RedEyes/Female/RedEyes_Female</graphicPathFemale>
 		</graphicData>
 	</GeneDef>
 </Defs>

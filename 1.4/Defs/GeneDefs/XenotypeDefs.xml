@@ -5,7 +5,7 @@
 		<label>charmweavers</label>
 		<description>Charmweavers are a rare type of archotech-enhanced xenohuman, somewhat realted to sanguphages. </description>
 		<descriptionShort>text.todo</descriptionShort>
-		<iconPath>UI/Icons/Xenotypes/Succuphage</iconPath>
+		<iconPath>UI/Icons/Xenotypes/Charmweavers</iconPath>
 		<soundDefOnImplant>PawnBecameSanguophage</soundDefOnImplant>
 		<generateWithXenogermReplicatingHediffChance>0.5</generateWithXenogermReplicatingHediffChance>
 		<xenogermReplicatingDurationLeftDaysRange>0.1~140</xenogermReplicatingDurationLeftDaysRange>
