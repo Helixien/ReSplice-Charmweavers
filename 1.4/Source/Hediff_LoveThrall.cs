@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Verse;
 
-namespace RareXenotypesSuccubus
+namespace ReSpliceCharmweavers
 {
     public class Hediff_LoveThrall : HediffWithComps
     {
@@ -13,13 +13,13 @@ namespace RareXenotypesSuccubus
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
-            master.relations.AddDirectRelation(RX_DefOf.RX_Thrall, pawn);
-            pawn.relations.AddDirectRelation(RX_DefOf.RX_Master, master);
+            master.relations.AddDirectRelation(RS_DefOf.RX_Thrall, pawn);
+            pawn.relations.AddDirectRelation(RS_DefOf.RX_Master, master);
             foreach (var loveRel in LovePartnerRelationUtility.ExistingLovePartners(pawn))
             {
                 if (loveRel.otherPawn != master)
                 {
-                    pawn.interactions.TryInteractWith(loveRel.otherPawn, RX_DefOf.Breakup);
+                    pawn.interactions.TryInteractWith(loveRel.otherPawn, RS_DefOf.Breakup);
                 }
             }
             if (master.relations.DirectRelationExists(PawnRelationDefOf.Lover, pawn) is false)

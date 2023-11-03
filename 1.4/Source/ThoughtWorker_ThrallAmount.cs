@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
-namespace RareXenotypesSuccubus
+namespace ReSpliceCharmweavers
 {
     public class ThoughtWorker_ThrallAmount : ThoughtWorker
     {
         public override ThoughtState CurrentStateInternal(Pawn p)
         {
-            if (p.genes.GetFirstGeneOfType<Gene_Oxytocin>() != null)
+            if (p.genes?.HasGene(RS_DefOf.RS_PsychicEnthralling) ?? false)
             {
                 var thrallAmount = GetAllThralls(p).Count;
                 if (thrallAmount <= 6)
@@ -26,7 +26,7 @@ namespace RareXenotypesSuccubus
 
         public List<Pawn> GetAllThralls(Pawn p)
         {
-            return p.relations.DirectRelations.Where(x => x.def == RX_DefOf.RX_Thrall).Select(x => x.otherPawn).ToList();
+            return p.relations.DirectRelations.Where(x => x.def == RS_DefOf.RX_Thrall).Select(x => x.otherPawn).ToList();
         }
     }
 }

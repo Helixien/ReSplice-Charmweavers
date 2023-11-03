@@ -9,7 +9,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 
-namespace RareXenotypesSuccubus
+namespace ReSpliceCharmweavers
 {
     [HarmonyPatch(typeof(PregnancyUtility), "ApplyBirthOutcome")]
     public static class PregnancyUtility_ApplyBirthOutcome_Patch
@@ -34,7 +34,7 @@ namespace RareXenotypesSuccubus
         {
             if (PregnancyUtility_ApplyBirthOutcome_Patch.mother != null)
             {
-                var gene = PregnancyUtility_ApplyBirthOutcome_Patch.mother.genes.GetGene(RX_DefOf.RX_Matrianic);
+                var gene = PregnancyUtility_ApplyBirthOutcome_Patch.mother.genes.GetGene(RS_DefOf.RS_Matrianic);
                 if (gene != null && Rand.Chance(0.9f))
                 {
                     request.FixedGender = Gender.Female;
@@ -69,18 +69,59 @@ namespace RareXenotypesSuccubus
                 }
             }
         }
+
         public static void DoLovinResult(JobDriver_Lovin jobDriver, ref Thought_Memory thoughtDef)
         {
-            var thrallHediff = jobDriver.pawn.health.hediffSet.GetFirstHediffOfDef(RX_DefOf.RX_LoveThrall) as Hediff_LoveThrall;
+            var thrallHediff = jobDriver.pawn.health.hediffSet.GetFirstHediffOfDef(RS_DefOf.RX_LoveThrall) as Hediff_LoveThrall;
             if (thrallHediff != null && jobDriver.TargetA.Pawn == thrallHediff.master)
             {
-                OxytocinUtility.OffsetOxytocin(jobDriver.TargetA.Pawn, Core.OxytocinOffsetAfterLovin * 2f);
-                thoughtDef = (Thought_Memory)ThoughtMaker.MakeThought(RX_DefOf.RX_GotSomeLovinThrall);
+                thoughtDef = (Thought_Memory)ThoughtMaker.MakeThought(RS_DefOf.RX_GotSomeLovinThrall);
             }
-            else if (jobDriver.TargetA.Pawn.genes.GetFirstGeneOfType<Gene_Oxytocin>() != null)
+            if (jobDriver.pawn.genes?.HasGene(RS_DefOf.RS_LoveFeed) ?? false)
             {
-                OxytocinUtility.OffsetOxytocin(jobDriver.TargetA.Pawn, Core.OxytocinOffsetAfterLovin);
+                DoLoveFeed(jobDriver.pawn, jobDriver.TargetA.Pawn);
             }
+            if (jobDriver.TargetA.Pawn.genes?.HasGene(RS_DefOf.RS_LoveFeed) ?? false)
+            {
+                DoLoveFeed(jobDriver.TargetA.Pawn, jobDriver.pawn);
+            }
+        }
+
+        private static void DoLoveFeed(Pawn biter, Pawn target)
+        {
+            if (target.genes?.HasGene(GeneDefOf.Bloodfeeder) ?? false)
+            {
+                if (biter.genes.HasGene(RS_DefOf.VRE_SanguoFeeder) is false)
+                {
+                    return;
+                }
+            }
+            float num = BloodlossAfterBite(target);
+            if (num >= HediffDefOf.BloodLoss.lethalSeverity)
+            {
+                return;
+            }
+            else if (HediffDefOf.BloodLoss.stages[HediffDefOf.BloodLoss.StageAtSeverity(num)].lifeThreatening)
+            {
+                return;
+            }
+            SanguophageUtility.DoBite(biter, target, 0.2f, 0.1f, 0.4499f / 2f, 1f,
+                IntRange.one, ThoughtDefOf.FedOn, ThoughtDefOf.FedOn_Social);
+        }
+
+        private static float BloodlossAfterBite(Pawn target)
+        {
+            if (target.Dead || !target.RaceProps.IsFlesh)
+            {
+                return 0f;
+            }
+            float num = 0.4499f / 2f;
+            Hediff firstHediffOfDef = target.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.BloodLoss);
+            if (firstHediffOfDef != null)
+            {
+                num += firstHediffOfDef.Severity;
+            }
+            return num;
         }
     }
 
@@ -209,9 +250,9 @@ namespace RareXenotypesSuccubus
             {
                 foreach (var relation in __instance.relations.DirectRelations)
                 {
-                    if (relation.def == RX_DefOf.RX_Thrall)
+                    if (relation.def == RS_DefOf.RX_Thrall)
                     {
-                        var hediff = relation.otherPawn.health.hediffSet.GetFirstHediffOfDef(RX_DefOf.RX_LoveThrall) as Hediff_LoveThrall;
+                        var hediff = relation.otherPawn.health.hediffSet.GetFirstHediffOfDef(RS_DefOf.RX_LoveThrall) as Hediff_LoveThrall;
                         if (hediff != null)
                         {
                             hediff.MakeBerserk();
@@ -286,6 +327,51 @@ namespace RareXenotypesSuccubus
             if (pawn.IsLoveThrall())
             {
                 color = Core.SuccubColor;
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Pawn_RelationsTracker), "SecondaryRomanceChanceFactor")]
+    public static class Pawn_RelationsTracker_SecondaryRomanceChanceFactor_Patch
+    {
+        public static void Postfix(ref float __result, Pawn_RelationsTracker __instance, Pawn otherPawn)
+        {
+            if (__instance.pawn.genes?.HasGene(RS_DefOf.RS_Beauty_Angelic) ?? false)
+            {
+                __result *= 1.6f;
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(LovePartnerRelationUtility), "GetLovinMtbHours")]
+    public static class LovePartnerRelationUtility_GetLovinMtbHours_Patch
+    {
+        public static void Postfix(ref float __result, Pawn pawn, Pawn partner)
+        {
+            if ((pawn.genes?.HasGene(RS_DefOf.RS_Libido_None) ?? false) 
+                || (partner.genes?.HasGene(RS_DefOf.RS_Libido_None) ?? false))
+            {
+                __result = -1f;
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(JobGiver_DoLovin), "TryGiveJob")]
+    public static class JobGiver_DoLovin_TryGiveJob_Patch
+    {
+        public static void Postfix(ref Job __result, Pawn pawn)
+        {
+            if (pawn.genes?.HasGene(RS_DefOf.RS_Libido_None) ?? false)
+            {
+                __result = null;
+            }
+            if (__result != null)
+            {
+                var target = __result.targetA.Pawn;
+                if (target != null && (target.genes?.HasGene(RS_DefOf.RS_Libido_None) ?? false)) 
+                {
+                    __result = null;
+                }
             }
         }
     }

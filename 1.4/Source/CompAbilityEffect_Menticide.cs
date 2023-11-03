@@ -1,7 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace RareXenotypesSuccubus
+namespace ReSpliceCharmweavers
 {
     public class CompProperties_Menticide : CompProperties_AbilityEffect
     {
@@ -15,7 +15,7 @@ namespace RareXenotypesSuccubus
         public override bool HideTargetPawnTooltip => true;
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
-            var hediff = HediffMaker.MakeHediff(RX_DefOf.RX_LoveThrall, target.Pawn) as Hediff_LoveThrall;
+            var hediff = HediffMaker.MakeHediff(RS_DefOf.RX_LoveThrall, target.Pawn) as Hediff_LoveThrall;
             hediff.master = parent.pawn;
             if (target.Pawn.Faction != this.parent.pawn.Faction)
             {
@@ -24,7 +24,7 @@ namespace RareXenotypesSuccubus
             }
 
             target.Pawn.health.AddHediff(hediff);
-            target.Pawn.needs.mood.thoughts.memories.TryGainMemory(RX_DefOf.RX_BecameThrallMood, this.parent.pawn);
+            target.Pawn.needs.mood.thoughts.memories.TryGainMemory(RS_DefOf.RX_BecameThrallMood, this.parent.pawn);
         }
 
         public override bool Valid(LocalTargetInfo target, bool throwMessages = false)

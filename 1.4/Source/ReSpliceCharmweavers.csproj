@@ -7,8 +7,8 @@
     <ProjectGuid>{97FA1308-3ED7-41D8-827D-0CC3A3291EE8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RareXenotypesSuccubus</RootNamespace>
-    <AssemblyName>RareXenotypesSuccubus</AssemblyName>
+    <RootNamespace>ReSpliceCharmweavers</RootNamespace>
+    <AssemblyName>ReSpliceCharmweavers</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -296,15 +296,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompAbilityEffect_Menticide.cs" />
-    <Compile Include="CompAbilityEffect_OxytocinCost.cs" />
     <Compile Include="Core.cs" />
-    <Compile Include="GeneGizmo_ResourceOxytocin.cs" />
-    <Compile Include="Gene_Oxytocin.cs" />
     <Compile Include="Hediff_LoveThrall.cs" />
-    <Compile Include="OxytocinDrainUtility.cs" />
     <Compile Include="PawnColumnWorker_Thrall.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RX_DefOf.cs" />
+    <Compile Include="RS_DefOf.cs" />
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="ThoughtWorker_ThrallAmount.cs" />
   </ItemGroup>

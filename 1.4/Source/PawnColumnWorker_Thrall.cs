@@ -2,7 +2,7 @@
 using UnityEngine;
 using Verse;
 
-namespace RareXenotypesSuccubus
+namespace ReSpliceCharmweavers
 {
     public class PawnColumnWorker_Thrall : PawnColumnWorker_Icon
     {
