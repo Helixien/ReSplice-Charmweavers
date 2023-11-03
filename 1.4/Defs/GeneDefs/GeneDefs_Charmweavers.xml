@@ -54,7 +54,9 @@
 			<li>No chance of lovin'.</li>
 		</customEffectDescriptions>
 		<forcedTraits>
-			<def>Asexual</def>
+			<li>
+				<def>Asexual</def>
+			</li>
 		</forcedTraits>
 		<biostatMet>-3</biostatMet>
 		<biostatCpx>1</biostatCpx>
