@@ -112,8 +112,8 @@
 		<biostatMet>6</biostatMet>
 	</GeneDef>
 	<GeneDef>
-		<defName>RS_PsychicalEnthralling</defName>
-		<label>psychical enthralling</label>
+		<defName>RS_PsychicEnthralling</defName>
+		<label>psychic enthralling</label>
 		<description>Carriers of this gene have a special neural organ that makes them able to psychically enthral people for life. The enthralled person will be unable to resist or act against the carrier and fall into an addiction-like state with them. If they are physically separated, the enthralled person will fall into a berserk state, attacking anything and anyone around them.</description>
 		<iconPath>UI/Icons/Genes/Gene_PsychicalEnthralling</iconPath>
 		<displayCategory>Hemogen</displayCategory>
