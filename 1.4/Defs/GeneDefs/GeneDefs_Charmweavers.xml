@@ -12,20 +12,20 @@
 		<biostatArc>1</biostatArc>
 	</GeneDef>
 	<GeneDef>
-		<defName>RS_Superfecundation</defName>
-		<label>superfecundation</label>
+		<defName>RS_MultiPregnancy</defName>
+		<label>multi-pregnancy</label>
 		<description>Carriers of this gene have archites in their womb that allows them to have multiple pregnancies in different stages at the same time.</description>
-		<iconPath>UI/Icons/Genes/Gene_Superfecundation</iconPath>
+		<iconPath>UI/Icons/Genes/Gene_MultiPregnancy</iconPath>
 		<displayCategory>Archite</displayCategory>
 		<biostatMet>0</biostatMet>
 		<biostatCpx>4</biostatCpx>
 		<biostatArc>1</biostatArc>
 	</GeneDef>
 	<GeneDef>
-		<defName>RS_Isothermalskin</defName>
-		<label>isothermalskin</label>
+		<defName>RS_TemperatureInsensitive</defName>
+		<label>temperature insensitive</label>
 		<description>Carriers of this gene have archites in the outer layer of their skin which continuously adapt it to the climate around them. They are comfortable even in extremely cold and hot temperatures.</description>
-		<iconPath>UI/Icons/Genes/Gene_IsothermalSkin</iconPath>
+		<iconPath>UI/Icons/Genes/Gene_TemperatureInsensitive</iconPath>
 		<displayCategory>Archite</displayCategory>
 		<biostatMet>0</biostatMet>
 		<biostatCpx>6</biostatCpx>
@@ -112,10 +112,10 @@
 		<biostatMet>6</biostatMet>
 	</GeneDef>
 	<GeneDef>
-		<defName>RS_Menticide</defName>
-		<label>menticide</label>
-		<description>text.todo</description>
-		<iconPath>UI/Icons/Genes/Gene_Menticide</iconPath>
+		<defName>RS_PsychicalEnthralling</defName>
+		<label>psychical enthralling</label>
+		<description>Carriers of this gene have a special neural organ that makes them able to psychically enthral people for life. The enthralled person will be unable to resist or act against the carrier and fall into an addiction-like state with them. If they are physically separated, the enthralled person will fall into a berserk state, attacking anything and anyone around them.</description>
+		<iconPath>UI/Icons/Genes/Gene_PsychicalEnthralling</iconPath>
 		<displayCategory>Hemogen</displayCategory>
 		<abilities>
 			<li>RS_Menticide</li>
