@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<!-- ================ Master Killed ================ -->
 	<ThoughtDef>
@@ -63,7 +63,7 @@
   
 	<ThoughtDef>
 		<defName>RX_ThrallAmount</defName>
-		<workerClass>RareXenotypesSuccubus.ThoughtWorker_ThrallAmount</workerClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_ThrallAmount</workerClass>
 		<stages>
 			<li>
 				<label>No thrall</label>

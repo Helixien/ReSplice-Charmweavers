@@ -21,7 +21,7 @@
 			<li Class="CompProperties_AbilityHemogenCost">
 				<hemogenCost>0.5</hemogenCost>
 			</li>
-			<li Class="RareXenotypesSuccubus.CompProperties_Menticide"/>
+			<li Class="ReSpliceCharmweavers.CompProperties_Menticide"/>
 		</comps>
 	</AbilityDef>
 	<AbilityDef ParentName="LongJump">

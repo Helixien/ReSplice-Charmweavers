@@ -3,7 +3,7 @@
 
   <PawnColumnDef>
     <defName>RX_Thrall</defName>
-    <workerClass>RareXenotypesSuccubus.PawnColumnWorker_Thrall</workerClass>
+    <workerClass>ReSpliceCharmweavers.PawnColumnWorker_Thrall</workerClass>
   </PawnColumnDef>
 
 </Defs>

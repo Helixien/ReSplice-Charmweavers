@@ -5,7 +5,7 @@
 		<defName>RX_LoveThrall</defName>
 		<label>love thrall</label>
 		<description>text.todo.</description>
-		<hediffClass>RareXenotypesSuccubus.Hediff_LoveThrall</hediffClass>
+		<hediffClass>ReSpliceCharmweavers.Hediff_LoveThrall</hediffClass>
 		<isBad>false</isBad>
 		<makesSickThought>false</makesSickThought>
 		<scenarioCanAdd>false</scenarioCanAdd>

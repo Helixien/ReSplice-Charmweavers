@@ -11,7 +11,7 @@ namespace ReSpliceCharmweavers
         public static Texture2D LoveThrallIcon = ContentFinder<Texture2D>.Get("UI/Icons/Thrall");
         static Core()
         {
-            new Harmony("RareXenotypesSuccubus.Mod").PatchAll();
+            new Harmony("ReSpliceCharmweavers.Mod").PatchAll();
         }
 
         public static Color SuccubColor = new ColorInt(198, 122, 211).ToColor;
