@@ -20,7 +20,13 @@
 		<biostatMet>0</biostatMet>
 		<biostatCpx>4</biostatCpx>
 		<biostatArc>1</biostatArc>
+		<modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">	               
+				<forGenderOnly>Female</forGenderOnly>
+			</li>
+		</modExtensions>
 	</GeneDef>
+	
 	<GeneDef>
 		<defName>RS_TemperatureInsensitive</defName>
 		<label>temperature insensitive</label>

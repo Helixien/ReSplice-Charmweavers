@@ -18,5 +18,6 @@ namespace ReSpliceCharmweavers
         public static GeneDef RS_LoveFeed;
         public static GeneDef RS_PsychicEnthralling;
         [MayRequire("vanillaracesexpanded.sanguophage")] public static GeneDef VRE_SanguoFeeder;
+        public static GeneDef RS_MultiPregnancy;
     }
 }
