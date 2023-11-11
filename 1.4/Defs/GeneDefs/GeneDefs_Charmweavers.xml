@@ -21,12 +21,11 @@
 		<biostatCpx>4</biostatCpx>
 		<biostatArc>1</biostatArc>
 		<modExtensions>
-			<li Class="VanillaGenesExpanded.GeneExtension">	               
+			<li Class="VanillaGenesExpanded.GeneExtension">
 				<forGenderOnly>Female</forGenderOnly>
 			</li>
 		</modExtensions>
 	</GeneDef>
-	
 	<GeneDef>
 		<defName>RS_TemperatureInsensitive</defName>
 		<label>temperature insensitive</label>
@@ -105,6 +104,20 @@
 			</prefixSymbols>
 		</symbolPack>
 	</GeneDef>
+	<!-- ================ Other ================ -->
+	<GeneDef ParentName="LibidoBase">
+		<defName>RS_Naturalist</defName>
+		<label>naturalist</label>
+		<description>Carriers of this gene prefer to not cover their skin with clothing or armour.</description>
+		<iconPath>UI/Icons/Genes/Gene_Naturalist</iconPath>
+		<forcedTraits>
+			<li>
+				<def>Nudist</def>
+			</li>
+		</forcedTraits>
+		<biostatMet>1</biostatMet>
+		<biostatCpx>1</biostatCpx>
+	</GeneDef>
 	<!-- ================ Hemogenic ================ -->
 	<GeneDef>
 		<defName>RS_LoveFeed</defName>
@@ -113,7 +126,7 @@
 		<description>Carriers of this gene have special glands in their mouth that allows them to feed more effectively while they are engaged in lovin’ with another person.</description>
 		<resourceLabel>hemogen</resourceLabel>
 		<geneClass>Gene_HemogenDrain</geneClass>
-		<iconPath>UI/Icons/Genes/Gene_HemogenDrain</iconPath>
+		<iconPath>UI/Icons/Genes/Gene_Lovefeed</iconPath>
 		<prerequisite>Hemogenic</prerequisite>
 		<resourceLossPerDay>0.08</resourceLossPerDay>
 		<displayCategory>Hemogen</displayCategory>
@@ -177,7 +190,7 @@
 	<GeneDef ParentName="RS_HornsBase">
 		<defName>RS_Headbone_RamHorns</defName>
 		<label>ram-horns</label>
-		<description>text.todo</description>
+		<description>Carriers of this gene grow two ram-like horns protruding from the forehead.</description>
 		<iconPath>UI/Icons/Genes/Gene_RamHorns</iconPath>
 		<graphicData>
 			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/RamHorns/RamHorns</graphicPath>
@@ -186,7 +199,7 @@
 	<GeneDef ParentName="RS_HornsBase">
 		<defName>RS_Headbone_MediumHorns</defName>
 		<label>medium-horns</label>
-		<description>text.todo</description>
+		<description>Carriers of this gene grow two sizable horns protruding from the forehead.</description>
 		<iconPath>UI/Icons/Genes/Gene_MediumHorns</iconPath>
 		<graphicData>
 			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/DevilHorns/DevilHorns</graphicPath>
@@ -195,7 +208,7 @@
 	<GeneDef ParentName="RS_HornsBase">
 		<defName>RS_Headbone_LargeHorns</defName>
 		<label>large-horns</label>
-		<description>text.todo</description>
+		<description>Carriers of this gene grow two large horns protruding from the forehead.</description>
 		<iconPath>UI/Icons/Genes/Gene_LargeHorns</iconPath>
 		<graphicData>
 			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/DemonHorns/DemonHorns</graphicPath>
@@ -215,7 +228,7 @@
 	<GeneDef ParentName="RS_GeneWingBase">
 		<defName>RS_Wing_Batlike</defName>
 		<label>bat-wings</label>
-		<description>text.todo</description>
+		<description>Carriers of this gene have a pair of bat-like wings.”</description>
 		<iconPath>UI/Icons/Genes/Gene_BatWings</iconPath>
 		<iconColor>(0.75, 0.75, 0.75)</iconColor>
 		<displayOrderInCategory>1000</displayOrderInCategory>
@@ -242,7 +255,7 @@
 	<GeneDef ParentName="GeneTailBase">
 		<defName>RS_Tail_Spiked</defName>
 		<label>spiked tail</label>
-		<description>text.todo</description>
+		<description>Carriers of this gene have a sleek tail with a sharp bone-like spike at the end.</description>
 		<iconPath>UI/Icons/Genes/Gene_SpikedTail</iconPath>
 		<iconColor>(0.75, 0.75, 0.75)</iconColor>
 		<displayOrderInCategory>1000</displayOrderInCategory>
@@ -267,7 +280,7 @@
 		<defName>RS_Eyes_Pink</defName>
 		<label>pink eyes</label>
 		<labelShortAdj>pink-eyed</labelShortAdj>
-		<description>Carriers of this gene have deeply pink-pigmented eyes.</description>
+		<description>Carriers of this gene have pink-pigmented eyes.</description>
 		<iconPath>UI/Icons/Genes/Gene_PinkEyes</iconPath>
 		<displayOrderInCategory>0</displayOrderInCategory>
 		<graphicData>
