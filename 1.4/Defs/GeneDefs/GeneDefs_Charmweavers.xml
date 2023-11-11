@@ -105,7 +105,7 @@
 		</symbolPack>
 	</GeneDef>
 	<!-- ================ Other ================ -->
-	<GeneDef ParentName="LibidoBase">
+	<GeneDef>
 		<defName>RS_Naturalist</defName>
 		<label>naturalist</label>
 		<description>Carriers of this gene prefer to not cover their skin with clothing or armour.</description>
@@ -137,19 +137,49 @@
 	</GeneDef>
 	<GeneDef>
 		<defName>RS_PsychicEnthralling</defName>
-		<label>psychic enthralling</label>
+		<label>PsychicEnthralling</label>
 		<description>Carriers of this gene have a special neural organ that makes them able to psychically enthral people for life. The enthralled person will be unable to resist or act against the carrier and fall into an addiction-like state with them. If they are physically separated, the enthralled person will fall into a berserk state, attacking anything and anyone around them.</description>
 		<iconPath>UI/Icons/Genes/Gene_PsychicalEnthralling</iconPath>
 		<displayCategory>Hemogen</displayCategory>
 		<abilities>
-			<li>RS_Menticide</li>
+			<li>RS_PsychicEnthralling</li>
 		</abilities>
 		<descriptionHyperlinks>
-			<AbilityDef>RS_Menticide</AbilityDef>
+			<AbilityDef>RS_PsychicEnthralling</AbilityDef>
 		</descriptionHyperlinks>
 		<biostatMet>-1</biostatMet>
 	</GeneDef>
 	<!-- ================ Cosmetic Genes ================ -->
+	<!-- ================ Skins ================ -->
+	<GeneDef ParentName="GeneSkinColorOverride">
+		<defName>RS_Skin_PaleGreen</defName>
+		<label>pale green skin</label>
+		<labelShortAdj>green</labelShortAdj>
+		<description>Carriers of this gene produce a pigment that gives their skin a green color.</description>
+		<skinColorOverride>(163,212,135)</skinColorOverride>
+		<displayOrderInCategory>0</displayOrderInCategory>
+		<symbolPack>
+			<wholeNameSymbols>
+				<li>
+					<symbol>greenskin</symbol>
+				</li>
+			</wholeNameSymbols>
+			<prefixSymbols>
+				<li>
+					<symbol>green</symbol>
+				</li>
+				<li>
+					<symbol>lime</symbol>
+				</li>
+				<li>
+					<symbol>jade</symbol>
+				</li>
+				<li>
+					<symbol>apple</symbol>
+				</li>
+			</prefixSymbols>
+		</symbolPack>
+	</GeneDef>
 	<!-- ================ Horns ================ -->
 	<GeneDef ParentName="GeneHeadboneBase" Name="RS_HornsBase" Abstract="True">
 		<graphicData>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<AbilityDef>
-		<defName>RS_Menticide</defName>
-		<label>menticide</label>
+		<defName>RS_PsychicEnthralling</defName>
+		<label>PsychicEnthralling</label>
 		<description>text.todo</description>
-		<iconPath>UI/Abilities/Menticide</iconPath>
+		<iconPath>UI/Abilities/PsychicalEnthralling</iconPath>
 		<cooldownTicksRange>420000</cooldownTicksRange>
 		<category>Sanguophage</category>
 		<displayOrder>200</displayOrder>
