@@ -1,13 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-	<RX.AbilityOxytocinCost>Oxytocin cost</RX.AbilityOxytocinCost>
-	<RX.AbilityDisabledNoOxytocinGene>{0_labelShort} is not succubus.</RX.AbilityDisabledNoOxytocinGene>
-	<RX.AbilityDisabledNoOxytocin>{0_labelShort} does not have enough oxytocin.</RX.AbilityDisabledNoOxytocin>
 	<RX.TargetTooYoung>Too young.</RX.TargetTooYoung>
 	<RX.ThrallOf>Thrall of {PAWN_nameDef}</RX.ThrallOf>
 	<RX.BerserkThrallStateReason>This happened because of {0_definite}'s death.</RX.BerserkThrallStateReason>
 	<RX.NewThrall>New thrall: {PAWN_nameDef}</RX.NewThrall>
 	<RX.NewThrallDesc>{CASTER_nameDef} successfully enthralled {TARGET_nameDef}.</RX.NewThrallDesc>
-	
+	<RS.MaxThrallAmount>Max thrall amount</RS.MaxThrallAmount>
+	<RS.ThrallAmount>Thrall amount</RS.ThrallAmount>
 </LanguageData>

@@ -5,6 +5,7 @@ using Verse;
 
 namespace ReSpliceCharmweavers
 {
+
     [HarmonyPatch(typeof(TransferableUIUtility), "DoExtraIcons")]
     public static class TransferableUIUtility_DoExtraIcons_Patch
     {
