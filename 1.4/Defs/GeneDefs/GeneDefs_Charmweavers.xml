@@ -297,8 +297,6 @@
 				<offset>0.1</offset>
 			</li>
 		</capMods>
-		<biostatCpx>1</biostatCpx>
-		<biostatMet>-1</biostatMet>
 		<graphicData>
 			<graphicPath>Things/Pawn/Humanlike/BodyAttachments/DemonicTail/DemonicTail</graphicPath>
 			<colorType>Skin</colorType>
@@ -317,8 +315,8 @@
 		<displayOrderInCategory>0</displayOrderInCategory>
 		<graphicData>
 			<drawScale>0.28</drawScale>
-			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/RedEyes/Male/RedEyes_Male</graphicPath>
-			<graphicPathFemale>Things/Pawn/Humanlike/HeadAttachments/RedEyes/Female/RedEyes_Female</graphicPathFemale>
+			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/PinkEyes/Male/PinkEyes_Male</graphicPath>
+			<graphicPathFemale>Things/Pawn/Humanlike/HeadAttachments/PinkEyes/Female/PinkEyes_Female</graphicPathFemale>
 		</graphicData>
 	</GeneDef>
 </Defs>
