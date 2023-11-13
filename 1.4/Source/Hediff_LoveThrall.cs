@@ -9,7 +9,7 @@ namespace ReSpliceCharmweavers
     {
         public Pawn master;
         public Faction previousFaction;
-        public override bool ShouldRemove => false;
+        public override bool ShouldRemove => master.DestroyedOrNull() || master.Dead;
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
@@ -38,15 +38,23 @@ namespace ReSpliceCharmweavers
                 LetterDefOf.NeutralEvent, pawn);
         }
 
-        public void MakeBerserk()
+        public override void PostRemoved()
         {
-            pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk,
-                "RX.BerserkThrallStateReason".Translate(master));
+            base.PostRemoved();
             if (previousFaction != null && pawn.Faction != previousFaction)
             {
                 pawn.SetFaction(previousFaction);
             }
+
+            var relation = pawn.relations.GetDirectRelation(RS_DefOf.RX_Master, master);
+            if (relation != null)
+            {
+                pawn.relations.RemoveDirectRelation(relation);
+            }
+
+            pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_BrokenEnthrallment);
         }
+
         public override void ExposeData()
         {
             base.ExposeData();

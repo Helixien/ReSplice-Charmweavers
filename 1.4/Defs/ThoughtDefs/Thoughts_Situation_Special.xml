@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>RS_BondedWithMyMaster</defName>
+    <workerClass>ReSpliceCharmweavers.ThoughtWorker_BondedWithMyMaster</workerClass>
+    <stages>
+      <li>
+        <label>Bonded with my master</label>
+        <description>I am able to bask in the presence of my master, life is good.</description>
+        <baseMoodEffect>18</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

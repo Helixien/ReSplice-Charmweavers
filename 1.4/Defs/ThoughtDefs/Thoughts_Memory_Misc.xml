@@ -1,19 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<!-- ================ Sold Master================ -->
-	<ThoughtDef>
-		<defName>RX_SoldMyMaster</defName>
-		<durationDays>6</durationDays>
-		<stackLimit>5</stackLimit>
-		<doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
-		<stages>
-			<li>
-				<label>master sold</label>
-				<description>This colony sold my master into slavery. That's outrageous!</description>
-				<baseMoodEffect>-10</baseMoodEffect>
-			</li>
-		</stages>
-	</ThoughtDef>
+
 	<!-- ================ Sold Thrall================ -->
 	<ThoughtDef>
 		<defName>RX_SoldMyThrall</defName>
@@ -28,4 +15,37 @@
 			</li>
 		</stages>
 	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>RS_BrokenEnthrallment</defName>
+		<durationDays>9</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>Broken Enthrallment</label>
+				<description>I am finally free and able to think for myself again!</description>
+				<baseMoodEffect>30</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>RS_EnthralledPrisoner</defName>
+		<durationDays>3</durationDays>
+		<stackLimit>1</stackLimit>
+		<nullifyingTraits>
+			<li>Psychopath</li>
+		</nullifyingTraits>
+		<nullifyingGenes>
+			<li>RS_PsychicEnthralling</li>
+		</nullifyingGenes>
+		<stages>
+			<li>
+				<label>Enthralled prisoner</label>
+				<description>I know it's more human than killing them, but it still feels wrong.</description>
+				<baseMoodEffect>-3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
 </Defs>

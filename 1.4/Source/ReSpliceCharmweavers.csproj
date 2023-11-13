@@ -305,7 +305,9 @@
     <Compile Include="Core.cs" />
     <Compile Include="HarmonyPatches\HediffSet_AddDirect_Patch.cs" />
     <Compile Include="HarmonyPatches\HediffSet_HasHediffPreventsPregnancy_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnDiedOrDownedThoughtsUtility_TryGiveThoughts_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_AddHediff_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_RelationsTracker_Notify_PawnSold_Patch.cs" />
     <Compile Include="Hediff_LoveThrall.cs" />
     <Compile Include="HarmonyPatches\Hediff_TryMergeWith_Patch.cs" />
     <Compile Include="HarmonyPatches\InteractionWorker_Breakup_RandomSelectionWeight_Patch.cs" />
@@ -326,6 +328,7 @@
     <Compile Include="ReSpliceCharmweaversSettings.cs" />
     <Compile Include="RS_DefOf.cs" />
     <Compile Include="HarmonyPatches\JobGiver_DoLovin_TryGiveJob_Patch.cs" />
+    <Compile Include="ThoughtWorker_BondedWithMyMaster.cs" />
     <Compile Include="ThoughtWorker_ThrallAmount.cs" />
     <Compile Include="HarmonyPatches\TransferableOneWayWidget_DoRow_Patch.cs" />
     <Compile Include="HarmonyPatches\TransferableUIUtility_DoExtraIcons_Patch.cs" />

@@ -12,9 +12,5 @@
 		<requireDifferentGender>false</requireDifferentGender>
 		<lovinDurationMultiplier>1.10</lovinDurationMultiplier>
 	</VFECore.PregnancyApproachDef>
-	
-New Lovin’ Type: Lovin’ for Hemogen:
-A new lovin mode only available to carriers of the lovefeed gene. Lovin’ takes 10% longer, consumes 60% of the other pawns' energy and has only a 0.5 pregnancy chance.
-
 
 </Defs>

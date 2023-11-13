@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using System.Linq;
 using Verse;
 
 namespace ReSpliceCharmweavers
@@ -8,17 +9,24 @@ namespace ReSpliceCharmweavers
     {
         public static void Postfix(Pawn __instance, DamageInfo? dinfo, Hediff exactCulprit = null)
         {
-            if (__instance.Dead && __instance.RaceProps.Humanlike && __instance.relations != null)
+            if (__instance.Dead)
             {
-                foreach (var relation in __instance.relations.DirectRelations)
+                FreeAllThrals(__instance);
+            }
+        }
+
+        public static void FreeAllThrals(Pawn __instance)
+        {
+            if (__instance.RaceProps.Humanlike && __instance.relations != null)
+            {
+                foreach (var relation in __instance.relations.DirectRelations.ToList())
                 {
                     if (relation.def == RS_DefOf.RX_Thrall)
                     {
                         var hediff = relation.otherPawn.health.hediffSet.GetFirstHediffOfDef(RS_DefOf.RX_LoveThrall) as Hediff_LoveThrall;
                         if (hediff != null)
                         {
-                            hediff.MakeBerserk();
-                            return;
+                            hediff.pawn.health.RemoveHediff(hediff);
                         }
                     }
                 }

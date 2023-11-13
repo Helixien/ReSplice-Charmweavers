@@ -1,32 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<!-- ================ Master Died ================ -->
-	<ThoughtDef ParentName="DeathMemory">
-		<defName>RX_MyMasterDied</defName>
-		<durationDays>45.0</durationDays>
-		<stackLimit>10</stackLimit>
-		<showBubble>true</showBubble>
-		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
-		<stages>
-			<li>
-				<label>my master {0} died</label>
-				<description>My master is dead. They were everything to me...</description>
-				<baseMoodEffect>-30</baseMoodEffect>
-			</li>
-		</stages>
-	</ThoughtDef>
+
+
+
 	<!-- ================ Thrall Died ================ -->
 	<ThoughtDef ParentName="DeathMemory">
 		<defName>RX_MyThrallDied</defName>
 		<durationDays>3.0</durationDays>
 		<stackLimit>10</stackLimit>
 		<showBubble>true</showBubble>
+		<nullifyingTraits>
+			<li>Psychopath</li>
+		</nullifyingTraits>
 		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
 		<stages>
 			<li>
 				<label>my thrall {0} died</label>
-				<description>My thrall is dead. Guess I need a new one...</description>
-				<baseMoodEffect>-5</baseMoodEffect>
+				<description>My thrall died. Oh well, I can always get a new one.</description>
+				<baseMoodEffect>-3</baseMoodEffect>
 			</li>
 		</stages>
 	</ThoughtDef>

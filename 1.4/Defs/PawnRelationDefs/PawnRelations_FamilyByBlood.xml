@@ -3,14 +3,6 @@
 	<PawnRelationDef>
 		<defName>RX_Master</defName>
 		<label>master</label>
-		<importance>185</importance>
-		<diedThought>RX_MyMasterDied</diedThought>
-		<killedThought>RX_KilledMyMaster</killedThought>
-		<lostThought>RX_MyMasterLost</lostThought>
-		<lostThoughtFemale>RX_MyMasterLostFemale</lostThoughtFemale>
-		<soldThoughts>
-			<li>RX_SoldMyMaster</li>
-		</soldThoughts>
 		<opinionOffset>85</opinionOffset>
 		<generationChanceFactor>0</generationChanceFactor>
 		<romanceChanceFactor>1</romanceChanceFactor>

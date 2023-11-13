@@ -35,6 +35,14 @@ namespace ReSpliceCharmweavers
 
             target.Pawn.health.AddHediff(hediff);
             target.Pawn.needs.mood.thoughts.memories.TryGainMemory(RS_DefOf.RX_BecameThrallMood, this.parent.pawn);
+
+            foreach (Pawn p in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonistsAndPrisoners)
+            {
+                if (p.needs.mood != null && p != target.Pawn)
+                {
+                    p.needs.mood.thoughts.memories.TryGainMemory(RS_DefOf.RS_EnthralledPrisoner, target.Pawn);
+                }
+            }
         }
 
         public override bool Valid(LocalTargetInfo target, bool throwMessages = false)
