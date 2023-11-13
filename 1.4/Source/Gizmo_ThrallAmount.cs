@@ -10,13 +10,9 @@ namespace ReSpliceCharmweavers
     {
         public Pawn pawn;
 
-        private static readonly Texture2D FullBarTex = SolidColorMaterials.NewSolidColorTexture(new Color(0.35f, 0.35f, 0.2f));
+        private static readonly Texture2D FullBarTex = SolidColorMaterials.NewSolidColorTexture(Core.SuccubColor);
 
         private static readonly Texture2D EmptyBarTex = SolidColorMaterials.NewSolidColorTexture(Color.black);
-
-        private static readonly Texture2D TargetLevelArrow = ContentFinder<Texture2D>.Get("UI/Misc/BarInstantMarkerRotated");
-
-        private const float ArrowScale = 0.5f;
 
         public Gizmo_ThrallAmount()
         {
@@ -30,22 +26,29 @@ namespace ReSpliceCharmweavers
 
         public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
         {
-            Rect overRect = new Rect(topLeft.x, topLeft.y, GetWidth(maxWidth), 75f);
-            Find.WindowStack.ImmediateWindow(1523289473, overRect, WindowLayer.GameUI, delegate
+            var thrallAmount = pawn.GetThrallAmount();
+            Rect rect = new Rect(topLeft.x, topLeft.y, GetWidth(maxWidth), 75f);
+            Rect rect2 = rect.ContractedBy(8f);
+            Widgets.DrawWindowBackground(rect);
+            Text.Font = GameFont.Small;
+            Rect labelRect = rect2;
+            labelRect.height = Text.LineHeight;
+            Widgets.Label(labelRect, "RS.ThrallAmount".Translate());
+            rect2.yMin += labelRect.height + 8f;
+            var barRect = rect2;
+            Widgets.FillableBar(barRect, thrallAmount / (float)ReSpliceCharmweaversSettings.maxThrallAmount, FullBarTex, EmptyBarTex, doBorder: true);
+            Text.Anchor = TextAnchor.MiddleCenter;
+            Widgets.Label(barRect, thrallAmount.ToString() + " / " + ReSpliceCharmweaversSettings.maxThrallAmount);
+            Text.Anchor = TextAnchor.UpperLeft;
+            if (Mouse.IsOver(rect))
             {
-                Rect rect;
-                Rect rect2 = (rect = overRect.AtZero().ContractedBy(6f));
-                rect.height = overRect.height / 2f;
-                Text.Font = GameFont.Tiny;
-                Widgets.Label(rect, "RS.ThrallAmount".Translate());
-                Rect rect3 = rect2;
-                rect3.yMin = overRect.height / 2f;
-                Text.Font = GameFont.Small;
-                Text.Anchor = TextAnchor.MiddleCenter;
-                var thrallAmount = pawn.relations.DirectRelations.Where(x => x.def == RS_DefOf.RX_Thrall).Count();
-                Widgets.Label(rect3, thrallAmount.ToString() + " / " + ReSpliceCharmweaversSettings.maxThrallAmount);
-                Text.Anchor = TextAnchor.UpperLeft;
-            });
+                Widgets.DrawHighlight(rect);
+                string tip = "RS.ThrallAmountTooltip".Translate();
+                if (!tip.NullOrEmpty())
+                {
+                    TooltipHandler.TipRegion(rect, tip);
+                }
+            }
             return new GizmoResult(GizmoState.Clear);
         }
     }

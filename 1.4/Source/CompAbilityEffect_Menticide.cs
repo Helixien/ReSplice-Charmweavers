@@ -13,6 +13,16 @@ namespace ReSpliceCharmweavers
     public class CompAbilityEffect_Menticide : CompAbilityEffect
     {
         public override bool HideTargetPawnTooltip => true;
+
+        public override bool GizmoDisabled(out string reason)
+        {
+            if (parent.pawn.GetThrallAmount() >= ReSpliceCharmweaversSettings.maxThrallAmount)
+            {
+                reason = "RS.AlreadyHasMaxThrallAmount".Translate();
+                return true;
+            }
+            return base.GizmoDisabled(out reason);
+        }
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
             var hediff = HediffMaker.MakeHediff(RS_DefOf.RX_LoveThrall, target.Pawn) as Hediff_LoveThrall;
@@ -31,6 +41,10 @@ namespace ReSpliceCharmweavers
         {
             Pawn pawn = target.Pawn;
             if (pawn == null)
+            {
+                return false;
+            }
+            if (pawn.IsLoveThrall(out var master) && master == parent.pawn)
             {
                 return false;
             }

@@ -10,7 +10,6 @@ namespace ReSpliceCharmweavers
         public ReSpliceCharmweaversMod(ModContentPack pack) : base(pack)
         {
             settings = GetSettings<ReSpliceCharmweaversSettings>();
-            new Harmony("ReSpliceCharmweavers.Mod").PatchAll();
         }
 
         public override void DoSettingsWindowContents(Rect inRect)

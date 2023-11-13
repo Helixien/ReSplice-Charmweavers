@@ -11,7 +11,7 @@ namespace ReSpliceCharmweavers
         {
             if (p.genes?.HasGene(RS_DefOf.RS_PsychicEnthralling) ?? false)
             {
-                var thrallAmount = GetAllThralls(p).Count;
+                var thrallAmount = p.GetThrallAmount();
                 if (thrallAmount <= 6)
                 {
                     return ThoughtState.ActiveAtStage(thrallAmount);
@@ -22,11 +22,6 @@ namespace ReSpliceCharmweavers
                 }
             }
             return ThoughtState.Inactive;
-        }
-
-        public List<Pawn> GetAllThralls(Pawn p)
-        {
-            return p.relations.DirectRelations.Where(x => x.def == RS_DefOf.RX_Thrall).Select(x => x.otherPawn).ToList();
         }
     }
 }

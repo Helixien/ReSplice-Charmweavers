@@ -41,51 +41,6 @@ namespace ReSpliceCharmweavers
             {
                 thoughtDef = (Thought_Memory)ThoughtMaker.MakeThought(RS_DefOf.RX_GotSomeLovinThrall);
             }
-            if (jobDriver.pawn.genes?.HasGene(RS_DefOf.RS_LoveFeed) ?? false)
-            {
-                DoLoveFeed(jobDriver.pawn, jobDriver.TargetA.Pawn);
-            }
-            if (jobDriver.TargetA.Pawn.genes?.HasGene(RS_DefOf.RS_LoveFeed) ?? false)
-            {
-                DoLoveFeed(jobDriver.TargetA.Pawn, jobDriver.pawn);
-            }
-        }
-
-        private static void DoLoveFeed(Pawn biter, Pawn target)
-        {
-            if (target.genes?.HasGene(GeneDefOf.Bloodfeeder) ?? false)
-            {
-                if (biter.genes.HasGene(RS_DefOf.VRE_SanguoFeeder) is false)
-                {
-                    return;
-                }
-            }
-            float num = BloodlossAfterBite(target);
-            if (num >= HediffDefOf.BloodLoss.lethalSeverity)
-            {
-                return;
-            }
-            else if (HediffDefOf.BloodLoss.stages[HediffDefOf.BloodLoss.StageAtSeverity(num)].lifeThreatening)
-            {
-                return;
-            }
-            SanguophageUtility.DoBite(biter, target, 0.2f, 0.1f, 0.4499f / 2f, 1f,
-                IntRange.one, ThoughtDefOf.FedOn, ThoughtDefOf.FedOn_Social);
-        }
-
-        private static float BloodlossAfterBite(Pawn target)
-        {
-            if (target.Dead || !target.RaceProps.IsFlesh)
-            {
-                return 0f;
-            }
-            float num = 0.4499f / 2f;
-            Hediff firstHediffOfDef = target.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.BloodLoss);
-            if (firstHediffOfDef != null)
-            {
-                num += firstHediffOfDef.Severity;
-            }
-            return num;
         }
     }
 }

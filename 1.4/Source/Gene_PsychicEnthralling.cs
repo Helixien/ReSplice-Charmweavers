@@ -8,10 +8,6 @@ namespace ReSpliceCharmweavers
         public Gizmo_ThrallAmount gizmo;
         public override IEnumerable<Gizmo> GetGizmos()
         {
-            foreach (var g in base.GetGizmos())
-            {
-                yield return g;
-            }
             gizmo ??= new Gizmo_ThrallAmount
             {
                 pawn = this.pawn

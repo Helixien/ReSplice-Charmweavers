@@ -8,4 +8,6 @@
 	<RX.NewThrallDesc>{CASTER_nameDef} successfully enthralled {TARGET_nameDef}.</RX.NewThrallDesc>
 	<RS.MaxThrallAmount>Max thrall amount</RS.MaxThrallAmount>
 	<RS.ThrallAmount>Thrall amount</RS.ThrallAmount>
+	<RS.AlreadyHasMaxThrallAmount>Already has maximum thrall amount allowed.</RS.AlreadyHasMaxThrallAmount>
+	<RS.ThrallAmountTooltip>tooltip todo</RS.ThrallAmountTooltip>
 </LanguageData>
