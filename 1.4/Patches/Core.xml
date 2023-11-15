@@ -6,7 +6,13 @@
 				<xpath>/Defs/PawnTableDef[defName="Work" or defName="Assign" or defName="Restrict"]/columns/li[text()="LabelShortWithIcon"]</xpath>
 				<order>Append</order>
 				<value>
-					<li>RX_Thrall</li>
+					<li>RS_Thrall</li>
+				</value>
+			</li>
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/FactionDef[@Name="FactionBase" or @Name="PirateBandBase"]/xenotypeSet/xenotypeChances</xpath>
+				<value>
+					<RS_Charmweaver MayRequire="Ludeon.RimWorld.Biotech">0.005</RS_Charmweaver>
 				</value>
 			</li>
 		</operations>
