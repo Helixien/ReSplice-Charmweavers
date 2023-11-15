@@ -48,6 +48,7 @@
 			<li>RS_Beauty_Angelic</li>
 			<li>RS_Libido_Extreme</li>
 			<li>RS_LoveFeed</li>
+			<li MayRequire="vanillaracesexpanded.highmate">VRE_Flirty</li>
 		</genes>
 	</XenotypeDef>
 </Defs>

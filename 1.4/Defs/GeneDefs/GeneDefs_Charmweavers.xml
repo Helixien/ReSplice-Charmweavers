@@ -50,6 +50,9 @@
 		<lovinMTBFactor>0.1</lovinMTBFactor>
 		<biostatMet>3</biostatMet>
 		<biostatCpx>1</biostatCpx>
+		<abilities>
+			<li MayRequire="vanillaracesexpanded.highmate">VRE_InitiateLovin</li>
+		</abilities>
 	</GeneDef>
 	<GeneDef ParentName="LibidoBase">
 		<defName>RS_Libido_None</defName>
