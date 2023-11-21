@@ -2,17 +2,17 @@
 <Patch>
 	<Operation Class="PatchOperationSequence">
 		<operations>
-			<li Class="PatchOperationInsert">
+<!--			<li Class="PatchOperationInsert">
 				<xpath>/Defs/PawnTableDef[defName="Work" or defName="Assign" or defName="Restrict"]/columns/li[text()="LabelShortWithIcon"]</xpath>
 				<order>Append</order>
 				<value>
 					<li>RS_Thrall</li>
 				</value>
-			</li>
+			</li>-->
 			<li Class="PatchOperationInsert">
 				<xpath>/Defs/FactionDef[@Name="FactionBase" or @Name="PirateBandBase"]/xenotypeSet/xenotypeChances</xpath>
 				<value>
-					<RS_Charmweaver MayRequire="Ludeon.RimWorld.Biotech">0.005</RS_Charmweaver>
+					<RS_Charmweaver>0.005</RS_Charmweaver>
 				</value>
 			</li>
 		</operations>
