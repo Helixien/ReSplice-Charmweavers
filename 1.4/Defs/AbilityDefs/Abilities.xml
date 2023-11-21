@@ -9,9 +9,10 @@
 		<category>Sanguophage</category>
 		<displayOrder>200</displayOrder>
 		<aiCanUse>false</aiCanUse>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
-			<range>10</range>
+			<range>8</range>
 			<warmupTime>0.5</warmupTime>
 			<targetParams>
 				<canTargetBuildings>False</canTargetBuildings>
@@ -21,15 +22,22 @@
 			<li Class="CompProperties_AbilityHemogenCost">
 				<hemogenCost>0.5</hemogenCost>
 			</li>
-			<li Class="ReSpliceCharmweavers.CompProperties_Menticide"/>
+			<li Class="ReSpliceCharmweavers.CompProperties_Menticide">
+				<applicableToMechs>false</applicableToMechs>
+				<goodwillImpact>-75</goodwillImpact>
+			</li>
 		</comps>
 	</AbilityDef>
+	
 	<AbilityDef ParentName="LongJump">
 		<defName>RS_WingJump</defName>
 		<label>wing jump</label>
 		<category>Sanguophage</category>
 		<description>Jump to a distant location using wings.</description>
 		<iconPath>UI/Abilities/WingJump</iconPath>
+		<verbProperties>
+			<range>22.9</range>
+		</verbProperties>
 		<comps Inherit="False">
 			<li Class="CompProperties_AbilityHemogenCost">
 				<hemogenCost>0.035</hemogenCost>

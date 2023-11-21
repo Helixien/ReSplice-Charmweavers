@@ -56,6 +56,14 @@ namespace ReSpliceCharmweavers
             {
                 return false;
             }
+            if (pawn.GetStatValue(StatDefOf.PsychicSensitivity) <= 0)
+            {
+                if (throwMessages)
+                {
+                    Messages.Message(parent.def.LabelCap + ": " + "AbilityTargetPsychicallyDeaf".Translate(), target.ToTargetInfo(pawn.Map), MessageTypeDefOf.RejectInput, historical: false);
+                }
+                return false;
+            }
             if (!AbilityUtility.ValidateMustBeHuman(pawn, throwMessages, parent))
             {
                 return false;
@@ -64,7 +72,7 @@ namespace ReSpliceCharmweavers
             {
                 return false;
             }
-            return true;
+            return base.Valid(target, throwMessages);
         }
 
         public static bool ValidateMustNotBeChild(Pawn targetPawn, bool showMessages, Ability ability)

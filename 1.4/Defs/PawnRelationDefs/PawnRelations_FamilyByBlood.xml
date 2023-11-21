@@ -22,7 +22,7 @@
 		<soldThoughts>
 			<li>RX_SoldMyThrall</li>
 		</soldThoughts>
-		<opinionOffset>25</opinionOffset>
+		<opinionOffset>50</opinionOffset>
 		<generationChanceFactor>0</generationChanceFactor>
 		<romanceChanceFactor>1</romanceChanceFactor>
 		<incestOpinionOffset>-100</incestOpinionOffset>

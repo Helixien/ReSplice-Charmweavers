@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<QuestScriptDef>
+		<defName>RS_IrresistibleOffer</defName>
+		<rootSelectionWeight>0.6</rootSelectionWeight>
+		<minRefireDays>180</minRefireDays>
+		<rootMinPoints>0</rootMinPoints>
+		<expireDaysRange>1</expireDaysRange>
+		<rootIncreasesPopulation>true</rootIncreasesPopulation>
+		<questNameRules>
+			<rulesStrings>
+				<li>questName->Irresistible Offer</li>
+			</rulesStrings>
+		</questNameRules>
+		<questDescriptionRules>
+			<rulesStrings>
+				<li>questDescription->[asker_nameFull], [asker_titleIndef] of [asker_factionName] contacts you with a special offer. [asker_pronoun] recently managed to capture a charmweaver in an attempt to sell it, but now needs to get rid of it as it causes problems in [asker_objective] faction. If you accept, [asker_nameDef] will send the charmweaver to you by transport pod.</li>
+			</rulesStrings>
+		</questDescriptionRules>
+		<root Class="QuestNode_Sequence">
+			<nodes>
+				<li Class="QuestNode_GetMap"/>
+
+				<li Class="QuestNode_GetPawn">
+					<storeAs>asker</storeAs>
+					<allowPermanentEnemyFaction>false</allowPermanentEnemyFaction>
+					<canGeneratePawn>true</canGeneratePawn>
+					<mustBeNonHostileToPlayer>true</mustBeNonHostileToPlayer>
+					<minTechLevel>Industrial</minTechLevel>
+					<mustBeOfKind>SpaceRefugee_Clothed</mustBeOfKind>
+				</li>
+				
+				<li Class="ReSpliceCharmweavers.QuestNode_GenerateCharmweaver">
+					<storeAs>joiner</storeAs>
+					<kindDef>SpaceRefugee_Clothed</kindDef>
+				</li>
+				<li Class="QuestNode_JoinPlayer">
+					<pawns>$joiner</pawns>
+					<joinPlayer>true</joinPlayer>
+				</li>
+				<li Class="QuestNode_DropPods">
+					<contents>$joiner</contents>
+					<useTradeDropSpot>true</useTradeDropSpot>
+				</li>
+				
+				<li Class="QuestNode_ChangeFactionGoodwill">
+					<change>15</change>
+					<factionOf>$asker</factionOf>
+				</li>
+				<li Class="QuestNode_End">
+					<outcome>Success</outcome>
+				</li>
+			</nodes>
+		</root>
+	</QuestScriptDef>
+
+</Defs>

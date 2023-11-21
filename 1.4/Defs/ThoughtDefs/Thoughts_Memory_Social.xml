@@ -62,6 +62,19 @@
   </ThoughtDef>
   
 	<ThoughtDef>
+		<defName>RS_EnthralledMe</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>enthralled me</label>
+				<baseOpinionOffset>-80</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+	<ThoughtDef>
 		<defName>RX_ThrallAmount</defName>
 		<workerClass>ReSpliceCharmweavers.ThoughtWorker_ThrallAmount</workerClass>
 		<stages>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Verse;
+using VFECore;
 
 namespace ReSpliceCharmweavers
 {
@@ -9,6 +10,7 @@ namespace ReSpliceCharmweavers
     {
         public Pawn master;
         public Faction previousFaction;
+        public bool gainedGayTrait;
         public override bool ShouldRemove => master.DestroyedOrNull() || master.Dead;
         public override void PostAdd(DamageInfo? dinfo)
         {
@@ -36,6 +38,22 @@ namespace ReSpliceCharmweavers
 
             Find.LetterStack.ReceiveLetter("RX.NewThrall".Translate(pawn.Named("PAWN")), "RX.NewThrallDesc".Translate(master.Named("CASTER"), pawn.Named("TARGET")),
                 LetterDefOf.NeutralEvent, pawn);
+
+            if (master.genes.HasGene(RS_DefOf.RS_LoveFeed))
+            {
+                _ = pawn.relations.GetPregnancyApproachForPartner(master);
+                pawn.relations.GetAdditionalPregnancyApproachData().partners[master] = RS_DefOf.RS_LovinForHemogen;
+                master.relations.GetAdditionalPregnancyApproachData().partners[pawn] = RS_DefOf.RS_LovinForHemogen;
+            }
+
+            if (master.gender == pawn.gender)
+            {
+                if (pawn.story.traits.HasTrait(TraitDefOf.Gay) is false)
+                {
+                    pawn.story.traits.GainTrait(new Trait(TraitDefOf.Gay, 0, forced: true));
+                    gainedGayTrait = true;
+                }
+            }
         }
 
         public override void PostRemoved()
@@ -53,6 +71,15 @@ namespace ReSpliceCharmweavers
             }
 
             pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_BrokenEnthrallment);
+            pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_EnthralledMe, master);
+            if (gainedGayTrait)
+            {
+                var gayTrait = pawn.story.traits.GetTrait(TraitDefOf.Gay);
+                if (gayTrait != null)
+                {
+                    pawn.story.traits.RemoveTrait(gayTrait);
+                }
+            }
         }
 
         public override void ExposeData()
@@ -60,6 +87,7 @@ namespace ReSpliceCharmweavers
             base.ExposeData();
             Scribe_References.Look(ref master, "master");
             Scribe_References.Look(ref previousFaction, "previousFaction");
+            Scribe_Values.Look(ref gainedGayTrait, "gainedGayTrait");
 
         }
     }

@@ -1,10 +1,11 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using System;
 using Verse;
 
 namespace ReSpliceCharmweavers
 {
-    [HarmonyPatch(typeof(PawnDiedOrDownedThoughtsUtility), "TryGiveThoughts")]
+    [HarmonyPatch(typeof(PawnDiedOrDownedThoughtsUtility), "TryGiveThoughts", new Type[] { typeof(Pawn), typeof(DamageInfo?), typeof(PawnDiedOrDownedThoughtsKind) })]
     public static class PawnDiedOrDownedThoughtsUtility_TryGiveThoughts_Patch
     {
         public static void Postfix(Pawn victim, DamageInfo? dinfo, PawnDiedOrDownedThoughtsKind thoughtsKind)
