@@ -29,7 +29,7 @@ namespace ReSpliceCharmweavers
 
         public static bool IsLoveThrall(this Pawn pawn, out Pawn master)
         {
-            var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(RS_DefOf.RX_LoveThrall) as Hediff_LoveThrall;
+            var hediff = pawn?.health?.hediffSet?.GetFirstHediffOfDef(RS_DefOf.RX_LoveThrall) as Hediff_LoveThrall;
             if (hediff != null)
             {
                 master = hediff.master;
