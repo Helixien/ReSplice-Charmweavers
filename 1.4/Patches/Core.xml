@@ -9,7 +9,7 @@
 					<li>RS_Thrall</li>
 				</value>
 			</li>-->
-			<li Class="PatchOperationInsert">
+			<li Class="PatchOperationAdd">
 				<xpath>/Defs/FactionDef[@Name="FactionBase" or @Name="PirateBandBase"]/xenotypeSet/xenotypeChances</xpath>
 				<value>
 					<RS_Charmweaver>0.005</RS_Charmweaver>
