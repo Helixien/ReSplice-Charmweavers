@@ -10,6 +10,7 @@
 		<displayOrder>200</displayOrder>
 		<aiCanUse>false</aiCanUse>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<range>8</range>
