@@ -6,7 +6,6 @@
 		<opinionOffset>85</opinionOffset>
 		<generationChanceFactor>0</generationChanceFactor>
 		<romanceChanceFactor>1</romanceChanceFactor>
-		<incestOpinionOffset>-100</incestOpinionOffset>
 		<implied>false</implied>
 		<familyByBloodRelation>false</familyByBloodRelation>
 	</PawnRelationDef>
@@ -25,7 +24,6 @@
 		<opinionOffset>50</opinionOffset>
 		<generationChanceFactor>0</generationChanceFactor>
 		<romanceChanceFactor>1</romanceChanceFactor>
-		<incestOpinionOffset>-100</incestOpinionOffset>
 		<implied>false</implied>
 		<familyByBloodRelation>false</familyByBloodRelation>
 	</PawnRelationDef>

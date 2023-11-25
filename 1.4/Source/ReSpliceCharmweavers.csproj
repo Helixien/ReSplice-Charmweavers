@@ -299,6 +299,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompUseEffect_OffsetLovethrallCapacity.cs" />
     <Compile Include="Gene_PsychicEnthralling.cs" />
     <Compile Include="Gizmo_ThrallAmount.cs" />
     <Compile Include="HarmonyPatches\ColonistBarColonistDrawer_DrawIcons_Patch.cs" />

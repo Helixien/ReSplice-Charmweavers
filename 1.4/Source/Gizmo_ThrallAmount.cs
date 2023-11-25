@@ -8,7 +8,7 @@ namespace ReSpliceCharmweavers
     [StaticConstructorOnStartup]
     public class Gizmo_ThrallAmount : Gizmo
     {
-        public Pawn pawn;
+        public Gene_PsychicEnthralling gene;
 
         private static readonly Texture2D FullBarTex = SolidColorMaterials.NewSolidColorTexture(Core.SuccubColor);
 
@@ -26,7 +26,7 @@ namespace ReSpliceCharmweavers
 
         public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
         {
-            var thrallAmount = pawn.GetThrallAmount();
+            var thrallAmount = gene.pawn.GetThrallAmount();
             Rect rect = new Rect(topLeft.x, topLeft.y, GetWidth(maxWidth), 75f);
             Rect rect2 = rect.ContractedBy(8f);
             Widgets.DrawWindowBackground(rect);
@@ -36,9 +36,9 @@ namespace ReSpliceCharmweavers
             Widgets.Label(labelRect, "RS.ThrallAmount".Translate());
             rect2.yMin += labelRect.height + 8f;
             var barRect = rect2;
-            Widgets.FillableBar(barRect, thrallAmount / (float)ReSpliceCharmweaversSettings.maxThrallAmount, FullBarTex, EmptyBarTex, doBorder: true);
+            Widgets.FillableBar(barRect, thrallAmount / (float)gene.LovethrallCapacity, FullBarTex, EmptyBarTex, doBorder: true);
             Text.Anchor = TextAnchor.MiddleCenter;
-            Widgets.Label(barRect, thrallAmount.ToString() + " / " + ReSpliceCharmweaversSettings.maxThrallAmount);
+            Widgets.Label(barRect, thrallAmount.ToString() + " / " + gene.LovethrallCapacity);
             Text.Anchor = TextAnchor.UpperLeft;
             if (Mouse.IsOver(rect))
             {

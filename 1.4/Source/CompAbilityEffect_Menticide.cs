@@ -16,7 +16,13 @@ namespace ReSpliceCharmweavers
 
         public override bool GizmoDisabled(out string reason)
         {
-            if (parent.pawn.GetThrallAmount() >= ReSpliceCharmweaversSettings.maxThrallAmount)
+            var gene = parent.pawn.genes?.GetFirstGeneOfType<Gene_PsychicEnthralling>();
+            if (gene == null)
+            {
+                reason = "RS.CannotLovethrall".Translate();
+                return true;
+            }
+            if (parent.pawn.GetThrallAmount() >= gene.LovethrallCapacity)
             {
                 reason = "RS.AlreadyHasMaxThrallAmount".Translate();
                 return true;
