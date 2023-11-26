@@ -3,20 +3,24 @@
 	<AbilityDef>
 		<defName>RS_PsychicEnthralling</defName>
 		<label>PsychicEnthralling</label>
-		<description>text.todo</description>
+		<description>Psychically enthral the target, turning them into a willing and loyal servant, as well as lover to the caster.</description>
 		<iconPath>UI/Abilities/PsychicalEnthralling</iconPath>
 		<cooldownTicksRange>420000</cooldownTicksRange>
 		<category>Sanguophage</category>
 		<displayOrder>200</displayOrder>
-		<aiCanUse>false</aiCanUse>
+		<aiCanUse>true</aiCanUse>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
-			<range>8</range>
-			<warmupTime>0.5</warmupTime>
+			<range>15</range>
+			<warmupTime>1</warmupTime>
 			<targetParams>
-				<canTargetBuildings>False</canTargetBuildings>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetPawns>True</canTargetPawns>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetAnimals>false</canTargetAnimals>
 			</targetParams>
 		</verbProperties>
 		<comps>
@@ -29,7 +33,6 @@
 			</li>
 		</comps>
 	</AbilityDef>
-	
 	<AbilityDef ParentName="LongJump">
 		<defName>RS_WingJump</defName>
 		<label>wing jump</label>

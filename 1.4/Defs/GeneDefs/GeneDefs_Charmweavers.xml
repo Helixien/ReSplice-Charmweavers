@@ -35,7 +35,6 @@
 		<biostatMet>0</biostatMet>
 		<biostatCpx>6</biostatCpx>
 		<biostatArc>1</biostatArc>
-		
 	</GeneDef>
 	<!-- ================ Libido ================ -->
 	<GeneDef ParentName="LibidoBase">
@@ -300,10 +299,12 @@
 				<offset>0.1</offset>
 			</li>
 		</capMods>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
 		<graphicData>
 			<graphicPath>Things/Pawn/Humanlike/BodyAttachments/DemonicTail/DemonicTail</graphicPath>
 			<colorType>Skin</colorType>
-			<drawOffsetNorth>(0.1, 0, -0.50)</drawOffsetNorth>
+			<drawOffsetNorth>(0.1, 0.2, -0.25)</drawOffsetNorth>
 			<drawOffsetSouth>(-0.1, -0.1, -0.25)</drawOffsetSouth>
 			<drawOffsetEast>(-0.5, -0.1, -0.15)</drawOffsetEast>
 		</graphicData>

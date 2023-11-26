@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
 	<VFECore.PregnancyApproachDef>
 		<defName>RS_LovinForHemogen</defName>
 		<label>Lovin’ for Hemogen (pregnancy chance x50%)</label>
@@ -12,5 +11,4 @@
 		<requireDifferentGender>false</requireDifferentGender>
 		<lovinDurationMultiplier>1.10</lovinDurationMultiplier>
 	</VFECore.PregnancyApproachDef>
-
 </Defs>
