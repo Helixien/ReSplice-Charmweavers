@@ -31,7 +31,7 @@ namespace ReSpliceCharmweavers
         {
             if (pawn.IsLoveThrall(out var master))
             {
-                ColonistBarColonistDrawer.tmpIconsToDraw.Add(new ColonistBarColonistDrawer.IconDrawCall(Core.LoveThrallIcon, "RX.ThrallOf".Translate(master.Named("PAWN"))));
+                ColonistBarColonistDrawer.tmpIconsToDraw.Add(new ColonistBarColonistDrawer.IconDrawCall(Core.LoveThrallIcon, "RS.ThrallOf".Translate(master.Named("PAWN"))));
             }
         }
     }

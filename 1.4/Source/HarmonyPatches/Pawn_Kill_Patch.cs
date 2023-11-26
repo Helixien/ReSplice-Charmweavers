@@ -21,9 +21,9 @@ namespace ReSpliceCharmweavers
             {
                 foreach (var relation in __instance.relations.DirectRelations.ToList())
                 {
-                    if (relation.def == RS_DefOf.RX_Thrall)
+                    if (relation.def == RS_DefOf.RS_Thrall)
                     {
-                        var hediff = relation.otherPawn.health.hediffSet.GetFirstHediffOfDef(RS_DefOf.RX_LoveThrall) as Hediff_LoveThrall;
+                        var hediff = relation.otherPawn.health.hediffSet.GetFirstHediffOfDef(RS_DefOf.RS_LoveThrall) as Hediff_LoveThrall;
                         if (hediff != null)
                         {
                             hediff.pawn.health.RemoveHediff(hediff);

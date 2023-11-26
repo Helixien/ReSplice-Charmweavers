@@ -19,7 +19,7 @@ namespace ReSpliceCharmweavers
         {
             if (pawn.IsLoveThrall(out var master))
             {
-                return "RX.ThrallOf".Translate(master.Named("PAWN"));
+                return "RS.ThrallOf".Translate(master.Named("PAWN"));
             }
             return null;
         }

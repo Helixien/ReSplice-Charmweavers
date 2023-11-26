@@ -11,7 +11,7 @@ namespace ReSpliceCharmweavers
         {
             if (pawn.IsLoveThrall())
             {
-                __result = Core.SuccubColor;
+                __result = Core.ThrallColor;
             }
         }
     }
