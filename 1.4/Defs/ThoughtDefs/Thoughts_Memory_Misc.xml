@@ -1,9 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-	<!-- ================ Sold Thrall================ -->
 	<ThoughtDef>
-		<defName>RX_SoldMyThrall</defName>
+		<defName>RS_SoldMyThrall</defName>
 		<durationDays>2</durationDays>
 		<stackLimit>5</stackLimit>
 		<doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
@@ -15,7 +13,6 @@
 			</li>
 		</stages>
 	</ThoughtDef>
-
 	<ThoughtDef>
 		<defName>RS_BrokenEnthrallment</defName>
 		<durationDays>9</durationDays>
@@ -28,7 +25,6 @@
 			</li>
 		</stages>
 	</ThoughtDef>
-	
 	<ThoughtDef>
 		<defName>RS_EnthralledPrisoner</defName>
 		<durationDays>3</durationDays>
@@ -47,5 +43,4 @@
 			</li>
 		</stages>
 	</ThoughtDef>
-	
 </Defs>

@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
 	<!-- ================ Base ================ -->
-	<ThoughtDef Name="RX_LostMemoryThrall" ParentName="LostMemory" Abstract="True">
+	<ThoughtDef Name="RS_LostMemoryThrall" ParentName="LostMemory" Abstract="True">
 		<durationDays>3.0</durationDays>
 		<nullifyingTraits>
 			<li>Psychopath</li>
@@ -11,10 +10,9 @@
 		<showBubble>true</showBubble>
 		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
 	</ThoughtDef>
-	
 	<!-- ================ Thrall Lost ================ -->
-	<ThoughtDef ParentName="RX_LostMemoryThrall">
-		<defName>RX_MyThrallLost</defName>
+	<ThoughtDef ParentName="RS_LostMemoryThrall">
+		<defName>RS_MyThrallLost</defName>
 		<stages>
 			<li>
 				<label>my thrall {0} lost</label>
@@ -23,9 +21,8 @@
 			</li>
 		</stages>
 	</ThoughtDef>
-	
-	<ThoughtDef ParentName="RX_LostMemoryThrall">
-		<defName>RX_MyThrallLostFemale</defName>
+	<ThoughtDef ParentName="RS_LostMemoryThrall">
+		<defName>RS_MyThrallLostFemale</defName>
 		<stages>
 			<li>
 				<label>my thrall {0} lost</label>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<PawnRelationDef>
-		<defName>RX_Master</defName>
+		<defName>RS_Master</defName>
 		<label>master</label>
 		<opinionOffset>85</opinionOffset>
 		<generationChanceFactor>0</generationChanceFactor>
@@ -9,17 +9,16 @@
 		<implied>false</implied>
 		<familyByBloodRelation>false</familyByBloodRelation>
 	</PawnRelationDef>
-	
 	<PawnRelationDef>
-		<defName>RX_Thrall</defName>
+		<defName>RS_Thrall</defName>
 		<label>thrall</label>
 		<importance>185</importance>
-		<diedThought>RX_MyThrallDied</diedThought>
-		<killedThought>RX_KilledMyThrall</killedThought>
-		<lostThought>RX_MyThrallLost</lostThought>
-		<lostThoughtFemale>RX_MyThrallLostFemale</lostThoughtFemale>
+		<diedThought>RS_MyThrallDied</diedThought>
+		<killedThought>RS_KilledMyThrall</killedThought>
+		<lostThought>RS_MyThrallLost</lostThought>
+		<lostThoughtFemale>RS_MyThrallLostFemale</lostThoughtFemale>
 		<soldThoughts>
-			<li>RX_SoldMyThrall</li>
+			<li>RS_SoldMyThrall</li>
 		</soldThoughts>
 		<opinionOffset>50</opinionOffset>
 		<generationChanceFactor>0</generationChanceFactor>

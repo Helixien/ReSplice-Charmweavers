@@ -6,7 +6,7 @@
 				<xpath>/Defs/PawnTableDef[defName="Work" or defName="Assign" or defName="Restrict"]/columns/li[text()="LabelShortWithIcon"]</xpath>
 				<order>Append</order>
 				<value>
-					<li>RX_Thrall</li>
+					<li>RS_Thrall</li>
 				</value>
 			</li>
 			<li Class="PatchOperationAdd">

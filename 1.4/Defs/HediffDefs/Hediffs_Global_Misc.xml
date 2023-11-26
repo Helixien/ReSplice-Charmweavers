@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
 	<HediffDef>
-		<defName>RX_LoveThrall</defName>
+		<defName>RS_LoveThrall</defName>
 		<label>love thrall</label>
 		<description>text.todo.</description>
 		<hediffClass>ReSpliceCharmweavers.Hediff_LoveThrall</hediffClass>
@@ -17,5 +16,4 @@
 			</li>
 		</stages>
 	</HediffDef>
-
 </Defs>

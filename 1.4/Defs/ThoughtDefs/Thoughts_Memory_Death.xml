@@ -1,11 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-
-
-	<!-- ================ Thrall Died ================ -->
 	<ThoughtDef ParentName="DeathMemory">
-		<defName>RX_MyThrallDied</defName>
+		<defName>RS_MyThrallDied</defName>
 		<durationDays>3.0</durationDays>
 		<stackLimit>10</stackLimit>
 		<showBubble>true</showBubble>
