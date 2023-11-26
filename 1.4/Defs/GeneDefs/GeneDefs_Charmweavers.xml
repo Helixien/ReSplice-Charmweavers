@@ -35,6 +35,20 @@
 		<biostatMet>0</biostatMet>
 		<biostatCpx>6</biostatCpx>
 		<biostatArc>1</biostatArc>
+		<statOffsets>
+			<ComfyTemperatureMax>1000</ComfyTemperatureMax>
+			<ComfyTemperatureMin>-270</ComfyTemperatureMin>
+		</statOffsets>
+		<symbolPack>
+			<prefixSymbols>
+				<li>
+					<symbol>insensitive</symbol>
+				</li>
+			</prefixSymbols>
+		</symbolPack>
+		<exclusionTags>
+			<li>MinTemperature</li>
+		</exclusionTags>
 	</GeneDef>
 	<!-- ================ Libido ================ -->
 	<GeneDef ParentName="LibidoBase">
