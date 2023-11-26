@@ -10,6 +10,11 @@
 		<biostatMet>0</biostatMet>
 		<biostatCpx>2</biostatCpx>
 		<biostatArc>1</biostatArc>
+		<modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<forGenderOnly>Female</forGenderOnly>
+			</li>
+		</modExtensions>
 	</GeneDef>
 	<GeneDef>
 		<defName>RS_MultiPregnancy</defName>
