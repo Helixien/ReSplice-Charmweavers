@@ -275,12 +275,12 @@
 		<statOffsets>
 			<ComfyTemperatureMin>-5</ComfyTemperatureMin>
 		</statOffsets>
-		<biostatCpx>1</biostatCpx>
-		<biostatMet>-1</biostatMet>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>-2</biostatMet>
 		<graphicData>
 			<graphicPath>Things/Pawn/Humanlike/BodyAttachments/DemonicWing/DemonicWing</graphicPath>
 			<colorType>Skin</colorType>
-			<drawOffsetNorth>(0,0.2,-0.2)</drawOffsetNorth>
+			<drawOffsetNorth>(0,0.2,-0.1)</drawOffsetNorth>
 			<drawOffsetSouth>(0,-0.2,0)</drawOffsetSouth>
 			<drawOffsetEast>(0,0.3,0)</drawOffsetEast>
 		</graphicData>
@@ -299,12 +299,15 @@
 				<offset>0.1</offset>
 			</li>
 		</capMods>
+		<statOffsets>
+			<ComfyTemperatureMin>-2</ComfyTemperatureMin>
+		</statOffsets>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-1</biostatMet>
 		<graphicData>
 			<graphicPath>Things/Pawn/Humanlike/BodyAttachments/DemonicTail/DemonicTail</graphicPath>
 			<colorType>Skin</colorType>
-			<drawOffsetNorth>(0.1, 0.2, -0.25)</drawOffsetNorth>
+			<drawOffsetNorth>(0.1, 0.2, -0.45)</drawOffsetNorth>
 			<drawOffsetSouth>(-0.1, -0.1, -0.25)</drawOffsetSouth>
 			<drawOffsetEast>(-0.5, -0.1, -0.15)</drawOffsetEast>
 		</graphicData>
