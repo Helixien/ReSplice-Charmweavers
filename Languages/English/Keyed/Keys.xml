@@ -1,18 +1,24 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-	<RX.TargetTooYoung>Too young.</RX.TargetTooYoung>
-	<RX.ThrallOf>Thrall of {PAWN_nameDef}</RX.ThrallOf>
-	<RX.BerserkThrallStateReason>This happened because of {0_definite}'s death.</RX.BerserkThrallStateReason>
-	<RX.NewThrall>New thrall: {PAWN_nameDef}</RX.NewThrall>
-	<RX.NewThrallDesc>{CASTER_nameDef} successfully enthralled {TARGET_nameDef}.</RX.NewThrallDesc>
+	<RS.TargetTooYoung>Too young.</RS.TargetTooYoung>
+	<RS.ThrallOf>Thrall of {PAWN_nameDef}</RS.ThrallOf>
+	<RS.BerserkThrallStateReason>This happened because of {0_definite}'s death.</RS.BerserkThrallStateReason>
+	<RS.NewThrall>New thrall: {PAWN_nameDef}</RS.NewThrall>
+	<RS.NewThrallDesc>{CASTER_nameDef} successfully enthralled {TARGET_nameDef}.</RS.NewThrallDesc>
 	<RS.MaxThrallAmount>Default max thrall capacity</RS.MaxThrallAmount>
 	<RS.ThrallAmount>Thrall amount</RS.ThrallAmount>
 	<RS.AlreadyHasMaxThrallAmount>Already has maximum thrall amount allowed.</RS.AlreadyHasMaxThrallAmount>
-	<RS.ThrallAmountTooltip>tooltip todo</RS.ThrallAmountTooltip>
 	<RS.CannotLovethrall>Cannot lovethrall</RS.CannotLovethrall>
 	<RS.MessageLovethrallCapacityChanged>{PAWN_nameDef}'s lovethrall capacity has increased from {OLD} to {NEW}.</RS.MessageLovethrallCapacityChanged>
 	<RS.LovethrallCapacity>lovethrall capacity</RS.LovethrallCapacity>
 	<RS.LovethrallCapacityDesc>text.todo.\n\nLovethrall capacity can be increased using lovethrall capacity serums. These serums can be purchased from traders.</RS.LovethrallCapacityDesc>
+	<RS.PsychicEnthrallment>Psychic Enthrallment</RS.PsychicEnthrallment>
+	<RS.PsychicEnthrallmentDesc>Thrall number: {0}
 
+{PAWN_nameDef} can control up to {1} amount of love thralls.
+
+People with the psychic enthralling gene are able to manipulate others minds and turn them into willing and loyal servants. This is permanent until either the carrier of the gene, or the enthralled person dies.
+</RS.PsychicEnthrallmentDesc>
+	<RS.LoveThralls>Love Thralls</RS.LoveThralls>
 </LanguageData>

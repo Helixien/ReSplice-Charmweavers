@@ -10,7 +10,7 @@ namespace ReSpliceCharmweavers
     {
         public static bool VRESangouphageActive = ModsConfig.IsActive("vanillaracesexpanded.sanguophage");
         public static Texture2D LoveThrallIcon = ContentFinder<Texture2D>.Get("UI/Icons/Thrall");
-        public static Color SuccubColor = new ColorInt(198, 122, 211).ToColor;
+        public static Color ThrallColor = new ColorInt(198, 122, 211).ToColor;
 
         static Core()
         {
@@ -24,12 +24,12 @@ namespace ReSpliceCharmweavers
 
         public static int GetThrallAmount(this Pawn pawn)
         {
-            return pawn.relations.DirectRelations.Where(x => x.def == RS_DefOf.RX_Thrall).Count();
+            return pawn.relations.DirectRelations.Where(x => x.def == RS_DefOf.RS_Thrall).Count();
         }
 
         public static bool IsLoveThrall(this Pawn pawn, out Pawn master)
         {
-            var hediff = pawn?.health?.hediffSet?.GetFirstHediffOfDef(RS_DefOf.RX_LoveThrall) as Hediff_LoveThrall;
+            var hediff = pawn?.health?.hediffSet?.GetFirstHediffOfDef(RS_DefOf.RS_LoveThrall) as Hediff_LoveThrall;
             if (hediff != null)
             {
                 master = hediff.master;

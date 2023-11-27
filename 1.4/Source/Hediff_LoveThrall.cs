@@ -15,8 +15,8 @@ namespace ReSpliceCharmweavers
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
-            master.relations.AddDirectRelation(RS_DefOf.RX_Thrall, pawn);
-            pawn.relations.AddDirectRelation(RS_DefOf.RX_Master, master);
+            master.relations.AddDirectRelation(RS_DefOf.RS_Thrall, pawn);
+            pawn.relations.AddDirectRelation(RS_DefOf.RS_Master, master);
             foreach (var loveRel in LovePartnerRelationUtility.ExistingLovePartners(pawn))
             {
                 if (loveRel.otherPawn != master)
@@ -36,7 +36,7 @@ namespace ReSpliceCharmweavers
             FleckMaker.Static(master.Position, master.Map, FleckDefOf.PsycastAreaEffect, 1.5f);
             FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.PsycastAreaEffect, 1.5f);
 
-            Find.LetterStack.ReceiveLetter("RX.NewThrall".Translate(pawn.Named("PAWN")), "RX.NewThrallDesc".Translate(master.Named("CASTER"), pawn.Named("TARGET")),
+            Find.LetterStack.ReceiveLetter("RS.NewThrall".Translate(pawn.Named("PAWN")), "RS.NewThrallDesc".Translate(master.Named("CASTER"), pawn.Named("TARGET")),
                 LetterDefOf.NeutralEvent, pawn);
 
             if (master.genes.HasGene(RS_DefOf.RS_LoveFeed))
@@ -64,7 +64,7 @@ namespace ReSpliceCharmweavers
                 pawn.SetFaction(previousFaction);
             }
 
-            var relation = pawn.relations.GetDirectRelation(RS_DefOf.RX_Master, master);
+            var relation = pawn.relations.GetDirectRelation(RS_DefOf.RS_Master, master);
             if (relation != null)
             {
                 pawn.relations.RemoveDirectRelation(relation);

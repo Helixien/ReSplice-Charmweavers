@@ -8,11 +8,11 @@ namespace ReSpliceCharmweavers
     public static class RS_DefOf
     {
         public static GeneDef RS_Matrianic;
-        public static PawnRelationDef RX_Master;
-        public static PawnRelationDef RX_Thrall;
-        public static HediffDef RX_LoveThrall;
-        public static ThoughtDef RX_BecameThrallMood;
-        public static ThoughtDef RX_GotSomeLovinThrall;
+        public static PawnRelationDef RS_Master;
+        public static PawnRelationDef RS_Thrall;
+        public static HediffDef RS_LoveThrall;
+        public static ThoughtDef RS_BecameThrallMood;
+        public static ThoughtDef RS_GotSomeLovinThrall;
         public static InteractionDef Breakup;
         public static GeneDef RS_Beauty_Angelic;
         public static GeneDef RS_Libido_None;

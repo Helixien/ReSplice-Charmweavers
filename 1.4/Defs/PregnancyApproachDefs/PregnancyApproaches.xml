@@ -9,6 +9,7 @@
 		<pregnancyChanceFactorBase>0.5</pregnancyChanceFactorBase>
 		<requiredGene>RS_LoveFeed</requiredGene>
 		<requireDifferentGender>false</requireDifferentGender>
+		<requireFertility>True</requireFertility>
 		<lovinDurationMultiplier>1.10</lovinDurationMultiplier>
 	</VFECore.PregnancyApproachDef>
 </Defs>

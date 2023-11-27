@@ -36,10 +36,10 @@ namespace ReSpliceCharmweavers
 
         public static void DoLovinResult(JobDriver_Lovin jobDriver, ref Thought_Memory thoughtDef)
         {
-            var thrallHediff = jobDriver.pawn.health.hediffSet.GetFirstHediffOfDef(RS_DefOf.RX_LoveThrall) as Hediff_LoveThrall;
+            var thrallHediff = jobDriver.pawn.health.hediffSet.GetFirstHediffOfDef(RS_DefOf.RS_LoveThrall) as Hediff_LoveThrall;
             if (thrallHediff != null && jobDriver.TargetA.Pawn == thrallHediff.master)
             {
-                thoughtDef = (Thought_Memory)ThoughtMaker.MakeThought(RS_DefOf.RX_GotSomeLovinThrall);
+                thoughtDef = (Thought_Memory)ThoughtMaker.MakeThought(RS_DefOf.RS_GotSomeLovinThrall);
             }
         }
     }

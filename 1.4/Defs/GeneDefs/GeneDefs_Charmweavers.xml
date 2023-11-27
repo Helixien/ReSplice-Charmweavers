@@ -11,11 +11,13 @@
 		<biostatCpx>2</biostatCpx>
 		<biostatArc>1</biostatArc>
 	</GeneDef>
+	
 	<GeneDef>
 		<defName>RS_MultiPregnancy</defName>
 		<label>multi-pregnancy</label>
 		<description>Carriers of this gene have archites in their womb that allows them to have multiple pregnancies in different stages at the same time.</description>
 		<iconPath>UI/Icons/Genes/Gene_MultiPregnancy</iconPath>
+		<geneClass>VanillaGenesExpanded.GeneGendered</geneClass>
 		<displayCategory>Archite</displayCategory>
 		<biostatMet>0</biostatMet>
 		<biostatCpx>4</biostatCpx>

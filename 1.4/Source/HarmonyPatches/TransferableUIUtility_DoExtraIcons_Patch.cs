@@ -18,7 +18,7 @@ namespace ReSpliceCharmweavers
                 GUI.DrawTexture(iconRect, Core.LoveThrallIcon);
                 if (Mouse.IsOver(iconRect))
                 {
-                    TooltipHandler.TipRegion(iconRect, "RX.ThrallOf".Translate(master.Named("PAWN")));
+                    TooltipHandler.TipRegion(iconRect, "RS.ThrallOf".Translate(master.Named("PAWN")));
                 }
                 curX -= BondIconWidth;
             }

@@ -31,7 +31,7 @@ namespace ReSpliceCharmweavers
         }
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
-            var hediff = HediffMaker.MakeHediff(RS_DefOf.RX_LoveThrall, target.Pawn) as Hediff_LoveThrall;
+            var hediff = HediffMaker.MakeHediff(RS_DefOf.RS_LoveThrall, target.Pawn) as Hediff_LoveThrall;
             hediff.master = parent.pawn;
             if (target.Pawn.Faction != this.parent.pawn.Faction)
             {
@@ -40,7 +40,7 @@ namespace ReSpliceCharmweavers
             }
 
             target.Pawn.health.AddHediff(hediff);
-            target.Pawn.needs.mood.thoughts.memories.TryGainMemory(RS_DefOf.RX_BecameThrallMood, this.parent.pawn);
+            target.Pawn.needs.mood.thoughts.memories.TryGainMemory(RS_DefOf.RS_BecameThrallMood, this.parent.pawn);
 
             foreach (Pawn p in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonistsAndPrisoners)
             {
@@ -87,7 +87,7 @@ namespace ReSpliceCharmweavers
             {
                 if (showMessages)
                 {
-                    AbilityUtility.SendPostProcessedMessage("RX.TargetTooYoung".Translate(), targetPawn, ability);
+                    AbilityUtility.SendPostProcessedMessage("RS.TargetTooYoung".Translate(), targetPawn, ability);
                 }
                 return false;
             }
