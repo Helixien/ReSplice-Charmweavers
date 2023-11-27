@@ -154,7 +154,7 @@
 	</GeneDef>
 	<GeneDef>
 		<defName>RS_PsychicEnthralling</defName>
-		<label>PsychicEnthralling</label>
+		<label>psychic enthralling</label>
 		<description>Carriers of this gene have a special neural organ that makes them able to psychically enthral people for life. The enthralled person will be unable to resist or act against the carrier and fall into an addiction-like state with them. If they are physically separated, the enthralled person will fall into a berserk state, attacking anything and anyone around them.</description>
 		<iconPath>UI/Icons/Genes/Gene_PsychicalEnthralling</iconPath>
 		<geneClass>ReSpliceCharmweavers.Gene_PsychicEnthralling</geneClass>
@@ -165,7 +165,8 @@
 		<descriptionHyperlinks>
 			<AbilityDef>RS_PsychicEnthralling</AbilityDef>
 		</descriptionHyperlinks>
-		<biostatMet>-1</biostatMet>
+		<biostatMet>-2</biostatMet>
+		<biostatCpx>2</biostatCpx>
 	</GeneDef>
 	<!-- ================ Cosmetic Genes ================ -->
 	<!-- ================ Skins ================ -->
