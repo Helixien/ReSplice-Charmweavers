@@ -89,7 +89,7 @@
 	<GeneDef ParentName="GeneBeautyBase">
 		<defName>RS_Beauty_Angelic</defName>
 		<label>extremely attractive</label>
-		<description>Carriers of this gene are inhumanly perfect in every way. Their features, skin and physique mirror those of old divine beings of old religions and tales.They are universally seen as angelic and considered irresistible.</description>
+		<description>Carriers of this gene are inhumanly perfect in every way. Their features, skin and physique mirror those of the divine beings of old religions and tales.They are universally seen as angelic and considered irresistible.</description>
 		<iconPath>UI/Icons/Genes/Gene_Extremely attractive</iconPath>
 		<displayOrderInCategory>30</displayOrderInCategory>
 		<statOffsets>
