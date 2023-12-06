@@ -1,8 +1,19 @@
-﻿using RimWorld;
+﻿using HarmonyLib;
+using RimWorld;
+using System.Linq;
 using Verse;
+using Verse.AI.Group;
 
 namespace ReSpliceCharmweavers
 {
+    [HarmonyPatch(typeof(Quest), nameof(Quest.End))]
+    public static class test
+    {
+        public static void Postfix(Quest __instance)
+        {
+            Log.Message(__instance.name + " - ended");
+        }
+    }
     public class CompProperties_Menticide : CompProperties_AbilityEffect
     {
         public CompProperties_Menticide()
@@ -33,12 +44,30 @@ namespace ReSpliceCharmweavers
         {
             var hediff = HediffMaker.MakeHediff(RS_DefOf.RS_LoveThrall, target.Pawn) as Hediff_LoveThrall;
             hediff.master = parent.pawn;
-            if (target.Pawn.Faction != this.parent.pawn.Faction)
+            if (target.Pawn.HomeFaction != null && target.Pawn.HomeFaction != this.parent.pawn.Faction)
             {
-                hediff.previousFaction = target.Pawn.Faction;
-                target.Pawn.SetFaction(this.parent.pawn.Faction, this.parent.pawn);
+                target.Pawn.HomeFaction.TryAffectGoodwillWith(parent.pawn.Faction,
+                    Faction.OfPlayer.GoodwillToMakeHostile(target.Pawn.HomeFaction));
+                hediff.previousFaction = target.Pawn.HomeFaction;
+                QuestUtility.SendQuestTargetSignals(target.Pawn.HomeFaction.questTags, "BecameHostileToPlayer", target.Pawn.HomeFaction.Named("SUBJECT"));
+                QuestUtility.SendQuestTargetSignals(target.Pawn.questTags, "ChangedFaction", this.Named("SUBJECT"), parent.pawn.Faction.Named("FACTION"));
+                QuestUtility.SendQuestTargetSignals(target.Pawn.questTags, "ChangedFactionToPlayer", this.Named("SUBJECT"), parent.pawn.Faction.Named("FACTION"));
+                QuestUtility.SendQuestTargetSignals(target.Pawn.questTags, "Arrested", target.Pawn.Named("SUBJECT"));
+                if (target.Pawn.Faction != null)
+                {
+                    QuestUtility.SendQuestTargetSignals(target.Pawn.Faction.questTags, "FactionMemberArrested", target.Pawn.Faction.Named("FACTION"));
+                }
+                target.Pawn.GetLord()?.Notify_PawnAttemptArrested(target.Pawn);
+                if (target.Pawn.Faction != this.parent.pawn.Faction)
+                {
+                    target.Pawn.SetFaction(this.parent.pawn.Faction, this.parent.pawn);
+                }
+                target.Pawn.guest.SetGuestStatus(null);
+                foreach (var quest in Find.QuestManager.QuestsListForReading.SelectMany(x => x.PartsListForReading.OfType<QuestPart_ExtraFaction>()))
+                {
+                    quest.affectedPawns.Remove(target.Pawn);
+                }
             }
-
             target.Pawn.health.AddHediff(hediff);
             target.Pawn.needs.mood.thoughts.memories.TryGainMemory(RS_DefOf.RS_BecameThrallMood, this.parent.pawn);
 

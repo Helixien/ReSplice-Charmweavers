@@ -8,7 +8,7 @@ namespace ReSpliceCharmweavers
     {
         public static void Postfix(Pawn_RelationsTracker __instance)
         {
-            Pawn_Kill_Patch.FreeAllThrals(__instance.pawn);
+            Pawn_Kill_Patch.RemoveThrallRelationships(__instance.pawn);
         }
     }
 }

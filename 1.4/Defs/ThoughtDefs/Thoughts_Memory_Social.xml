@@ -62,6 +62,7 @@
 	</ThoughtDef>
 	<ThoughtDef>
 		<defName>RS_EnthralledMe</defName>
+		<durationDays>120</durationDays>
 		<thoughtClass>Thought_MemorySocial</thoughtClass>
 		<stackLimit>300</stackLimit>
 		<stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>

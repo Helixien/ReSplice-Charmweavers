@@ -65,6 +65,11 @@
 		<lovinMTBFactor>0.1</lovinMTBFactor>
 		<biostatMet>3</biostatMet>
 		<biostatCpx>1</biostatCpx>
+		<forcedTraits>
+			<li>
+				<def>Bisexual</def>
+			</li>
+		</forcedTraits>
 		<abilities>
 			<li MayRequire="vanillaracesexpanded.highmate">VRE_InitiateLovin</li>
 		</abilities>

@@ -10,7 +10,6 @@ namespace ReSpliceCharmweavers
         {
             base.PostLovinEffect(pawn, partner);
             DoLovinResult(pawn, partner);
-
         }
 
         public static void DoLovinResult(Pawn pawn, Pawn partner)

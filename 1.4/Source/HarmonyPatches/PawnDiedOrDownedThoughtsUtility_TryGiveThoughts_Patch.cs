@@ -14,7 +14,7 @@ namespace ReSpliceCharmweavers
                 || thoughtsKind == PawnDiedOrDownedThoughtsKind.Died
                 || thoughtsKind == PawnDiedOrDownedThoughtsKind.BanishedToDie)
             {
-                Pawn_Kill_Patch.FreeAllThrals(victim);
+                Pawn_Kill_Patch.RemoveThrallRelationships(victim);
             }
         }
     }

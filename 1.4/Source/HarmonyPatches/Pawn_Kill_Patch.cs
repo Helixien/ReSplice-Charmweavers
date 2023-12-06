@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using RimWorld;
 using System.Linq;
 using Verse;
 
@@ -11,14 +12,22 @@ namespace ReSpliceCharmweavers
         {
             if (__instance.Dead)
             {
-                FreeAllThrals(__instance);
+                RemoveThrallRelationships(__instance);
             }
         }
 
-        public static void FreeAllThrals(Pawn __instance)
+        public static void RemoveThrallRelationships(Pawn __instance)
         {
             if (__instance.RaceProps.Humanlike && __instance.relations != null)
             {
+                if (__instance.IsLoveThrall())
+                {
+                    var hediff = __instance.health.hediffSet.GetFirstHediffOfDef(RS_DefOf.RS_LoveThrall) as Hediff_LoveThrall;
+                    if (hediff != null)
+                    {
+                        hediff.pawn.health.RemoveHediff(hediff);
+                    }
+                }
                 foreach (var relation in __instance.relations.DirectRelations.ToList())
                 {
                     if (relation.def == RS_DefOf.RS_Thrall)

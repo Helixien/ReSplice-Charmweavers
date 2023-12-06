@@ -56,20 +56,31 @@ namespace ReSpliceCharmweavers
             }
         }
 
+
+        public bool recursionTrap;
         public override void PostRemoved()
         {
             base.PostRemoved();
+            if (recursionTrap)
+            {
+                return;
+            }
+            recursionTrap = true;
             if (previousFaction != null && pawn.Faction != previousFaction)
             {
                 pawn.SetFaction(previousFaction);
             }
-
-            var relation = pawn.relations.GetDirectRelation(RS_DefOf.RS_Master, master);
-            if (relation != null)
+            var masterRelation = pawn.relations.GetDirectRelation(RS_DefOf.RS_Master, master);
+            if (masterRelation != null)
             {
-                pawn.relations.RemoveDirectRelation(relation);
+                pawn.relations.RemoveDirectRelation(masterRelation);
             }
-
+            var loverRelation = pawn.relations.GetDirectRelation(PawnRelationDefOf.Lover, master);
+            if (loverRelation != null)
+            {
+                pawn.relations.RemoveDirectRelation(loverRelation);
+            }
+            
             pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_BrokenEnthrallment);
             pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_EnthralledMe, master);
             if (gainedGayTrait)
@@ -80,6 +91,7 @@ namespace ReSpliceCharmweavers
                     pawn.story.traits.RemoveTrait(gayTrait);
                 }
             }
+            recursionTrap = false;
         }
 
         public override void ExposeData()
