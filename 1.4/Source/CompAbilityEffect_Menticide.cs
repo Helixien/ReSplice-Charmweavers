@@ -6,14 +6,6 @@ using Verse.AI.Group;
 
 namespace ReSpliceCharmweavers
 {
-    [HarmonyPatch(typeof(Quest), nameof(Quest.End))]
-    public static class test
-    {
-        public static void Postfix(Quest __instance)
-        {
-            Log.Message(__instance.name + " - ended");
-        }
-    }
     public class CompProperties_Menticide : CompProperties_AbilityEffect
     {
         public CompProperties_Menticide()
