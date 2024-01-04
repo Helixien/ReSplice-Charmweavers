@@ -63,7 +63,7 @@
 		</customEffectDescriptions>
 		<displayOrderInCategory>20</displayOrderInCategory>
 		<lovinMTBFactor>0.1</lovinMTBFactor>
-		<biostatMet>3</biostatMet>
+		<biostatMet>-3</biostatMet>
 		<biostatCpx>1</biostatCpx>
 		<forcedTraits>
 			<li>
@@ -87,7 +87,7 @@
 				<def>Asexual</def>
 			</li>
 		</forcedTraits>
-		<biostatMet>-3</biostatMet>
+		<biostatMet>2</biostatMet>
 		<biostatCpx>1</biostatCpx>
 	</GeneDef>
 	<!-- ================ Beauty ================ -->
@@ -156,8 +156,8 @@
 		<displayCategory>Hemogen</displayCategory>
 		<displayOrderInCategory>-1</displayOrderInCategory>
 		<minAgeActive>14</minAgeActive>
-		<biostatCpx>1</biostatCpx>
-		<biostatMet>6</biostatMet>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>-2</biostatMet>
 	</GeneDef>
 	<GeneDef>
 		<defName>RS_PsychicEnthralling</defName>
@@ -172,7 +172,7 @@
 		<descriptionHyperlinks>
 			<AbilityDef>RS_PsychicEnthralling</AbilityDef>
 		</descriptionHyperlinks>
-		<biostatMet>-2</biostatMet>
+		<biostatMet>-3</biostatMet>
 		<biostatCpx>2</biostatCpx>
 	</GeneDef>
 	<!-- ================ Cosmetic Genes ================ -->
@@ -258,7 +258,7 @@
 		<description>Carriers of this gene grow two sizable horns protruding from the forehead.</description>
 		<iconPath>UI/Icons/Genes/Gene_MediumHorns</iconPath>
 		<graphicData>
-			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/DevilHorns/DevilHorns</graphicPath>
+			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/DemonHorns/DemonHorns</graphicPath>
 		</graphicData>
 	</GeneDef>
 	<GeneDef ParentName="RS_HornsBase">
@@ -267,7 +267,7 @@
 		<description>Carriers of this gene grow two large horns protruding from the forehead.</description>
 		<iconPath>UI/Icons/Genes/Gene_LargeHorns</iconPath>
 		<graphicData>
-			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/DemonHorns/DemonHorns</graphicPath>
+			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/DevilHorns/DevilHorns</graphicPath>
 		</graphicData>
 	</GeneDef>
 	<!-- ================ Wings ================ -->
