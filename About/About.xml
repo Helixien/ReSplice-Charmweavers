@@ -2,13 +2,19 @@
 <ModMetaData>
 	<name>ReSplice: Charmweavers</name>
 	<author>Helixien</author>
-	<description>text.todo</description>
+	<description>ReSplice is the banner under which I will release any xenotype I feel like making. Similar to ReGrowth, I aim for my additions to be vanilla friendly in both artstyle and lore. Everything added was made to fit or mirror vanilla. From a simple UI texture to a new more complex system,being as performance and vanilla friendly is the main objective I have.
+
+Inspired by the well known Succubus (and Incubus), Charmweavers are a new archite powered xenotype you can encounter and add to your colonies. They are rare, similar to sanguophages, and quite unique, offering some interesting upsides and downsides.
+
+Charmweavers are a relatively simple xenotype. They should work fine in whatever load order you have and be a nice addition, if not for the xenotype itself, then for the genes they add.
+
+ReSplice is designed to be as lightweight as possible, adding the minimum of new code required for its additions to work.</description>
 	<modVersion>1.0-Lurelings-rev1</modVersion>
 	<supportedVersions>
 		<li>1.4</li>
 	</supportedVersions>
 	<packageId>ReSplice.XOTR.Charmweavers</packageId>
-	<url/>
+	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=3131996691</url>
 	<modDependencies>
 		<li>
 			<packageId>Ludeon.RimWorld.Biotech</packageId>
