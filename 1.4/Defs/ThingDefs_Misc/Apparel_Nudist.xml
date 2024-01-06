@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="ApparelMakeableBase">
+		<defName>RS_Apparel_SlaveOutfit</defName>
+		<label>slave outfit</label>
+		<description>A simple and revealing outfit made for slaves.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/SlaveOutfit/SlaveOutfit</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+		<costList>
+			<Gold>8</Gold>
+		</costList>
+		<costStuffCount>15</costStuffCount>
+		<stuffCategories>
+			<li>Fabric</li>
+			<li>Leathery</li>
+		</stuffCategories>
+		<thingCategories>
+			<li>ApparelMisc</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>75</MaxHitPoints>
+			<WorkToMake>8500</WorkToMake>
+			<Mass>1.2</Mass>
+			<StuffEffectMultiplierArmor>0.1</StuffEffectMultiplierArmor>
+			<StuffEffectMultiplierInsulation_Cold>0.10</StuffEffectMultiplierInsulation_Cold>
+			<StuffEffectMultiplierInsulation_Heat>0.10</StuffEffectMultiplierInsulation_Heat>
+		</statBases>
+		<equippedStatOffsets>
+			<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.15</SlaveSuppressionOffset>
+			<SocialImpact>0.2</SocialImpact>
+		</equippedStatOffsets>
+		<apparel>
+			<slaveApparel>true</slaveApparel>
+			<bodyPartGroups>
+				<li>Torso</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/SlaveOutfit/SlaveOutfit</wornGraphicPath>
+			<layers>
+				<li>OnSkin</li>
+			</layers>
+			<defaultOutfitTags MayRequire="Ludeon.RimWorld.Ideology">
+				<li>Slave</li>
+			</defaultOutfitTags>
+			<canBeDesiredForIdeo MayRequire="Ludeon.RimWorld.Ideology">true</canBeDesiredForIdeo>
+			<canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+			<canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+			<countsAsClothingForNudity>false</countsAsClothingForNudity>
+		</apparel>
+		<colorGenerator Class="ColorGenerator_StandardApparel"/>
+		<tradeTags>
+			<li>BasicClothing</li>
+		</tradeTags>
+		<recipeMaker>
+			<displayPriority>261</displayPriority>
+		</recipeMaker>
+	</ThingDef>
+</Defs>
