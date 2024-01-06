@@ -38,6 +38,7 @@
 				<li>Torso</li>
 			</bodyPartGroups>
 			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/SlaveOutfit/SlaveOutfit</wornGraphicPath>
+			<useWornGraphicMask>true</useWornGraphicMask>
 			<layers>
 				<li>OnSkin</li>
 			</layers>
