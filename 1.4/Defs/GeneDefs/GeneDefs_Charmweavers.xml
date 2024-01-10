@@ -78,7 +78,7 @@
 		<defName>RS_Libido_None</defName>
 		<label>no libido</label>
 		<description>Carriers of this gene have no interest in lovin' and will never engage in lovin' with their partner or anyone else.</description>
-		<iconPath>UI/Icons/Genes/Gene_InsatiableLibido</iconPath>
+		<iconPath>UI/Icons/Genes/Gene_NoLibido</iconPath>
 		<customEffectDescriptions>
 			<li>No chance of lovin'.</li>
 		</customEffectDescriptions>
