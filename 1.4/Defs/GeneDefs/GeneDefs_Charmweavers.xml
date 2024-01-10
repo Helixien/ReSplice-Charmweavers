@@ -152,7 +152,7 @@
 		<geneClass>Gene_HemogenDrain</geneClass>
 		<iconPath>UI/Icons/Genes/Gene_Lovefeed</iconPath>
 		<prerequisite>Hemogenic</prerequisite>
-		<resourceLossPerDay>0.08</resourceLossPerDay>
+		<resourceLossPerDay>0.04</resourceLossPerDay>
 		<displayCategory>Hemogen</displayCategory>
 		<displayOrderInCategory>-1</displayOrderInCategory>
 		<minAgeActive>14</minAgeActive>
