@@ -32,6 +32,12 @@ namespace ReSpliceCharmweavers
             }
             return base.GizmoDisabled(out reason);
         }
+
+        public override bool CanApplyOn(LocalTargetInfo target, LocalTargetInfo dest)
+        {
+            return base.CanApplyOn(target, dest) && Valid(target, false);
+        }
+
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
             var hediff = HediffMaker.MakeHediff(RS_DefOf.RS_LoveThrall, target.Pawn) as Hediff_LoveThrall;
@@ -39,7 +45,7 @@ namespace ReSpliceCharmweavers
             if (target.Pawn.HomeFaction != null && target.Pawn.HomeFaction != this.parent.pawn.Faction)
             {
                 target.Pawn.HomeFaction.TryAffectGoodwillWith(parent.pawn.Faction,
-                    Faction.OfPlayer.GoodwillToMakeHostile(target.Pawn.HomeFaction));
+                    this.parent.pawn.Faction.GoodwillToMakeHostile(target.Pawn.HomeFaction));
                 hediff.previousFaction = target.Pawn.HomeFaction;
                 QuestUtility.SendQuestTargetSignals(target.Pawn.HomeFaction.questTags, "BecameHostileToPlayer", target.Pawn.HomeFaction.Named("SUBJECT"));
                 QuestUtility.SendQuestTargetSignals(target.Pawn.questTags, "ChangedFaction", this.Named("SUBJECT"), parent.pawn.Faction.Named("FACTION"));
