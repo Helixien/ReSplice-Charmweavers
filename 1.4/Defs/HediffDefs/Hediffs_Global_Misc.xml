@@ -3,7 +3,7 @@
 	<HediffDef>
 		<defName>RS_LoveThrall</defName>
 		<label>love thrall</label>
-		<description>text.todo.</description>
+		<description>This person has been psychically enthralled by another. Their mind has been scrambled, making them undyingly loyal and enamoured with their master. This connection can only be broken by death of either the thrall or its master.</description>
 		<hediffClass>ReSpliceCharmweavers.Hediff_LoveThrall</hediffClass>
 		<isBad>false</isBad>
 		<makesSickThought>false</makesSickThought>
