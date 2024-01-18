@@ -67,7 +67,7 @@ namespace ReSpliceCharmweavers
                 }
             }
             target.Pawn.health.AddHediff(hediff);
-            target.Pawn.needs.mood.thoughts.memories.TryGainMemory(RS_DefOf.RS_BecameThrallMood, this.parent.pawn);
+            target.Pawn.needs?.mood?.thoughts?.memories.TryGainMemory(RS_DefOf.RS_BecameThrallMood, this.parent.pawn);
 
             foreach (Pawn p in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonistsAndPrisoners)
             {
