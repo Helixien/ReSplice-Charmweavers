@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ================================ Issues ====================== -->
+	<IssueDef>
+		<defName>RS_Issue_Divorce</defName>
+		<label>Divorce</label>
+		<iconPath>VCEF_AlphaFish_a</iconPath>
+	</IssueDef>
+	<!-- ================================ Precepts - Divorce - Forbidden ====================== -->
+	<PreceptDef>
+		<defName>RS_Divorce_Forbidden</defName>
+		<issue>RS_Issue_Divorce</issue>
+		<label>forbidden</label>
+		<description>Divorcing ones partner is forbidden.</description>
+		<impact>High</impact>
+		<displayOrderInIssue>0</displayOrderInIssue>
+		<displayOrderInImpact>0</displayOrderInImpact>
+		<requiredMemes>
+			<li>Collectivist</li>
+		</requiredMemes>
+		<conflictingMemes>
+			<li>Collectivist</li>
+		</conflictingMemes>
+	</PreceptDef>
+	<!-- ================================ Precepts - Divorce - Abhorrent ====================== -->
+	<PreceptDef>
+		<defName>RS_Divorce_Abhorrent</defName>
+		<issue>RS_Issue_Divorce</issue>
+		<label>abhorrent</label>
+		<description>Divorcing ones partner is an disgusting act.</description>
+		<impact>High</impact>
+		<displayOrderInIssue>0</displayOrderInIssue>
+		<displayOrderInImpact>0</displayOrderInImpact>
+		<requiredMemes>
+			<li>Collectivist</li>
+		</requiredMemes>
+		<conflictingMemes>
+			<li>Collectivist</li>
+		</conflictingMemes>
+	</PreceptDef>
+	<ThoughtDef>
+		<defName>RS_Divorce_Abhorrent_BrokeUp</defName>
+		<workerClass>todo</workerClass>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<durationDays>90</durationDays>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>divorced {0}</label>
+				<description>I ended my commitment with {0}, I feel disgusted by myself.</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>RS_Divorce_Abhorrent_BrokeUp_Social</defName>
+		<workerClass>todo</workerClass>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<durationDays>90</durationDays>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>divorced their partner</label>
+				<baseOpinionOffset>-30</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!-- ================================ Precepts - Divorce - Horrible ====================== -->
+	<PreceptDef>
+		<defName>RS_Divorce_Horrible</defName>
+		<issue>RS_Issue_Divorce</issue>
+		<label>horrible</label>
+		<description>Divorcing ones partner is a horrible thing to do under any circumstances.</description>
+		<impact>High</impact>
+		<displayOrderInIssue>0</displayOrderInIssue>
+		<displayOrderInImpact>0</displayOrderInImpact>
+	</PreceptDef>
+	<ThoughtDef>
+		<defName>RS_Divorce_Horrible_BrokeUp</defName>
+		<workerClass>todo</workerClass>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<durationDays>60</durationDays>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>divorced {0}</label>
+				<description>I ended my commitment with {0}, I know I shouldn't have, but I saw now other way.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>RS_Divorce_Horrible_BrokeUp_Social</defName>
+		<workerClass>todo</workerClass>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<durationDays>60</durationDays>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>divorced their partner</label>
+				<baseOpinionOffset>-15</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!-- ================================ Precepts - Divorce - Free ====================== -->
+	<PreceptDef>
+		<defName>RS_Divorce_Free</defName>
+		<issue>RS_Issue_Divorce</issue>
+		<label>free</label>
+		<description>Divorcing ones partner is ones own choice.</description>
+		<impact>High</impact>
+		<displayOrderInIssue>0</displayOrderInIssue>
+		<displayOrderInImpact>0</displayOrderInImpact>
+	</PreceptDef>
+	<!-- ================================ Precepts - Divorce - Male ====================== -->
+	<PreceptDef>
+		<defName>RS_Divorce_MaleOnly</defName>
+		<issue>RS_Issue_Divorce</issue>
+		<label>abhorrent</label>
+		<description>Men may divorce their partner.</description>
+		<impact>High</impact>
+		<displayOrderInIssue>0</displayOrderInIssue>
+		<displayOrderInImpact>0</displayOrderInImpact>
+		<requiredMemes>
+			<li>MaleSupremacy</li>
+		</requiredMemes>
+		<conflictingMemes>
+			<li>FemaleSupremacy</li>
+		</conflictingMemes>
+	</PreceptDef>
+	<!-- ================================ Precepts - Divorce - Female ====================== -->
+	<PreceptDef>
+		<defName>RS_Divorce_FemaleOnly</defName>
+		<issue>RS_Issue_Divorce</issue>
+		<label>abhorrent</label>
+		<description>Women may divorce their partner.</description>
+		<impact>High</impact>
+		<displayOrderInIssue>0</displayOrderInIssue>
+		<displayOrderInImpact>0</displayOrderInImpact>
+		<requiredMemes>
+			<li>FemaleSupremacy</li>
+		</requiredMemes>
+		<conflictingMemes>
+			<li>MaleSupremacy</li>
+		</conflictingMemes>
+	</PreceptDef>
+</Defs>
