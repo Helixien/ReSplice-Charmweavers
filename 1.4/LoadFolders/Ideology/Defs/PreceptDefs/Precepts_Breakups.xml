@@ -108,11 +108,11 @@
 			</li>
 		</stages>
 	</ThoughtDef>
-	<!-- ================================ Precepts - Divorce - Free ====================== -->
+	<!-- ================================ Precepts - Divorce - Acceptable ====================== -->
 	<PreceptDef>
-		<defName>RS_Divorce_Free</defName>
+		<defName>RS_Divorce_Acceptable</defName>
 		<issue>RS_Issue_Divorce</issue>
-		<label>free</label>
+		<label>acceptable</label>
 		<description>Divorcing ones partner is ones own choice.</description>
 		<impact>Low</impact>
 		<displayOrderInIssue>0</displayOrderInIssue>
@@ -123,7 +123,7 @@
 	<PreceptDef>
 		<defName>RS_Divorce_MaleOnly</defName>
 		<issue>RS_Issue_Divorce</issue>
-		<label>abhorrent</label>
+		<label>only men</label>
 		<description>Men may divorce their partner.</description>
 		<impact>Low</impact>
 		<displayOrderInIssue>30</displayOrderInIssue>
@@ -139,7 +139,7 @@
 	<PreceptDef>
 		<defName>RS_Divorce_FemaleOnly</defName>
 		<issue>RS_Issue_Divorce</issue>
-		<label>abhorrent</label>
+		<label>only women</label>
 		<description>Women may divorce their partner.</description>
 		<impact>Low</impact>
 		<displayOrderInIssue>30</displayOrderInIssue>
