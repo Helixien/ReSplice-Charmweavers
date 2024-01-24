@@ -17,6 +17,24 @@ namespace ReSpliceCharmweavers
             {
                 __result = 0f;
             }
+
+            if (initiator.HasPrecept(RS_DefOf.RS_Divorce_Forbidden))
+            {
+                __result = 0f;
+            }
+            if (initiator.gender == Gender.Male && initiator.HasPrecept(RS_DefOf.RS_Divorce_FemaleOnly))
+            {
+                __result = 0f;
+            }
+            if (initiator.gender == Gender.Female && initiator.HasPrecept(RS_DefOf.RS_Divorce_MaleOnly))
+            {
+                __result = 0f;
+            }
+        }
+
+        public static bool HasPrecept(this Pawn pawn, PreceptDef precept)
+        {
+            return pawn?.ideo?.Ideo?.HasPrecept(precept) ?? false;
         }
     }
 }
