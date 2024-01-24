@@ -12,14 +12,13 @@
 		<issue>RS_Issue_Divorce</issue>
 		<label>forbidden</label>
 		<description>Divorcing ones partner is forbidden.</description>
-		<impact>High</impact>
-		<displayOrderInIssue>0</displayOrderInIssue>
-		<displayOrderInImpact>0</displayOrderInImpact>
-		<requiredMemes>
+		<impact>Low</impact>
+		<displayOrderInIssue>55</displayOrderInIssue>
+		<associatedMemes>
 			<li>Collectivist</li>
-		</requiredMemes>
+		</associatedMemes>
 		<conflictingMemes>
-			<li>Collectivist</li>
+			<li>Individualist</li>
 		</conflictingMemes>
 	</PreceptDef>
 	<!-- ================================ Precepts - Divorce - Abhorrent ====================== -->
@@ -28,14 +27,13 @@
 		<issue>RS_Issue_Divorce</issue>
 		<label>abhorrent</label>
 		<description>Divorcing ones partner is an disgusting act.</description>
-		<impact>High</impact>
-		<displayOrderInIssue>0</displayOrderInIssue>
-		<displayOrderInImpact>0</displayOrderInImpact>
-		<requiredMemes>
+		<impact>Low</impact>
+		<displayOrderInIssue>45</displayOrderInIssue>
+		<associatedMemes>
 			<li>Collectivist</li>
-		</requiredMemes>
+		</associatedMemes>
 		<conflictingMemes>
-			<li>Collectivist</li>
+			<li>Individualist</li>
 		</conflictingMemes>
 	</PreceptDef>
 	<ThoughtDef>
@@ -75,9 +73,9 @@
 		<issue>RS_Issue_Divorce</issue>
 		<label>horrible</label>
 		<description>Divorcing ones partner is a horrible thing to do under any circumstances.</description>
-		<impact>High</impact>
-		<displayOrderInIssue>0</displayOrderInIssue>
-		<displayOrderInImpact>0</displayOrderInImpact>
+		<impact>Low</impact>
+		<defaultSelectionWeight>1</defaultSelectionWeight>
+		<displayOrderInIssue>35</displayOrderInIssue>
 	</PreceptDef>
 	<ThoughtDef>
 		<defName>RS_Divorce_Horrible_BrokeUp</defName>
@@ -116,9 +114,10 @@
 		<issue>RS_Issue_Divorce</issue>
 		<label>free</label>
 		<description>Divorcing ones partner is ones own choice.</description>
-		<impact>High</impact>
+		<impact>Low</impact>
 		<displayOrderInIssue>0</displayOrderInIssue>
-		<displayOrderInImpact>0</displayOrderInImpact>
+		<displayOrderInImpact>-1000</displayOrderInImpact>
+		<defaultSelectionWeight>1</defaultSelectionWeight>
 	</PreceptDef>
 	<!-- ================================ Precepts - Divorce - Male ====================== -->
 	<PreceptDef>
@@ -126,9 +125,9 @@
 		<issue>RS_Issue_Divorce</issue>
 		<label>abhorrent</label>
 		<description>Men may divorce their partner.</description>
-		<impact>High</impact>
-		<displayOrderInIssue>0</displayOrderInIssue>
-		<displayOrderInImpact>0</displayOrderInImpact>
+		<impact>Low</impact>
+		<displayOrderInIssue>30</displayOrderInIssue>
+		<displayOrderInImpact>-1000</displayOrderInImpact>
 		<requiredMemes>
 			<li>MaleSupremacy</li>
 		</requiredMemes>
@@ -142,9 +141,9 @@
 		<issue>RS_Issue_Divorce</issue>
 		<label>abhorrent</label>
 		<description>Women may divorce their partner.</description>
-		<impact>High</impact>
-		<displayOrderInIssue>0</displayOrderInIssue>
-		<displayOrderInImpact>0</displayOrderInImpact>
+		<impact>Low</impact>
+		<displayOrderInIssue>30</displayOrderInIssue>
+		<displayOrderInImpact>-1000</displayOrderInImpact>
 		<requiredMemes>
 			<li>FemaleSupremacy</li>
 		</requiredMemes>
