@@ -5,7 +5,7 @@
 		<defName>RS_CoSpouse</defName>
 		<label>co-husband</label>
 		<labelFemale>co-wife</labelFemale>
-		<workerClass>todo</workerClass>
+		<workerClass>ReSpliceCharmweavers.PawnRelationWorker_CoSpouse</workerClass>
 		<importance>180</importance>
 		<diedThought>RS_MyCoHusbandDied</diedThought>
 		<diedThoughtFemale>RS_MyCoWifeDied</diedThoughtFemale>

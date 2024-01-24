@@ -15,10 +15,15 @@
 		<impact>High</impact>
 		<displayOrderInIssue>30</displayOrderInIssue>
 		<displayOrderInImpact>700</displayOrderInImpact>
+		<comps>
+			<li Class="ReSpliceCharmweavers.PreceptComp_Divorce">
+				<thought>RS_Marriage_Abhorrent_IsMarried</thought>
+				<thoughtSocial>RS_Marriage_Abhorrent_IsMarried_Social</thoughtSocial>
+			</li>
+		</comps>
 	</PreceptDef>
 	<ThoughtDef>
 		<defName>RS_Marriage_Abhorrent_IsMarried</defName>
-		<workerClass>todo</workerClass>
 		<thoughtClass>Thought_MemorySocial</thoughtClass>
 		<developmentalStageFilter>Adult</developmentalStageFilter>
 		<stackLimit>300</stackLimit>
@@ -33,7 +38,6 @@
 	</ThoughtDef>
 	<ThoughtDef>
 		<defName>RS_Marriage_Abhorrent_IsMarried_Social</defName>
-		<workerClass>todo</workerClass>
 		<thoughtClass>Thought_MemorySocial</thoughtClass>
 		<developmentalStageFilter>Adult</developmentalStageFilter>
 		<stackLimit>300</stackLimit>

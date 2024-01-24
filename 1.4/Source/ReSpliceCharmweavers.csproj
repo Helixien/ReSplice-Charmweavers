@@ -308,13 +308,15 @@
     <Compile Include="Core.cs" />
     <Compile Include="HarmonyPatches\HediffSet_AddDirect_Patch.cs" />
     <Compile Include="HarmonyPatches\HediffSet_HasHediffPreventsPregnancy_Patch.cs" />
+    <Compile Include="HarmonyPatches\InteractionWorker_MarriageProposal_RandomSelectionWeight_Patch.cs" />
     <Compile Include="HarmonyPatches\LeaveQuestPartUtility_MakePawnsLeave_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnDiedOrDownedThoughtsUtility_TryGiveThoughts_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_Destroy_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_AddHediff_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_RelationsTracker_Notify_PawnSold_Patch.cs" />
+    <Compile Include="PawnRelationWorker_CoSpouse.cs" />
     <Compile Include="PreceptComp_Divorce.cs" />
-    <Compile Include="HarmonyPatches\TaleRecorder_RecordTale_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_RelationsTracker_AddDirectRelation_Patch.cs" />
     <Compile Include="Hediff_LoveThrall.cs" />
     <Compile Include="HarmonyPatches\Hediff_TryMergeWith_Patch.cs" />
     <Compile Include="HarmonyPatches\InteractionWorker_Breakup_RandomSelectionWeight_Patch.cs" />

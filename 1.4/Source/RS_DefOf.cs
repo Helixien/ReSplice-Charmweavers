@@ -24,6 +24,7 @@ namespace ReSpliceCharmweavers
         public static ThoughtDef RS_BrokenEnthrallment, RS_EnthralledPrisoner, RS_EnthralledMe;
         public static PregnancyApproachDef RS_LovinForHemogen;
         public static XenotypeDef RS_Charmweaver;
-        public static PreceptDef RS_Divorce_Forbidden, RS_Divorce_MaleOnly, RS_Divorce_FemaleOnly;
+        public static PreceptDef RS_Divorce_Forbidden, RS_Divorce_MaleOnly, RS_Divorce_FemaleOnly,
+            RS_Marriage_MaleOnly, RS_Marriage_FemaleOnly;
     }
 }
