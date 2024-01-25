@@ -19,10 +19,20 @@
 		<displayOrderInIssue>30</displayOrderInIssue>
 		<displayOrderInImpact>650</displayOrderInImpact>
 		<defaultSelectionWeight>0.5</defaultSelectionWeight>
+		<comps>
+			<li Class="PreceptComp_SituationalThought">
+				<description>Pregnancy abhorrent</description>
+				<thought>RS_Pregnancy_Abhorrent_IsPregnant</thought>
+				<tooltipShowMoodRange>true</tooltipShowMoodRange>
+			</li>
+			<li Class="PreceptComp_SituationalThought">
+				<thought>RS_Pregnancy_Abhorrent_Social</thought>
+			</li>
+		</comps>
 	</PreceptDef>
 	<ThoughtDef>
 		<defName>RS_Pregnancy_Abhorrent_IsPregnant</defName>
-		<workerClass>todo</workerClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Precept_IsPregnant</workerClass>
 		<thoughtClass>Thought_Situational</thoughtClass>
 		<developmentalStageFilter>Adult</developmentalStageFilter>
 		<stackLimit>300</stackLimit>
@@ -37,7 +47,7 @@
 	</ThoughtDef>
 	<ThoughtDef>
 		<defName>RS_Pregnancy_Abhorrent_Social</defName>
-		<workerClass>todo</workerClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Precept_IsPregnant_Social</workerClass>
 		<thoughtClass>Thought_SituationalSocial</thoughtClass>
 		<stages>
 			<li>
@@ -58,10 +68,26 @@
 		<requiredMemes>
 			<li>RS_LoveLusting</li>
 		</requiredMemes>
+		<comps>
+			<li Class="PreceptComp_SituationalThought">
+				<description>Pregnancy desired</description>
+				<thought>RS_Pregnancy_Desired_IsPregnant</thought>
+				<tooltipShowMoodRange>true</tooltipShowMoodRange>
+			</li>
+			<li Class="PreceptComp_SituationalThought">
+				<thought>RS_Pregnancy_Desired_NotPregnant</thought>
+			</li>
+			<li Class="PreceptComp_SituationalThought">
+				<thought>RS_Pregnancy_Desired_Pregnant_Social</thought>
+			</li>
+			<li Class="PreceptComp_SituationalThought">
+				<thought>RS_Pregnancy_Desired_NotPregnant_Social</thought>
+			</li>
+		</comps>
 	</PreceptDef>
 	<ThoughtDef>
 		<defName>RS_Pregnancy_Desired_IsPregnant</defName>
-		<workerClass>todo</workerClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Precept_IsPregnant</workerClass>
 		<thoughtClass>Thought_Situational</thoughtClass>
 		<developmentalStageFilter>Adult</developmentalStageFilter>
 		<stackLimit>300</stackLimit>
@@ -76,7 +102,7 @@
 	</ThoughtDef>
 	<ThoughtDef>
 		<defName>RS_Pregnancy_Desired_NotPregnant</defName>
-		<workerClass>todo</workerClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Precept_NotPregnant</workerClass>
 		<thoughtClass>Thought_Situational</thoughtClass>
 		<developmentalStageFilter>Adult</developmentalStageFilter>
 		<stackLimit>300</stackLimit>
@@ -93,7 +119,7 @@
 	</ThoughtDef>
 	<ThoughtDef>
 		<defName>RS_Pregnancy_Desired_Pregnant_Social</defName>
-		<workerClass>todo</workerClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Precept_IsPregnant_Social</workerClass>
 		<thoughtClass>Thought_SituationalSocial</thoughtClass>
 		<stages>
 			<li>
@@ -104,7 +130,7 @@
 	</ThoughtDef>
 	<ThoughtDef>
 		<defName>RS_Pregnancy_Desired_NotPregnant_Social</defName>
-		<workerClass>todo</workerClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Precept_NotPregnant_Social</workerClass>
 		<thoughtClass>Thought_SituationalSocial</thoughtClass>
 		<developmentalStageFilter>Adult</developmentalStageFilter>
 		<stackLimit>300</stackLimit>
