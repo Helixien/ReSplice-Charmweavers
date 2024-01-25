@@ -3,7 +3,7 @@
 	<!-- ================================ Issues ====================== -->
 	<IssueDef>
 		<defName>RS_Issue_Divorce</defName>
-		<label>Divorce</label>
+		<label>divorce</label>
 		<iconPath>UI/Issues/IssueDivorce</iconPath>
 	</IssueDef>
 	<!-- ================================ Precepts - Divorce - Forbidden ====================== -->
