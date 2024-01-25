@@ -4,7 +4,7 @@
 	<IssueDef>
 		<defName>RS_Issue_Marriage</defName>
 		<label>Marriage</label>
-		<iconPath>VCEF_AlphaFish_a</iconPath>
+		<iconPath>UI/Issues/Marriage</iconPath>
 	</IssueDef>
 	<!-- ================================ Precepts - Marriage - Abhorrent ====================== -->
 	<PreceptDef>
@@ -13,6 +13,9 @@
 		<label>abhorrent</label>
 		<description>To commit to be with the same person forever is sinful.</description>
 		<impact>High</impact>
+		<requiredMemes>
+			<li>RS_LoveLusting</li>
+		</requiredMemes>
 		<displayOrderInIssue>30</displayOrderInIssue>
 		<displayOrderInImpact>700</displayOrderInImpact>
 		<comps>
