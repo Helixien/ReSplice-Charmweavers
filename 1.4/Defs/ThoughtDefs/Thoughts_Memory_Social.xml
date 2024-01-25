@@ -55,7 +55,7 @@
 		<stages>
 			<li>
 				<label>{0} became my master</label>
-				<description>I never saw {0_objective} for what {0_pronoun} is, of course I should serve {0_objective}!</description>
+				<description>I never saw {0} for what {0_pronoun} is, of course I should serve {0_objective}!</description>
 				<baseMoodEffect>8</baseMoodEffect>
 			</li>
 		</stages>
