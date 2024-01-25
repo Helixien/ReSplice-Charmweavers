@@ -10,8 +10,8 @@
 	<PreceptDef>
 		<defName>RS_Divorce_Forbidden</defName>
 		<issue>RS_Issue_Divorce</issue>
-		<label>forbidden</label>
-		<description>Divorcing ones partner is forbidden.</description>
+		<label>prohibited</label>
+		<description>Divorcing ones partner is prohibited.</description>
 		<impact>Low</impact>
 		<displayOrderInIssue>55</displayOrderInIssue>
 		<associatedMemes>

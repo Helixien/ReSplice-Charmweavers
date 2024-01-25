@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ================================ Issues ====================== -->
+	<IssueDef>
+		<defName>RS_Issue_Pregnancy</defName>
+		<label>pregnancy</label>
+		<iconPath>UI/Issues/IssuePregnancy</iconPath>
+	</IssueDef>
+	<!-- ================================ Precepts - Pregnancy - Abhorrent ====================== -->
+	<PreceptDef>
+		<defName>RS_Pregnancy_Abhorrent</defName>
+		<issue>RS_Issue_Pregnancy</issue>
+		<label>abhorrent</label>
+		<description>To bring another human being into this world is an abhorrent evil.</description>
+		<impact>High</impact>
+		<requiredMemes>
+			<li>Guilty</li>
+		</requiredMemes>
+		<displayOrderInIssue>30</displayOrderInIssue>
+		<displayOrderInImpact>650</displayOrderInImpact>
+		<defaultSelectionWeight>0.5</defaultSelectionWeight>
+	</PreceptDef>
+	<ThoughtDef>
+		<defName>RS_Pregnancy_Abhorrent_IsPregnant</defName>
+		<workerClass>todo</workerClass>
+		<thoughtClass>Thought_Situational</thoughtClass>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>pregnant</label>
+				<description>New live is growing inside me, this is wrong.</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>RS_Pregnancy_Abhorrent_Social</defName>
+		<workerClass>todo</workerClass>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<stages>
+			<li>
+				<label>pregnant</label>
+				<baseOpinionOffset>-15</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!-- ================================ Precepts - Pregnancy - Desired ====================== -->
+	<PreceptDef>
+		<defName>RS_Pregnancy_Desired</defName>
+		<issue>RS_Issue_Pregnancy</issue>
+		<label>desired</label>
+		<description>To bring new life into this world is the very reason we are here.</description>
+		<impact>Medium</impact>
+		<displayOrderInIssue>50</displayOrderInIssue>
+		<displayOrderInImpact>-100</displayOrderInImpact>
+		<requiredMemes>
+			<li>RS_LoveLusting</li>
+		</requiredMemes>
+	</PreceptDef>
+	<ThoughtDef>
+		<defName>RS_Pregnancy_Desired_IsPregnant</defName>
+		<workerClass>todo</workerClass>
+		<thoughtClass>Thought_Situational</thoughtClass>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>pregnant</label>
+				<description>New live is growing inside me, as it should be.</description>
+				<baseMoodEffect>20</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>RS_Pregnancy_Desired_NotPregnant</defName>
+		<workerClass>todo</workerClass>
+		<thoughtClass>Thought_Situational</thoughtClass>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+		<doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+		<gender>Female</gender>
+		<stages>
+			<li>
+				<label>not pregnant</label>
+				<description>I am not pregnant, but I wish I was.</description>
+				<baseMoodEffect>-8</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>RS_Pregnancy_Desired_Pregnant_Social</defName>
+		<workerClass>todo</workerClass>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<stages>
+			<li>
+				<label>pregnant</label>
+				<baseOpinionOffset>15</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>RS_Pregnancy_Desired_NotPregnant_Social</defName>
+		<workerClass>todo</workerClass>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+		<doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+		<gender>Female</gender>
+		<stages>
+			<li>
+				<label>not pregnant</label>
+				<baseOpinionOffset>-10</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!-- ================================ Precepts - Pregnancy - Don't care ====================== -->
+	<PreceptDef>
+		<defName>RS_Pregnancy_DontCare</defName>
+		<issue>RS_Issue_Pregnancy</issue>
+		<label>don't care</label>
+		<description>The choice to bring new life into the world is up to each individual.</description>
+		<impact>Low</impact>
+		<displayOrderInIssue>0</displayOrderInIssue>
+		<displayOrderInImpact>-1000</displayOrderInImpact>
+		<defaultSelectionWeight>1</defaultSelectionWeight>
+	</PreceptDef>
+</Defs>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!--	<!{1}** ================================ Hisotry ====================== **{1}>
+	<HistoryEventDef>
+		<defName>RS_CreatedLoveThrall</defName>
+		<label>created love thrall</label>
+	</HistoryEventDef>
+	<HistoryEventDef>
+		<defName>RS_LoveThrallDied</defName>
+		<label>love thrall died</label>
+	</HistoryEventDef>
+	<!{1}** ================================ Issues ====================== **{1}>
+	<IssueDef>
+		<defName>RS_Issue_LoveThralls</defName>
+		<label>love thralls</label>
+		<iconPath>UI/Issues/IssueLoveThrall</iconPath>
+	</IssueDef>
+	<!{1}** ================================ Precepts - Love Thralls - Revered ====================== **{1}>
+	<PreceptDef>
+		<defName>RS_Issue_LoveThralls_Revered</defName>
+		<issue>RS_Issue_LoveThralls</issue>
+		<label>revered</label>
+		<description>Being enthralled by ones master is the highest honor.</description>
+		<impact>Medium</impact>
+		<comps>
+			<li Class="PreceptComp_SituationalThought">
+				<thought>Bloodfeeders_Revered_Opinion_Bloodfeeder</thought>
+				<description>Bloodfeeder</description>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>todo</eventDef>
+				<thought>BloodfeederDied_Revered</thought>
+			</li>
+			<li Class="PreceptComp_SituationalThought">
+				<thought>Bloodfeeder_ReveredBloodfeeder</thought>
+				<description>Revered bloodfeeder</description>
+			</li>
+			<li Class="PreceptComp_SituationalThought">
+				<thought>BloodfeederColonist_Revered</thought>
+				<thoughtStageDescriptions>
+					<li>No love thrall</li>
+				</thoughtStageDescriptions>
+			</li>
+		</comps>
+	</PreceptDef>
+	<ThoughtDef>
+		<defName>RS_Issue_LoveThrallColonist_Revered</defName>
+		<thoughtClass>Thought_Situational</thoughtClass>
+		<workerClass>ThoughtWorker_Precept_BloodfeederColonist</workerClass>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+		<stages>
+			<li>
+				<label>no bloodfeeders</label>
+				<description>Without a bloodfeeder master, we are undirected and lost. We should make a bloodfeeder our leader.</description>
+				<baseMoodEffect>-2</baseMoodEffect>
+			</li>
+			<li>
+				<label>no bloodfeeder master</label>
+				<description>Without a bloodfeeder master, we lack proper direction. We should make a bloodfeeder our leader.</description>
+				<baseMoodEffect>-1</baseMoodEffect>
+			</li>
+			<li>
+				<label>bloodfeeder master</label>
+				<description>The bloodfeeder's presence is a great honor. May they live forever.</description>
+				<baseMoodEffect>2</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>RS_Issue_LoveThralls_Revered_Opinion</defName>
+		<workerClass>todo</workerClass>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>love thrall</label>
+				<baseOpinionOffset>8</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!{1}** ================================ Precepts - Love Thralls - Reviled ====================== **{1}>
+	<PreceptDef>
+		<defName>RS_Issue_LoveThralls_Reviled</defName>
+		<issue>RS_Issue_LoveThralls</issue>
+		<label>reviled</label>
+		<description>Being enthralled is a horrible and pityful thing.</description>
+		<impact>Medium</impact>
+		<comps>
+			<li Class="PreceptComp_UnwillingToDo">
+				<eventDef>todo</eventDef>
+				<description>Create love thrall</description>
+			</li>
+			<li Class="PreceptComp_SituationalThought">
+				<thought>RS_Issue_LoveThralls_Reviled_Opinion</thought>
+				<description>Love thrall</description>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>todo</eventDef>
+				<thought>RS_Issue_LoveThrallsDied_Reviled</thought>
+			</li>
+			<li Class="PreceptComp_SituationalThought">
+				<thought>RS_Issue_LoveThrallsColonist_Reviled</thought>
+				<description>Love thrall among us</description>
+			</li>
+		</comps>
+	</PreceptDef>
+	<ThoughtDef>
+		<defName>RS_Issue_LoveThralls_Reviled_Opinion</defName>
+		<workerClass>todo</workerClass>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>love thrall</label>
+				<baseOpinionOffset>-12</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>RS_Issue_LoveThrallsDied_Reviled</defName>
+		<thoughtClass>Thought_Memory</thoughtClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<durationDays>5</durationDays>
+		<stages>
+			<li>
+				<label>love thrall died</label>
+				<description>Finally they are pitiful existence has been ended.</description>
+				<baseMoodEffect>6</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>RS_Issue_LoveThrallsColonist_Reviled</defName>
+		<thoughtClass>Thought_Situational</thoughtClass>
+		<workerClass>todo</workerClass>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+		<stages>
+			<li>
+				<label>love thrall among us</label>
+				<description>One of them walks among us. We should end their misery.</description>
+				<baseMoodEffect>-4</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>-->
+</Defs>
