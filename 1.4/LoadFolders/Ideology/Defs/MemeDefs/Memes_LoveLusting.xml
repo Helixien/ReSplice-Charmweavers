@@ -4,7 +4,7 @@
 		<defName>RS_LoveLusting</defName>
 		<label>lovelusting</label>
 		<description>todo</description>
-		<iconPath>UI/Memes/LoveLusting</iconPath>
+		<iconPath>UI/Memes/MemeLoveLusting</iconPath>
 		<groupDef>Misc</groupDef>
 		<impact>3</impact>
 		<requireOne>
@@ -23,12 +23,10 @@
 				<li>MarriageName_KeepNames</li>
 			</li>
 			<li>
-				<li>SpouseCount_Male_MaxThree</li>
 				<li>SpouseCount_Male_MaxFour</li>
 				<li>SpouseCount_Male_Unlimited</li>
 			</li>
 			<li>
-				<li>SpouseCount_Female_MaxThree</li>
 				<li>SpouseCount_Female_MaxFour</li>
 				<li>SpouseCount_Female_Unlimited</li>
 			</li>
