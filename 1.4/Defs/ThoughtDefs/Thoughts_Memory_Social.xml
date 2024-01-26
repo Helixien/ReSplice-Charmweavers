@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+	<!-- ================ Is a Thrall ================ -->
+	<ThoughtDef>
+		<defName>RS_IsThrall</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>enthralled</label>
+				<baseOpinionOffset>-20</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
 	<!-- ================ Master Killed ================ -->
 	<ThoughtDef>
 		<defName>RS_KilledMyMaster</defName>
