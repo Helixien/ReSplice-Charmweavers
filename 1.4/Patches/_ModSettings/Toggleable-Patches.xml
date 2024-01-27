@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+<!--	<!{1}** ================================ Toggle Hotspring Motes ====================== **{1}>
+	<Operation Class="ModSettingsFramework.PatchOperationModOption" MayRequire="vanillaracesexpanded.highmate">
+		<defaultValue>False</defaultValue>
+		<label>Charmweavers have lovin' dependency (Requires VRE - Highmates)</label>
+		<tooltip/>
+		<id>RS_CharmweaverLovinDependency</id>
+		<category>RS_Core</category>
+		<order>10</order>
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/XenotypeDef[defName = "RS_Charmweaver"]/genes</xpath>
+				<value>
+					<li>VRE_LovinDependency</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>-->
+</Patch>
