@@ -26,5 +26,6 @@ namespace ReSpliceCharmweavers
         public static XenotypeDef RS_Charmweaver;
         public static PreceptDef RS_Divorce_Forbidden, RS_Divorce_MaleOnly, RS_Divorce_FemaleOnly,
             RS_Marriage_MaleOnly, RS_Marriage_FemaleOnly;
+        public static HistoryEventDef RS_PropagateLovehexerGene;
     }
 }

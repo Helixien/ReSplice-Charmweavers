@@ -7,7 +7,7 @@ namespace ReSpliceCharmweavers
     {
         public override ThoughtState CurrentStateInternal(Pawn p)
         {
-            if (p.IsLoveThrall())
+            if (p.IsLovethrall())
             {
                 return ThoughtState.ActiveDefault;
             }

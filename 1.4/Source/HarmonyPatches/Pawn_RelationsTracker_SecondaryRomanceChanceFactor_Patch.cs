@@ -9,7 +9,7 @@ namespace ReSpliceCharmweavers
     {
         public static void Postfix(ref float __result, Pawn_RelationsTracker __instance, Pawn otherPawn)
         {
-            if (__instance.pawn.genes?.HasGene(RS_DefOf.RS_Beauty_Angelic) ?? false)
+            if (__instance.pawn.HasGene(RS_DefOf.RS_Beauty_Angelic))
             {
                 __result *= 1.6f;
             }

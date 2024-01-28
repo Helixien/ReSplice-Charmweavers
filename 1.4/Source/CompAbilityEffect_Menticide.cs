@@ -85,7 +85,7 @@ namespace ReSpliceCharmweavers
             {
                 return false;
             }
-            if (pawn.IsLoveThrall(out var master) && master == parent.pawn)
+            if (pawn.IsLovethrall(out var master) && master == parent.pawn)
             {
                 return false;
             }

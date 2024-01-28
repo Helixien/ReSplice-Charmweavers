@@ -12,7 +12,7 @@ namespace ReSpliceCharmweavers
         {
             if (other.def == HediffDefOf.PregnantHuman && __instance.def == HediffDefOf.PregnantHuman)
             {
-                if (__instance.pawn.genes?.HasGene(RS_DefOf.RS_MultiPregnancy) ?? false)
+                if (__instance.pawn.HasGene(RS_DefOf.RS_MultiPregnancy))
                 {
                     if (__instance.pawn.health.hediffSet.hediffs.Count(x => x.def == HediffDefOf.PregnantHuman) >= 3)
                     {

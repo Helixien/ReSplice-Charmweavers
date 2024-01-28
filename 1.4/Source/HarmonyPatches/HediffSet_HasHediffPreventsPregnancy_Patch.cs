@@ -8,7 +8,7 @@ namespace ReSpliceCharmweavers
     {
         public static bool Prefix(HediffSet __instance, ref bool __result)
         {
-            if (__instance.pawn.genes?.HasGene(RS_DefOf.RS_MultiPregnancy) ?? false)
+            if (__instance.pawn.HasGene(RS_DefOf.RS_MultiPregnancy))
             {
                 __result = HasHediffPreventsPregnancyForMultiPregnancy(__instance);
                 return false;

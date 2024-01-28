@@ -20,7 +20,7 @@ namespace ReSpliceCharmweavers
         {
             if (__instance.RaceProps.Humanlike && __instance.relations != null)
             {
-                if (__instance.IsLoveThrall())
+                if (__instance.IsLovethrall())
                 {
                     var hediff = __instance.health.hediffSet.GetFirstHediffOfDef(RS_DefOf.RS_LoveThrall) as Hediff_LoveThrall;
                     if (hediff != null)

@@ -12,7 +12,7 @@ namespace ReSpliceCharmweavers
         private static float BondIconWidth = 24f;
         public static void Postfix(Transferable trad, Rect rect, ref float curX)
         {
-            if (trad.AnyThing is Pawn pawn && pawn.IsLoveThrall(out var master))
+            if (trad.AnyThing is Pawn pawn && pawn.IsLovethrall(out var master))
             {
                 var iconRect = new Rect(curX - BondIconWidth, (rect.height - BondIconWidth) / 2f, BondIconWidth, BondIconWidth);
                 GUI.DrawTexture(iconRect, Core.LoveThrallIcon);

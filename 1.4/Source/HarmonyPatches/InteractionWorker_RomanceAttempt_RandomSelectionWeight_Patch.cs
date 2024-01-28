@@ -9,11 +9,11 @@ namespace ReSpliceCharmweavers
     {
         public static void Postfix(ref float __result, Pawn initiator, Pawn recipient)
         {
-            if (initiator.IsLoveThrall())
+            if (initiator.IsLovethrall())
             {
                 __result = 0f;
             }
-            else if (recipient.IsLoveThrall())
+            else if (recipient.IsLovethrall())
             {
                 __result = 0f;
             }

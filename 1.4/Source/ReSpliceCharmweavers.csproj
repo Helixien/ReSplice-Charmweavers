@@ -293,6 +293,10 @@
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.XRModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="VanillaRacesExpandedHighmate">
+      <HintPath>..\..\..\VanillaRacesExpanded-Highmate\1.4\Assemblies\VanillaRacesExpandedHighmate.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="VFECore">
       <HintPath>..\..\..\..\..\..\..\..\..\Users\Vova\Downloads\VFECore.dll</HintPath>
       <Private>False</Private>
@@ -306,14 +310,23 @@
     <Compile Include="HarmonyPatches\ColonistBarColonistDrawer_DrawIcons_Patch.cs" />
     <Compile Include="CompAbilityEffect_Menticide.cs" />
     <Compile Include="Core.cs" />
+    <Compile Include="HarmonyPatches\CompAbilityEffect_ReimplantXenogerm_PawnIdeoCanAcceptReimplant_Patch.cs" />
     <Compile Include="HarmonyPatches\HediffSet_AddDirect_Patch.cs" />
     <Compile Include="HarmonyPatches\HediffSet_HasHediffPreventsPregnancy_Patch.cs" />
+    <Compile Include="HarmonyPatches\Hediff_CurStage_Patch.cs" />
     <Compile Include="HarmonyPatches\InteractionWorker_MarriageProposal_RandomSelectionWeight_Patch.cs" />
     <Compile Include="HarmonyPatches\LeaveQuestPartUtility_MakePawnsLeave_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnDiedOrDownedThoughtsUtility_TryGiveThoughts_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_Destroy_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_AddHediff_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_RelationsTracker_Notify_PawnSold_Patch.cs" />
+    <Compile Include="HarmonyPatches\VRE_Highmate_RJW_patch.cs" />
+    <Compile Include="HarmonyPatches\Xenogerm_PawnIdeoDisallowsImplanting_Patch.cs" />
+    <Compile Include="Precepts\ThoughtWorker_Precept_IsThrall_Social.cs" />
+    <Compile Include="Precepts\ThoughtWorker_Precept_IsLovehexer.cs" />
+    <Compile Include="Precepts\ThoughtWorker_Precept_IsLovehexer_Social.cs" />
+    <Compile Include="Precepts\ThoughtWorker_Precept_LovehexerColonist.cs" />
+    <Compile Include="Precepts\ThoughtWorker_Precept_LovehexerPresent.cs" />
     <Compile Include="Relations\PawnRelationWorker_CoSpouse.cs" />
     <Compile Include="Precepts\PreceptComp_Divorce.cs" />
     <Compile Include="HarmonyPatches\Pawn_RelationsTracker_AddDirectRelation_Patch.cs" />
@@ -340,12 +353,13 @@
     <Compile Include="ReSpliceCharmweaversSettings.cs" />
     <Compile Include="RS_DefOf.cs" />
     <Compile Include="HarmonyPatches\JobGiver_DoLovin_TryGiveJob_Patch.cs" />
-    <Compile Include="ThoughtWorker_BondedWithMyMaster.cs" />
+    <Compile Include="Thoughts\ThoughtWorker_BondedWithMyMaster.cs" />
     <Compile Include="Precepts\ThoughtWorker_Precept_IsPregnant.cs" />
     <Compile Include="Precepts\ThoughtWorker_Precept_IsPregnant_Social.cs" />
     <Compile Include="Precepts\ThoughtWorker_Precept_NotPregnant.cs" />
     <Compile Include="Precepts\ThoughtWorker_Precept_NotPregnant_Social.cs" />
-    <Compile Include="ThoughtWorker_ThrallAmount.cs" />
+    <Compile Include="Thoughts\ThoughtWorker_Enthralled.cs" />
+    <Compile Include="Thoughts\ThoughtWorker_ThrallAmount.cs" />
     <Compile Include="HarmonyPatches\TransferableOneWayWidget_DoRow_Patch.cs" />
     <Compile Include="HarmonyPatches\TransferableUIUtility_DoExtraIcons_Patch.cs" />
   </ItemGroup>

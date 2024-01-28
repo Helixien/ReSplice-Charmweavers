@@ -166,6 +166,7 @@
 		<iconPath>UI/Icons/Genes/Gene_PsychicalEnthralling</iconPath>
 		<geneClass>ReSpliceCharmweavers.Gene_PsychicEnthralling</geneClass>
 		<displayCategory>Hemogen</displayCategory>
+		<deathHistoryEvent>RS_LovehexerDied</deathHistoryEvent>
 		<abilities>
 			<li>RS_PsychicEnthralling</li>
 		</abilities>
