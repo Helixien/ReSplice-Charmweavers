@@ -28,7 +28,7 @@
 				<description>Lovehexer</description>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>topdo</eventDef>
+				<eventDef>RS_LovehexerDied</eventDef>
 				<thought>RS_Lovehexer_Revered_Died</thought>
 			</li>
 			<li Class="PreceptComp_SituationalThought">
@@ -47,8 +47,8 @@
 	</PreceptDef>
 	<ThoughtDef>
 		<defName>RS_Lovehexer_Revered_IsThrall</defName>
-		<thoughtClass>Thought_MemorySocial</thoughtClass>
-		<workerClass>todo</workerClass>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Precept_IsThrall_Social</workerClass>
 		<stackLimit>300</stackLimit>
 		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
 		<stages>
@@ -61,7 +61,7 @@
 	<ThoughtDef>
 		<defName>RS_Lovehexer_Revered_IsLovehexer</defName>
 		<thoughtClass>Thought_Situational</thoughtClass>
-		<workerClass>todo</workerClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Precept_IsLovehexer</workerClass>
 		<stages>
 			<li>
 				<label>revered lovehexer</label>
@@ -73,7 +73,7 @@
 	<ThoughtDef>
 		<defName>RS_Lovehexer_Revered_Opinion_IsLovehexer</defName>
 		<thoughtClass>Thought_SituationalSocial</thoughtClass>
-		<workerClass>todo</workerClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Precept_IsLovehexer_Social</workerClass>
 		<validWhileDespawned>true</validWhileDespawned>
 		<stages>
 			<li>
@@ -99,7 +99,7 @@
 	<ThoughtDef>
 		<defName>RS_LovehexerColonist_Revered</defName>
 		<thoughtClass>Thought_Situational</thoughtClass>
-		<workerClass>todo</workerClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Precept_LovehexerColonist</workerClass>
 		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
 		<stages>
 			<li>
@@ -128,7 +128,7 @@
 		<impact>Medium</impact>
 		<comps>
 			<li Class="PreceptComp_UnwillingToDo">
-				<eventDef>todo</eventDef>
+				<eventDef>RS_PropagateLovehexerGene</eventDef>
 				<description>Propagate lovehexer gene</description>
 			</li>
 			<li Class="PreceptComp_SituationalThought">
@@ -136,7 +136,7 @@
 				<description>lovehexer</description>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>todo</eventDef>
+				<eventDef>RS_LovehexerDied</eventDef>
 				<thought>RS_LovehexerDied_Reviled</thought>
 			</li>
 			<li Class="PreceptComp_SituationalThought">
@@ -151,8 +151,8 @@
 	</PreceptDef>
 	<ThoughtDef>
 		<defName>RS_Lovehexer_Reviled_IsThrall</defName>
-		<thoughtClass>Thought_MemorySocial</thoughtClass>
-		<workerClass>todo</workerClass>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Precept_IsThrall_Social</workerClass>
 		<stackLimit>300</stackLimit>
 		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
 		<stages>
@@ -165,7 +165,7 @@
 	<ThoughtDef>
 		<defName>RS_Lovehexer_Reviled_Opinion_IsLovehexer</defName>
 		<thoughtClass>Thought_SituationalSocial</thoughtClass>
-		<workerClass>todo</workerClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Precept_IsLovehexer_Social</workerClass>
 		<validWhileDespawned>true</validWhileDespawned>
 		<stages>
 			<li>
@@ -177,7 +177,7 @@
 	<ThoughtDef>
 		<defName>RS_Lovehexer_Reviled_IsLovehexer</defName>
 		<thoughtClass>Thought_Situational</thoughtClass>
-		<workerClass>todo</workerClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Precept_IsLovehexer</workerClass>
 		<stages>
 			<li>
 				<label>lovehexer self hatred</label>
@@ -202,7 +202,7 @@
 	<ThoughtDef>
 		<defName>RS_LovehexerColonist_Reviled</defName>
 		<thoughtClass>Thought_Situational</thoughtClass>
-		<workerClass>todo</workerClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Precept_LovehexerPresent</workerClass>
 		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
 		<stages>
 			<li>

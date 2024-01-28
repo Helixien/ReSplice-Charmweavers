@@ -14,7 +14,7 @@ namespace ReSpliceCharmweavers
 
         public static void DoLovinResult(Pawn pawn, Pawn partner)
         {
-            if (pawn.genes?.HasGene(RS_DefOf.RS_LoveFeed) ?? false)
+            if (pawn.HasGene(RS_DefOf.RS_LoveFeed))
             {
                 DoLoveFeed(pawn, partner);
             }
@@ -22,7 +22,7 @@ namespace ReSpliceCharmweavers
 
         private static void DoLoveFeed(Pawn biter, Pawn target)
         {
-            if (target.genes?.HasGene(GeneDefOf.Bloodfeeder) ?? false)
+            if (target.HasGene(GeneDefOf.Bloodfeeder))
             {
                 if (biter.genes.HasGene(RS_DefOf.VRE_SanguoFeeder) is false)
                 {

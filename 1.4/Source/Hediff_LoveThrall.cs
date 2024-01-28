@@ -24,14 +24,13 @@ namespace ReSpliceCharmweavers
                     pawn.interactions.TryInteractWith(loveRel.otherPawn, RS_DefOf.Breakup);
                 }
             }
-            if (master.relations.DirectRelationExists(PawnRelationDefOf.Lover, pawn) is false)
+
+            if (LovePartnerRelationUtility.LovePartnerRelationExists(master, pawn) is false)
             {
                 master.relations.AddDirectRelation(PawnRelationDefOf.Lover, pawn);
-            }
-            if (pawn.relations.DirectRelationExists(PawnRelationDefOf.Lover, master) is false)
-            {
                 pawn.relations.AddDirectRelation(PawnRelationDefOf.Lover, master);
             }
+
 
             FleckMaker.Static(master.Position, master.Map, FleckDefOf.PsycastAreaEffect, 1.5f);
             FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.PsycastAreaEffect, 1.5f);

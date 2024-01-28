@@ -9,7 +9,7 @@ namespace ReSpliceCharmweavers
     {
         public override ThoughtState CurrentStateInternal(Pawn p)
         {
-            if (p.genes?.HasGene(RS_DefOf.RS_PsychicEnthralling) ?? false)
+            if (p.HasGene(RS_DefOf.RS_PsychicEnthralling))
             {
                 var thrallAmount = p.GetThrallAmount();
                 if (thrallAmount <= 6)

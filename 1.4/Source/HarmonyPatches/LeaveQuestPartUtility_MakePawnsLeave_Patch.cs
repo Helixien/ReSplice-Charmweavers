@@ -11,7 +11,7 @@ namespace ReSpliceCharmweavers
     {
         public static void Prefix(ref IEnumerable<Pawn> pawns)
         {
-            pawns = pawns.Where(x => x.IsLoveThrall(out var master) is false || master.Faction != Faction.OfPlayer).ToList();
+            pawns = pawns.Where(x => x.IsLovethrall(out var master) is false || master.Faction != Faction.OfPlayer).ToList();
         }
     }
 }

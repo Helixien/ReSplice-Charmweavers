@@ -14,7 +14,7 @@ namespace ReSpliceCharmweavers
         [HarmonyPriority(int.MaxValue)]
         private static bool Prefix(Pawn_HealthTracker __instance, Pawn ___pawn, ref Hediff hediff, BodyPartRecord part = null, DamageInfo? dinfo = null, DamageWorker.DamageResult result = null)
         {
-            if (___pawn.genes?.HasGene(RS_DefOf.RS_TemperatureInsensitive) ?? false)
+            if (___pawn.HasGene(RS_DefOf.RS_TemperatureInsensitive))
             {
                 return HandleHediffForTemperatureInsensitive(___pawn, ref hediff);
             }

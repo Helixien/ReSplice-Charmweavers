@@ -8,7 +8,7 @@ namespace ReSpliceCharmweavers
     {
         public override Texture2D GetIconFor(Pawn pawn)
         {
-            if (pawn.IsLoveThrall())
+            if (pawn.IsLovethrall())
             {
                 return Core.LoveThrallIcon;
             }
@@ -17,7 +17,7 @@ namespace ReSpliceCharmweavers
 
         public override string GetIconTip(Pawn pawn)
         {
-            if (pawn.IsLoveThrall(out var master))
+            if (pawn.IsLovethrall(out var master))
             {
                 return "RS.ThrallOf".Translate(master.Named("PAWN"));
             }

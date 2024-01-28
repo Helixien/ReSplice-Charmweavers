@@ -13,7 +13,7 @@ namespace ReSpliceCharmweavers
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> codeInstructions)
         {
-            var isLoveThrallInfo = AccessTools.Method(typeof(Core), nameof(Core.IsLoveThrall), new Type[] {typeof(Pawn)});
+            var isLoveThrallInfo = AccessTools.Method(typeof(Core), nameof(Core.IsLovethrall), new Type[] {typeof(Pawn)});
             var get_IsSlaveInfo = AccessTools.PropertyGetter(typeof(Pawn), nameof(Pawn.IsSlave));
             var codes = codeInstructions.ToList();
             for (var i = 0; i < codes.Count; i++)

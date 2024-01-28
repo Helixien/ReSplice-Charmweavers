@@ -3,9 +3,13 @@
 	<!-- ================ Is a Thrall ================ -->
 	<ThoughtDef>
 		<defName>RS_IsThrall</defName>
-		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Enthralled</workerClass>
 		<stackLimit>300</stackLimit>
 		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+		<nullifyingPrecepts>
+			<li>RS_Lovehexer_Revered</li>
+		</nullifyingPrecepts>
 		<stages>
 			<li>
 				<label>enthralled</label>

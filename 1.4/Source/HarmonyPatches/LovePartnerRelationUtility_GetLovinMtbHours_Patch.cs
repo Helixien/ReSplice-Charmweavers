@@ -9,8 +9,8 @@ namespace ReSpliceCharmweavers
     {
         public static void Postfix(ref float __result, Pawn pawn, Pawn partner)
         {
-            if ((pawn.genes?.HasGene(RS_DefOf.RS_Libido_None) ?? false) 
-                || (partner.genes?.HasGene(RS_DefOf.RS_Libido_None) ?? false))
+            if ((pawn.HasGene(RS_DefOf.RS_Libido_None)) 
+                || (partner.HasGene(RS_DefOf.RS_Libido_None)))
             {
                 __result = -1f;
             }

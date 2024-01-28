@@ -29,7 +29,7 @@ namespace ReSpliceCharmweavers
 
         public static void LoadIconIfThrall(Pawn pawn)
         {
-            if (pawn.IsLoveThrall(out var master))
+            if (pawn.IsLovethrall(out var master))
             {
                 ColonistBarColonistDrawer.tmpIconsToDraw.Add(new ColonistBarColonistDrawer.IconDrawCall(Core.LoveThrallIcon, "RS.ThrallOf".Translate(master.Named("PAWN"))));
             }

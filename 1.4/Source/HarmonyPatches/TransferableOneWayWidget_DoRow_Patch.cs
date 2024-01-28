@@ -29,7 +29,7 @@ namespace ReSpliceCharmweavers
 
         public static void TrySetColor(Pawn pawn, ref Color color)
         {
-            if (pawn.IsLoveThrall())
+            if (pawn.IsLovethrall())
             {
                 color = Core.ThrallColor;
             }

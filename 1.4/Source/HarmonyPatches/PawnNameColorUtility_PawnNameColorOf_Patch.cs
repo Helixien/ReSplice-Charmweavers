@@ -9,7 +9,7 @@ namespace ReSpliceCharmweavers
     {
         public static void Postfix(ref Color __result, Pawn pawn)
         {
-            if (pawn.IsLoveThrall())
+            if (pawn.IsLovethrall())
             {
                 __result = Core.ThrallColor;
             }

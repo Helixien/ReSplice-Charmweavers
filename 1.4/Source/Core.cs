@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using System.Linq;
+using System.Reflection;
 using UnityEngine;
 using Verse;
 
@@ -17,9 +18,9 @@ namespace ReSpliceCharmweavers
             new Harmony("ReSpliceCharmweavers.Mod").PatchAll();
         }
 
-        public static bool IsLoveThrall(this Pawn pawn)
+        public static bool IsLovethrall(this Pawn pawn)
         {
-            return IsLoveThrall(pawn, out _);
+            return IsLovethrall(pawn, out _);
         }
 
         public static int GetThrallAmount(this Pawn pawn)
@@ -27,7 +28,7 @@ namespace ReSpliceCharmweavers
             return pawn.relations.DirectRelations.Where(x => x.def == RS_DefOf.RS_Thrall).Count();
         }
 
-        public static bool IsLoveThrall(this Pawn pawn, out Pawn master)
+        public static bool IsLovethrall(this Pawn pawn, out Pawn master)
         {
             var hediff = pawn?.health?.hediffSet?.GetFirstHediffOfDef(RS_DefOf.RS_LoveThrall) as Hediff_LoveThrall;
             if (hediff != null)
@@ -40,6 +41,19 @@ namespace ReSpliceCharmweavers
                 master = null;
                 return false;
             }
+        }
+
+        public static bool IsLovehexer(this Pawn pawn) => pawn.HasGene(RS_DefOf.RS_PsychicEnthralling);
+
+        public static bool HasGene(this Pawn pawn, GeneDef gene) 
+        {
+            return pawn?.genes?.HasGene(gene) ?? false;
+        }
+
+        public static T Clone<T>(this T obj)
+        {
+            var inst = obj.GetType().GetMethod("MemberwiseClone", BindingFlags.Instance | BindingFlags.NonPublic);
+            return (T)inst?.Invoke(obj, null);
         }
     }
 }

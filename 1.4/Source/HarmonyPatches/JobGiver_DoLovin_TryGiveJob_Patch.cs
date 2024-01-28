@@ -10,14 +10,14 @@ namespace ReSpliceCharmweavers
     {
         public static void Postfix(ref Job __result, Pawn pawn)
         {
-            if (pawn.genes?.HasGene(RS_DefOf.RS_Libido_None) ?? false)
+            if (pawn.HasGene(RS_DefOf.RS_Libido_None))
             {
                 __result = null;
             }
             if (__result != null)
             {
                 var target = __result.targetA.Pawn;
-                if (target != null && (target.genes?.HasGene(RS_DefOf.RS_Libido_None) ?? false)) 
+                if (target != null && (target.HasGene(RS_DefOf.RS_Libido_None))) 
                 {
                     __result = null;
                 }

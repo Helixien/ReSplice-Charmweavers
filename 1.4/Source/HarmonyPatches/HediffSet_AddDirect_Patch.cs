@@ -9,7 +9,7 @@ namespace ReSpliceCharmweavers
         [HarmonyPriority(int.MaxValue)]
         private static bool Prefix(HediffSet __instance, Pawn ___pawn, Hediff hediff)
         {
-            if (___pawn.genes?.HasGene(RS_DefOf.RS_TemperatureInsensitive) ?? false)
+            if (___pawn.HasGene(RS_DefOf.RS_TemperatureInsensitive))
             {
                 return Pawn_HealthTracker_AddHediff_Patch.HandleHediffForTemperatureInsensitive(___pawn, ref hediff);
             }
