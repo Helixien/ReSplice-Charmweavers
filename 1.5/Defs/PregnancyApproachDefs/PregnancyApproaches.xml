@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<VFECore.PregnancyApproachDef>
+		<defName>RS_LovinForHemogen</defName>
+		<label>Lovin’ for Hemogen (pregnancy chance x50%)</label>
+		<cancelLabel>Normal lovin'</cancelLabel>
+		<iconPath>UI/Icons/Pregnancyapproaches/RhythmMode_LovinForHemogen</iconPath>
+		<workerClass>ReSpliceCharmweavers.PregnancyApproach_LovinForHemogen</workerClass>
+		<pregnancyChanceFactorBase>0.5</pregnancyChanceFactorBase>
+		<requiredGene>RS_LoveFeed</requiredGene>
+		<requireDifferentGender>false</requireDifferentGender>
+		<requireFertility>True</requireFertility>
+		<lovinDurationMultiplier>1.10</lovinDurationMultiplier>
+	</VFECore.PregnancyApproachDef>
+</Defs>

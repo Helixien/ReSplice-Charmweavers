@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<XenotypeDef>
+		<defName>RS_Charmweaver</defName>
+		<label>charmweaver</label>
+		<description>Charmweavers are a type of archotech-enhanced xenohuman who are related to sanguophage. Powered by archites, their abilities go far beyond normal genetic enhancements. They are socially adept and inhumanly beautiful. They are weak combatants and prefer to use their natural psychic ability to enthral others and make them do their bidding. While they do not age, they are still susceptible to disease, poison and a violent death. A Charmweaver can make new charmweavers by reimplanting their own xenogerm into a person.\n\Charmweavers must regularly consume hemogen derived from human blood, which they prefer to do while lovin’. Engaging sexually with a charmweaver can lead to unforeseen consequences, as their bodies are able to sustain multiple pregnancies at the same time, by even multiple partners.\n\nCharmweavers and Sanguophage are closely linked in their origin and in their creation and even share many traits, even if they are quite different today. When the granddaughter of the first sanguophage Varan-Du sought to rid herself of the curse that was bestowed upon her by him and in doing so repeated his mistake. When she tried to control the very same hyperintelligent archotech to become a baseliner again, it transformed her instead into something different. Every charmweavers descended from her, hunted as well, but often for very different reasons. Their appearance made it impossible to hide, so most of them seek out less developed worlds where they can hide, or enter the service of powerful figures.\n\nTheir numbers are unknown, but considered to be extremely low. Some think they are legends or rare irrelevancies, others they are demons from ancient religions to be hunted and killed.</description>
+		<descriptionShort>Charmweavers are ageless, irresistible super-humans powered by archotech-created archites in the bloodstream. They are inhumanly beautiful and extremely charming. They can psychically influence others and turn them into their servants. They avoid combat, letting others do the fighting for them. The price is that charmweavers must consume hemogen derived from human blood to survive, and are addicted to being in romantic relationships with others. They often cause social issues in the community they are part of.</descriptionShort>
+		<iconPath>UI/Icons/Xenotypes/NEWCharmweavers</iconPath>
+		<soundDefOnImplant>PawnBecameSanguophage</soundDefOnImplant>
+		<generateWithXenogermReplicatingHediffChance>0.5</generateWithXenogermReplicatingHediffChance>
+		<xenogermReplicatingDurationLeftDaysRange>0.1~140</xenogermReplicatingDurationLeftDaysRange>
+		<combatPowerFactor>1.25</combatPowerFactor>
+		<displayPriority>-1001</displayPriority>
+		<genes>
+			<li>Hemogenic</li>
+			<li>HemogenDrain</li>
+			<li>Bloodfeeder</li>
+			<li>XenogermReimplanter</li>
+			<li>Ageless</li>
+			<li>DiseaseFree</li>
+			<li>ArchiteMetabolism</li>
+			<li>RS_Matrianic</li>
+			<li>RS_MultiPregnancy</li>
+			<li>RS_TemperatureInsensitive</li>
+			<li>RS_PsychicEnthralling</li>
+			<li>RS_Naturalist</li>
+			<li>WoundHealing_Fast</li>
+			<li>MoveSpeed_Quick</li>
+			<li>Delicate</li>
+			<li>MeleeDamage_Weak</li>
+			<li>Learning_Slow</li>
+			<li>LowSleep</li>
+			<li>AptitudeRemarkable_Social</li>
+			<li>AptitudePoor_Shooting</li>
+			<li>AptitudePoor_Melee</li>
+			<li>Body_Standard</li>
+			<li>Skin_Blue</li>
+			<li>Skin_Purple</li>
+			<li>Skin_PaleRed</li>
+			<li>RS_Skin_PaleGreen</li>
+			<li>RS_Headbone_RamHorns</li>
+			<li>RS_Headbone_MediumHorns</li>
+			<li>RS_Headbone_LargeHorns</li>
+			<li>RS_Wing_Batlike</li>
+			<li>RS_Tail_Spiked</li>
+			<li>RS_Eyes_Pink</li>
+			<li>RS_Beauty_Angelic</li>
+			<li>RS_Libido_Extreme</li>
+			<li>RS_LoveFeed</li>
+			<li MayRequire="vanillaracesexpanded.highmate">VRE_Flirty</li>
+		</genes>
+	</XenotypeDef>
+</Defs>

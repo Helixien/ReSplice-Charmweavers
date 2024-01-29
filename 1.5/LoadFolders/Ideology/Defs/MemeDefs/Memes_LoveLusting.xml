@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<MemeDef>
+		<defName>RS_LoveLusting</defName>
+		<label>lovelusting</label>
+		<description>The pleasure of the flesh is the greatest gift given to humanity.</description>
+		<iconPath>UI/Memes/MemeLoveLusting</iconPath>
+		<groupDef>Misc</groupDef>
+		<impact>3</impact>
+		<requireOne>
+			<li>
+				<li>RS_Marriage_Abhorrent</li>
+			</li>
+			<li>
+				<li>RS_Divorce_Acceptable</li>
+			</li>
+			<li>
+				<li>Lovin_FreeApproved</li>
+				<li>Lovin_Free</li>
+			</li>
+			<li>
+				<li>MarriageName_Random</li>
+				<li>MarriageName_KeepNames</li>
+			</li>
+			<li>
+				<li>SpouseCount_Male_MaxFour</li>
+				<li>SpouseCount_Male_Unlimited</li>
+			</li>
+			<li>
+				<li>SpouseCount_Female_MaxFour</li>
+				<li>SpouseCount_Female_Unlimited</li>
+			</li>
+		</requireOne>
+		<generalRules>
+			<rulesStrings>
+				<li>memeAdjective->loving</li>
+				<li>memeAdjective->lusting</li>
+				<li>memeAdjective->desiring</li>
+				<li>memeLeaderNoun->lustful</li>
+				<li>memeLeaderNoun->passionate</li>
+				<li>memeLeaderNoun->libidinous</li>
+				<li>memeConcept->sensualism</li>
+				<li>memeLeaderAdjective->lusting</li>
+				<li>memeLeaderAdjective->loving</li>
+				<li>memeLeaderAdjective->desiring</li>
+			</rulesStrings>
+		</generalRules>
+		<descriptionMaker>
+			<rules>
+				<rulesStrings>
+					<!-- theist myth -->
+					<li>creation(tag=meme_Lovelusting)        ->[deity0_name] granted us the pleasure of the flesh, that we may explore each others bodies to our hearts content.</li>
+					<li>episode(uses=1,tag=meme_Lovelusting)  ->humans indulge in their carnal desires, which pleased [deity0_objective].</li>
+				</rulesStrings>
+			</rules>
+		</descriptionMaker>
+		<requiredRituals/>
+	</MemeDef>
+</Defs>

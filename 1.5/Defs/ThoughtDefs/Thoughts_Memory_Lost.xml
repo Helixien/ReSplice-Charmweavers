@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ================ Base ================ -->
+	<ThoughtDef Name="RS_LostMemoryThrall" ParentName="LostMemory" Abstract="True">
+		<durationDays>3.0</durationDays>
+		<nullifyingTraits>
+			<li>Psychopath</li>
+		</nullifyingTraits>
+		<stackLimit>10</stackLimit>
+		<showBubble>true</showBubble>
+		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+	</ThoughtDef>
+	<!-- ================ Thrall Lost ================ -->
+	<ThoughtDef ParentName="RS_LostMemoryThrall">
+		<defName>RS_MyThrallLost</defName>
+		<stages>
+			<li>
+				<label>my thrall {0} lost</label>
+				<description>My thrall is gone. Oh well, I can always get a new one.</description>
+				<baseMoodEffect>-3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef ParentName="RS_LostMemoryThrall">
+		<defName>RS_MyThrallLostFemale</defName>
+		<stages>
+			<li>
+				<label>my thrall {0} lost</label>
+				<description>My thrall is gone. Oh well, I can always get a new one.</description>
+				<baseMoodEffect>-3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>

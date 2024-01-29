@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<QuestScriptDef>
+		<defName>RS_IrresistibleOffer</defName>
+		<rootSelectionWeight>0.6</rootSelectionWeight>
+		<minRefireDays>160</minRefireDays>
+		<rootMinPoints>200</rootMinPoints>
+		<expireDaysRange>2</expireDaysRange>
+		<rootIncreasesPopulation>true</rootIncreasesPopulation>
+		<questNameRules>
+			<rulesStrings>
+				<li>questName->[asker_nameFull] [weaverAdjective] [weaverNoun]</li>
+				<li>weaverAdjective->irresistible</li>
+				<li>weaverAdjective->tempting</li>
+				<li>weaverAdjective->enticing</li>
+				<li>weaverAdjective->alluring</li>
+				<li>weaverAdjective->appealing </li>
+				<li>weaverAdjective->captivating </li>
+				<li>weaverNoun->offer</li>
+				<li>weaverNoun->proposal</li>
+				<li>weaverNoun->proposition</li>
+				<li>weaverNoun->suggestion</li>
+				<li>weaverNoun->mistake</li>
+				<li>weaverNoun->oversight</li>
+				<li>weaverNoun->miscalculation</li>
+			</rulesStrings>
+		</questNameRules>
+		<questDescriptionRules>
+			<rulesStrings>
+				<li>questDescription->[asker_nameFull], [asker_titleIndef] of [asker_factionName] contacts you with a special offer. [asker_pronoun] recently managed to capture a charmweaver in an attempt to sell it later, but [asker_pronoun] now needs to get rid of it as it causes problems in [asker_noun] faction. If you accept, [asker_nameDef] will send the charmweaver to you by transport pod. [asker_pronoun] refuses to answer any questions about the charmweaver and pushes for an answer to [asker_noun] offer.\n\n[charmweaverInfo]</li>
+				<li>charmweaverInfo->(*Gray)About charmweaver: Charmweavers are ageless super-humans powered by archotech-created archites in the bloodstream. They are inhumanly beautiful and extremely manipulative. They can seduce any pawn they want to turn them into a loyal thrall. Furthermore, they are unaffected by temperature and heal quickly from any wounds. The price is that charmweavers must consume hemogen derived from human blood to survive, and can easily get pregnant, as well as carry multiple pregnancies at the same time. They're easily killed in combat by any means.(/Gray)</li>
+			</rulesStrings>
+		</questDescriptionRules>
+		<root Class="QuestNode_Sequence">
+			<nodes>
+				<li Class="QuestNode_GetMap"/>
+				<li Class="QuestNode_GetPawn">
+					<storeAs>asker</storeAs>
+					<allowPermanentEnemyFaction>false</allowPermanentEnemyFaction>
+					<canGeneratePawn>true</canGeneratePawn>
+					<mustBeNonHostileToPlayer>true</mustBeNonHostileToPlayer>
+					<minTechLevel>Industrial</minTechLevel>
+					<mustBeOfKind>SpaceRefugee_Clothed</mustBeOfKind>
+				</li>
+				<li Class="ReSpliceCharmweavers.QuestNode_GenerateCharmweaver">
+					<storeAs>joiner</storeAs>
+					<kindDef>SpaceRefugee_Clothed</kindDef>
+				</li>
+				<li Class="QuestNode_JoinPlayer">
+					<pawns>$joiner</pawns>
+					<joinPlayer>true</joinPlayer>
+				</li>
+				<li Class="QuestNode_DropPods">
+					<contents>$joiner</contents>
+					<useTradeDropSpot>true</useTradeDropSpot>
+				</li>
+				<li Class="QuestNode_ChangeFactionGoodwill">
+					<change>15</change>
+					<factionOf>$asker</factionOf>
+				</li>
+				<li Class="QuestNode_End">
+					<outcome>Success</outcome>
+				</li>
+			</nodes>
+		</root>
+	</QuestScriptDef>
+</Defs>

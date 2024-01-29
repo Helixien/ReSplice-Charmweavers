@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<PawnColumnDef>
+		<defName>RS_Thrall</defName>
+		<workerClass>ReSpliceCharmweavers.PawnColumnWorker_Thrall</workerClass>
+	</PawnColumnDef>
+</Defs>

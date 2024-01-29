@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ================================ Relationship ====================== -->
+	<PawnRelationDef>
+		<defName>RS_CoSpouse</defName>
+		<label>co-husband</label>
+		<labelFemale>co-wife</labelFemale>
+		<workerClass>ReSpliceCharmweavers.PawnRelationWorker_CoSpouse</workerClass>
+		<importance>180</importance>
+		<diedThought>RS_MyCoHusbandDied</diedThought>
+		<diedThoughtFemale>RS_MyCoWifeDied</diedThoughtFemale>
+		<killedThought>RS_KilledMyCoSpouse</killedThought>
+		<lostThought>RS_MyCoHusbandLost</lostThought>
+		<lostThoughtFemale>RS_MyCoWifeLost</lostThoughtFemale>
+		<soldThoughts>
+			<li>AC_SoldMyLovedOnesLovedOne</li>
+		</soldThoughts>
+		<opinionOffset>10</opinionOffset>
+		<implied>false</implied>
+		<reflexive>true</reflexive>
+	</PawnRelationDef>
+	<!-- ================================ Thoughts ====================== -->
+	<ThoughtDef ParentName="DeathMemoryFamily">
+		<defName>RS_MyCoHusbandDied</defName>
+		<stages>
+			<li>
+				<label>my co-husband {0} died</label>
+				<description>My co-husband is dead.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef ParentName="DeathMemoryFamily">
+		<defName>RS_MyCoWifeDied</defName>
+		<stages>
+			<li>
+				<label>my co-wife {0} died</label>
+				<description>My co-wife is dead.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef ParentName="LostMemoryFamily">
+		<defName>RS_MyCoHusbandLost</defName>
+		<stages>
+			<li>
+				<label>my co-husband {0} lost</label>
+				<description>My co-husband has gone lost. I hope he will get back to us someday.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef ParentName="LostMemoryFamily">
+		<defName>RS_MyCoWifeLost</defName>
+		<stages>
+			<li>
+				<label>my co-wife {0} lost</label>
+				<description>My co-wife has gone lost. I hope she will get back to us someday.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>RS_KilledMyCoSpouse</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>60</durationDays>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>killed my co-spouse</label>
+				<baseOpinionOffset>-35</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>AC_SoldMyLovedOnesLovedOne</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>60</durationDays>
+		<stackLimit>10</stackLimit>
+		<stackLimitForSameOtherPawn>2</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>co-spouse sold</label>
+				<labelSocial>sold my co-spouse</labelSocial>
+				<description>Someone who my loved one loves was sold to a trader like a piece of meat!</description>
+				<baseOpinionOffset>-5</baseOpinionOffset>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>

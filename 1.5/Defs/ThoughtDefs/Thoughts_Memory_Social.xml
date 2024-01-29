@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ================ Is a Thrall ================ -->
+	<ThoughtDef>
+		<defName>RS_IsThrall</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Enthralled</workerClass>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+		<nullifyingPrecepts>
+			<li>RS_Lovehexer_Revered</li>
+		</nullifyingPrecepts>
+		<stages>
+			<li>
+				<label>enthralled</label>
+				<baseOpinionOffset>-20</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!-- ================ Master Killed ================ -->
+	<ThoughtDef>
+		<defName>RS_KilledMyMaster</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>120</durationDays>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>killed my master</label>
+				<baseOpinionOffset>-80</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!-- ================ Thrall Killed ================ -->
+	<ThoughtDef>
+		<defName>RS_KilledMyThrall</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>120</durationDays>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>killed my thrall</label>
+				<baseOpinionOffset>-10</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!-- ================ Thrall Lovin ================ -->
+	<ThoughtDef>
+		<defName>RS_GotSomeLovinThrall</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>3</durationDays>
+		<stackLimit>10</stackLimit>
+		<stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<label>got some lovin'</label>
+				<description>There's nothing like a tumble between the sheets with my master.</description>
+				<baseMoodEffect>12</baseMoodEffect>
+				<baseOpinionOffset>10</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!-- ================ Became ================ -->
+	<ThoughtDef>
+		<defName>RS_BecameThrallMood</defName>
+		<durationDays>5</durationDays>
+		<stackLimit>5</stackLimit>
+		<stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<label>{0} became my master</label>
+				<description>I never saw {OTHERPAWN} for what {OTHERPAWN_pronoun} is, of course I should serve {OTHERPAWN_objective}!</description>
+				<baseMoodEffect>8</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>RS_EnthralledMe</defName>
+		<durationDays>120</durationDays>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>enthralled me</label>
+				<baseOpinionOffset>-80</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>RS_ThrallAmount</defName>
+		<workerClass>ReSpliceCharmweavers.ThoughtWorker_ThrallAmount</workerClass>
+		<stages>
+			<li>
+				<label>No thrall</label>
+				<description>I don't have any thrall!</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>One thrall</label>
+				<description>I have just one thrall, it's not enough for me!</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>Two thralls</label>
+				<description>I have only two thralls, it's something I guess.</description>
+				<baseMoodEffect>0</baseMoodEffect>
+			</li>
+			<li>
+				<label>Three thrals</label>
+				<description>That's nice to have them at my disposal.</description>
+				<baseMoodEffect>5</baseMoodEffect>
+			</li>
+			<li>
+				<label>A lot of thralls</label>
+				<description>It makes me so happy to have them all!</description>
+				<baseMoodEffect>15</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>

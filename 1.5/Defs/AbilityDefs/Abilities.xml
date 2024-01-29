@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<AbilityDef>
+		<defName>RS_PsychicEnthralling</defName>
+		<label>PsychicEnthralling</label>
+		<description>Psychically enthral the target, turning them into a willing and loyal servant, as well as lover to the caster. This bond can only be broken by death and is otherwise permanent.</description>
+		<iconPath>UI/Abilities/PsychicalEnthralling</iconPath>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<category>Sanguophage</category>
+		<displayOrder>200</displayOrder>
+		<aiCanUse>true</aiCanUse>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>15</range>
+			<warmupTime>1</warmupTime>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetPawns>True</canTargetPawns>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetAnimals>false</canTargetAnimals>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityHemogenCost">
+				<hemogenCost>0.5</hemogenCost>
+			</li>
+			<li Class="ReSpliceCharmweavers.CompProperties_Menticide">
+				<applicableToMechs>false</applicableToMechs>
+				<goodwillImpact>-75</goodwillImpact>
+			</li>
+		</comps>
+	</AbilityDef>
+	<AbilityDef ParentName="LongJump">
+		<defName>RS_WingJump</defName>
+		<label>wing jump</label>
+		<category>Sanguophage</category>
+		<description>Jump to a distant location using wings.</description>
+		<iconPath>UI/Abilities/WingJump</iconPath>
+		<verbProperties>
+			<range>22.9</range>
+		</verbProperties>
+		<comps Inherit="False">
+			<li Class="CompProperties_AbilityHemogenCost">
+				<hemogenCost>0.035</hemogenCost>
+			</li>
+		</comps>
+	</AbilityDef>
+</Defs>

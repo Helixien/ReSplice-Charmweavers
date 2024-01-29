@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<PawnRelationDef>
+		<defName>RS_Master</defName>
+		<label>master</label>
+		<opinionOffset>85</opinionOffset>
+		<generationChanceFactor>0</generationChanceFactor>
+		<romanceChanceFactor>1</romanceChanceFactor>
+		<workerClass>ReSpliceCharmweavers.PawnRelationWorker_Master</workerClass>
+		<implied>false</implied>
+		<familyByBloodRelation>false</familyByBloodRelation>
+	</PawnRelationDef>
+	<PawnRelationDef>
+		<defName>RS_Thrall</defName>
+		<label>thrall</label>
+		<importance>185</importance>
+		<workerClass>ReSpliceCharmweavers.PawnRelationWorker_Thrall</workerClass>
+		<diedThought>RS_MyThrallDied</diedThought>
+		<killedThought>RS_KilledMyThrall</killedThought>
+		<lostThought>RS_MyThrallLost</lostThought>
+		<lostThoughtFemale>RS_MyThrallLostFemale</lostThoughtFemale>
+		<soldThoughts>
+			<li>RS_SoldMyThrall</li>
+		</soldThoughts>
+		<opinionOffset>50</opinionOffset>
+		<generationChanceFactor>0</generationChanceFactor>
+		<romanceChanceFactor>1</romanceChanceFactor>
+		<implied>false</implied>
+		<familyByBloodRelation>false</familyByBloodRelation>
+	</PawnRelationDef>
+</Defs>

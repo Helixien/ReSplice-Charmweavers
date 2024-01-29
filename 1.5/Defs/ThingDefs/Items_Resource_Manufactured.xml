@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="ResourceBase">
+		<defName>RS_LovethrallCapacitySerum</defName>
+		<label>lovethrall capacity serum</label>
+		<description>A serum that permanently increases the number of lovethralls a person can control. The serum can only be ingested by individuals with the psychic enthralling gene.</description>
+		<stackLimit>10</stackLimit>
+		<graphicData>
+			<texPath>Things/Item/Resource/LovethrallapacitySerum</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<MarketValue>750</MarketValue>
+			<DeteriorationRate>5</DeteriorationRate>
+			<Mass>0.50</Mass>
+			<Flammability>0.7</Flammability>
+		</statBases>
+		<thingCategories>
+			<li>ItemsMisc</li>
+		</thingCategories>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Usable">
+				<useJob>UseArtifact</useJob>
+				<useLabel>Ingest {0_label}</useLabel>
+			</li>
+			<li Class="ReSpliceCharmweavers.CompProperties_UseEffectOffsetLovethrallCapacity">
+				<offset>1</offset>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>DeathrestCapacitySerum_Consume</soundOnUsed>
+			</li>
+			<li Class="CompProperties_UseEffectDestroySelf"/>
+		</comps>
+		<thingSetMakerTags>
+			<li>RewardStandardHighFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+</Defs>
