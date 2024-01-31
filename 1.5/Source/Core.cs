@@ -43,7 +43,7 @@ namespace ReSpliceCharmweavers
             }
         }
 
-        public static bool IsLovehexer(this Pawn pawn) => pawn.HasGene(RS_DefOf.RS_PsychicEnthralling);
+        public static bool IsLovehexer(this Pawn pawn) => pawn.HasGene(RS_DefOf.RS_Lovehexer);
 
         public static bool HasGene(this Pawn pawn, GeneDef gene) 
         {

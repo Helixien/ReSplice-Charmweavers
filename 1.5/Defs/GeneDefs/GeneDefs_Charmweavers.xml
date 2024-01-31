@@ -11,7 +11,6 @@
 		<biostatCpx>2</biostatCpx>
 		<biostatArc>1</biostatArc>
 	</GeneDef>
-	
 	<GeneDef>
 		<defName>RS_MultiPregnancy</defName>
 		<label>multi-pregnancy</label>
@@ -210,10 +209,6 @@
 	</GeneDef>
 	<!-- ================ Horns ================ -->
 	<GeneDef ParentName="GeneHeadboneBase" Name="RS_HornsBase" Abstract="True">
-		<graphicData>
-			<color>(255, 255, 255)</color>
-			<layer>PostHeadgear</layer>
-		</graphicData>
 		<symbolPack>
 			<prefixSymbols>
 				<li>
@@ -250,27 +245,69 @@
 		<label>ram-horns</label>
 		<description>Carriers of this gene grow two ram-like horns protruding from the forehead.</description>
 		<iconPath>UI/Icons/Genes/Gene_RamHorns</iconPath>
-		<graphicData>
-			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/RamHorns/RamHorns</graphicPath>
-		</graphicData>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<color>(255, 255, 255)</color>
+				<texPath>Things/Pawn/Humanlike/HeadAttachments/RamHorns/RamHorns</texPath>
+				<drawData>
+					<defaultData>
+						<layer>80</layer>
+					</defaultData>
+					<dataNorth>
+						<layer>10</layer>
+					</dataNorth>
+				</drawData>
+				<parentTagDef>Head</parentTagDef>
+			</li>
+		</renderNodeProperties>
 	</GeneDef>
 	<GeneDef ParentName="RS_HornsBase">
 		<defName>RS_Headbone_MediumHorns</defName>
 		<label>medium-horns</label>
 		<description>Carriers of this gene grow two sizable horns protruding from the forehead.</description>
 		<iconPath>UI/Icons/Genes/Gene_MediumHorns</iconPath>
-		<graphicData>
-			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/DemonHorns/DemonHorns</graphicPath>
-		</graphicData>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<color>(255, 255, 255)</color>
+				<texPath>Things/Pawn/Humanlike/HeadAttachments/DemonHorns/DemonHorns</texPath>
+				<drawData>
+					<defaultData>
+						<layer>80</layer>
+					</defaultData>
+					<dataNorth>
+						<layer>10</layer>
+					</dataNorth>
+				</drawData>
+				<parentTagDef>Head</parentTagDef>
+			</li>
+		</renderNodeProperties>
 	</GeneDef>
 	<GeneDef ParentName="RS_HornsBase">
 		<defName>RS_Headbone_LargeHorns</defName>
 		<label>large-horns</label>
 		<description>Carriers of this gene grow two large horns protruding from the forehead.</description>
 		<iconPath>UI/Icons/Genes/Gene_LargeHorns</iconPath>
-		<graphicData>
-			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/DevilHorns/DevilHorns</graphicPath>
-		</graphicData>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<color>(255, 255, 255)</color>
+				<texPath>Things/Pawn/Humanlike/HeadAttachments/DevilHorns/DevilHorns</texPath>
+				<drawData>
+					<defaultData>
+						<layer>80</layer>
+					</defaultData>
+					<dataNorth>
+						<layer>10</layer>
+					</dataNorth>
+				</drawData>
+				<parentTagDef>Head</parentTagDef>
+			</li>
+		</renderNodeProperties>
 	</GeneDef>
 	<!-- ================ Wings ================ -->
 	<GeneDef Name="RS_GeneWingBase" Abstract="True">
@@ -279,9 +316,6 @@
 			<li>Wing</li>
 			<li>Wings</li>
 		</exclusionTags>
-		<graphicData>
-			<drawLoc>Tailbone</drawLoc>
-		</graphicData>
 	</GeneDef>
 	<GeneDef ParentName="RS_GeneWingBase">
 		<defName>RS_Wing_Batlike</defName>
@@ -301,13 +335,30 @@
 		</statOffsets>
 		<biostatCpx>2</biostatCpx>
 		<biostatMet>-2</biostatMet>
-		<graphicData>
-			<graphicPath>Things/Pawn/Humanlike/BodyAttachments/DemonicWing/DemonicWing</graphicPath>
-			<colorType>Skin</colorType>
-			<drawOffsetNorth>(0,0.2,-0.1)</drawOffsetNorth>
-			<drawOffsetSouth>(0,-0.2,0)</drawOffsetSouth>
-			<drawOffsetEast>(0,0.3,0)</drawOffsetEast>
-		</graphicData>
+		<renderNodeProperties>
+			<li>
+				<workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+				<parentTagDef>Body</parentTagDef>
+				<texPath>Things/Pawn/Humanlike/BodyAttachments/DemonicWing/DemonicWing</texPath>
+				<colorType>Skin</colorType>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<drawData>
+					<defaultData>
+						<layer>10</layer>
+					</defaultData>
+					<dataNorth>
+						<layer>80</layer>
+						<offset>(0,0.2,-0.1)</offset>
+					</dataNorth>
+					<dataSouth>
+						<offset>(0,-0.2,0)</offset>
+					</dataSouth>
+					<dataEast>
+						<offset>(0,0.3,0)</offset>
+					</dataEast>
+				</drawData>
+			</li>
+		</renderNodeProperties>
 	</GeneDef>
 	<!-- ================ Tails ================ -->
 	<GeneDef ParentName="GeneTailBase">
@@ -328,13 +379,35 @@
 		</statOffsets>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-1</biostatMet>
-		<graphicData>
-			<graphicPath>Things/Pawn/Humanlike/BodyAttachments/DemonicTail/DemonicTail</graphicPath>
-			<colorType>Skin</colorType>
-			<drawOffsetNorth>(0.1, 0.2, -0.45)</drawOffsetNorth>
-			<drawOffsetSouth>(-0.1, -0.1, -0.25)</drawOffsetSouth>
-			<drawOffsetEast>(-0.5, -0.1, -0.15)</drawOffsetEast>
-		</graphicData>
+		<renderNodeProperties>
+			<li>
+				<workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+				<texPath>Things/Pawn/Humanlike/BodyAttachments/DemonicTail/DemonicTail</texPath>
+				<colorType>Skin</colorType>
+				<overrideMeshSize>(1, 1)</overrideMeshSize>
+				<parentTagDef>Body</parentTagDef>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<drawData>
+					<scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+					<defaultData>
+						<layer>-2</layer>
+					</defaultData>
+					<dataNorth>
+						<offset>(0.1, 0, -0.45)</offset>
+						<layer>90</layer>
+					</dataNorth>
+					<dataSouth>
+						<offset>(-0.1, 0, -0.25)</offset>
+					</dataSouth>
+					<dataEast>
+						<offset>(-0.5, 0, -0.15)</offset>
+					</dataEast>
+					<dataWest>
+						<offset>(0.5, 0, -0.15)</offset>
+					</dataWest>
+				</drawData>
+			</li>
+		</renderNodeProperties>
 	</GeneDef>
 	<!-- ================ Eyes ================ -->
 	<GeneDef ParentName="GeneEyeColor">
@@ -344,10 +417,41 @@
 		<description>Carriers of this gene have pink-pigmented eyes.</description>
 		<iconPath>UI/Icons/Genes/Gene_PinkEyes</iconPath>
 		<displayOrderInCategory>0</displayOrderInCategory>
-		<graphicData>
-			<drawScale>0.28</drawScale>
-			<graphicPath>Things/Pawn/Humanlike/HeadAttachments/PinkEyes/Male/PinkEyes_Male</graphicPath>
-			<graphicPathFemale>Things/Pawn/Humanlike/HeadAttachments/PinkEyes/Female/PinkEyes_Female</graphicPathFemale>
-		</graphicData>
+		<renderNodeProperties>
+			<li Class="PawnRenderNodeProperties_Eye">
+				<texPath>Things/Pawn/Humanlike/HeadAttachments/PinkEyes/Male/PinkEyes_Male</texPath>
+				<texPathFemale>Things/Pawn/Humanlike/HeadAttachments/PinkEyes/Female/PinkEyes_Female</texPathFemale>
+				<anchorTag>RightEye</anchorTag>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>0.28</drawSize>
+				<side>Right</side>
+				<drawData>
+					<defaultData>
+						<layer>54</layer>
+						<offset>(0, 0, -0.25)</offset>
+					</defaultData>
+				</drawData>
+			</li>
+			<li Class="PawnRenderNodeProperties_Eye">
+				<texPath>Things/Pawn/Humanlike/HeadAttachments/PinkEyes/Male/PinkEyes_Male</texPath>
+				<texPathFemale>Things/Pawn/Humanlike/HeadAttachments/PinkEyes/Female/PinkEyes_Female</texPathFemale>
+				<anchorTag>LeftEye</anchorTag>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>0.28</drawSize>
+				<side>Left</side>
+				<drawData>
+					<defaultData>
+						<layer>54</layer>
+						<offset>(0, 0, -0.25)</offset>
+						<flip>true</flip>
+					</defaultData>
+					<dataWest>
+						<flip>false</flip>
+					</dataWest>
+				</drawData>
+			</li>
+		</renderNodeProperties>
 	</GeneDef>
 </Defs>

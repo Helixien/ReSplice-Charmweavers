@@ -10,7 +10,7 @@ namespace ReSpliceCharmweavers
     {
         public static void Postfix(CompAbilityEffect_ReimplantXenogerm __instance, Pawn implanter, Pawn implantee, ref bool __result)
         {
-            if (!IdeoUtility.DoerWillingToDo(RS_DefOf.RS_PropagateLovehexerGene, implantee) && implanter.genes.Xenogenes.Any((Gene x) => x.def == RS_DefOf.RS_PsychicEnthralling))
+            if (!IdeoUtility.DoerWillingToDo(RS_DefOf.RS_PropagateLovehexerGene, implantee) && implanter.genes.Xenogenes.Any((Gene x) => x.def == RS_DefOf.RS_Lovehexer))
             {
                 __result = false;
             }

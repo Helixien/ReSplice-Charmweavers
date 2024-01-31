@@ -17,7 +17,7 @@ namespace ReSpliceCharmweavers
         public static GeneDef RS_Beauty_Angelic;
         public static GeneDef RS_Libido_None;
         public static GeneDef RS_LoveFeed;
-        public static GeneDef RS_PsychicEnthralling;
+        public static GeneDef RS_Lovehexer;
         [MayRequire("vanillaracesexpanded.sanguophage")] public static GeneDef VRE_SanguoFeeder;
         public static GeneDef RS_MultiPregnancy;
         public static GeneDef RS_TemperatureInsensitive;
