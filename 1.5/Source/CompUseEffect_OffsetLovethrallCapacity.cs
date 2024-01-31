@@ -27,14 +27,13 @@ namespace ReSpliceCharmweavers
             }
         }
 
-        public override bool CanBeUsedBy(Pawn p, out string failReason)
+        public override AcceptanceReport CanBeUsedBy(Pawn p)
         {
             if (p.genes?.GetFirstGeneOfType<Gene_PsychicEnthralling>() == null)
             {
-                failReason = "RS.CannotLovethrall".Translate();
-                return false;
+                return "RS.CannotLovethrall".Translate();
             }
-            return base.CanBeUsedBy(p, out failReason);
+            return base.CanBeUsedBy(p);
         }
 
         public override IEnumerable<StatDrawEntry> SpecialDisplayStats()
