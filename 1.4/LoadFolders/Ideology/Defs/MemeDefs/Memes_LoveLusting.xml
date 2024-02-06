@@ -4,7 +4,7 @@
 		<defName>RS_LoveLusting</defName>
 		<label>lovelusting</label>
 		<description>The pleasure of the flesh is the greatest gift given to humanity.</description>
-		<iconPath>UI/Memes/MemeLoveLusting</iconPath>
+		<iconPath>UI/Meme/MemeLoveLusting</iconPath>
 		<groupDef>Misc</groupDef>
 		<impact>3</impact>
 		<requireOne>
