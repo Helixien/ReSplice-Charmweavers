@@ -27,7 +27,7 @@
 		</questNameRules>
 		<questDescriptionRules>
 			<rulesStrings>
-				<li>questDescription->[asker_nameFull], [asker_titleIndef] of [asker_factionName] contacts you with a special offer. [asker_pronoun] recently managed to capture a charmweaver in an attempt to sell it later, but [asker_pronoun] now needs to get rid of it as it causes problems in [asker_noun] faction. If you accept, [asker_nameDef] will send the charmweaver to you by transport pod. [asker_pronoun] refuses to answer any questions about the charmweaver and pushes for an answer to [asker_noun] offer.\n\n[charmweaverInfo]</li>
+				<li>questDescription->[asker_nameFull], [asker_titleIndef] of [asker_factionName] contacts you with a special offer. [asker_pronoun] recently managed to capture a charmweaver in an attempt to sell it later, but [asker_pronoun] now needs to get rid of it as it causes problems in [asker_possesive] faction. If you accept, [asker_nameDef] will send the charmweaver to you by transport pod. [asker_pronoun] refuses to answer any questions about the charmweaver and pushes for an answer to [asker_possesive] offer.\n\n[charmweaverInfo]</li>
 				<li>charmweaverInfo->(*Gray)About charmweaver: Charmweavers are ageless super-humans powered by archotech-created archites in the bloodstream. They are inhumanly beautiful and extremely manipulative. They can seduce any pawn they want to turn them into a loyal thrall. Furthermore, they are unaffected by temperature and heal quickly from any wounds. The price is that charmweavers must consume hemogen derived from human blood to survive, and can easily get pregnant, as well as carry multiple pregnancies at the same time. They're easily killed in combat by any means.(/Gray)</li>
 			</rulesStrings>
 		</questDescriptionRules>

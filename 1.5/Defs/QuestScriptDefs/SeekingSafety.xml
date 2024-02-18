@@ -28,7 +28,7 @@
 		</questNameRules>
 		<questDescriptionRules>
 			<rulesStrings>
-				<li>questDescription->A charmweaver named [joiner_nameDef] is looking for a safe place to lie low and hide from a group of zealots who destroyed [joiner_possessive] coven. If you accept, [joiner_nameDef] will join your colony, but there is a small chance the zealots hunting [joiner_noun] will attack your colony. You may betray the charmweaver and attack [joiner_objective].\n\n[charmweaverInfo]</li>
+				<li>questDescription->A charmweaver named [joiner_nameDef] is looking for a safe place to lie low and hide from a group of zealots who destroyed [joiner_possessive] coven. If you accept, [joiner_nameDef] will join your colony, but there is a small chance the zealots hunting [joiner_possessive] will attack your colony. You may betray the charmweaver and attack [joiner_objective].\n\n[charmweaverInfo]</li>
 				<li>charmweaverInfo->(*Gray)About charmweaver: Charmweavers are ageless super-humans powered by archotech-created archites in the bloodstream. They are inhumanly beautiful and extremely manipulative. They can seduce any pawn they want to turn them into a loyal thrall. Furthermore, they are unaffected by temperature and heal quickly from any wounds. The price is that charmweavers must consume hemogen derived from human blood to survive, and can easily get pregnant, as well as carry multiple pregnancies at the same time. They're easily killed in combat by any means.(/Gray)</li>
 			</rulesStrings>
 		</questDescriptionRules>

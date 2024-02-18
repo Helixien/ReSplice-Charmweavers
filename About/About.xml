@@ -9,7 +9,7 @@ Inspired by the well known Succubus (and Incubus), Charmweavers are a new archit
 Charmweavers are a relatively simple xenotype. They should work fine in whatever load order you have and be a nice addition, if not for the xenotype itself, then for the genes they add.
 
 ReSplice is designed to be as lightweight as possible, adding the minimum of new code required for its additions to work.</description>
-	<modVersion>1.1-Lurelings-rev3</modVersion>
+	<modVersion>1.1-Lurelings-rev4</modVersion>
 	<supportedVersions>
 		<li>1.4</li>
 		<li>1.5</li>
