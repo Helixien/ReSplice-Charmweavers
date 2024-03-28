@@ -9,13 +9,13 @@ Inspired by the well known Succubus (and Incubus), Charmweavers are a new archit
 Charmweavers are a relatively simple xenotype. They should work fine in whatever load order you have and be a nice addition, if not for the xenotype itself, then for the genes they add.
 
 ReSplice is designed to be as lightweight as possible, adding the minimum of new code required for its additions to work.</description>
-	<modVersion>1.1-Lurelings-rev4</modVersion>
 	<supportedVersions>
 		<li>1.4</li>
 		<li>1.5</li>
 	</supportedVersions>
 	<packageId>ReSplice.XOTR.Charmweavers</packageId>
 	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=3131996691</url>
+	<modVersion IgnoreIfNoMatchingField="True">1.1-Lurelings-rev4</modVersion>
 	<modDependencies>
 		<li>
 			<packageId>Ludeon.RimWorld.Biotech</packageId>
@@ -29,9 +29,7 @@ ReSplice is designed to be as lightweight as possible, adding the minimum of new
 			<downloadUrl>https://github.com/Vanilla-Expanded/VanillaExpandedFramework</downloadUrl>
 		</li>
 	</modDependencies>
-	<loadAfter>
-		<li>brrainz.harmony</li>
-		<li>Ludeon.RimWorld</li>
+	<forceLoadAfter>
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
-	</loadAfter>
+	</forceLoadAfter>
 </ModMetaData>
