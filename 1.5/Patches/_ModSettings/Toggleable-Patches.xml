@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-<!--	<!{1}** ================================ Toggle Hotspring Motes ====================== **{1}>
+<!--	<!{1}** ================================ Sovereign Mode ====================== **{1}>
 	<Operation Class="ModSettingsFramework.PatchOperationModOption" MayRequire="vanillaracesexpanded.highmate">
 		<defaultValue>False</defaultValue>
-		<label>Charmweavers have lovin' dependency (Requires VRE - Highmates)</label>
-		<tooltip/>
+		<label>Enable Sovereign Mode</label>
+		<tooltip>Enabling this will make the charmweaver quests happen sooner and more often than intentend.</tooltip>
 		<id>RS_CharmweaverLovinDependency</id>
 		<category>RS_Core</category>
 		<order>10</order>
