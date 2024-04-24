@@ -298,7 +298,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="VFECore">
-      <HintPath>..\..\..\..\..\..\..\..\..\Users\Vova\Downloads\VFECore.dll</HintPath>
+      <HintPath>..\..\..\VanillaExpandedFramework\1.5\Assemblies\VFECore.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

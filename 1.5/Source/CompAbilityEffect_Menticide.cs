@@ -56,11 +56,11 @@ namespace ReSpliceCharmweavers
                     QuestUtility.SendQuestTargetSignals(target.Pawn.Faction.questTags, "FactionMemberArrested", target.Pawn.Faction.Named("FACTION"));
                 }
                 target.Pawn.GetLord()?.Notify_PawnAttemptArrested(target.Pawn);
+                target.Pawn.guest.SetGuestStatus(null);
                 if (target.Pawn.Faction != this.parent.pawn.Faction)
                 {
                     target.Pawn.SetFaction(this.parent.pawn.Faction, this.parent.pawn);
                 }
-                target.Pawn.guest.SetGuestStatus(null);
                 foreach (var quest in Find.QuestManager.QuestsListForReading.SelectMany(x => x.PartsListForReading.OfType<QuestPart_ExtraFaction>()))
                 {
                     quest.affectedPawns.Remove(target.Pawn);
