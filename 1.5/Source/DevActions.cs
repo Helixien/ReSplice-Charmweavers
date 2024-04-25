@@ -21,5 +21,15 @@ namespace ReSpliceCharmweavers
                 }
             }
         }
+
+        [DebugAction("Pawns", "Set pregnancy at 99%", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        public static void SetPregnancyAt99(Pawn p)
+        {
+            var pregnancy = p.health.hediffSet.hediffs.FirstOrDefault(x => x.def == HediffDefOf.PregnantHuman && x.Severity < 0.99f);
+            if (pregnancy != null)
+            {
+                pregnancy.Severity = 0.99f;
+            }
+        }
     }
 }
