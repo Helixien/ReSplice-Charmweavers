@@ -22,6 +22,7 @@
 				<canTargetMechs>false</canTargetMechs>
 				<canTargetAnimals>false</canTargetAnimals>
 			</targetParams>
+			<violent>false</violent>
 		</verbProperties>
 		<comps>
 			<li Class="CompProperties_AbilityHemogenCost">

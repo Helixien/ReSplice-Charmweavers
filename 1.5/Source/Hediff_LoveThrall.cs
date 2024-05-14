@@ -12,6 +12,16 @@ namespace ReSpliceCharmweavers
         public Faction previousFaction;
         public bool gainedGayTrait;
         public override bool ShouldRemove => master.DestroyedOrNull() || master.Dead;
+
+        public override void CopyFrom(Hediff other)
+        {
+            base.CopyFrom(other);
+            var otherHediff = other as Hediff_LoveThrall;
+            master = otherHediff.master;
+            previousFaction = otherHediff.previousFaction;
+            gainedGayTrait = otherHediff.gainedGayTrait;
+        }
+
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
@@ -28,15 +38,19 @@ namespace ReSpliceCharmweavers
             if (LovePartnerRelationUtility.LovePartnerRelationExists(master, pawn) is false)
             {
                 master.relations.AddDirectRelation(PawnRelationDefOf.Lover, pawn);
-                pawn.relations.AddDirectRelation(PawnRelationDefOf.Lover, master);
             }
 
+            if (master.Map != null)
+            {
+                FleckMaker.Static(master.Position, master.Map, FleckDefOf.PsycastAreaEffect, 1.5f);
+            }
 
-            FleckMaker.Static(master.Position, master.Map, FleckDefOf.PsycastAreaEffect, 1.5f);
-            FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.PsycastAreaEffect, 1.5f);
-
-            Find.LetterStack.ReceiveLetter("RS.NewThrall".Translate(pawn.Named("PAWN")), "RS.NewThrallDesc".Translate(master.Named("CASTER"), pawn.Named("TARGET")),
-                LetterDefOf.NeutralEvent, pawn);
+            if (pawn.Map != null && PawnUtility.ShouldSendNotificationAbout(pawn))
+            {
+                FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.PsycastAreaEffect, 1.5f);
+                Find.LetterStack.ReceiveLetter("RS.NewThrall".Translate(pawn.Named("PAWN")), "RS.NewThrallDesc".Translate(master.Named("CASTER"), pawn.Named("TARGET")),
+                   LetterDefOf.NeutralEvent, pawn);
+            }
 
             if (master.genes.HasGene(RS_DefOf.RS_LoveFeed))
             {
