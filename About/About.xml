@@ -15,7 +15,7 @@ ReSplice is designed to be as lightweight as possible, adding the minimum of new
 	</supportedVersions>
 	<packageId>ReSplice.XOTR.Charmweavers</packageId>
 	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=3131996691</url>
-	<modVersion IgnoreIfNoMatchingField="True">1.1-Lurelings-rev4</modVersion>
+	<modVersion IgnoreIfNoMatchingField="True">1.1-Lurelings-rev5</modVersion>
 	<modDependencies>
 		<li>
 			<packageId>Ludeon.RimWorld.Biotech</packageId>
