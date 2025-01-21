@@ -8,9 +8,8 @@ namespace ReSpliceCharmweavers
     [HarmonyPatch]
     public static class VRE_Highmate_RJW_patch
     {
-        public static MethodBase rjw_FinalizeThought;
-        public static bool Prepare() => ModsConfig.IsActive("rim.job.world") && ModsConfig.IsActive("vanillaracesexpanded.highmate");
-        public static MethodBase TargetMethod() => rjw_FinalizeThought ??= AccessTools.Method("rjw.AfterSexUtility:FinalizeThought");
+        public static bool Prepare() => RJW_patch.Prepare() && ModsConfig.IsActive("vanillaracesexpanded.highmate");
+        public static MethodBase TargetMethod() => RJW_patch.TargetMethod();
 
         public static void Postfix(ThoughtDef thoughtgain, Pawn pawn)
         {

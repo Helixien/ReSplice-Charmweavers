@@ -37,6 +37,10 @@
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="RJW">
+      <HintPath>..\..\..\rjw-master\1.5\Assemblies\RJW.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -323,6 +327,7 @@
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_AddHediff_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_RelationsTracker_Notify_PawnSold_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_RelationsTracker_SecondaryLovinChanceFactor_Patch.cs" />
+    <Compile Include="HarmonyPatches\RJW_patch.cs" />
     <Compile Include="HarmonyPatches\VRE_Highmate_RJW_patch.cs" />
     <Compile Include="HarmonyPatches\Xenogerm_PawnIdeoDisallowsImplanting_Patch.cs" />
     <Compile Include="Precepts\ThoughtWorker_Precept_IsThrall_Social.cs" />
