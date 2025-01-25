@@ -2,7 +2,7 @@
 <Defs>
 	<AbilityDef>
 		<defName>RS_PsychicEnthralling</defName>
-		<label>PsychicEnthralling</label>
+		<label>Psychic enthralling</label>
 		<description>Psychically enthral the target, turning them into a willing and loyal servant, as well as lover to the caster. This bond can only be broken by death and is otherwise permanent.</description>
 		<iconPath>UI/Abilities/PsychicalEnthralling</iconPath>
 		<cooldownTicksRange>60000</cooldownTicksRange>
@@ -11,6 +11,7 @@
 		<aiCanUse>true</aiCanUse>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<range>15</range>

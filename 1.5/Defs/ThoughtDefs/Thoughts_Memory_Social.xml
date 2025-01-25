@@ -96,7 +96,7 @@
 		<stages>
 			<li>
 				<label>No thrall</label>
-				<description>I don't have any thrall!</description>
+				<description>I don't have any thralls!</description>
 				<baseMoodEffect>-10</baseMoodEffect>
 			</li>
 			<li>

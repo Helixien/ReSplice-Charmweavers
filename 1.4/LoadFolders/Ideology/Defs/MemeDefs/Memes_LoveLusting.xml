@@ -9,9 +9,6 @@
 		<impact>3</impact>
 		<requireOne>
 			<li>
-				<li>RS_Marriage_Abhorrent</li>
-			</li>
-			<li>
 				<li>RS_Divorce_Acceptable</li>
 			</li>
 			<li>

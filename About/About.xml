@@ -19,7 +19,7 @@ ReSplice is designed to be as lightweight as possible, adding the minimum of new
 	<modDependencies>
 		<li>
 			<packageId>Ludeon.RimWorld.Biotech</packageId>
-			<displayName>Boitech</displayName>
+			<displayName>Biotech</displayName>
 			<steamWorkshopUrl/>
 		</li>
 		<li>
@@ -29,7 +29,8 @@ ReSplice is designed to be as lightweight as possible, adding the minimum of new
 			<downloadUrl>https://github.com/Vanilla-Expanded/VanillaExpandedFramework</downloadUrl>
 		</li>
 	</modDependencies>
-	<forceLoadAfter>
+	<loadAfter>
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
-	</forceLoadAfter>
+		<li>ReSplice.XOTR.Core</li>
+	</loadAfter>
 </ModMetaData>
