@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================ Archnite Genes ================ -->
+	<GeneDef>
+		<defName>RS_Matrianic</defName>
+		<label>matrianic</label>
+		<description>Carriers of this gene are extremely likely to have offspring that are the same sex as them.</description>
+		<iconPath>UI/Icons/Genes/Gene_Matrianic</iconPath>
+		<displayCategory>Archite</displayCategory>
+		<biostatMet>0</biostatMet>
+		<biostatCpx>2</biostatCpx>
+		<biostatArc>1</biostatArc>
+	</GeneDef>
+	<GeneDef>
+		<defName>RS_MultiPregnancy</defName>
+		<label>multi-pregnancy</label>
+		<description>Carriers of this gene have archites in their womb that allows them to have multiple pregnancies in different stages at the same time.</description>
+		<iconPath>UI/Icons/Genes/Gene_MultiPregnancy</iconPath>
+		<geneClass>VEF.Genes.GeneGendered</geneClass>
+		<displayCategory>Archite</displayCategory>
+		<biostatMet>0</biostatMet>
+		<biostatCpx>4</biostatCpx>
+		<biostatArc>1</biostatArc>
+		<modExtensions>
+			<li Class="VEF.Genes.GeneExtension">
+				<forGenderOnly>Female</forGenderOnly>
+			</li>
+		</modExtensions>
+	</GeneDef>
+	<GeneDef>
+		<defName>RS_TemperatureInsensitive</defName>
+		<label>temperature insensitive</label>
+		<description>Carriers of this gene have archites in the outer layer of their skin which continuously adapt it to the climate around them. They are comfortable even in extremely cold and hot temperatures.</description>
+		<iconPath>UI/Icons/Genes/Gene_TemperatureInsensitive</iconPath>
+		<displayCategory>Archite</displayCategory>
+		<biostatMet>0</biostatMet>
+		<biostatCpx>6</biostatCpx>
+		<biostatArc>1</biostatArc>
+		<statOffsets>
+			<ComfyTemperatureMax>1000</ComfyTemperatureMax>
+			<ComfyTemperatureMin>-270</ComfyTemperatureMin>
+		</statOffsets>
+		<symbolPack>
+			<prefixSymbols>
+				<li>
+					<symbol>insensitive</symbol>
+				</li>
+			</prefixSymbols>
+		</symbolPack>
+		<exclusionTags>
+			<li>MinTemperature</li>
+		</exclusionTags>
+	</GeneDef>
+	<!-- ================ Libido ================ -->
+	<GeneDef ParentName="LibidoBase">
+		<defName>RS_Libido_Extreme</defName>
+		<label>insatiable libido</label>
+		<description>Carriers of this gene are obsessed with lovin' and are extremely likely to engage in lovin' with their partner.</description>
+		<iconPath>UI/Icons/Genes/Gene_InsatiableLibido</iconPath>
+		<customEffectDescriptions>
+			<li>Extremely increases the chance of lovin'.</li>
+		</customEffectDescriptions>
+		<displayOrderInCategory>20</displayOrderInCategory>
+		<lovinMTBFactor>0.1</lovinMTBFactor>
+		<biostatMet>-3</biostatMet>
+		<biostatCpx>1</biostatCpx>
+		<forcedTraits>
+			<li>
+				<def>Bisexual</def>
+			</li>
+		</forcedTraits>
+		<abilities>
+			<li MayRequire="vanillaracesexpanded.highmate">VRE_InitiateLovin</li>
+		</abilities>
+	</GeneDef>
+	<GeneDef ParentName="LibidoBase">
+		<defName>RS_Libido_None</defName>
+		<label>no libido</label>
+		<description>Carriers of this gene have no interest in lovin' and will never engage in lovin' with their partner or anyone else.</description>
+		<iconPath>UI/Icons/Genes/Gene_NoLibido</iconPath>
+		<customEffectDescriptions>
+			<li>No chance of lovin'.</li>
+		</customEffectDescriptions>
+		<forcedTraits>
+			<li>
+				<def>Asexual</def>
+			</li>
+		</forcedTraits>
+		<biostatMet>2</biostatMet>
+		<biostatCpx>1</biostatCpx>
+	</GeneDef>
+	<!-- ================ Beauty ================ -->
+	<GeneDef ParentName="GeneBeautyBase">
+		<defName>RS_Beauty_Angelic</defName>
+		<label>extremely attractive</label>
+		<description>Carriers of this gene are inhumanly perfect in every way. Their features, skin and physique mirror those of the divine beings of old religions and tales.They are universally seen as angelic and considered irresistible.</description>
+		<iconPath>UI/Icons/Genes/Gene_Extremely attractive</iconPath>
+		<displayOrderInCategory>30</displayOrderInCategory>
+		<statOffsets>
+			<PawnBeauty>3</PawnBeauty>
+		</statOffsets>
+		<biostatMet>-3</biostatMet>
+		<biostatCpx>1</biostatCpx>
+		<symbolPack>
+			<prefixSymbols>
+				<li>
+					<symbol>angelic</symbol>
+				</li>
+				<li>
+					<symbol>ethereal</symbol>
+				</li>
+				<li>
+					<symbol>inhuman</symbol>
+				</li>
+				<li>
+					<symbol>perfect</symbol>
+				</li>
+				<li>
+					<symbol>stunning</symbol>
+				</li>
+				<li>
+					<symbol>breathtaking</symbol>
+				</li>
+				<li>
+					<symbol>smooth</symbol>
+				</li>
+			</prefixSymbols>
+		</symbolPack>
+	</GeneDef>
+	<!-- ================ Other ================ -->
+	<GeneDef>
+		<defName>RS_Naturalist</defName>
+		<label>naturalist</label>
+		<description>Carriers of this gene prefer to not cover their skin with clothing or armour.</description>
+		<iconPath>UI/Icons/Genes/Gene_Naturalist</iconPath>
+		<forcedTraits>
+			<li>
+				<def>Nudist</def>
+			</li>
+		</forcedTraits>
+		<biostatMet>1</biostatMet>
+		<biostatCpx>1</biostatCpx>
+	</GeneDef>
+	<!-- ================ Hemogenic ================ -->
+	<GeneDef>
+		<defName>RS_LoveFeed</defName>
+		<label>love feed</label>
+		<labelShortAdj>draining</labelShortAdj>
+		<description>Carriers of this gene have special glands in their mouth that allows them to feed more effectively while they are engaged in lovin’ with another person.</description>
+		<resourceLabel>hemogen</resourceLabel>
+		<geneClass>Gene_HemogenDrain</geneClass>
+		<iconPath>UI/Icons/Genes/Gene_Lovefeed</iconPath>
+		<prerequisite>Hemogenic</prerequisite>
+		<resourceLossPerDay>0.04</resourceLossPerDay>
+		<displayCategory>Hemogen</displayCategory>
+		<displayOrderInCategory>-1</displayOrderInCategory>
+		<minAgeActive>14</minAgeActive>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>-2</biostatMet>
+	</GeneDef>
+	<GeneDef>
+		<defName>RS_Lovehexer</defName>
+		<label>lovehexer</label>
+		<description>Carriers of this gene have a special neural organ that makes them able to psychically enthral people for life. The enthralled person will be unable to resist or act against the carrier and fall into an addiction-like state with them. If they are physically separated, the enthralled person will fall into a berserk state, attacking anything and anyone around them.</description>
+		<iconPath>UI/Icons/Genes/Gene_PsychicalEnthralling</iconPath>
+		<geneClass>ReSpliceCharmweavers.Gene_PsychicEnthralling</geneClass>
+		<prerequisite>Hemogenic</prerequisite>
+		<displayCategory>Hemogen</displayCategory>
+		<deathHistoryEvent>RS_LovehexerDied</deathHistoryEvent>
+		<abilities>
+			<li>RS_PsychicEnthralling</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>RS_PsychicEnthralling</AbilityDef>
+		</descriptionHyperlinks>
+		<biostatMet>-3</biostatMet>
+		<biostatCpx>2</biostatCpx>
+	</GeneDef>
+	<!-- ================ Cosmetic Genes ================ -->
+	<!-- ================ Skins ================ -->
+	<GeneDef ParentName="GeneSkinColorOverride">
+		<defName>RS_Skin_PaleGreen</defName>
+		<label>pale green skin</label>
+		<labelShortAdj>green</labelShortAdj>
+		<description>Carriers of this gene produce a pigment that gives their skin a green color.</description>
+		<skinColorOverride>(163,212,135)</skinColorOverride>
+		<displayOrderInCategory>0</displayOrderInCategory>
+		<symbolPack>
+			<wholeNameSymbols>
+				<li>
+					<symbol>greenskin</symbol>
+				</li>
+			</wholeNameSymbols>
+			<prefixSymbols>
+				<li>
+					<symbol>green</symbol>
+				</li>
+				<li>
+					<symbol>lime</symbol>
+				</li>
+				<li>
+					<symbol>jade</symbol>
+				</li>
+				<li>
+					<symbol>apple</symbol>
+				</li>
+			</prefixSymbols>
+		</symbolPack>
+	</GeneDef>
+	<!-- ================ Horns ================ -->
+	<GeneDef ParentName="GeneHeadboneBase" Name="RS_HornsBase" Abstract="True">
+		<symbolPack>
+			<prefixSymbols>
+				<li>
+					<symbol>horn</symbol>
+				</li>
+				<li>
+					<symbol>devil</symbol>
+				</li>
+				<li>
+					<symbol>demon</symbol>
+				</li>
+				<li>
+					<symbol>luci</symbol>
+				</li>
+				<li>
+					<symbol>beelze</symbol>
+				</li>
+				<li>
+					<symbol>hell</symbol>
+				</li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>horn</symbol>
+				</li>
+				<li>
+					<symbol>vil</symbol>
+				</li>
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+	<GeneDef ParentName="RS_HornsBase">
+		<defName>RS_Headbone_RamHorns</defName>
+		<label>ram-horns</label>
+		<description>Carriers of this gene grow two ram-like horns protruding from the forehead.</description>
+		<iconPath>UI/Icons/Genes/Gene_RamHorns</iconPath>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<color>(255, 255, 255)</color>
+				<texPath>Things/Pawn/Humanlike/HeadAttachments/RamHorns/RamHorns</texPath>
+				<drawData>
+					<defaultData>
+						<layer>80</layer>
+					</defaultData>
+					<dataNorth>
+						<layer>10</layer>
+					</dataNorth>
+				</drawData>
+				<parentTagDef>Head</parentTagDef>
+			</li>
+		</renderNodeProperties>
+	</GeneDef>
+	<GeneDef ParentName="RS_HornsBase">
+		<defName>RS_Headbone_MediumHorns</defName>
+		<label>medium-horns</label>
+		<description>Carriers of this gene grow two sizable horns protruding from the forehead.</description>
+		<iconPath>UI/Icons/Genes/Gene_MediumHorns</iconPath>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<color>(255, 255, 255)</color>
+				<texPath>Things/Pawn/Humanlike/HeadAttachments/DemonHorns/DemonHorns</texPath>
+				<drawData>
+					<defaultData>
+						<layer>80</layer>
+					</defaultData>
+					<dataNorth>
+						<layer>10</layer>
+					</dataNorth>
+				</drawData>
+				<parentTagDef>Head</parentTagDef>
+			</li>
+		</renderNodeProperties>
+	</GeneDef>
+	<GeneDef ParentName="RS_HornsBase">
+		<defName>RS_Headbone_LargeHorns</defName>
+		<label>large-horns</label>
+		<description>Carriers of this gene grow two large horns protruding from the forehead.</description>
+		<iconPath>UI/Icons/Genes/Gene_LargeHorns</iconPath>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<color>(255, 255, 255)</color>
+				<texPath>Things/Pawn/Humanlike/HeadAttachments/DevilHorns/DevilHorns</texPath>
+				<drawData>
+					<defaultData>
+						<layer>80</layer>
+					</defaultData>
+					<dataNorth>
+						<layer>10</layer>
+					</dataNorth>
+				</drawData>
+				<parentTagDef>Head</parentTagDef>
+			</li>
+		</renderNodeProperties>
+	</GeneDef>
+	<!-- ================ Wings ================ -->
+	<GeneDef Name="RS_GeneWingBase" Abstract="True">
+		<displayCategory>Miscellaneous</displayCategory>
+		<exclusionTags>
+			<li>Wing</li>
+			<li>Wings</li>
+		</exclusionTags>
+	</GeneDef>
+	<GeneDef ParentName="RS_GeneWingBase">
+		<defName>RS_Wing_Batlike</defName>
+		<label>bat-wings</label>
+		<description>Carriers of this gene have a pair of bat-like wings.”</description>
+		<iconPath>UI/Icons/Genes/Gene_BatWings</iconPath>
+		<iconColor>(0.75, 0.75, 0.75)</iconColor>
+		<displayOrderInCategory>1000</displayOrderInCategory>
+		<abilities>
+			<li>RS_WingJump</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>RS_WingJump</AbilityDef>
+		</descriptionHyperlinks>
+		<statOffsets>
+			<ComfyTemperatureMin>-5</ComfyTemperatureMin>
+		</statOffsets>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>-2</biostatMet>
+		<renderNodeProperties>
+			<li>
+				<workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+				<parentTagDef>Body</parentTagDef>
+				<texPath>Things/Pawn/Humanlike/BodyAttachments/DemonicWing/DemonicWing</texPath>
+				<colorType>Skin</colorType>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<drawData>
+					<defaultData>
+						<layer>10</layer>
+					</defaultData>
+					<dataNorth>
+						<layer>80</layer>
+						<offset>(0,0.2,-0.1)</offset>
+					</dataNorth>
+					<dataSouth>
+						<offset>(0,-0.2,0)</offset>
+					</dataSouth>
+					<dataEast>
+						<offset>(0,0.3,0)</offset>
+					</dataEast>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+	</GeneDef>
+	<!-- ================ Tails ================ -->
+	<GeneDef ParentName="GeneTailBase">
+		<defName>RS_Tail_Spiked</defName>
+		<label>spiked tail</label>
+		<description>Carriers of this gene have a sleek tail with a sharp bone-like spike at the end.</description>
+		<iconPath>UI/Icons/Genes/Gene_SpikedTail</iconPath>
+		<iconColor>(0.75, 0.75, 0.75)</iconColor>
+		<displayOrderInCategory>1000</displayOrderInCategory>
+		<capMods>
+			<li>
+				<capacity>Manipulation</capacity>
+				<offset>0.1</offset>
+			</li>
+		</capMods>
+		<statOffsets>
+			<ComfyTemperatureMin>-2</ComfyTemperatureMin>
+		</statOffsets>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+		<renderNodeProperties>
+			<li>
+				<workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+				<texPath>Things/Pawn/Humanlike/BodyAttachments/DemonicTail/DemonicTail</texPath>
+				<colorType>Skin</colorType>
+				<overrideMeshSize>(1, 1)</overrideMeshSize>
+				<parentTagDef>Body</parentTagDef>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<drawData>
+					<scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+					<defaultData>
+						<layer>-2</layer>
+					</defaultData>
+					<dataNorth>
+						<offset>(0.1, 0, -0.45)</offset>
+						<layer>90</layer>
+					</dataNorth>
+					<dataSouth>
+						<offset>(-0.1, 0, -0.25)</offset>
+					</dataSouth>
+					<dataEast>
+						<offset>(-0.5, 0, -0.15)</offset>
+					</dataEast>
+					<dataWest>
+						<offset>(0.5, 0, -0.15)</offset>
+					</dataWest>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+	</GeneDef>
+	<!-- ================ Eyes ================ -->
+	<GeneDef ParentName="GeneEyeColor">
+		<defName>RS_Eyes_Pink</defName>
+		<label>pink eyes</label>
+		<labelShortAdj>pink-eyed</labelShortAdj>
+		<description>Carriers of this gene have pink-pigmented eyes.</description>
+		<iconPath>UI/Icons/Genes/Gene_PinkEyes</iconPath>
+		<displayOrderInCategory>0</displayOrderInCategory>
+		<renderNodeProperties>
+			<li Class="PawnRenderNodeProperties_Eye">
+				<texPath>Things/Pawn/Humanlike/HeadAttachments/PinkEyes/Male/PinkEyes_Male</texPath>
+				<texPathFemale>Things/Pawn/Humanlike/HeadAttachments/PinkEyes/Female/PinkEyes_Female</texPathFemale>
+				<anchorTag>RightEye</anchorTag>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>0.2</drawSize>
+				<side>Right</side>
+				<drawData>
+					<defaultData>
+						<layer>54</layer>
+						<offset>(0, 0, -0.25)</offset>
+					</defaultData>
+				</drawData>
+			</li>
+			<li Class="PawnRenderNodeProperties_Eye">
+				<texPath>Things/Pawn/Humanlike/HeadAttachments/PinkEyes/Male/PinkEyes_Male</texPath>
+				<texPathFemale>Things/Pawn/Humanlike/HeadAttachments/PinkEyes/Female/PinkEyes_Female</texPathFemale>
+				<anchorTag>LeftEye</anchorTag>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>0.2</drawSize>
+				<side>Left</side>
+				<drawData>
+					<defaultData>
+						<layer>54</layer>
+						<offset>(0, 0, -0.25)</offset>
+						<flip>true</flip>
+					</defaultData>
+					<dataWest>
+						<flip>false</flip>
+					</dataWest>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+	</GeneDef>
+</Defs>

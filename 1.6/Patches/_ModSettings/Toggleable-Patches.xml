@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+<!--	<!{1}** ================================ Sovereign Mode ====================== **{1}>
+	<Operation Class="ModSettingsFramework.PatchOperationModOption" MayRequire="vanillaracesexpanded.highmate">
+		<defaultValue>False</defaultValue>
+		<label>Enable Sovereign Mode</label>
+		<tooltip>Enabling this will make the charmweaver quests happen sooner and more often than intentend.</tooltip>
+		<id>RS_CharmweaverLovinDependency</id>
+		<category>RS_Core</category>
+		<order>10</order>
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/XenotypeDef[defName = "RS_Charmweaver"]/genes</xpath>
+				<value>
+					<li>VRE_LovinDependency</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>-->
+</Patch>

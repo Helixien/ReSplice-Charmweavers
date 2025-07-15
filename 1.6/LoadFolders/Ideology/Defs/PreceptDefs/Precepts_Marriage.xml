@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ================================ Issues ====================== -->
+	<IssueDef>
+		<defName>RS_Issue_Marriage</defName>
+		<label>marriage</label>
+		<iconPath>UI/Issues/IssueMarriage</iconPath>
+	</IssueDef>
+	<!-- ================================ Precepts - Marriage - Abhorrent ====================== -->
+	<PreceptDef>
+		<defName>RS_Marriage_Abhorrent</defName>
+		<issue>RS_Issue_Marriage</issue>
+		<label>abhorrent</label>
+		<description>To commit to be with the same person forever is sinful.</description>
+		<impact>High</impact>
+		<requiredMemes>
+			<li>RS_LoveLusting</li>
+		</requiredMemes>
+		<displayOrderInIssue>30</displayOrderInIssue>
+		<displayOrderInImpact>700</displayOrderInImpact>
+		<comps>
+			<li Class="ReSpliceCharmweavers.PreceptComp_Divorce">
+				<thought>RS_Marriage_Abhorrent_IsMarried</thought>
+				<thoughtSocial>RS_Marriage_Abhorrent_IsMarried_Social</thoughtSocial>
+			</li>
+		</comps>
+	</PreceptDef>
+	<ThoughtDef>
+		<defName>RS_Marriage_Abhorrent_IsMarried</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>married to {0}</label>
+				<description>I am married to {0}, while I love them I know its sinful to be commited to them for life.</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>RS_Marriage_Abhorrent_IsMarried_Social</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>married</label>
+				<baseOpinionOffset>-35</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!-- ================================ Precepts - Marriage - Free ====================== -->
+	<PreceptDef>
+		<defName>RS_Marriage_Free</defName>
+		<issue>RS_Issue_Marriage</issue>
+		<label>free</label>
+		<description>Anyone may ask for their partners hand in marriage.</description>
+		<impact>Low</impact>
+		<displayOrderInIssue>0</displayOrderInIssue>
+		<displayOrderInImpact>-1000</displayOrderInImpact>
+		<defaultSelectionWeight>1</defaultSelectionWeight>
+	</PreceptDef>
+	<!-- ================================ Precepts - Divorce - Male ====================== -->
+	<PreceptDef>
+		<defName>RS_Marriage_MaleOnly</defName>
+		<issue>RS_Issue_Marriage</issue>
+		<label>only men</label>
+		<description>Men may ask for their partners hand in marriage.</description>
+		<impact>Medium</impact>
+		<displayOrderInIssue>50</displayOrderInIssue>
+		<displayOrderInImpact>-100</displayOrderInImpact>
+		<requiredMemes>
+			<li>MaleSupremacy</li>
+		</requiredMemes>
+		<conflictingMemes>
+			<li>FemaleSupremacy</li>
+		</conflictingMemes>
+	</PreceptDef>
+	<!-- ================================ Precepts - Divorce - Female ====================== -->
+	<PreceptDef>
+		<defName>RS_Marriage_FemaleOnly</defName>
+		<issue>RS_Issue_Marriage</issue>
+		<label>only women</label>
+		<description>Women may ask for their partners hand in marriage.</description>
+		<impact>Medium</impact>
+		<displayOrderInIssue>60</displayOrderInIssue>
+		<displayOrderInImpact>-100</displayOrderInImpact>
+		<requiredMemes>
+			<li>FemaleSupremacy</li>
+		</requiredMemes>
+		<conflictingMemes>
+			<li>MaleSupremacy</li>
+		</conflictingMemes>
+	</PreceptDef>
+</Defs>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThoughtDef>
+		<defName>RS_SoldMyThrall</defName>
+		<durationDays>2</durationDays>
+		<stackLimit>5</stackLimit>
+		<doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+		<stages>
+			<li>
+				<label>thrall sold</label>
+				<description>This colony sold my thrall into slavery. That's annoying!</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>RS_BrokenEnthrallment</defName>
+		<durationDays>9</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>Broken Enthrallment</label>
+				<description>I am finally free and able to think for myself again!</description>
+				<baseMoodEffect>30</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>RS_EnthralledPrisoner</defName>
+		<durationDays>3</durationDays>
+		<stackLimit>1</stackLimit>
+		<nullifyingTraits>
+			<li>Psychopath</li>
+		</nullifyingTraits>
+		<nullifyingGenes>
+			<li>RS_Lovehexer</li>
+		</nullifyingGenes>
+		<stages>
+			<li>
+				<label>Enthralled prisoner</label>
+				<description>I know it's more human than killing them, but it still feels wrong.</description>
+				<baseMoodEffect>-3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>
