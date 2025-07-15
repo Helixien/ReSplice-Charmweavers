@@ -9,7 +9,7 @@ namespace ReSpliceCharmweavers
     {
         public static void Postfix(ref float __result, Pawn initiator, Pawn recipient)
         {
-            if (initiator.HasPrecept(RS_DefOf.RS_Marriage_Abhorrent) || recipient.HasPrecept(RS_DefOf.RS_Marriage_Abhorrent))
+            if (initiator.HasPrecept(RS_DefOf.RS_Marriage_Abhorrent))
             {
                 __result = 0f;
             }

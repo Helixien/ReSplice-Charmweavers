@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using RimWorld.Planet;
 using RimWorld.QuestGen;
 using System;
@@ -18,7 +18,7 @@ namespace ReSpliceCharmweavers
             PawnGenerationRequest request = new PawnGenerationRequest(fixedGender: Rand.Chance(0.9f) ? Gender.Female 
                 : Gender.Male, kind: kindDef.GetValue(slate), forcedXenotype: RS_DefOf.RS_Charmweaver, 
                 forcedCustomXenotype: null, allowedXenotypes: null, forceBaselinerChance: 0f, 
-                developmentalStages: DevelopmentalStage.Adult);
+                developmentalStages: DevelopmentalStage.Adult, fixedBiologicalAge: Rand.Range(18, 30));
             Pawn pawn = PawnGenerator.GeneratePawn(request);
             Pawn asker = slate.Get<Pawn>("asker");
             if (pawn.gender == Gender.Female)
