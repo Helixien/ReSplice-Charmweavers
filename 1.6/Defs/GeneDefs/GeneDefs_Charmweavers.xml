@@ -166,7 +166,7 @@
 		<geneClass>ReSpliceCharmweavers.Gene_PsychicEnthralling</geneClass>
 		<prerequisite>Hemogenic</prerequisite>
 		<displayCategory>Hemogen</displayCategory>
-		<deathHistoryEvent>RS_LovehexerDied</deathHistoryEvent>
+		<deathHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">RS_LovehexerDied</deathHistoryEvent>
 		<abilities>
 			<li>RS_PsychicEnthralling</li>
 		</abilities>

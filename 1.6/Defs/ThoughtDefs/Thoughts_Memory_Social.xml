@@ -8,7 +8,7 @@
 		<stackLimit>300</stackLimit>
 		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
 		<nullifyingPrecepts>
-			<li>RS_Lovehexer_Revered</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology">RS_Lovehexer_Revered</li>
 		</nullifyingPrecepts>
 		<stages>
 			<li>
