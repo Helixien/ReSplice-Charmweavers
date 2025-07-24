@@ -13,7 +13,9 @@
 	<RS.MessageLovethrallCapacityChanged>{PAWN_nameDef}'s lovethrall capacity has increased from {OLD} to {NEW}.</RS.MessageLovethrallCapacityChanged>
 	<RS.LovethrallCapacity>lovethrall capacity</RS.LovethrallCapacity>
 	<RS.LovethrallCapacityDesc>text.todo.\n\nLovethrall capacity can be increased using lovethrall capacity serums. These serums can be purchased from traders.</RS.LovethrallCapacityDesc>
+	<!-- Unused in 1.6, still used in previous versions. -->
 	<RS.PsychicEnthrallment>Psychic Enthrallment</RS.PsychicEnthrallment>
+	<!-- Also unused in 1.6, still used in previous versions. -->
 	<RS.PsychicEnthrallmentDesc>Thrall number: {0}
 
 {PAWN_nameDef} can control up to {1} amount of love thralls.
@@ -21,4 +23,5 @@
 People with the psychic enthralling gene are able to manipulate others minds and turn them into willing and loyal servants. This is permanent until either the carrier of the gene, or the enthralled person dies.
 </RS.PsychicEnthrallmentDesc>
 	<RS.LoveThralls>Love Thralls</RS.LoveThralls>
+	<RS.LoveThrallsDesc>People with the psychic enthralling gene are able to manipulate others minds and turn them into willing and loyal servants. This is permanent until either the carrier of the gene, or the enthralled person dies.</RS.LoveThrallsDesc>
 </LanguageData>

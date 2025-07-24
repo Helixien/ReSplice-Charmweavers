@@ -76,6 +76,11 @@ namespace ReSpliceCharmweavers
                     p.needs.mood.thoughts.memories.TryGainMemory(RS_DefOf.RS_EnthralledPrisoner, target.Pawn);
                 }
             }
+
+            if (ModsConfig.IdeologyActive && target.Pawn.Ideo != parent.pawn.Ideo)
+            {
+                target.Pawn.ideo.SetIdeo(parent.pawn.Ideo);
+            }
         }
 
         public override bool Valid(LocalTargetInfo target, bool throwMessages = false)

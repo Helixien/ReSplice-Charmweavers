@@ -78,33 +78,40 @@ namespace ReSpliceCharmweavers
             {
                 return;
             }
-            recursionTrap = true;
-            if (previousFaction != null && pawn.Faction != previousFaction)
-            {
-                pawn.SetFaction(previousFaction);
-            }
-            var masterRelation = pawn.relations.GetDirectRelation(RS_DefOf.RS_Master, master);
-            if (masterRelation != null)
-            {
-                pawn.relations.RemoveDirectRelation(masterRelation);
-            }
-            var loverRelation = pawn.relations.GetDirectRelation(PawnRelationDefOf.Lover, master);
-            if (loverRelation != null)
-            {
-                pawn.relations.RemoveDirectRelation(loverRelation);
-            }
 
-            pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_BrokenEnthrallment);
-            pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_EnthralledMe, master);
-            if (gainedGayTrait)
+            try
             {
-                var gayTrait = pawn.story.traits.GetTrait(TraitDefOf.Gay);
-                if (gayTrait != null)
+                recursionTrap = true;
+                if (previousFaction != null && pawn.Faction != previousFaction)
                 {
-                    pawn.story.traits.RemoveTrait(gayTrait);
+                    pawn.SetFaction(previousFaction);
+                }
+                var masterRelation = pawn.relations.GetDirectRelation(RS_DefOf.RS_Master, master);
+                if (masterRelation != null)
+                {
+                    pawn.relations.RemoveDirectRelation(masterRelation);
+                }
+                var loverRelation = pawn.relations.GetDirectRelation(PawnRelationDefOf.Lover, master);
+                if (loverRelation != null)
+                {
+                    pawn.relations.RemoveDirectRelation(loverRelation);
+                }
+
+                pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_BrokenEnthrallment);
+                pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_EnthralledMe, master);
+                if (gainedGayTrait)
+                {
+                    var gayTrait = pawn.story.traits.GetTrait(TraitDefOf.Gay);
+                    if (gayTrait != null)
+                    {
+                        pawn.story.traits.RemoveTrait(gayTrait);
+                    }
                 }
             }
-            recursionTrap = false;
+            finally
+            {
+                recursionTrap = false;
+            }
         }
 
         public override void ExposeData()

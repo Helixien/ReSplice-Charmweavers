@@ -6,6 +6,10 @@ namespace ReSpliceCharmweavers
 {
     public class PregnancyApproach_LovinForHemogen : PregnancyApproachWorker
     {
+        private const float LoveBiteBloodLoss = JobDriver_PrisonerBloodfeed.BloodLoss / 2f;
+        private const float HemogenGain = JobDriver_PrisonerBloodfeed.HemogenGain / 2f;
+        private const float NutritionGain = JobDriver_PrisonerBloodfeed.NutritionGain / 2f;
+
         public override void PostLovinEffect(Pawn pawn, Pawn partner)
         {
             base.PostLovinEffect(pawn, partner);
@@ -22,6 +26,12 @@ namespace ReSpliceCharmweavers
 
         private static void DoLoveFeed(Pawn biter, Pawn target)
         {
+            var hemogen = biter.genes.GetFirstGeneOfType<Gene_Hemogen>();
+            if (hemogen == null || hemogen.ValuePercent > 0.9f)
+            {
+                return;
+            }
+
             if (target.HasActiveGene(GeneDefOf.Bloodfeeder))
             {
                 if (biter.genes.HasActiveGene(RS_DefOf.VRE_SanguoFeeder) is false)
@@ -29,33 +39,44 @@ namespace ReSpliceCharmweavers
                     return;
                 }
             }
-            float num = BloodlossAfterBite(target);
-            if (num >= HediffDefOf.BloodLoss.lethalSeverity)
+
+            var percent = GetSafeHemogenAmountPercentage(target);
+            if (percent <= 0.01f)
             {
                 return;
             }
-            else if (HediffDefOf.BloodLoss.stages[HediffDefOf.BloodLoss.StageAtSeverity(num)].lifeThreatening)
-            {
-                return;
-            }
-            SanguophageUtility.DoBite(biter, target, 0.2f, 0.1f, 0.4499f / 2f, 1f,
-                IntRange.one, ThoughtDefOf.FedOn, ThoughtDefOf.FedOn_Social);
-            target.needs.rest.CurLevelPercentage -= 0.5f;
+
+            SanguophageUtility.DoBite(biter, target, HemogenGain * percent, NutritionGain * percent, LoveBiteBloodLoss * percent, 1f,
+                IntRange.One, ThoughtDefOf.FedOn, ThoughtDefOf.FedOn_Social);
+            target.needs.rest.CurLevelPercentage -= 0.5f * percent;
         }
 
-        private static float BloodlossAfterBite(Pawn target)
+        private static float GetSafeHemogenAmountPercentage(Pawn target)
         {
             if (target.Dead || !target.RaceProps.IsFlesh)
-            {
-                return 0f;
-            }
-            float num = 0.4499f / 2f;
-            Hediff firstHediffOfDef = target.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.BloodLoss);
-            if (firstHediffOfDef != null)
-            {
-                num += firstHediffOfDef.Severity;
-            }
-            return num;
+                return 0;
+
+            var bloodLossHediff = target.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.BloodLoss);
+            // No blood loss, allow full amount
+            if (bloodLossHediff == null)
+                return 1;
+
+            var maxBloodLoss = HediffDefOf.BloodLoss.lethalSeverity;
+            var lifeThreateningStage = HediffDefOf.BloodLoss.stages.FirstOrDefault(x => x.lifeThreatening);
+            if (lifeThreateningStage != null && lifeThreateningStage.minSeverity < maxBloodLoss)
+                maxBloodLoss = lifeThreateningStage.minSeverity;
+            // Just a small precaution in case it would exactly end on the disallowed amount
+            maxBloodLoss -= 0.001f;
+
+            // Hediff is already over max blood loss, not allowed at all
+            if (bloodLossHediff.Severity >= maxBloodLoss)
+                return 0;
+            // Under max blood loss, allow full amount
+            if (bloodLossHediff.Severity + LoveBiteBloodLoss < maxBloodLoss)
+                return 1;
+
+            // Under allowed blood loss but would cause medical emergency, scale amount to be right under max
+            return (maxBloodLoss - bloodLossHediff.Severity) / LoveBiteBloodLoss;
         }
     }
 }

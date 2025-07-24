@@ -69,6 +69,12 @@
 				<def>Bisexual</def>
 			</li>
 		</forcedTraits>
+		<suppressedTraits>
+			<li>
+				<def>Gay</def>
+				<def>Asexual</def>
+			</li>
+		</suppressedTraits>
 		<abilities>
 			<li MayRequire="vanillaracesexpanded.highmate">VRE_InitiateLovin</li>
 		</abilities>
@@ -86,6 +92,12 @@
 				<def>Asexual</def>
 			</li>
 		</forcedTraits>
+		<suppressedTraits>
+			<li>
+				<def>Gay</def>
+				<def>Bisexual</def>
+			</li>
+		</suppressedTraits>
 		<biostatMet>2</biostatMet>
 		<biostatCpx>1</biostatCpx>
 	</GeneDef>
