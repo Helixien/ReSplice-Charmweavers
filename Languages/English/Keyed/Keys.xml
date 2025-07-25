@@ -24,4 +24,8 @@ People with the psychic enthralling gene are able to manipulate others minds and
 </RS.PsychicEnthrallmentDesc>
 	<RS.LoveThralls>Love Thralls</RS.LoveThralls>
 	<RS.LoveThrallsDesc>People with the psychic enthralling gene are able to manipulate others minds and turn them into willing and loyal servants. This is permanent until either the carrier of the gene, or the enthralled person dies.</RS.LoveThrallsDesc>
+	<RS.CannotArrestMaster>{PAWN_nameDef} won't arrest {PAWN_possessive} master</RS.CannotArrestMaster>
+	<RS.CannotCaptureMaster>{PAWN_nameDef} won't capture {PAWN_possessive} master</RS.CannotCaptureMaster>
+	<RS.CannotAttackMaster>{PAWN_nameDef} won't attack {PAWN_possessive} master</RS.CannotAttackMaster>
+	<RS.CannotUseHarmfulAbilitiesOnMaster>{PAWN_nameDef} won't use harmful abilities on {PAWN_possessive} master</RS.CannotUseHarmfulAbilitiesOnMaster>
 </LanguageData>
