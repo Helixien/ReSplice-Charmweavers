@@ -40,7 +40,7 @@
 		<stages>
 			<li>
 				<label>pregnant</label>
-				<description>New live is growing inside me, this is wrong.</description>
+				<description>New life is growing inside me, this is wrong.</description>
 				<baseMoodEffect>-20</baseMoodEffect>
 			</li>
 		</stages>
@@ -95,7 +95,7 @@
 		<stages>
 			<li>
 				<label>pregnant</label>
-				<description>New live is growing inside me, as it should be.</description>
+				<description>New life is growing inside me, as it should be.</description>
 				<baseMoodEffect>20</baseMoodEffect>
 			</li>
 		</stages>
