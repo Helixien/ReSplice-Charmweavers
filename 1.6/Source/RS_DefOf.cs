@@ -11,6 +11,7 @@ namespace ReSpliceCharmweavers
         public static PawnRelationDef RS_Master;
         public static PawnRelationDef RS_Thrall;
         public static HediffDef RS_LoveThrall;
+        [MayRequireIdeology] public static HediffDef RS_RecentPregnancy;
         public static ThoughtDef RS_BecameThrallMood;
         public static ThoughtDef RS_GotSomeLovinThrall;
         public static InteractionDef Breakup;
@@ -27,5 +28,6 @@ namespace ReSpliceCharmweavers
         [MayRequireIdeology] public static PreceptDef RS_Divorce_Forbidden, RS_Divorce_MaleOnly, RS_Divorce_FemaleOnly,
             RS_Marriage_MaleOnly, RS_Marriage_FemaleOnly, RS_Marriage_Abhorrent;
         [MayRequireIdeology] public static HistoryEventDef RS_PropagateLovehexerGene;
+        public static ThingDef RS_EnthralledMote;
     }
 }

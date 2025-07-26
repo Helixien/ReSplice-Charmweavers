@@ -8,7 +8,7 @@ namespace ReSpliceCharmweavers
         public override ThoughtState ShouldHaveThought(Pawn p, Pawn otherPawn)
         {
             return otherPawn.gender == Gender.Female
-                && PregnancyUtility.GetPregnancyHediff(otherPawn) is null;
+                && PregnancyUtility.GetPregnancyHediff(otherPawn) is null && !otherPawn.health.hediffSet.HasHediff(RS_DefOf.RS_RecentPregnancy);
         }
     }
 }

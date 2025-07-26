@@ -1,5 +1,4 @@
-﻿using HarmonyLib;
-using RimWorld;
+﻿using RimWorld;
 using System.Linq;
 using Verse;
 using Verse.AI.Group;
@@ -115,7 +114,7 @@ namespace ReSpliceCharmweavers
 
         public static bool ValidateMustNotBeChild(Pawn targetPawn, bool showMessages, Ability ability)
         {
-            if (targetPawn.DevelopmentalStage.Juvenile())
+            if (targetPawn.ageTracker.AgeBiologicalYearsFloat < 16f)
             {
                 if (showMessages)
                 {
@@ -125,6 +124,5 @@ namespace ReSpliceCharmweavers
             }
             return true;
         }
-
     }
 }

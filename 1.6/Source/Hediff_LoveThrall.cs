@@ -1,6 +1,5 @@
 using RimWorld;
-using System.Collections.Generic;
-using System.Text;
+using UnityEngine;
 using VEF.Pawns;
 using Verse;
 
@@ -45,11 +44,16 @@ namespace ReSpliceCharmweavers
                 FleckMaker.Static(master.Position, master.Map, FleckDefOf.PsycastAreaEffect, 1.5f);
             }
 
-            if (pawn.Map != null && PawnUtility.ShouldSendNotificationAbout(pawn))
+            if (pawn.Map != null)
             {
-                FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.PsycastAreaEffect, 1.5f);
-                Find.LetterStack.ReceiveLetter("RS.NewThrall".Translate(pawn.Named("PAWN")), "RS.NewThrallDesc".Translate(master.Named("CASTER"), pawn.Named("TARGET")),
-                   LetterDefOf.NeutralEvent, pawn);
+                if (PawnUtility.ShouldSendNotificationAbout(pawn))
+                {
+                    FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.PsycastAreaEffect, 1.5f);
+                    Find.LetterStack.ReceiveLetter("RS.NewThrall".Translate(pawn.Named("PAWN")), "RS.NewThrallDesc".Translate(master.Named("CASTER"), pawn.Named("TARGET")),
+                       LetterDefOf.NeutralEvent, pawn);
+                }
+
+                MoteMaker.MakeAttachedOverlay(pawn, RS_DefOf.RS_EnthralledMote, Vector2.zero);
             }
 
             if (master.genes.HasActiveGene(RS_DefOf.RS_LoveFeed))

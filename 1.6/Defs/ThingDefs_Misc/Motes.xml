@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="MoteGlowDistorted">
+		<defName>RS_EnthralledMote</defName>
+		<thingClass>MoteAttached</thingClass>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<fadeInTime>0.5</fadeInTime>
+			<fadeOutTime>1</fadeOutTime>
+			<solidTime>5</solidTime>
+			<attachedToHead>true</attachedToHead>
+		</mote>
+		<graphicData>
+			<texPath>Things/Mote/EnthrallCast</texPath>
+		</graphicData>
+	</ThingDef>
+</Defs>

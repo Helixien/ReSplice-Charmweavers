@@ -12,6 +12,7 @@
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<warmupMoteSocialSymbol>Things/Mote/EnthrallIcon</warmupMoteSocialSymbol>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<range>15</range>

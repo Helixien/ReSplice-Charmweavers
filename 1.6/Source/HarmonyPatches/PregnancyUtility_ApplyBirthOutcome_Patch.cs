@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using System.Collections.Generic;
 using Verse;
 
 namespace ReSpliceCharmweavers
@@ -14,7 +13,15 @@ namespace ReSpliceCharmweavers
             mother = geneticMother;
         }
 
-        public static void Postfix()
+        public static void Postfix(Thing birtherThing)
+        {
+            if (RS_DefOf.RS_RecentPregnancy != null && birtherThing is Pawn birtherPawn)
+            {
+                birtherPawn.health.AddHediff(RS_DefOf.RS_RecentPregnancy);
+            }
+        }
+
+        public static void Finalizer()
         {
             mother = null;
         }
