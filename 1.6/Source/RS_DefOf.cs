@@ -11,7 +11,8 @@ namespace ReSpliceCharmweavers
         public static PawnRelationDef RS_Master;
         public static PawnRelationDef RS_Thrall;
         public static HediffDef RS_LoveThrall;
-        [MayRequireIdeology] public static HediffDef RS_RecentPregnancy;
+        public static HediffDef RS_RecentImpregnation;
+        public static HediffDef RS_RecentPregnancy;
         public static ThoughtDef RS_BecameThrallMood;
         public static ThoughtDef RS_GotSomeLovinThrall;
         public static InteractionDef Breakup;

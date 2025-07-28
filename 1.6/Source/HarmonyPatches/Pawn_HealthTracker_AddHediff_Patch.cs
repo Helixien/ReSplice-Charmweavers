@@ -14,22 +14,32 @@ namespace ReSpliceCharmweavers
         [HarmonyPriority(int.MaxValue)]
         private static bool Prefix(Pawn_HealthTracker __instance, Pawn ___pawn, ref Hediff hediff, BodyPartRecord part = null, DamageInfo? dinfo = null, DamageWorker.DamageResult result = null)
         {
-            if (___pawn.HasActiveGene(RS_DefOf.RS_TemperatureInsensitive))
+            if (!HandleHediffForTemperatureInsensitive(___pawn, ref hediff))
             {
-                return HandleHediffForTemperatureInsensitive(___pawn, ref hediff);
+                return false;
+            }
+            if (!HandleHediffForMultiPregnancy(___pawn, ref hediff))
+            {
+                return false;
             }
             return true;
         }
 
         public static bool HandleHediffForTemperatureInsensitive(Pawn ___pawn, ref Hediff hediff)
         {
-            if (hediff.def == HediffDefOf.Hypothermia)
+            if (hediff.def == HediffDefOf.Hypothermia || hediff.def == HediffDefOf.Heatstroke)
             {
-                return false;
+                return !___pawn.HasActiveGene(RS_DefOf.RS_TemperatureInsensitive);
             }
-            else if (hediff.def == HediffDefOf.Heatstroke)
+
+            return true;
+        }
+
+        public static bool HandleHediffForMultiPregnancy(Pawn ___pawn, ref Hediff hediff)
+        {
+            if (hediff.def == HediffDefOf.PregnantHuman)
             {
-                return false;
+                return !___pawn.HasActiveGene(RS_DefOf.RS_MultiPregnancy) || !___pawn.health.hediffSet.HasHediff(RS_DefOf.RS_RecentImpregnation);
             }
             return true;
         }

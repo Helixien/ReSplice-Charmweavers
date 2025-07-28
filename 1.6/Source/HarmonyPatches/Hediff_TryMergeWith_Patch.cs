@@ -18,6 +18,7 @@ namespace ReSpliceCharmweavers
                     {
                         return true;
                     }
+                    __instance.pawn.health.AddHediff(RS_DefOf.RS_RecentImpregnation);
                     return false;
                 }
             }

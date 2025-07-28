@@ -1,4 +1,5 @@
 using HarmonyLib;
+using RimWorld;
 using Verse;
 
 namespace ReSpliceCharmweavers
@@ -9,11 +10,23 @@ namespace ReSpliceCharmweavers
         [HarmonyPriority(int.MaxValue)]
         private static bool Prefix(HediffSet __instance, Pawn ___pawn, Hediff hediff)
         {
-            if (___pawn.HasActiveGene(RS_DefOf.RS_TemperatureInsensitive))
+            if (!Pawn_HealthTracker_AddHediff_Patch.HandleHediffForTemperatureInsensitive(___pawn, ref hediff))
             {
-                return Pawn_HealthTracker_AddHediff_Patch.HandleHediffForTemperatureInsensitive(___pawn, ref hediff);
+                return false;
+            }
+            if (!Pawn_HealthTracker_AddHediff_Patch.HandleHediffForMultiPregnancy(___pawn, ref hediff))
+            {
+                return false;
             }
             return true;
+        }
+
+        private static void Postfix(HediffSet __instance, Pawn ___pawn, Hediff hediff)
+        {
+            if (hediff.def == HediffDefOf.PregnantHuman && ___pawn.HasActiveGene(RS_DefOf.RS_MultiPregnancy) && __instance.hediffs.Contains(hediff))
+            {
+                ___pawn.health.AddHediff(RS_DefOf.RS_RecentImpregnation);
+            }
         }
     }
 }
