@@ -8,7 +8,7 @@ namespace ReSpliceCharmweavers
     [HarmonyPatch]
     public static class VRE_Highmate_RJW_patch
     {
-        public static bool Prepare() => RJW_patch.Prepare() && ModsConfig.IsActive("vanillaracesexpanded.highmate");
+        public static bool Prepare(MethodBase method) => RJW_patch.Prepare(method) && ModsConfig.IsActive("vanillaracesexpanded.highmate");
         public static MethodBase TargetMethod() => RJW_patch.TargetMethod();
 
         public static void Postfix(ThoughtDef thoughtgain, Pawn pawn)

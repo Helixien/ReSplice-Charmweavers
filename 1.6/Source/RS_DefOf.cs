@@ -29,5 +29,6 @@ namespace ReSpliceCharmweavers
             RS_Marriage_MaleOnly, RS_Marriage_FemaleOnly, RS_Marriage_Abhorrent;
         [MayRequireIdeology] public static HistoryEventDef RS_PropagateLovehexerGene;
         public static ThingDef RS_EnthralledMote;
+        public static EffecterDef Bloodfeed_Warmup;
     }
 }

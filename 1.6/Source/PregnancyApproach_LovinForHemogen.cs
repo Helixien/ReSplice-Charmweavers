@@ -1,6 +1,7 @@
 using RimWorld;
 using VEF.Pawns;
 using Verse;
+using Verse.AI;
 
 namespace ReSpliceCharmweavers
 {
@@ -10,6 +11,13 @@ namespace ReSpliceCharmweavers
         private const float HemogenGain = JobDriver_PrisonerBloodfeed.HemogenGain / 2f;
         private const float NutritionGain = JobDriver_PrisonerBloodfeed.NutritionGain / 2f;
 
+        public override void ModifyLovinToil(Toil lovinToil, Pawn pawn, Pawn partner)
+        {
+            base.ModifyLovinToil(lovinToil, pawn, partner);
+            if (GetSafeHemogenAmountPercentage(pawn, partner) > 0.01f)
+                lovinToil.WithEffect(RS_DefOf.Bloodfeed_Warmup, TargetIndex.A);
+        }
+
         public override void PostLovinEffect(Pawn pawn, Pawn partner)
         {
             base.PostLovinEffect(pawn, partner);
@@ -18,41 +26,32 @@ namespace ReSpliceCharmweavers
 
         public static void DoLovinResult(Pawn pawn, Pawn partner)
         {
-            if (pawn.HasActiveGene(RS_DefOf.RS_LoveFeed))
-            {
-                DoLoveFeed(pawn, partner);
-            }
+            DoLoveFeed(pawn, partner);
         }
 
         private static void DoLoveFeed(Pawn biter, Pawn target)
         {
-            var hemogen = biter.genes.GetFirstGeneOfType<Gene_Hemogen>();
-            if (hemogen == null || hemogen.ValuePercent > 0.9f)
-            {
-                return;
-            }
-
-            if (target.HasActiveGene(GeneDefOf.Bloodfeeder))
-            {
-                if (biter.genes.HasActiveGene(RS_DefOf.VRE_SanguoFeeder) is false)
-                {
-                    return;
-                }
-            }
-
-            var percent = GetSafeHemogenAmountPercentage(target);
+            var percent = GetSafeHemogenAmountPercentage(biter, target);
             if (percent <= 0.01f)
-            {
                 return;
-            }
 
             SanguophageUtility.DoBite(biter, target, HemogenGain * percent, NutritionGain * percent, LoveBiteBloodLoss * percent, 1f,
                 IntRange.One, ThoughtDefOf.FedOn, ThoughtDefOf.FedOn_Social);
             target.needs.rest.CurLevelPercentage -= 0.5f * percent;
         }
 
-        private static float GetSafeHemogenAmountPercentage(Pawn target)
+        private static float GetSafeHemogenAmountPercentage(Pawn biter, Pawn target)
         {
+            if (!biter.HasActiveGene(RS_DefOf.RS_LoveFeed))
+                return 0;
+
+            var hemogen = biter.genes.GetFirstGeneOfType<Gene_Hemogen>();
+            if (hemogen == null || hemogen.ValuePercent > 0.9f)
+                return 0;
+
+            if (target.HasActiveGene(GeneDefOf.Bloodfeeder) && biter.genes.HasActiveGene(RS_DefOf.VRE_SanguoFeeder) is false)
+                return 0;
+
             if (target.Dead || !target.RaceProps.IsFlesh)
                 return 0;
 
