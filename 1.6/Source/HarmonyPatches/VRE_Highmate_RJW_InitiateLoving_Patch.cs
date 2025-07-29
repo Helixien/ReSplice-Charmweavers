@@ -9,7 +9,7 @@ namespace ReSpliceCharmweavers;
 [HarmonyPatch([typeof(LocalTargetInfo), typeof(LocalTargetInfo)])]
 public static class VRE_Highmate_RJW_InitiateLoving_Patch
 {
-    public static bool Prepare(MethodBase method) => method != null || ModsConfig.IsActive("vanillaracesexpanded.highmate");
+    public static bool Prepare(MethodBase method) => method != null || (ModsConfig.IsActive("rim.job.world") && ModsConfig.IsActive("vanillaracesexpanded.highmate"));
 
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
     {
