@@ -28,4 +28,23 @@ People with the psychic enthralling gene are able to manipulate others minds and
 	<RS.CannotCaptureMaster>{PAWN_nameDef} won't capture {PAWN_possessive} master</RS.CannotCaptureMaster>
 	<RS.CannotAttackMaster>{PAWN_nameDef} won't attack {PAWN_possessive} master</RS.CannotAttackMaster>
 	<RS.CannotUseHarmfulAbilitiesOnMaster>{PAWN_nameDef} won't use harmful abilities on {PAWN_possessive} master</RS.CannotUseHarmfulAbilitiesOnMaster>
+	<RS.CommandSelectAllThralls>Select all thralls</RS.CommandSelectAllThralls>
+	<RS.CommandSelectAllThrallsDesc>Select all thralls bound to this {PAWN_xenotype}.</RS.CommandSelectAllThrallsDesc>
+	<RS.CommandSelectMaster>Select master</RS.CommandSelectMaster>
+	<RS.CommandSelectMasterDesc>Select the {PAWN_xenotype} this thrall is bound to.</RS.CommandSelectMasterDesc>
+	<RS.MessageCaravanAddingEscortingThrall>Auto-adding {THRALL_nameDef} to the caravan, since {THRALL_possessive} is escorting {MASTER_nameDef}</RS.MessageCaravanAddingEscortingThrall>
+	<!-- Some of those are duplicates of vanilla texts, but were added here in case we'll want to ever modify them. -->
+	<RS.Group>Group</RS.Group>
+	<RS.Groups>Groups</RS.Groups>
+	<RS.NoThralls>no thralls</RS.NoThralls>
+	<RS.AssignToGroup>Assign to group...</RS.AssignToGroup>
+	<RS.AssignToGroupDesc>Assign the selected thrall(s) to another control group under their current master.</RS.AssignToGroupDesc>
+	<RS.ControlGroup>Control group</RS.ControlGroup>
+	<RS.CurrentThrallWorkMode>Current mode</RS.CurrentThrallWorkMode>
+	<RS.AssignedThralls>Assigned thralls</RS.AssignedThralls>
+	<RS.CannotAssignThrallToControlGroup>Cannot assign to control group {0}</RS.CannotAssignThrallToControlGroup>
+	<RS.AssignThrallAlreadyAssigned>Already assigned</RS.AssignThrallAlreadyAssigned>
+	<RS.AssignThrallToControlGroup>Assign to control group {0}</RS.AssignThrallToControlGroup>
+	<RS.MessageCaravanAddingEscortingThrall>Auto-adding {THRALL_nameDef} to the caravan, since {THRALL_possessive} is escorting {MASTER_nameDef}</RS.MessageCaravanAddingEscortingThrall>
+	<RS.MessageCaravanRemovingEscortingThrall>Auto-removing {THRALL_nameDef} from the caravan, since {THRALL_possessive} is escorting {MASTER_nameDef}</RS.MessageCaravanRemovingEscortingThrall>
 </LanguageData>

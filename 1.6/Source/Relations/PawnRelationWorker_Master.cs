@@ -12,9 +12,15 @@ namespace ReSpliceCharmweavers
             var rel = secondPawn.relations.GetDirectRelation(RS_DefOf.RS_Thrall, firstPawn);
             if (rel != null && recursionTrap is false)
             {
-                recursionTrap = true;
-                secondPawn.relations.RemoveDirectRelation(rel);
-                recursionTrap = false;
+                try
+                {
+                    recursionTrap = true;
+                    secondPawn.relations.RemoveDirectRelation(rel);
+                }
+                finally
+                {
+                    recursionTrap = false;
+                }
             }
             var hediff = secondPawn.health.hediffSet.GetFirstHediffOfDef(RS_DefOf.RS_LoveThrall) as Hediff_LoveThrall;
             if (hediff != null && !hediff.recursionTrap)

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <InteractionDef>
+    <defName>RS_WorshipInteraction</defName>
+    <label>worship</label>
+    <symbol>Things/Mote/SpeechSymbols/Chitchat</symbol>
+    <initiatorXpGainSkill>Social</initiatorXpGainSkill>
+    <initiatorXpGainAmount>4</initiatorXpGainAmount>
+    <recipientThought>RS_Worshipped</recipientThought>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [worship] [RECIPIENT_nameDef] by [worshiptactic].</li>
+
+        <li>worship->tried to compliment</li>
+        <li>worship->complimented</li>
+        <li>worship(p=0.5)->declared [INITIATOR_possessive] loyalty to</li>
+        <li>worship->charmed</li>
+        <li>worship->talked to</li>
+
+        <li>worshiptactic(p=4)->[complimenting] [RECIPIENT_possessive] [PersonalCharacteristic]</li>
+        <li>worshiptactic->telling a story about [TalkTopicAny]</li>
+        <li>worshiptactic->telling a tale about [TalkTopicAny]</li>
+        <li>worshiptactic->joking about [TalkTopicAny]</li>
+        <li>worshiptactic->making an observation about [TalkTopicAny]</li>
+        <li>worshiptactic->comparing [RECIPIENT_objective] to a [romantic_adj] [romantic_noun]</li>
+        <li>worshiptactic->describing [RECIPIENT_objective] as a [romantic_adj] [romantic_noun]</li>
+
+        <li>complimenting(p=3)->complimenting</li>
+        <li>complimenting->subtly complimenting</li>
+        <li>complimenting->lauding</li>
+        <li>complimenting->commending</li>
+        <li>complimenting->saying good things about</li>
+        <li>complimenting(p=2)->playfully making fun of</li>
+        <li>complimenting->jokingly poking at</li>
+        <li>complimenting->jokingly half-complimenting</li>
+        <li>complimenting->impishly questioning</li>
+        <li>complimenting->cheerfully making fun of</li>
+
+        <li>romantic_adj->beautiful</li>
+        <li>romantic_adj->shining</li>
+        <li>romantic_adj->glimmering</li>
+        <li>romantic_adj->heavenly</li>
+        <li>romantic_adj->golden</li>
+        <li>romantic_adj->bright</li>
+        <li>romantic_adj->breathtaking</li>
+        <li>romantic_adj->charming</li>
+        <li>romantic_adj->dazzling</li>
+        <li>romantic_adj->delicate</li>
+        <li>romantic_adj->fine</li>
+        <li>romantic_adj->magnificent</li>
+        <li>romantic_adj->lovely</li>
+        <li>romantic_adj->wonderful</li>
+        <li>romantic_adj(p=3)->[AdjectiveBadass]</li>
+
+        <li>romantic_noun->flower</li>
+        <li>romantic_noun->spring</li>
+        <li>romantic_noun->river</li>
+        <li>romantic_noun->star</li>
+        <li>romantic_noun->moon</li>
+        <li>romantic_noun->sun</li>
+        <li>romantic_noun->house</li>
+        <li>romantic_noun->aurora</li>
+        <li>romantic_noun->[TreeType] tree</li>
+        <li>romantic_noun(p=2)->[TerrainFeature]</li>
+        <li>romantic_noun(p=2)->[NaturalObject]</li>
+
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+</Defs>

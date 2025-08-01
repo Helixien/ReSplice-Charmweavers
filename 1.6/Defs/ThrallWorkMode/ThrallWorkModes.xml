@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ReSpliceCharmweavers.ThrallWorkModeDef>
+		<defName>RS_Work</defName>
+		<label>work</label>
+		<description>Work autonomously according to thrall’s job assignment. Automatically goes to fulfil their needs when needed.</description>
+		<iconPath>UI/Icons/WorkMode/Work</iconPath>
+	</ReSpliceCharmweavers.ThrallWorkModeDef>
+
+	<ReSpliceCharmweavers.ThrallWorkModeDef>
+		<defName>RS_Escort</defName>
+		<label>escort</label>
+		<uiOrder>200</uiOrder>
+		<description>Stay near their master and fight nearby enemies. Follow their master even off the map.</description>
+		<iconPath>UI/Icons/WorkMode/Escort</iconPath>
+		<workerClass>ReSpliceCharmweavers.ThrallWorkModeDrawer_FollowMaster</workerClass>
+		<followMasterOnCaravans>true</followMasterOnCaravans>
+	</ReSpliceCharmweavers.ThrallWorkModeDef>
+
+	<ReSpliceCharmweavers.ThrallWorkModeDef>
+		<defName>RS_Worship</defName>
+		<label>worship</label>
+		<uiOrder>300</uiOrder>
+		<description>TODO</description>
+		<iconPath>UI/Icons/WorkMode/Escort</iconPath>
+		<workerClass>ReSpliceCharmweavers.ThrallWorkModeDrawer_FollowMaster</workerClass>
+	</ReSpliceCharmweavers.ThrallWorkModeDef>
+
+</Defs>

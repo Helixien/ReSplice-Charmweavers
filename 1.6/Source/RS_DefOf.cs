@@ -31,5 +31,9 @@ namespace ReSpliceCharmweavers
         [MayRequireIdeology] public static HistoryEventDef RS_PropagateLovehexerGene;
         public static ThingDef RS_EnthralledMote;
         public static EffecterDef Bloodfeed_Warmup;
+        public static ThrallWorkModeDef RS_Work;
+        public static ThrallWorkModeDef RS_Escort;
+        public static JobDef RS_Worship;
+        public static InteractionDef RS_WorshipInteraction;
     }
 }

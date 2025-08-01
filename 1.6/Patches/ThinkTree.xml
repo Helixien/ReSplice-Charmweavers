@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThinkTreeDef[defName="MainColonistBehaviorCore"]/thinkRoot/subNodes/li[@Class="ThinkNode_PrioritySorter"]/subNodes</xpath>
+		<value>
+			<li Class="ReSpliceCharmweavers.ThinkNode_ConditionalThrallTaskBeforeWork">
+				<subNodes>
+					<li Class="ReSpliceCharmweavers.ThinkNode_ConditionalThrallWorkMode">
+						<workMode>RS_Escort</workMode>
+						<subNodes>
+							<li Class="ReSpliceCharmweavers.JobGiver_ExitMapFollowMaster" />
+							<li Class="ReSpliceCharmweavers.JobGiver_AIDefendMaster" />
+							<li Class="ReSpliceCharmweavers.JobGiver_AIFollowMaster"/>
+							<li Class="ReSpliceCharmweavers.JobGiver_AIWaitWithMaster" />
+							<li Class="ReSpliceCharmweavers.JobGiver_WanderMaster" />
+						</subNodes>
+					</li>
+					<li Class="ReSpliceCharmweavers.ThinkNode_ConditionalThrallWorkMode">
+						<workMode>RS_Worship</workMode>
+						<subNodes>
+							<li Class="ReSpliceCharmweavers.ThinkNode_ChancePerHour_Worship">
+								<subNodes>
+									<li Class="ReSpliceCharmweavers.JobGiver_AIWorshipMaster" />
+								</subNodes>
+							</li>
+							<li Class="ReSpliceCharmweavers.JobGiver_AIFollowMaster"/>
+							<li Class="ReSpliceCharmweavers.JobGiver_AIWaitWithMaster" />
+							<li Class="ReSpliceCharmweavers.JobGiver_WanderMaster" />
+						</subNodes>
+					</li>
+				</subNodes>
+			</li>
+		</value>
+	</Operation>
+</Patch>

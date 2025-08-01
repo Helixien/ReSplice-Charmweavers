@@ -80,6 +80,9 @@ namespace ReSpliceCharmweavers
             {
                 target.Pawn.ideo.SetIdeo(parent.pawn.Ideo);
             }
+
+            var gene = parent.pawn.genes.GetFirstGeneOfType<Gene_PsychicEnthralling>();
+            gene.controlGroups?.FirstOrDefault()?.Assign(target.Pawn);
         }
 
         public override bool Valid(LocalTargetInfo target, bool throwMessages = false)

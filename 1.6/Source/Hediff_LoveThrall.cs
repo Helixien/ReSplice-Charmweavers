@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
 using VEF.Pawns;
@@ -125,6 +126,54 @@ namespace ReSpliceCharmweavers
             Scribe_References.Look(ref previousFaction, "previousFaction");
             Scribe_Values.Look(ref gainedGayTrait, "gainedGayTrait");
 
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && master != null)
+            {
+                var gene = master.genes?.GetFirstGeneOfType<Gene_PsychicEnthralling>();
+                if (gene != null && gene.GetControlGroup(pawn) == null)
+                {
+                    gene.controlGroups[0].Assign(pawn);
+                }
+            }
+        }
+
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            foreach (var gizmo in base.GetGizmos())
+                yield return gizmo;
+
+            if (master != null)
+            {
+                yield return new Command_Action
+                {
+                    defaultLabel = "RS.CommandSelectMaster".Translate(),
+                    defaultDesc = "RS.CommandSelectMasterDesc".Translate(master.Named("PAWN")),
+                    icon = Core.SelectMasterIcon,
+                    action = () =>
+                    {
+                        Find.Selector.ClearSelection();
+                        Find.Selector.Select(master);
+                    },
+                    onHover = () => GenDraw.DrawArrowPointingAt(master.TrueCenter()),
+                };
+
+                if (pawn.Faction == Faction.OfPlayer)
+                {
+                    var controlGroup = master.genes?.GetFirstGeneOfType<Gene_PsychicEnthralling>()?.GetControlGroup(pawn);
+                    if (controlGroup != null)
+                        yield return new ThrallControlGroupGizmo(controlGroup);
+
+                    if (AssignThrallToGroupUtility.CanAssignPawn(pawn))
+                    {
+                        yield return new Command_Action
+                        {
+                            defaultLabel = "RS.AssignToGroup".Translate(),
+                            defaultDesc = "RS.AssignToGroupDesc".Translate(),
+                            icon = ContentFinder<Texture2D>.Get("UI/Icons/Gizmos/AssignToGroupThrall"),
+                            action = AssignThrallToGroupUtility.CreateAssignThrallsFloatMenu,
+                        };
+                    }
+                }
+            }
         }
     }
 }
