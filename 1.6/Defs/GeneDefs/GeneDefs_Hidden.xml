@@ -17,6 +17,7 @@
 			<li Class="VEF.Genes.GeneExtension">
 				<hideGene>true</hideGene>
 			</li>
+			<li Class="ReSpliceCharmweavers.LovethrallGene" />
 		</modExtensions>
 	</GeneDef>
 
