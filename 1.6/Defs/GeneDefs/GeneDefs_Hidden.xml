@@ -8,6 +8,7 @@
 		<biostatMet>0</biostatMet>
 		<selectionWeight>0</selectionWeight>
 		<canGenerateInGeneSet>false</canGenerateInGeneSet>
+		<geneClass>ReSpliceCharmweavers.Gene_Thrall</geneClass>
 		<suppressedTraits>
 			<li>
 				<def>Asexual</def>
@@ -17,7 +18,6 @@
 			<li Class="VEF.Genes.GeneExtension">
 				<hideGene>true</hideGene>
 			</li>
-			<li Class="ReSpliceCharmweavers.LovethrallGene" />
 		</modExtensions>
 	</GeneDef>
 

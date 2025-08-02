@@ -146,7 +146,7 @@ namespace ReSpliceCharmweavers
                 for (var i = genes.Count - 1; i >= 0; i--)
                 {
                     var gene = genes[i];
-                    if (gene.def.HasModExtension<LovethrallGene>())
+                    if (gene is Gene_Thrall)
                         pawn.genes.RemoveGene(gene);
                 }
             }

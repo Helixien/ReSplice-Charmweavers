@@ -138,5 +138,27 @@ namespace ReSpliceCharmweavers
 
             return null;
         }
+
+        public override void PostAdd()
+        {
+            base.PostAdd();
+            Reset();
+        }
+
+        public override void PostRemove()
+        {
+            base.PostRemove();
+            Reset();
+            Pawn_Kill_Patch.RemoveThrallRelationships(pawn);
+        }
+
+        public override void Reset()
+        {
+            base.Reset();
+
+            loveThrallCapacityOffset = 0;
+            loveThrallControlGroupCapacityOffset = 0;
+            Notify_ControlGroupAmountMayChanged();
+        }
     }
 }
