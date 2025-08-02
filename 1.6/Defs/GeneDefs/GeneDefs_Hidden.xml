@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<GeneDef Name="RS_LovethrallGeneBase" Abstract="True">
+		<label>Lovethrall</label>
+		<description>Carriers of this gene are a lovethrall, and this gene will be lost if they stop being one. It causes the carrier to be attracted to their master.</description>
+		<iconPath>UI/Icons/Genes/Gene_Lovethrall</iconPath>
+		<biostatCpx>0</biostatCpx>
+		<biostatMet>0</biostatMet>
+		<suppressedTraits>
+			<li>
+				<def>Asexual</def>
+			</li>
+		</suppressedTraits>
+		<modExtensions>
+			<li Class="VEF.Genes.GeneExtension">
+				<hideGene>true</hideGene>
+			</li>
+		</modExtensions>
+	</GeneDef>
+
+	<!-- Straight relation, nullifies asexual and gay traits -->
+	<GeneDef ParentName="RS_LovethrallGeneBase">
+		<defName>RS_LovethrallStraight</defName>
+		<suppressedTraits>
+			<li>
+				<def>Gay</def>
+			</li>
+		</suppressedTraits>
+	</GeneDef>
+
+	<!-- Gay relation, forces gay and nullifies asexual trait -->
+	<GeneDef ParentName="RS_LovethrallGeneBase">
+		<defName>RS_LovethrallGay</defName>
+		<forcedTraits>
+			<li>
+				<def>Gay</def>
+			</li>
+		</forcedTraits>
+	</GeneDef>
+
+	<!-- Bisexual relation, forces bbisexual and nullifies both asexual and gay (so bisexual takes precedence) -->
+	<GeneDef ParentName="RS_LovethrallGeneBase">
+		<defName>RS_LovethrallBisexual</defName>
+		<forcedTraits>
+			<li>
+				<def>Bisexual</def>
+			</li>
+		</forcedTraits>
+		<suppressedTraits>
+			<li>
+				<def>Gay</def>
+			</li>
+		</suppressedTraits>
+	</GeneDef>
+</Defs>

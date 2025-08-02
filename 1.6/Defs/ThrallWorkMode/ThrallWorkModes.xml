@@ -23,7 +23,7 @@
 		<label>worship</label>
 		<uiOrder>300</uiOrder>
 		<description>TODO</description>
-		<iconPath>UI/Icons/WorkMode/Escort</iconPath>
+		<iconPath>UI/Icons/Gizmos/WorkMode/Worship</iconPath>
 		<workerClass>ReSpliceCharmweavers.ThrallWorkModeDrawer_FollowMaster</workerClass>
 	</ReSpliceCharmweavers.ThrallWorkModeDef>
 

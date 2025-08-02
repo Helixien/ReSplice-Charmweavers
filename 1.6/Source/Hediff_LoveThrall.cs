@@ -10,7 +10,6 @@ namespace ReSpliceCharmweavers
     {
         public Pawn master;
         public Faction previousFaction;
-        public bool gainedGayTrait;
         public override bool ShouldRemove => master.DestroyedOrNull() || master.Dead;
 
         public override void CopyFrom(Hediff other)
@@ -19,7 +18,6 @@ namespace ReSpliceCharmweavers
             var otherHediff = other as Hediff_LoveThrall;
             master = otherHediff.master;
             previousFaction = otherHediff.previousFaction;
-            gainedGayTrait = otherHediff.gainedGayTrait;
         }
 
         public override void PostAdd(DamageInfo? dinfo)
@@ -57,19 +55,46 @@ namespace ReSpliceCharmweavers
                 MoteMaker.MakeAttachedOverlay(pawn, RS_DefOf.RS_EnthralledMote, Vector2.zero);
             }
 
-            if (master.genes.HasActiveGene(RS_DefOf.RS_LoveFeed))
+            if (pawn.genes != null)
             {
-                _ = pawn.relations.GetPregnancyApproachForPartner(master);
-                pawn.relations.GetAdditionalPregnancyApproachData().partners[master] = RS_DefOf.RS_LovinForHemogen;
-                master.relations.GetAdditionalPregnancyApproachData().partners[pawn] = RS_DefOf.RS_LovinForHemogen;
-            }
-
-            if (master.gender == pawn.gender)
-            {
-                if (pawn.story.traits.HasTrait(TraitDefOf.Gay) is false)
+                if (master.genes.HasActiveGene(RS_DefOf.RS_LoveFeed))
                 {
-                    pawn.story.traits.GainTrait(new Trait(TraitDefOf.Gay, 0, forced: true));
-                    gainedGayTrait = true;
+                    _ = pawn.relations.GetPregnancyApproachForPartner(master);
+                    pawn.relations.GetAdditionalPregnancyApproachData().partners[master] = RS_DefOf.RS_LovinForHemogen;
+                    master.relations.GetAdditionalPregnancyApproachData().partners[pawn] = RS_DefOf.RS_LovinForHemogen;
+                }
+
+                var bisexual = false;
+                var gay = false;
+                if (pawn.story?.traits != null)
+                {
+                    if (pawn.story.traits.HasTrait(TraitDefOf.Bisexual))
+                        bisexual = true;
+                    else if (pawn.story.traits.HasTrait(TraitDefOf.Gay))
+                        gay = true;
+                }
+
+                // Honestly, if gender of either pawn is none, just add bisexual and be done with it.
+                // If the pawn is bisexual already, also just be done with it.
+                if (bisexual || pawn.gender == Gender.None || master.gender == Gender.None)
+                    pawn.genes.AddGene(RS_DefOf.RS_LovethrallBisexual, true);
+                // Straight relation
+                else if (pawn.gender != master.gender)
+                {
+                    // If pawn is gay, 20% chance to force bisexual. Straight otherwise.
+                    if (gay && Rand.Chance(0.2f))
+                        pawn.genes.AddGene(RS_DefOf.RS_LovethrallBisexual, true);
+                    else
+                        pawn.genes.AddGene(RS_DefOf.RS_LovethrallStraight, true);
+                }
+                // Gay relation
+                else
+                {
+                    // If pawn is not gay, 20% chance for bisexual. Gay otherwise.
+                    if (!gay && Rand.Chance(0.2f))
+                        pawn.genes.AddGene(RS_DefOf.RS_LovethrallBisexual, true);
+                    else
+                        pawn.genes.AddGene(RS_DefOf.RS_LovethrallGay, true);
                 }
             }
         }
@@ -104,18 +129,26 @@ namespace ReSpliceCharmweavers
 
                 pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_BrokenEnthrallment);
                 pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_EnthralledMe, master);
-                if (gainedGayTrait)
+
+                if (pawn.genes != null)
                 {
-                    var gayTrait = pawn.story.traits.GetTrait(TraitDefOf.Gay);
-                    if (gayTrait != null)
-                    {
-                        pawn.story.traits.RemoveTrait(gayTrait);
-                    }
+                    ClearGenes(pawn.genes.Xenogenes);
+                    ClearGenes(pawn.genes.Endogenes);
                 }
             }
             finally
             {
                 recursionTrap = false;
+            }
+
+            void ClearGenes(List<Gene> genes)
+            {
+                for (var i = genes.Count - 1; i >= 0; i--)
+                {
+                    var gene = genes[i];
+                    if (gene.def.HasModExtension<LovethrallGene>())
+                        pawn.genes.RemoveGene(gene);
+                }
             }
         }
 
@@ -124,7 +157,6 @@ namespace ReSpliceCharmweavers
             base.ExposeData();
             Scribe_References.Look(ref master, "master");
             Scribe_References.Look(ref previousFaction, "previousFaction");
-            Scribe_Values.Look(ref gainedGayTrait, "gainedGayTrait");
 
             if (Scribe.mode == LoadSaveMode.PostLoadInit && master != null)
             {

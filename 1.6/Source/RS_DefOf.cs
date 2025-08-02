@@ -23,6 +23,9 @@ namespace ReSpliceCharmweavers
         [MayRequire("vanillaracesexpanded.sanguophage")] public static GeneDef VRE_SanguoFeeder;
         public static GeneDef RS_MultiPregnancy;
         public static GeneDef RS_TemperatureInsensitive;
+        public static GeneDef RS_LovethrallStraight;
+        public static GeneDef RS_LovethrallGay;
+        public static GeneDef RS_LovethrallBisexual;
         public static ThoughtDef RS_BrokenEnthrallment, RS_EnthralledPrisoner, RS_EnthralledMe;
         public static PregnancyApproachDef RS_LovinForHemogen;
         public static XenotypeDef RS_Charmweaver;
