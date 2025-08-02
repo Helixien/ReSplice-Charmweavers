@@ -6,6 +6,8 @@
 		<iconPath>UI/Icons/Genes/Gene_Lovethrall</iconPath>
 		<biostatCpx>0</biostatCpx>
 		<biostatMet>0</biostatMet>
+		<selectionWeight>0</selectionWeight>
+		<canGenerateInGeneSet>false</canGenerateInGeneSet>
 		<suppressedTraits>
 			<li>
 				<def>Asexual</def>
