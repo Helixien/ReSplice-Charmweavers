@@ -7,10 +7,13 @@
 	<RS.NewThrall>New thrall: {PAWN_nameDef}</RS.NewThrall>
 	<RS.NewThrallDesc>{CASTER_nameDef} successfully enthralled {TARGET_nameDef}.</RS.NewThrallDesc>
 	<RS.MaxThrallAmount>Default max thrall capacity</RS.MaxThrallAmount>
+	<RS.MaxThrallControlGroupAmount>Default max thrall control group capacity</RS.MaxThrallControlGroupAmount>
 	<RS.ThrallAmount>Thrall amount</RS.ThrallAmount>
 	<RS.AlreadyHasMaxThrallAmount>Already has maximum thrall amount allowed.</RS.AlreadyHasMaxThrallAmount>
 	<RS.CannotLovethrall>Cannot lovethrall</RS.CannotLovethrall>
 	<RS.MessageLovethrallCapacityChanged>{PAWN_nameDef}'s lovethrall capacity has increased from {OLD} to {NEW}.</RS.MessageLovethrallCapacityChanged>
+  <!-- Normally impossible to get without extra plugins. -->
+	<RS.MessageLovethrallControlGroupCapacityChanged>{PAWN_nameDef}'s lovethrall control group capacity has increased from {OLD} to {NEW}.</RS.MessageLovethrallControlGroupCapacityChanged>
 	<RS.LovethrallCapacity>lovethrall capacity</RS.LovethrallCapacity>
 	<RS.LovethrallCapacityDesc>text.todo.\n\nLovethrall capacity can be increased using lovethrall capacity serums. These serums can be purchased from traders.</RS.LovethrallCapacityDesc>
 	<!-- Unused in 1.6, still used in previous versions. -->

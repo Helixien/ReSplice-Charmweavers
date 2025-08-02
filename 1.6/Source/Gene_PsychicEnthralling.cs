@@ -13,16 +13,31 @@ namespace ReSpliceCharmweavers
         public Gizmo_ThrallAmount gizmo;
 
         private int loveThrallCapacityOffset;
+        private int loveThrallControlGroupCapacityOffset;
 
         public int LovethrallCapacity => ReSpliceCharmweaversSettings.maxThrallAmount + loveThrallCapacityOffset;
+        public int LovethrallControlGroupCapacity => ReSpliceCharmweaversSettings.maxThrallControlGroupAmount + loveThrallControlGroupCapacityOffset;
 
         public void OffsetCapacity(int offset, bool sendNotification = true)
         {
             int num = LovethrallCapacity;
             loveThrallCapacityOffset += offset;
+            Notify_ControlGroupAmountMayChanged();
             if (sendNotification && PawnUtility.ShouldSendNotificationAbout(pawn))
             {
                 Messages.Message("RS.MessageLovethrallCapacityChanged".Translate(pawn.Named("PAWN"), num.Named("OLD"), LovethrallCapacity.Named("NEW")), pawn, MessageTypeDefOf.PositiveEvent);
+            }
+        }
+
+        public void OffsetControlGroupCapacity(int offset, bool sendNotification = true)
+        {
+            // Unused in the mod itself.
+            // Currently, this exists for mod compatibility in case some mods want to increase the offset.
+            int num = LovethrallControlGroupCapacity;
+            loveThrallControlGroupCapacityOffset += offset;
+            if (sendNotification && PawnUtility.ShouldSendNotificationAbout(pawn))
+            {
+                Messages.Message("RS.MessageLovethrallControlGroupCapacityChanged".Translate(pawn.Named("PAWN"), num.Named("OLD"), LovethrallCapacity.Named("NEW")), pawn, MessageTypeDefOf.PositiveEvent);
             }
         }
 
@@ -66,11 +81,17 @@ namespace ReSpliceCharmweavers
             };
         }
 
-        private void Notify_ControlGroupAmountMayChanged()
+        public void Notify_ControlGroupAmountMayChanged()
         {
-            const int TempMaxControlGroups = 2;
-
-            var totalGroups = TempMaxControlGroups;
+            var totalGroups = LovethrallControlGroupCapacity;
+            if (totalGroups < 1)
+            {
+                totalGroups = 1;
+                Log.ErrorOnce(
+                    $"{pawn.Name} has too little thrall control groups. They have {totalGroups}, while they need at least 1. " +
+                    $"Base is {ReSpliceCharmweaversSettings.maxThrallControlGroupAmount} while the offset is {loveThrallControlGroupCapacityOffset}",
+                    Gen.HashCombineInt(pawn.thingIDNumber, -2091729361));
+            }
 
             while (controlGroups.Count < totalGroups)
                 controlGroups.Add(new ThrallControlGroup(this));
