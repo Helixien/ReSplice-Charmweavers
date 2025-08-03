@@ -50,4 +50,9 @@ People with the psychic enthralling gene are able to manipulate others minds and
 	<RS.AssignThrallToControlGroup>Assign to control group {0}</RS.AssignThrallToControlGroup>
 	<RS.MessageCaravanAddingEscortingThrall>Auto-adding {THRALL_nameDef} to the caravan, since {THRALL_possessive} is escorting {MASTER_nameDef}</RS.MessageCaravanAddingEscortingThrall>
 	<RS.MessageCaravanRemovingEscortingThrall>Auto-removing {THRALL_nameDef} from the caravan, since {THRALL_possessive} is escorting {MASTER_nameDef}</RS.MessageCaravanRemovingEscortingThrall>
+	<!-- Reasons for why implanting an embryo is not possible. -->
+	<!-- Multi-pregnancy allows for a max of 3 pregnancies at a time. -->
+	<RS.CannotTooPregnant>too many pregnancies</RS.CannotTooPregnant>
+	<!-- Multi-pregnancy has a cooldown of 1 day. -->
+	<RS.CannotPregnantTooRecently>recently impregnated</RS.CannotPregnantTooRecently>
 </LanguageData>
