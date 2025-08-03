@@ -7,7 +7,8 @@ namespace ReSpliceCharmweavers
     {
         public override ThoughtState ShouldHaveThought(Pawn p)
         {
-            return p.gender == Gender.Female && PregnancyUtility.GetPregnancyHediff(p) is null && !p.health.hediffSet.HasHediff(RS_DefOf.RS_RecentPregnancy);
+            return Find.Storyteller.difficulty.ChildrenAllowed && p.gender == Gender.Female
+                   && PregnancyUtility.GetPregnancyHediff(p) is null && !p.health.hediffSet.HasHediff(RS_DefOf.RS_RecentPregnancy);
         }
     }
 }
