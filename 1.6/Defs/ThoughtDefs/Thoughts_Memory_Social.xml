@@ -123,9 +123,9 @@
 	</ThoughtDef>
 	<!-- ================ Thrall stolen ================ -->
 	<ThoughtDef>
-		<defName>RS_StolyMyThrall</defName>
+		<defName>RS_StoleMyThrall</defName>
 		<thoughtClass>Thought_MemorySocial</thoughtClass>
-		<durationDays>15</durationDays>
+		<durationDays>90</durationDays>
 		<stackLimit>300</stackLimit>
 		<stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
 		<stages>
@@ -133,7 +133,7 @@
 				<label>thrall stolen</label>
 				<labelSocial>stole my thrall</labelSocial>
 				<description>My thrall was stolen from me!</description>
-				<baseOpinionOffset>-5</baseOpinionOffset>
+				<baseOpinionOffset>-15</baseOpinionOffset>
 			</li>
 		</stages>
 	</ThoughtDef>

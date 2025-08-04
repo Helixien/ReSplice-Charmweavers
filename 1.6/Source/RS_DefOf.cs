@@ -15,7 +15,7 @@ namespace ReSpliceCharmweavers
         public static HediffDef RS_RecentPregnancy;
         public static ThoughtDef RS_BecameThrallMood;
         public static ThoughtDef RS_GotSomeLovinThrall;
-        public static ThoughtDef RS_StolyMyThrall;
+        public static ThoughtDef RS_StoleMyThrall;
         public static InteractionDef Breakup;
         public static GeneDef RS_Beauty_Angelic;
         public static GeneDef RS_Libido_None;

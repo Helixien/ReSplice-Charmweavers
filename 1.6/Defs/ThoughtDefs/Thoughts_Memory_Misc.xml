@@ -35,6 +35,9 @@
 		<nullifyingGenes>
 			<li>RS_Lovehexer</li>
 		</nullifyingGenes>
+		<nullifyingHediffs>
+			<li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+		</nullifyingHediffs>
 		<stages>
 			<li>
 				<label>Enthralled prisoner</label>
