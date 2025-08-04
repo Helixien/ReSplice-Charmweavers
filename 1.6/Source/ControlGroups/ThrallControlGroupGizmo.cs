@@ -22,7 +22,7 @@ public class ThrallControlGroupGizmo : Gizmo
 
     public override bool Visible => controlGroup.ThrallsForReading.Count > 0 || Find.Selector.SelectedPawns.Count == 1;
 
-    public override float Order => controlGroup.ThrallsForReading.Count > 0 ? -89 : 88;
+    public override float Order => controlGroup.ThrallsForReading.Count > 0 ? -89 : -88;
 
     public override float GetWidth(float maxWidth) => Width;
 

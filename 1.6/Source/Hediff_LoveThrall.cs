@@ -55,14 +55,18 @@ namespace ReSpliceCharmweavers
                 MoteMaker.MakeAttachedOverlay(pawn, RS_DefOf.RS_EnthralledMote, Vector2.zero);
             }
 
+            if (master.genes.HasActiveGene(RS_DefOf.RS_LoveFeed))
+            {
+                _ = pawn.relations.GetPregnancyApproachForPartner(master);
+                pawn.relations.GetAdditionalPregnancyApproachData().partners[master] = RS_DefOf.RS_LovinForHemogen;
+                master.relations.GetAdditionalPregnancyApproachData().partners[pawn] = RS_DefOf.RS_LovinForHemogen;
+            }
+
             if (pawn.genes != null)
             {
-                if (master.genes.HasActiveGene(RS_DefOf.RS_LoveFeed))
-                {
-                    _ = pawn.relations.GetPregnancyApproachForPartner(master);
-                    pawn.relations.GetAdditionalPregnancyApproachData().partners[master] = RS_DefOf.RS_LovinForHemogen;
-                    master.relations.GetAdditionalPregnancyApproachData().partners[pawn] = RS_DefOf.RS_LovinForHemogen;
-                }
+                RemoveGene(RS_DefOf.RS_LovethrallBisexual);
+                RemoveGene(RS_DefOf.RS_LovethrallStraight);
+                RemoveGene(RS_DefOf.RS_LovethrallGay);
 
                 var bisexual = false;
                 var gay = false;
@@ -95,6 +99,13 @@ namespace ReSpliceCharmweavers
                         pawn.genes.AddGene(RS_DefOf.RS_LovethrallBisexual, true);
                     else
                         pawn.genes.AddGene(RS_DefOf.RS_LovethrallGay, true);
+                }
+
+                void RemoveGene(GeneDef geneDef)
+                {
+                    var gene = pawn.genes.GetGene(geneDef);
+                    if (gene != null)
+                        pawn.genes.RemoveGene(gene);
                 }
             }
         }
