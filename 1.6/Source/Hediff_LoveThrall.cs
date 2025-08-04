@@ -130,6 +130,8 @@ namespace ReSpliceCharmweavers
                 pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_BrokenEnthrallment);
                 pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_EnthralledMe, master);
 
+                master.genes?.GetFirstGeneOfType<Gene_PsychicEnthralling>()?.GetControlGroup(pawn).TryUnassign(pawn);
+
                 if (pawn.genes != null)
                 {
                     ClearGenes(pawn.genes.Xenogenes);

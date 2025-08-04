@@ -39,6 +39,11 @@ namespace ReSpliceCharmweavers
 
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
+            if (target.Pawn.IsLovethrall())
+            {
+                Pawn_Kill_Patch.RemoveThrallRelationships(target.Pawn);
+            }
+
             var hediff = HediffMaker.MakeHediff(RS_DefOf.RS_LoveThrall, target.Pawn) as Hediff_LoveThrall;
             hediff.master = parent.pawn;
             if (target.Pawn.HomeFaction != null && target.Pawn.HomeFaction != this.parent.pawn.Faction)
@@ -90,6 +95,14 @@ namespace ReSpliceCharmweavers
             Pawn pawn = target.Pawn;
             if (pawn == null)
             {
+                return false;
+            }
+            if (pawn.IsLovehexer())
+            {
+                if (throwMessages)
+                {
+                    AbilityUtility.SendPostProcessedMessage("RS.TargetIsLovehexer".Translate(), pawn, parent);
+                }
                 return false;
             }
             if (pawn.IsLovethrall(out var master) && master == parent.pawn)

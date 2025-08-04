@@ -2,6 +2,7 @@
 <LanguageData>
 
 	<RS.TargetTooYoung>Too young.</RS.TargetTooYoung>
+	<RS.TargetIsLovehexer>Target is lovehexer.</RS.TargetIsLovehexer>
 	<RS.ThrallOf>Thrall of {PAWN_nameDef}</RS.ThrallOf>
 	<RS.BerserkThrallStateReason>This happened because of {0_definite}'s death.</RS.BerserkThrallStateReason>
 	<RS.NewThrall>New thrall: {PAWN_nameDef}</RS.NewThrall>
