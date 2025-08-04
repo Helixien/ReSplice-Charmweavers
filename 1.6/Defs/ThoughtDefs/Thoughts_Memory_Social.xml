@@ -139,4 +139,20 @@
 			</li>
 		</stages>
 	</ThoughtDef>
+	<!-- Thrall stolen -->
+	<ThoughtDef>
+		<defName>RS_StolyMyThrall</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>15</durationDays>
+		<stackLimit>300</stackLimit>
+		<stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+		<stages>
+			<li>
+				<label>thrall stolen</label>
+				<labelSocial>stole my thrall</labelSocial>
+				<description>My thrall was stolen from me!</description>
+				<baseOpinionOffset>-5</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
 </Defs>

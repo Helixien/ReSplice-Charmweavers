@@ -39,9 +39,10 @@ namespace ReSpliceCharmweavers
 
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
-            if (target.Pawn.IsLovethrall())
+            if (target.Pawn.IsLovethrall(out var oldMaster))
             {
                 Pawn_Kill_Patch.RemoveThrallRelationships(target.Pawn);
+                oldMaster.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_StolyMyThrall, parent.pawn);
             }
 
             var hediff = HediffMaker.MakeHediff(RS_DefOf.RS_LoveThrall, target.Pawn) as Hediff_LoveThrall;
