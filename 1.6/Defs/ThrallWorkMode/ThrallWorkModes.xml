@@ -16,6 +16,11 @@
 		<iconPath>UI/Icons/WorkMode/Escort</iconPath>
 		<workerClass>ReSpliceCharmweavers.ThrallWorkModeDrawer_FollowMaster</workerClass>
 		<followMasterOnCaravans>true</followMasterOnCaravans>
+		<!-- If a pawn is incapable of all the work tags on the list, display the following message. -->
+		<warningIfNoWorkTagsKey>RS.MessageThrallIncapableOfWorkInGroupViolent</warningIfNoWorkTagsKey>
+		<warningIfNoWorkTags>
+			<li>Violent</li>
+		</warningIfNoWorkTags>
 	</ReSpliceCharmweavers.ThrallWorkModeDef>
 
 	<ReSpliceCharmweavers.ThrallWorkModeDef>
@@ -25,6 +30,11 @@
 		<description>TODO</description>
 		<iconPath>UI/Icons/Gizmos/WorkMode/Worship</iconPath>
 		<workerClass>ReSpliceCharmweavers.ThrallWorkModeDrawer_FollowMaster</workerClass>
+		<!-- If a pawn is incapable of all the work tags on the list, display the following message. -->
+		<warningIfNoWorkTagsKey>RS.MessageThrallIncapableOfWorkInGroupSocial</warningIfNoWorkTagsKey>
+		<warningIfNoWorkTags>
+			<li>Social</li>
+		</warningIfNoWorkTags>
 	</ReSpliceCharmweavers.ThrallWorkModeDef>
 
 </Defs>

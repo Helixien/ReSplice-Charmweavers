@@ -59,7 +59,7 @@ public class ThrallControlGroup : IExposable
     {
         if (this.workMode == workMode && this.target == target)
             return;
-        
+
         this.workMode = workMode;
         this.target = target;
 
@@ -86,7 +86,15 @@ public class ThrallControlGroup : IExposable
         }
     }
 
-    private void SetWorkModeForPawn(Pawn pawn, ThrallWorkModeDef workMode) => pawn.jobs?.CheckForJobOverride();
+    private void SetWorkModeForPawn(Pawn pawn, ThrallWorkModeDef workMode)
+    {
+        pawn.jobs?.CheckForJobOverride();
+
+        if (workMode.warningIfNoWorkTags != WorkTags.None && !workMode.warningIfNoWorkTagsKey.NullOrEmpty() && pawn.WorkTagIsDisabled(workMode.warningIfNoWorkTags))
+        {
+            Messages.Message(workMode.warningIfNoWorkTagsKey.Translate(pawn.Named("THRALL"), workMode.Named("WORKMODE")), pawn, MessageTypeDefOf.NeutralEvent, false);
+        }
+    }
 
     public void ExposeData()
     {
