@@ -121,25 +121,7 @@
 			</li>
 		</stages>
 	</ThoughtDef>
-	<!-- ================ Worshipped by thralls ================ -->
-	<ThoughtDef>
-		<defName>RS_Worshipped</defName>
-		<durationDays>0.5</durationDays>
-		<stackLimit>10</stackLimit>
-		<stackedEffectMultiplier>1</stackedEffectMultiplier>
-		<stagesStack>true</stagesStack>
-		<nullifyingHediffs>
-			<li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
-		</nullifyingHediffs>
-		<stages>
-			<li>
-				<label>worshipped</label>
-				<description>My thralls are treating me with all the love and respect I deserve.</description>
-				<baseMoodEffect>1</baseMoodEffect>
-			</li>
-		</stages>
-	</ThoughtDef>
-	<!-- Thrall stolen -->
+	<!-- ================ Thrall stolen ================ -->
 	<ThoughtDef>
 		<defName>RS_StolyMyThrall</defName>
 		<thoughtClass>Thought_MemorySocial</thoughtClass>
