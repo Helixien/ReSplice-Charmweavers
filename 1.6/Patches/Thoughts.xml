@@ -8,36 +8,36 @@
 
 			<li Class="PatchOperationConditional">
 				<xpath>Defs/ThoughtDef[defName = "FedOn"]/nullifyingHediffs</xpath>
-				<match>
+				<match Class="PatchOperationAdd">
+					<xpath>Defs/ThoughtDef[defName = "FedOn"]</xpath>
+					<value>
+						<li>RS_LoveThrall</li>
+					</value>
+				</match>
+				<nomatch Class="PatchOperationAdd">
 					<xpath>Defs/ThoughtDef[defName = "FedOn"]</xpath>
 					<value>
 						<nullifyingHediffs>
 							<li>RS_LoveThrall</li>
 						</nullifyingHediffs>
 					</value>
-				</match>
-				<nomatch>
-					<xpath>Defs/ThoughtDef[defName = "FedOn"]/nullifyingHediffs</xpath>
-					<value>
-						<li>RS_LoveThrall</li>
-					</value>
 				</nomatch>
 			</li>
 
 			<li Class="PatchOperationConditional">
 				<xpath>Defs/ThoughtDef[defName = "FedOn_Social"]/nullifyingHediffs</xpath>
-				<match>
+				<match Class="PatchOperationAdd">
+					<xpath>Defs/ThoughtDef[defName = "FedOn_Social"]</xpath>
+					<value>
+						<li>RS_LoveThrall</li>
+					</value>
+				</match>
+				<nomatch Class="PatchOperationAdd">
 					<xpath>Defs/ThoughtDef[defName = "FedOn_Social"]</xpath>
 					<value>
 						<nullifyingHediffs>
 							<li>RS_LoveThrall</li>
 						</nullifyingHediffs>
-					</value>
-				</match>
-				<nomatch>
-					<xpath>Defs/ThoughtDef[defName = "FedOn_Social"]/nullifyingHediffs</xpath>
-					<value>
-						<li>RS_LoveThrall</li>
 					</value>
 				</nomatch>
 			</li>
