@@ -15,6 +15,12 @@
 					<RS_Charmweaver>0.005</RS_Charmweaver>
 				</value>
 			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThoughtDef[defName = "FedOn" or defName = "FedOn_Social"]/nullifyingTraits</xpath>
+				<value>
+					<li>RS_LoveThrall</li>
+				</value>
+			</li>
 		</operations>
 	</Operation>
 </Patch>

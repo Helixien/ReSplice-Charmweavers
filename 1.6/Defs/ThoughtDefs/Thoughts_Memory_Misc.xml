@@ -36,6 +36,7 @@
 			<li>RS_Lovehexer</li>
 		</nullifyingGenes>
 		<nullifyingHediffs>
+			<li>RS_LoveThrall</li>
 			<li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
 		</nullifyingHediffs>
 		<stages>
