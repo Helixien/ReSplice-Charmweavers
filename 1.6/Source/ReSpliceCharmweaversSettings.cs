@@ -8,11 +8,13 @@ namespace ReSpliceCharmweavers
     {
         public static int maxThrallAmount = 3;
         public static int maxThrallControlGroupAmount = 2;
+        public static int maxMultiPregnancyAmount = 3;
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref maxThrallAmount, "maxThrallAmount", 3);
             Scribe_Values.Look(ref maxThrallControlGroupAmount, "maxThrallControlGroupAmount", 2);
+            Scribe_Values.Look(ref maxMultiPregnancyAmount, "maxMultiPregnancyAmount", 3);
         }
 
         private Vector2 scrollPos;
@@ -26,14 +28,15 @@ namespace ReSpliceCharmweavers
             var ls = new Listing_Standard();
             ls.Begin(viewRect);
             var initY = ls.curY;
-            maxThrallAmount = (int)ls.SliderLabeled("RS.MaxThrallAmount".Translate() + ": " + maxThrallAmount, maxThrallAmount, 1, 10);
+            maxThrallAmount = (int)ls.SliderLabeled($"{"RS.MaxThrallAmount".Translate()}: {maxThrallAmount}", maxThrallAmount, 1, 10);
             var previous = maxThrallControlGroupAmount;
-            maxThrallControlGroupAmount = (int)ls.SliderLabeled("RS.MaxThrallControlGroupAmount".Translate() + ": " + maxThrallControlGroupAmount, maxThrallControlGroupAmount, 1, 10);
+            maxThrallControlGroupAmount = (int)ls.SliderLabeled($"{"RS.MaxThrallControlGroupAmount".Translate()}: {maxThrallControlGroupAmount}", maxThrallControlGroupAmount, 1, 10);
             if (maxThrallControlGroupAmount != previous && Current.ProgramState == ProgramState.Playing && Current.Game != null)
             {
                 foreach (var pawn in PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive)
                     pawn.genes?.GetFirstGeneOfType<Gene_PsychicEnthralling>()?.Notify_ControlGroupAmountMayChanged();
             }
+            maxMultiPregnancyAmount = (int)ls.SliderLabeled($"{"RS.MaxMultiPregnancyAmount".Translate()}: {maxMultiPregnancyAmount}", maxMultiPregnancyAmount, 2, 10);
             ls.End();
             Widgets.EndScrollView();
             scrollHeight = ls.curY - initY;

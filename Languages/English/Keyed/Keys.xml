@@ -9,6 +9,7 @@
 	<RS.NewThrallDesc>{CASTER_nameDef} successfully enthralled {TARGET_nameDef}.</RS.NewThrallDesc>
 	<RS.MaxThrallAmount>Default max thrall capacity</RS.MaxThrallAmount>
 	<RS.MaxThrallControlGroupAmount>Default max thrall control group capacity</RS.MaxThrallControlGroupAmount>
+	<RS.MaxMultiPregnancyAmount>Max multi-pregnancy amount</RS.MaxMultiPregnancyAmount>
 	<RS.ThrallAmount>Thrall amount</RS.ThrallAmount>
 	<RS.AlreadyHasMaxThrallAmount>Already has maximum thrall amount allowed.</RS.AlreadyHasMaxThrallAmount>
 	<RS.CannotLovethrall>Cannot lovethrall</RS.CannotLovethrall>

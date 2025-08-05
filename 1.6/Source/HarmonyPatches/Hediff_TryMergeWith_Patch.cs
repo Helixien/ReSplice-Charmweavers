@@ -14,7 +14,7 @@ namespace ReSpliceCharmweavers
             {
                 if (__instance.pawn.HasActiveGene(RS_DefOf.RS_MultiPregnancy))
                 {
-                    if (__instance.pawn.health.hediffSet.hediffs.Count(x => x.def == HediffDefOf.PregnantHuman) >= 3)
+                    if (__instance.pawn.health.hediffSet.hediffs.Count(x => x.def == HediffDefOf.PregnantHuman) >= ReSpliceCharmweaversSettings.maxMultiPregnancyAmount)
                     {
                         return true;
                     }

@@ -18,7 +18,7 @@ public static class HumanEmbryo_CanImplantReport_Patch
         // Don't allow if at 3 pregnancies or recently impregnated
         if (pawn.genes?.HasActiveGene(RS_DefOf.RS_MultiPregnancy) == true)
         {
-            if (pawn.health.hediffSet.hediffs.Count(x => x.def == HediffDefOf.PregnantHuman) >= 3)
+            if (pawn.health.hediffSet.hediffs.Count(x => x.def == HediffDefOf.PregnantHuman) >= ReSpliceCharmweaversSettings.maxMultiPregnancyAmount)
                 __result = "RS.CannotTooPregnant".Translate();
             else if (pawn.health.hediffSet.HasHediff(RS_DefOf.RS_RecentImpregnation))
                 __result = "RS.CannotPregnantTooRecently".Translate();
