@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+			<!-- Add lovethrall hediff to nullifying hediffs for feeding on hemogen. -->
+			<!-- Make sure that there's either a nullifyingHediffs node, or add it. -->
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThoughtDef[defName = "FedOn"]/nullifyingHediffs</xpath>
+				<match>
+					<xpath>Defs/ThoughtDef[defName = "FedOn"]</xpath>
+					<value>
+						<nullifyingHediffs>
+							<li>RS_LoveThrall</li>
+						</nullifyingHediffs>
+					</value>
+				</match>
+				<nomatch>
+					<xpath>Defs/ThoughtDef[defName = "FedOn"]/nullifyingHediffs</xpath>
+					<value>
+						<li>RS_LoveThrall</li>
+					</value>
+				</nomatch>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThoughtDef[defName = "FedOn_Social"]/nullifyingHediffs</xpath>
+				<match>
+					<xpath>Defs/ThoughtDef[defName = "FedOn_Social"]</xpath>
+					<value>
+						<nullifyingHediffs>
+							<li>RS_LoveThrall</li>
+						</nullifyingHediffs>
+					</value>
+				</match>
+				<nomatch>
+					<xpath>Defs/ThoughtDef[defName = "FedOn_Social"]/nullifyingHediffs</xpath>
+					<value>
+						<li>RS_LoveThrall</li>
+					</value>
+				</nomatch>
+			</li>
+		</operations>
+	</Operation>
+</Patch>
