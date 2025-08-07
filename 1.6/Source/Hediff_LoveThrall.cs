@@ -18,6 +18,14 @@ namespace ReSpliceCharmweavers
             var otherHediff = other as Hediff_LoveThrall;
             master = otherHediff.master;
             previousFaction = otherHediff.previousFaction;
+
+            // If a pawn was duplicated, assign them to a control group
+            var group = other.pawn.GetThrallControlGroup();
+            if (group != null && pawn != null)
+            {
+                pawn.GetThrallControlGroup()?.TryUnassign(pawn);
+                group.Assign(pawn, false);
+            }
         }
 
         public override void PostAdd(DamageInfo? dinfo)

@@ -44,18 +44,18 @@ public class ThrallControlGroup : IExposable
 
     public bool TryUnassign(Pawn pawn) => assignedThralls.RemoveAll(x => x.pawn == pawn) > 0;
 
-    public void Assign(Pawn pawn)
+    public void Assign(Pawn pawn, bool showMessages = true)
     {
         foreach (var controlGroup in Gene.controlGroups)
             controlGroup.TryUnassign(pawn);
 
         assignedThralls.Add(new AssignedThrall(pawn));
-        SetWorkModeForPawn(pawn, workMode);
+        SetWorkModeForPawn(pawn, workMode, showMessages);
     }
 
-    public void SetWorkMode(ThrallWorkModeDef workMode) => SetWorkMode(workMode, GlobalTargetInfo.Invalid);
+    public void SetWorkMode(ThrallWorkModeDef workMode, bool showMessages = true) => SetWorkMode(workMode, GlobalTargetInfo.Invalid, showMessages);
 
-    public void SetWorkMode(ThrallWorkModeDef workMode, GlobalTargetInfo target)
+    public void SetWorkMode(ThrallWorkModeDef workMode, GlobalTargetInfo target, bool showMessages = true)
     {
         if (this.workMode == workMode && this.target == target)
             return;
@@ -64,7 +64,7 @@ public class ThrallControlGroup : IExposable
         this.target = target;
 
         foreach (var thrall in assignedThralls)
-            SetWorkModeForPawn(thrall.pawn, workMode);
+            SetWorkModeForPawn(thrall.pawn, workMode, showMessages);
 
         if (workMode is { followMasterOnCaravans: true })
         {
@@ -86,11 +86,11 @@ public class ThrallControlGroup : IExposable
         }
     }
 
-    private void SetWorkModeForPawn(Pawn pawn, ThrallWorkModeDef workMode)
+    private void SetWorkModeForPawn(Pawn pawn, ThrallWorkModeDef workMode, bool showMessages)
     {
         pawn.jobs?.CheckForJobOverride();
 
-        if (workMode.warningIfNoWorkTags != WorkTags.None && !workMode.warningIfNoWorkTagsKey.NullOrEmpty() && pawn.WorkTagIsDisabled(workMode.warningIfNoWorkTags))
+        if (showMessages && workMode.warningIfNoWorkTags != WorkTags.None && !workMode.warningIfNoWorkTagsKey.NullOrEmpty() && pawn.WorkTagIsDisabled(workMode.warningIfNoWorkTags))
         {
             Messages.Message(workMode.warningIfNoWorkTagsKey.Translate(pawn.Named("THRALL"), workMode.Named("WORKMODE")), pawn, MessageTypeDefOf.NeutralEvent, false);
         }
