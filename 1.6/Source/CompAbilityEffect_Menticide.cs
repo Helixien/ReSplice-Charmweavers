@@ -16,6 +16,8 @@ namespace ReSpliceCharmweavers
     {
         public override bool HideTargetPawnTooltip => true;
 
+        public Mote moteCast = null;
+
         public override bool GizmoDisabled(out string reason)
         {
             var gene = parent.pawn.genes?.GetFirstGeneOfType<Gene_PsychicEnthralling>();
@@ -140,6 +142,18 @@ namespace ReSpliceCharmweavers
                 return false;
             }
             return true;
+        }
+
+        public override void CompTick()
+        {
+            base.CompTick();
+            if (ThingDefOf.Mote_CastPsycast != null && parent.pawn.Spawned && parent.Casting)
+            {
+                if (moteCast == null || moteCast.Destroyed)
+                    moteCast = MoteMaker.MakeAttachedOverlay(parent.pawn, ThingDefOf.Mote_CastPsycast, Psycast.MoteCastOffset, Psycast.MoteCastScale, parent.verb.verbProps.warmupTime - Psycast.MoteCastFadeTime);
+                else
+                    moteCast.Maintain();
+            }
         }
     }
 }
