@@ -12,6 +12,8 @@ public class Gene_Thrall : Gene
         // 10% chance to keep changes to sexuality after no longer lovethralled
         if (pawn.story?.traits != null && Rand.Chance(0.1f))
         {
+            var displayMessage = false;
+
             // If the gene was suppressing any of the sexuality traits, remove those (unless added by traits)
             if (def.suppressedTraits != null)
             {
@@ -22,7 +24,10 @@ public class Gene_Thrall : Gene
                         var current = pawn.story.traits.GetTrait(trait.def);
                         // Only remove if not forced by other genes
                         if (current is { sourceGene: null })
+                        {
                             pawn.story.traits.RemoveTrait(current);
+                            displayMessage = true;
+                        }
                     }
                 }
             }
@@ -33,9 +38,18 @@ public class Gene_Thrall : Gene
                 foreach (var trait in def.forcedTraits)
                 {
                     if (trait.def == TraitDefOf.Bisexual || trait.def == TraitDefOf.Gay || trait.def == TraitDefOf.Asexual)
+                    {
+                        // Currently, only 1 trait can be gained (there would be conflicts otherwise), so we break.
+                        // However, if we decided to add support for more, move the sexuality trait check before adding the trait, rather before the loop itself.
                         pawn.story.traits.GainTrait(new Trait(trait.def, trait.degree));
+                        displayMessage = true;
+                        break;
+                    }
                 }
             }
+
+            if (displayMessage && PawnUtility.ShouldSendNotificationAbout(pawn))
+                Messages.Message("RS.EnthrallmentTraitChangesMessage".Translate(pawn.Named("PAWN")), pawn, MessageTypeDefOf.NeutralEvent);
         }
     }
 

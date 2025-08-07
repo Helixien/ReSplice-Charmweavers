@@ -59,4 +59,7 @@ People with the psychic enthralling gene are able to manipulate others minds and
 	<RS.CannotTooPregnant>too many pregnancies</RS.CannotTooPregnant>
 	<!-- Multi-pregnancy has a cooldown of 1 day. -->
 	<RS.CannotPregnantTooRecently>recently impregnated</RS.CannotPregnantTooRecently>
+	<!-- Thralls have gay/bisexual traits forced on them and asexual/gay traits suppressed so they find their masters appealing. -->
+	<!-- When an entrhallment is broken, there's a 10% chance that they keep those changes. This is the messages that is displayed. -->
+	<RS.EnthrallmentTraitChangesMessage>{PAWN} was released from enthrallment, but it seems that some changes caused by it still remain.</RS.EnthrallmentTraitChangesMessage>
 </LanguageData>
