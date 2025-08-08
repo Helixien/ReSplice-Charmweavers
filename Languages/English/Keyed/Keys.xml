@@ -35,7 +35,7 @@ People with the psychic enthralling gene are able to manipulate others minds and
 	<RS.CannotUseHarmfulAbilitiesOnMaster>{PAWN_nameDef} won't use harmful abilities on {PAWN_possessive} master</RS.CannotUseHarmfulAbilitiesOnMaster>
 	<RS.CommandSelectAllThralls>Select all thralls</RS.CommandSelectAllThralls>
 	<RS.CommandSelectAllThrallsDesc>Select all thralls bound to this {PAWN_xenotype}.</RS.CommandSelectAllThrallsDesc>
-	<RS.CommandSelectMaster>Select master</RS.CommandSelectMaster>
+	<RS.CommandSelectMaster>Select\nmaster</RS.CommandSelectMaster>
 	<RS.CommandSelectMasterDesc>Select the {PAWN_xenotype} this thrall is bound to.</RS.CommandSelectMasterDesc>
 	<RS.MessageCaravanAddingEscortingThrall>Auto-adding {THRALL_nameDef} to the caravan, since {THRALL_possessive} is escorting {MASTER_nameDef}</RS.MessageCaravanAddingEscortingThrall>
 	<!-- Some of those are duplicates of vanilla texts, but were added here in case we'll want to ever modify them. -->
