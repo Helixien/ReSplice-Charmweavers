@@ -78,13 +78,6 @@ namespace ReSpliceCharmweavers
             }
         }
 
-        public override bool TestRunInt(Slate slate)
-        {
-            if (GenDate.DaysPassed < 60)
-            {
-                return false;
-            }
-            return true;
-        }
+        public override bool TestRunInt(Slate slate) => true;
     }
 }
