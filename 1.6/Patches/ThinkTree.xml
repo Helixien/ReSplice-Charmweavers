@@ -24,7 +24,6 @@
 								</subNodes>
 							</li>
 							<li Class="ReSpliceCharmweavers.JobGiver_AIFollowMaster"/>
-							<li Class="ReSpliceCharmweavers.JobGiver_AIWaitWithMaster" />
 							<li Class="ReSpliceCharmweavers.JobGiver_WanderMaster" />
 						</subNodes>
 					</li>

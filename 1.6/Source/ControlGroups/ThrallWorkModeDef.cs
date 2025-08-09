@@ -12,6 +12,7 @@ public class ThrallWorkModeDef : Def
     public int uiOrder;
     public Type workerClass = typeof(ThrallWorkModeDrawer);
     public bool followMasterOnCaravans;
+    public bool allowWhileMasterAsleep = false;
     [NoTranslate]
     public string warningIfNoWorkTagsKey;
     public WorkTags warningIfNoWorkTags = WorkTags.None;

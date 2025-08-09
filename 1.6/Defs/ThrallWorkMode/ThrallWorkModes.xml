@@ -14,6 +14,7 @@
 		<iconPath>UI/Icons/WorkMode/Escort</iconPath>
 		<workerClass>ReSpliceCharmweavers.ThrallWorkModeDrawer_FollowMaster</workerClass>
 		<followMasterOnCaravans>true</followMasterOnCaravans>
+		<allowWhileMasterAsleep>true</allowWhileMasterAsleep>
 		<!-- If a pawn is incapable of all the work tags on the list, display the following message. -->
 		<warningIfNoWorkTagsKey>RS.MessageThrallIncapableOfWorkInGroupViolent</warningIfNoWorkTagsKey>
 		<warningIfNoWorkTags>

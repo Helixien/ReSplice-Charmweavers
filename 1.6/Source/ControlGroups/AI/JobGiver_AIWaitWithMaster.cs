@@ -17,7 +17,7 @@ public class JobGiver_AIWaitWithMaster : ThinkNode_JobGiver
         if (!cell.IsValid)
             return null;
 
-        var job = JobMaker.MakeJob(JobDefOf.Wait_WithSleeping, cell, pawn);
+        var job = JobMaker.MakeJob(JobDefOf.Wait_WithSleeping, cell, master);
         job.expiryInterval = 120;
         job.expireOnEnemiesNearby = true;
         return job;
