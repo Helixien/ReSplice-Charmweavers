@@ -1,13 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
 	<ReSpliceCharmweavers.ThrallWorkModeDef>
 		<defName>RS_Work</defName>
 		<label>work</label>
 		<description>Work autonomously according to thrall’s job assignment. Automatically goes to fulfil their needs when needed.</description>
 		<iconPath>UI/Icons/WorkMode/Work</iconPath>
 	</ReSpliceCharmweavers.ThrallWorkModeDef>
-
 	<ReSpliceCharmweavers.ThrallWorkModeDef>
 		<defName>RS_Escort</defName>
 		<label>escort</label>
@@ -22,12 +20,11 @@
 			<li>Violent</li>
 		</warningIfNoWorkTags>
 	</ReSpliceCharmweavers.ThrallWorkModeDef>
-
 	<ReSpliceCharmweavers.ThrallWorkModeDef>
 		<defName>RS_Worship</defName>
 		<label>worship</label>
 		<uiOrder>300</uiOrder>
-		<description>TODO</description>
+		<description>Stay near their master and entertain them socially to keep their mood up. Do not follow their master even off the map.</description>
 		<iconPath>UI/Icons/Gizmos/WorkMode/Worship</iconPath>
 		<workerClass>ReSpliceCharmweavers.ThrallWorkModeDrawer_FollowMaster</workerClass>
 		<!-- If a pawn is incapable of all the work tags on the list, display the following message. -->
@@ -36,5 +33,4 @@
 			<li>Social</li>
 		</warningIfNoWorkTags>
 	</ReSpliceCharmweavers.ThrallWorkModeDef>
-
 </Defs>

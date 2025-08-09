@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
 	<RS.TargetTooYoung>Too young.</RS.TargetTooYoung>
 	<RS.TargetIsLovehexer>Target is lovehexer.</RS.TargetIsLovehexer>
 	<RS.ThrallOf>Thrall of {PAWN_nameDef}</RS.ThrallOf>
@@ -10,14 +9,14 @@
 	<RS.MaxThrallAmount>Default max thrall capacity</RS.MaxThrallAmount>
 	<RS.MaxThrallControlGroupAmount>Default max thrall control group capacity</RS.MaxThrallControlGroupAmount>
 	<RS.MaxMultiPregnancyAmount>Max multi-pregnancy amount</RS.MaxMultiPregnancyAmount>
-	<RS.ThrallAmount>Thrall amount</RS.ThrallAmount>
+	<RS.ThrallAmount>thrall amount</RS.ThrallAmount>
 	<RS.AlreadyHasMaxThrallAmount>Already has maximum thrall amount allowed.</RS.AlreadyHasMaxThrallAmount>
-	<RS.CannotLovethrall>Cannot lovethrall</RS.CannotLovethrall>
-	<RS.MessageLovethrallCapacityChanged>{PAWN_nameDef}'s lovethrall capacity has increased from {OLD} to {NEW}.</RS.MessageLovethrallCapacityChanged>
-  <!-- Normally impossible to get without extra plugins. -->
-	<RS.MessageLovethrallControlGroupCapacityChanged>{PAWN_nameDef}'s lovethrall control group capacity has increased from {OLD} to {NEW}.</RS.MessageLovethrallControlGroupCapacityChanged>
-	<RS.LovethrallCapacity>lovethrall capacity</RS.LovethrallCapacity>
-	<RS.LovethrallCapacityDesc>text.todo.\n\nLovethrall capacity can be increased using lovethrall capacity serums. These serums can be purchased from traders.</RS.LovethrallCapacityDesc>
+	<RS.CannotLovethrall>Cannot thrall</RS.CannotLovethrall>
+	<RS.MessageLovethrallCapacityChanged>{PAWN_nameDef}'s thrall capacity has increased from {OLD} to {NEW}.</RS.MessageLovethrallCapacityChanged>
+	<!-- Normally impossible to get without extra plugins. -->
+	<RS.MessageLovethrallControlGroupCapacityChanged>{PAWN_nameDef}'s thrall control group capacity has increased from {OLD} to {NEW}.</RS.MessageLovethrallControlGroupCapacityChanged>
+	<RS.LovethrallCapacity>thrall capacity</RS.LovethrallCapacity>
+	<RS.LovethrallCapacityDesc>The maximum amount of thralls this pawn can have.\n\nThrall capacity can be increased using thrall capacity serums. These serums can be purchased from traders.</RS.LovethrallCapacityDesc>
 	<!-- Unused in 1.6, still used in previous versions. -->
 	<RS.PsychicEnthrallment>Psychic Enthrallment</RS.PsychicEnthrallment>
 	<!-- Also unused in 1.6, still used in previous versions. -->
@@ -56,7 +55,7 @@ People with the psychic enthralling gene are able to manipulate others minds and
 	<RS.MessageThrallIncapableOfWorkInGroupSocial>{THRALL} was assigned to {WORKMODE} group, but is incapable of social tasks.</RS.MessageThrallIncapableOfWorkInGroupSocial>
 	<!-- Reasons for why implanting an embryo is not possible. -->
 	<!-- Multi-pregnancy allows for a max of 3 pregnancies at a time. -->
-	<RS.CannotTooPregnant>too many pregnancies</RS.CannotTooPregnant>
+	<RS.CannotTooPregnant>too many current pregnancies</RS.CannotTooPregnant>
 	<!-- Multi-pregnancy has a cooldown of 1 day. -->
 	<RS.CannotPregnantTooRecently>recently impregnated</RS.CannotPregnantTooRecently>
 	<!-- Thralls have gay/bisexual traits forced on them and asexual/gay traits suppressed so they find their masters appealing. -->
