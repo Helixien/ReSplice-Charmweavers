@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationInsert">
+		<!-- Insert into any storyteller that has the wimp intro quest. -->
+		<!-- This will patch the BaseStoryteller def, as well as any mods that copy-paste it instead of inheriting. -->
+		<xpath>Defs/StorytellerDef/comps/li[incident="GiveQuest_Intro_Wimp"]</xpath>
+		<order>Append</order>
+		<value>
+			<li Class="StorytellerCompProperties_SingleOnceFixed">
+				<fireAfterDaysPassed>12</fireAfterDaysPassed>
+				<incident>RS_GiveQuest_Charmweaver_Intro</incident>
+				<allowedTargetTags>
+					<li>World</li>
+				</allowedTargetTags>
+			</li>
+		</value>
+	</Operation>
+</Patch>

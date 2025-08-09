@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<QuestScriptDef>
-		<defName>RS_SeekingSafety</defName>
-		<rootSelectionWeight>0.6</rootSelectionWeight>
-		<minRefireDays>140</minRefireDays>
+	<QuestScriptDef Name="RS_SeekingSafetyQuestBase" Abstract="True">
 		<rootMinPoints>0</rootMinPoints>
 		<expireDaysRange>0.5</expireDaysRange>
 		<rootIncreasesPopulation>true</rootIncreasesPopulation>
@@ -99,6 +96,16 @@
 			</nodes>
 		</root>
 	</QuestScriptDef>
+	<QuestScriptDef ParentName="RS_SeekingSafetyQuestBase">
+		<defName>RS_SeekingSafety</defName>
+		<rootSelectionWeight>0.6</rootSelectionWeight>
+		<minRefireDays>140</minRefireDays>
+	</QuestScriptDef>
+	<QuestScriptDef ParentName="RS_SeekingSafetyQuestBase">
+		<defName>RS_SeekingSafety_Intro</defName>
+		<!-- Special selection -->
+		<rootSelectionWeight>0</rootSelectionWeight>
+	</QuestScriptDef>
 	<QuestScriptDef>
 		<defName>RS_Util_JoinerThreat_Joiner</defName>
 		<root Class="QuestNode_Sequence">
@@ -145,4 +152,11 @@
 			</nodes>
 		</root>
 	</QuestScriptDef>
+
+	<IncidentDef ParentName="GiveQuestBase">
+		<defName>RS_GiveQuest_Charmweaver_Intro</defName>
+		<label>charmweaver seeking safety</label>
+		<questScriptDef>RS_SeekingSafety_Intro</questScriptDef>
+		<baseChance>0</baseChance> <!-- given by a special storyteller comp -->
+	</IncidentDef>
 </Defs>
