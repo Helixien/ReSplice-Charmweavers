@@ -16,7 +16,7 @@ namespace ReSpliceCharmweavers
 
     public class CompUseEffect_OffsetLovethrallCapacity : CompUseEffect
     {
-        private CompProperties_UseEffectOffsetLovethrallCapacity Props => (CompProperties_UseEffectOffsetLovethrallCapacity)props;
+        private new CompProperties_UseEffectOffsetLovethrallCapacity Props => (CompProperties_UseEffectOffsetLovethrallCapacity)props;
 
         public override void DoEffect(Pawn user)
         {
