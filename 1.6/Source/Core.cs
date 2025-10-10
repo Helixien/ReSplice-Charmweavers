@@ -17,7 +17,16 @@ namespace ReSpliceCharmweavers
 
         static Core()
         {
-            new Harmony("ReSpliceCharmweavers.Mod").PatchAll();
+            var harmony = new Harmony("ReSpliceCharmweavers.Mod");
+            harmony.PatchAllUncategorized();
+
+            // Those 2 patches specifically are relying on one another. Make sure that either both or none of them are applied, to avoid issues.
+            var before = CountOurPatches();
+            harmony.PatchCategory(RJW_VFEPregnancyApproach_GetPreference_Patch.RJWTryForBaby_VFEPregnancyApproach_Patches);
+            if (before + 2 != CountOurPatches())
+                harmony.UnpatchCategory(RJW_VFEPregnancyApproach_GetPreference_Patch.RJWTryForBaby_VFEPregnancyApproach_Patches);
+
+            int CountOurPatches() => Harmony.GetAllPatchedMethods().Select(Harmony.GetPatchInfo).Count(x => x.Owners.Contains(harmony.Id));
         }
 
         public static bool IsLovethrall(this Pawn pawn)
