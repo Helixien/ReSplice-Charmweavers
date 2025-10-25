@@ -39,7 +39,7 @@ namespace ReSpliceCharmweavers
 
         public static int GetThrallAmount(this Pawn pawn)
         {
-            return pawn.relations.DirectRelations.Count(x => x.def == RS_DefOf.RS_Thrall);
+            return pawn.relations.DirectRelations.Count(x => x.def == RS_DefOf.RS_Thrall && x.otherPawn is { Dead: false });
         }
 
         public static Pawn GetMaster(this Pawn pawn)

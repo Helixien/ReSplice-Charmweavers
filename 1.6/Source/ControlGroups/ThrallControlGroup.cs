@@ -102,6 +102,6 @@ public class ThrallControlGroup : IExposable
         Scribe_Defs.Look(ref workMode, nameof(workMode));
         Scribe_TargetInfo.Look(ref target, nameof(target));
         if (Scribe.mode == LoadSaveMode.PostLoadInit)
-            assignedThralls.RemoveAll(x => x.pawn == null || !x.pawn.IsLovethrall(out var master) || master != Gene.pawn);
+            assignedThralls.RemoveAll(x => x.pawn == null || x.pawn.Dead || !x.pawn.IsLovethrall(out var master) || master != Gene.pawn);
     }
 }
