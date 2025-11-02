@@ -8,7 +8,7 @@ namespace ReSpliceCharmweavers
     {
         public override bool InRelation(Pawn me, Pawn other)
         {
-            if (me == other || other.relations is null || me.Dead || other.Dead)
+            if (me == other || other.relations is null)
             {
                 return false;
             }
@@ -16,10 +16,10 @@ namespace ReSpliceCharmweavers
             {
                 return false;
             }
-            var spouses = me.relations.DirectRelations.Where(x => x.def == PawnRelationDefOf.Spouse).Select(x => x.otherPawn).ToList();
+            var spouses = me.relations.DirectRelations.Where(x => x.def == PawnRelationDefOf.Spouse && !x.otherPawn?.Dead != false).Select(x => x.otherPawn).ToList();
             if (spouses.Contains(other) is false)
             {
-                var otherSpouses = other.relations.DirectRelations.Where(x => x.def == PawnRelationDefOf.Spouse).Select(x => x.otherPawn).ToList();
+                var otherSpouses = other.relations.DirectRelations.Where(x => x.def == PawnRelationDefOf.Spouse && !x.otherPawn?.Dead != false).Select(x => x.otherPawn).ToList();
                 if (spouses.Intersect(otherSpouses).Any())
                 {
                     return true;
