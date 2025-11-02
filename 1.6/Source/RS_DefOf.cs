@@ -10,6 +10,7 @@ namespace ReSpliceCharmweavers
         public static GeneDef RS_Matrianic;
         public static PawnRelationDef RS_Master;
         public static PawnRelationDef RS_Thrall;
+        [MayRequireIdeology] public static PawnRelationDef RS_CoSpouse;
         public static HediffDef RS_LoveThrall;
         public static HediffDef RS_RecentImpregnation;
         public static HediffDef RS_RecentPregnancy;

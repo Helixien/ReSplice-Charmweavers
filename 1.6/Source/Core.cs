@@ -14,11 +14,14 @@ namespace ReSpliceCharmweavers
         public static Texture2D SelectAllThrallsIcon = ContentFinder<Texture2D>.Get("UI/Icons/Gizmos/SelectAllThralls");
         public static Texture2D SelectMasterIcon = ContentFinder<Texture2D>.Get("UI/Icons/Gizmos/SelectMaster");
         public static Color ThrallColor = new ColorInt(198, 122, 211).ToColor;
+        public const string LatePatchesCategory = "LatePatches";
 
         static Core()
         {
             var harmony = new Harmony("ReSpliceCharmweavers.Mod");
             harmony.PatchAllUncategorized();
+            // Patches that rely on stuff being more initialized
+            LongEventHandler.ExecuteWhenFinished(() => harmony.PatchCategory(LatePatchesCategory));
 
             if (ModsConfig.IsActive("rim.job.world"))
             {
