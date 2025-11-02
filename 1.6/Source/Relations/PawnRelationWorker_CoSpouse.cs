@@ -8,7 +8,7 @@ namespace ReSpliceCharmweavers
     {
         public override bool InRelation(Pawn me, Pawn other)
         {
-            if (me == other || other.relations is null)
+            if (me == other || other.relations is null || me.Dead || other.Dead)
             {
                 return false;
             }
