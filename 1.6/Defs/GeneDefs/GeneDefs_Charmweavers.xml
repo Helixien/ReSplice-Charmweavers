@@ -62,7 +62,7 @@
 		</customEffectDescriptions>
 		<displayOrderInCategory>20</displayOrderInCategory>
 		<lovinMTBFactor>0.1</lovinMTBFactor>
-		<biostatMet>-3</biostatMet>
+		<biostatMet>3</biostatMet>
 		<biostatCpx>1</biostatCpx>
 		<forcedTraits>
 			<li>
