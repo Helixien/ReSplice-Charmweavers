@@ -62,8 +62,8 @@
 		</customEffectDescriptions>
 		<displayOrderInCategory>20</displayOrderInCategory>
 		<lovinMTBFactor>0.1</lovinMTBFactor>
-		<biostatMet>3</biostatMet>
-		<biostatCpx>1</biostatCpx>
+		<biostatMet>0</biostatMet>
+		<biostatCpx>2</biostatCpx>
 		<forcedTraits>
 			<li>
 				<def>Bisexual</def>
