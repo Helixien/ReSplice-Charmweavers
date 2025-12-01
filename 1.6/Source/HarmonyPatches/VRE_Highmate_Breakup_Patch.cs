@@ -4,10 +4,23 @@ using Verse;
 
 namespace ReSpliceCharmweavers;
 
-[HarmonyPatch("VanillaRacesExpandedHighmate.JobDriver_InitiateLovin", "ProcessBreakups")]
+[HarmonyPatch]
 public static class VRE_Highmate_Breakup_Patch
 {
-    public static bool Prepare(MethodBase method) => method != null || ModsConfig.IsActive("vanillaracesexpanded.highmate");
+    public static bool Prepare(MethodBase method)
+    {
+        if (method != null)
+            return true;
+        if (!ModLister.AnyModActiveNoSuffix(["vanillaracesexpanded.highmate"]))
+            return false;
+        if (TargetMethod() != null)
+            return true;
+
+        Log.Error("Patching VRE-Highmate/RJW compat failed - could not find method \"VanillaRacesExpandedHighmate.JobDriver_InitiateLovin:ProcessBreakups\"");
+        return false;
+    }
+
+    private static MethodBase TargetMethod() => AccessTools.DeclaredMethod("VanillaRacesExpandedHighmate.JobDriver_InitiateLovin:ProcessBreakups");
 
     // Don't force breakups between a master and their thrall
     public static bool Prefix(Pawn initiator, Pawn recipient)

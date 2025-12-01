@@ -7,7 +7,7 @@ using Verse;
 
 namespace ReSpliceCharmweavers;
 
-[HarmonyPatch("rjw.Modules.Interactions.Preferences.TryForBabyPreferences", "IsActive")]
+[HarmonyPatch]
 [HarmonyPatchCategory(RJW_VFEPregnancyApproach_GetPreference_Patch.RJWTryForBaby_VFEPregnancyApproach_Patches)]
 public static class RJW_VFEPregnancyApproach_IsPreferenceActive_Patch
 {
@@ -17,8 +17,14 @@ public static class RJW_VFEPregnancyApproach_IsPreferenceActive_Patch
     {
         if (method != null)
             return true;
-        if (!ModsConfig.IsActive("rim.job.world"))
+        if (!ModLister.AnyModActiveNoSuffix(["rim.job.world"]))
             return false;
+
+        if (TargetMethod() == null)
+        {
+            Log.Error("Patching RJW compat failed - could not find method \"rjw.Modules.Interactions.Preferences.TryForBabyPreferences:IsActive\"");
+            return false;
+        }
 
         try
         {
@@ -45,6 +51,8 @@ public static class RJW_VFEPregnancyApproach_IsPreferenceActive_Patch
             Log.Error(error);
         }
     }
+
+    private static MethodBase TargetMethod() => AccessTools.DeclaredMethod("rjw.Modules.Interactions.Preferences.TryForBabyPreferences:IsActive");
 
     private static bool Prefix(Pawn pawn, Pawn partner, out bool __result)
     {

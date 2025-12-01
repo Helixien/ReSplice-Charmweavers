@@ -7,10 +7,23 @@ using Verse;
 
 namespace ReSpliceCharmweavers;
 
-[HarmonyPatch("rjw.PregnancyHelper", "DoImpregnate")]
+[HarmonyPatch]
 public static class RJW_VFEPregnancyApproach_DoImpregnate_Patch
 {
-    private static bool Prepare(MethodBase method) => method != null || ModsConfig.IsActive("rim.job.world");
+    private static bool Prepare(MethodBase method)
+    {
+        if (method != null)
+            return true;
+        if (!ModLister.AnyModActiveNoSuffix(["rim.job.world"]))
+            return false;
+        if (TargetMethod() != null)
+            return true;
+
+        Log.Error("Patching RJW pregnancy chance failed - could not find method \"rjw.PregnancyHelper:DoImpregnate\"");
+        return false;
+    }
+
+    private static MethodBase TargetMethod() => AccessTools.DeclaredMethod("rjw.PregnancyHelper:DoImpregnate");
 
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instr)
     {

@@ -7,7 +7,7 @@ using Verse;
 
 namespace ReSpliceCharmweavers;
 
-[HarmonyPatch("rjw.PregnancyHelper", "CanImpregnate")]
+[HarmonyPatch]
 public static class RJW_PregnancyHelper_CanImpregnate_Patch
 {
     private static FastInvokeHandler UseVanillaPregnancyGetter;
@@ -16,8 +16,14 @@ public static class RJW_PregnancyHelper_CanImpregnate_Patch
     {
         if (method != null)
             return true;
-        if (!ModsConfig.IsActive("rim.job.world"))
+        if (!ModLister.AnyModActiveNoSuffix(["rim.job.world"]))
             return false;
+
+        if (TargetMethod() == null)
+        {
+            Log.Error("Patching RJW compat failed - could not find method \"rjw.PregnancyHelper:CanImpregnate\"");
+            return false;
+        }
 
         var getter = AccessTools.DeclaredPropertyGetter("rjw.RJWPregnancySettings:UseVanillaPregnancy");
         if (getter == null)
@@ -29,6 +35,8 @@ public static class RJW_PregnancyHelper_CanImpregnate_Patch
 
         return true;
     }
+
+    private static MethodBase TargetMethod() => AccessTools.DeclaredMethod("rjw.PregnancyHelper:CanImpregnate");
 
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instr)
     {

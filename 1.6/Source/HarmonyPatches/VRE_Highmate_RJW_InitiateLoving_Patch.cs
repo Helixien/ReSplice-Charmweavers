@@ -5,11 +5,22 @@ using Verse;
 
 namespace ReSpliceCharmweavers;
 
-[HarmonyPatch("VanillaRacesExpandedHighmate.CompAbilityEffect_InitiateLovin", "Apply")]
-[HarmonyPatch([typeof(LocalTargetInfo), typeof(LocalTargetInfo)])]
+[HarmonyPatch]
 public static class VRE_Highmate_RJW_InitiateLoving_Patch
 {
-    public static bool Prepare(MethodBase method) => method != null || (ModsConfig.IsActive("rim.job.world") && ModsConfig.IsActive("vanillaracesexpanded.highmate"));
+    public static bool Prepare(MethodBase method)
+    {
+        if (method != null) return true;
+        if (!ModLister.AllModsActiveNoSuffix(["rim.job.world", "vanillaracesexpanded.highmate"]))
+            return false;
+        if (TargetMethod() != null)
+            return true;
+
+        Log.Error("Patching VRE-Highmate/RJW compat failed - could not find method \"VanillaRacesExpandedHighmate.CompAbilityEffect_InitiateLovin:Apply\"");
+        return false;
+    }
+
+    private static MethodBase TargetMethod() => AccessTools.DeclaredMethod("VanillaRacesExpandedHighmate.CompAbilityEffect_InitiateLovin:Apply", [typeof(LocalTargetInfo), typeof(LocalTargetInfo)]);
 
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
     {

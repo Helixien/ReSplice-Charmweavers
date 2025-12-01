@@ -9,7 +9,7 @@ namespace ReSpliceCharmweavers
     [StaticConstructorOnStartup]
     public static class Core
     {
-        public static bool VRESangouphageActive = ModsConfig.IsActive("vanillaracesexpanded.sanguophage");
+        public static bool VRESangouphageActive = ModLister.AnyModActiveNoSuffix(["vanillaracesexpanded.sanguophage"]);
         public static Texture2D LoveThrallIcon = ContentFinder<Texture2D>.Get("UI/Icons/Thrall");
         public static Texture2D SelectAllThrallsIcon = ContentFinder<Texture2D>.Get("UI/Icons/Gizmos/SelectAllThralls");
         public static Texture2D SelectMasterIcon = ContentFinder<Texture2D>.Get("UI/Icons/Gizmos/SelectMaster");
@@ -23,7 +23,7 @@ namespace ReSpliceCharmweavers
             // Patches that rely on stuff being more initialized
             LongEventHandler.ExecuteWhenFinished(() => harmony.PatchCategory(LatePatchesCategory));
 
-            if (ModsConfig.IsActive("rim.job.world"))
+            if (ModLister.AnyModActiveNoSuffix(["rim.job.world"]))
             {
                 // Those 2 patches specifically are relying on one another. Make sure that either both or none of them are applied, to avoid issues.
                 var before = CountOurPatches();

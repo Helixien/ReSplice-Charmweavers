@@ -18,7 +18,7 @@ namespace ReSpliceCharmweavers
             if (method != null)
                 return true;
 
-            var isActive = ModsConfig.IsActive("rim.job.world");
+            var isActive = ModLister.AnyModActiveNoSuffix(["rim.job.world"]);
             if (isActive && rjw_SexPropsSexTypeGetter == null)
             {
                 rjw_SexPropsSexTypeGetter = MethodInvoker.GetHandler(AccessTools.DeclaredPropertyGetter("rjw.SexProps:sexType"));
