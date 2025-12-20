@@ -17,6 +17,19 @@
 			</li>
 		</stages>
 	</ThoughtDef>
+  <ThoughtDef>
+    <defName>RS_IsThrallSameMaster</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>ReSpliceCharmweavers.ThoughtWorker_EnthralledSameMaster</workerClass>
+    <stackLimit>300</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>enthralled under the same master</label>
+        <baseOpinionOffset>20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
 	<!-- ================ Master Killed ================ -->
 	<ThoughtDef>
 		<defName>RS_KilledMyMaster</defName>
