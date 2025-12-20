@@ -25,9 +25,31 @@
 			</li>
 		</stages>
 	</ThoughtDef>
+  <ThoughtDef>
+    <defName>RS_EnthralledPrisoner</defName>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingGenes>
+      <li>RS_Lovehexer</li>
+    </nullifyingGenes>
+    <nullifyingHediffs>
+      <li>RS_LoveThrall</li>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>Enthralled prisoner</label>
+        <description>I know it's more human than killing them, but it still feels wrong.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 	<ThoughtDef>
-		<defName>RS_EnthralledPrisoner</defName>
-		<durationDays>3</durationDays>
+		<defName>RS_EnthralledColonist</defName>
+		<durationDays>6</durationDays>
 		<stackLimit>1</stackLimit>
 		<nullifyingTraits>
 			<li>Psychopath</li>
@@ -41,9 +63,9 @@
 		</nullifyingHediffs>
 		<stages>
 			<li>
-				<label>Enthralled prisoner</label>
-				<description>I know it's more human than killing them, but it still feels wrong.</description>
-				<baseMoodEffect>-3</baseMoodEffect>
+				<label>Enthralled colonist</label>
+				<description>We enthralled one of our own, it feels wrong.</description>
+				<baseMoodEffect>-6</baseMoodEffect>
 			</li>
 		</stages>
 	</ThoughtDef>

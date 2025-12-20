@@ -28,7 +28,8 @@ namespace ReSpliceCharmweavers
         public static GeneDef RS_LovethrallStraight;
         public static GeneDef RS_LovethrallGay;
         public static GeneDef RS_LovethrallBisexual;
-        public static ThoughtDef RS_BrokenEnthrallment, RS_EnthralledPrisoner, RS_EnthralledMe;
+        public static ThoughtDef RS_BrokenEnthrallment, RS_EnthralledPrisoner, RS_EnthralledColonist, RS_EnthralledMe;
+        [MayRequireIdeology] public static ThoughtDef RS_EnthralledSlave;
         public static PregnancyApproachDef RS_LovinForHemogen;
         public static XenotypeDef RS_Charmweaver;
         [MayRequireIdeology] public static PreceptDef RS_Divorce_Forbidden, RS_Divorce_MaleOnly, RS_Divorce_FemaleOnly,

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThoughtDef>
+		<defName>RS_EnthralledSlave</defName>
+		<durationDays>3</durationDays>
+		<stackLimit>1</stackLimit>
+		<nullifyingTraits>
+			<li>Psychopath</li>
+		</nullifyingTraits>
+		<nullifyingGenes>
+			<li>RS_Lovehexer</li>
+		</nullifyingGenes>
+		<nullifyingHediffs>
+			<li>RS_LoveThrall</li>
+			<li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+		</nullifyingHediffs>
+		<stages>
+			<li>
+				<label>Enthralled slave</label>
+				<description>I know it's more human than killing them, but it still feels wrong.</description>
+				<baseMoodEffect>-3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>

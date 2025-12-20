@@ -47,6 +47,31 @@ namespace ReSpliceCharmweavers
                 oldMaster.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_StoleMyThrall, parent.pawn);
             }
 
+            if (parent.pawn.Faction is { IsPlayer: true })
+            {
+                ThoughtDef memoryToGive;
+
+                if (target.Pawn.IsPrisonerOfColony)
+                    memoryToGive = RS_DefOf.RS_EnthralledPrisoner;
+                else if (target.Pawn.IsSlaveOfColony)
+                    memoryToGive = RS_DefOf.RS_EnthralledSlave;
+                else if (target.Pawn.IsColonist)
+                    memoryToGive = RS_DefOf.RS_EnthralledColonist;
+                else
+                    memoryToGive = null;
+
+                if (memoryToGive != null)
+                {
+                    foreach (Pawn p in PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_FreeColonistsAndPrisoners)
+                    {
+                        if (p.needs.mood != null && p != target.Pawn)
+                        {
+                            p.needs.mood.thoughts.memories.TryGainMemory(memoryToGive, target.Pawn);
+                        }
+                    }
+                }
+            }
+
             var hediff = HediffMaker.MakeHediff(RS_DefOf.RS_LoveThrall, target.Pawn) as Hediff_LoveThrall;
             hediff.master = parent.pawn;
             if (target.Pawn.HomeFaction != null && target.Pawn.HomeFaction != this.parent.pawn.Faction)
@@ -75,14 +100,6 @@ namespace ReSpliceCharmweavers
             }
             target.Pawn.health.AddHediff(hediff);
             target.Pawn.needs?.mood?.thoughts?.memories.TryGainMemory(RS_DefOf.RS_BecameThrallMood, this.parent.pawn);
-
-            foreach (Pawn p in PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_FreeColonistsAndPrisoners)
-            {
-                if (p.needs.mood != null && p != target.Pawn)
-                {
-                    p.needs.mood.thoughts.memories.TryGainMemory(RS_DefOf.RS_EnthralledPrisoner, target.Pawn);
-                }
-            }
 
             if (ModsConfig.IdeologyActive && target.Pawn.Ideo != parent.pawn.Ideo)
             {
