@@ -41,5 +41,6 @@ namespace ReSpliceCharmweavers
         public static ThrallWorkModeDef RS_Escort;
         public static JobDef RS_Worship;
         public static InteractionDef RS_WorshipInteraction;
+        public static AbilityDef RS_PsychicEnthralling;
     }
 }

@@ -31,4 +31,17 @@
 			</li>
 		</value>
 	</Operation>
+
+  <!-- Insert our node to the mental state think tree so enthraller pawns will attempt to enthrall others. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThinkTreeDef[defName="MentalStateNonCritical"]/thinkRoot/subNodes</xpath>
+    <value>
+      <li Class="ThinkNode_ConditionalMentalState">
+        <state>RS_Enthraller</state>
+        <subNodes>
+          <li Class="ReSpliceCharmweavers.JobGiver_Enthraller" />
+        </subNodes>
+      </li>
+    </value>
+  </Operation>
 </Patch>

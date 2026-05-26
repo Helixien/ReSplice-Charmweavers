@@ -112,7 +112,12 @@ namespace ReSpliceCharmweavers
 
         public override bool Valid(LocalTargetInfo target, bool throwMessages = false)
         {
-            Pawn pawn = target.Pawn;
+            return CanEverBeTargeted(target, throwMessages, parent) && base.Valid(target, throwMessages);
+        }
+
+        public static bool CanEverBeTargeted(LocalTargetInfo target, bool throwMessages, Ability ability)
+        {
+            var pawn = target.Pawn;
             if (pawn == null)
             {
                 return false;
@@ -121,11 +126,11 @@ namespace ReSpliceCharmweavers
             {
                 if (throwMessages)
                 {
-                    AbilityUtility.SendPostProcessedMessage("RS.TargetIsLovehexer".Translate(), pawn, parent);
+                    AbilityUtility.SendPostProcessedMessage("RS.TargetIsLovehexer".Translate(), pawn, ability);
                 }
                 return false;
             }
-            if (pawn.IsLovethrall(out var master) && master == parent.pawn)
+            if (pawn.IsLovethrall(out var master) && master == ability.pawn)
             {
                 return false;
             }
@@ -133,19 +138,20 @@ namespace ReSpliceCharmweavers
             {
                 if (throwMessages)
                 {
-                    Messages.Message(parent.def.LabelCap + ": " + "AbilityTargetPsychicallyDeaf".Translate(), target.ToTargetInfo(pawn.Map), MessageTypeDefOf.RejectInput, historical: false);
+                    Messages.Message(ability.def.LabelCap + ": " + "AbilityTargetPsychicallyDeaf".Translate(), target.ToTargetInfo(pawn.Map), MessageTypeDefOf.RejectInput, historical: false);
                 }
                 return false;
             }
-            if (!AbilityUtility.ValidateMustBeHuman(pawn, throwMessages, parent))
+            if (!AbilityUtility.ValidateMustBeHuman(pawn, throwMessages, ability))
             {
                 return false;
             }
-            if (!ValidateMustNotBeChild(pawn, throwMessages, parent))
+            if (!ValidateMustNotBeChild(pawn, throwMessages, ability))
             {
                 return false;
             }
-            return base.Valid(target, throwMessages);
+
+            return true;
         }
 
         public static bool ValidateMustNotBeChild(Pawn targetPawn, bool showMessages, Ability ability)

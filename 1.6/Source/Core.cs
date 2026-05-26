@@ -1,8 +1,11 @@
+using System.Collections.Generic;
 using HarmonyLib;
 using System.Linq;
 using System.Reflection;
+using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 
 namespace ReSpliceCharmweavers
 {
@@ -74,6 +77,54 @@ namespace ReSpliceCharmweavers
             if (!pawn.IsLovethrall(out var master))
                 return null;
             return master.genes?.GetFirstGeneOfType<Gene_PsychicEnthralling>()?.GetControlGroup(pawn);
+        }
+
+        public static Pawn FindPawnToEnthrall(Pawn lovehexer)
+        {
+            if (!lovehexer.Spawned)
+                return null;
+
+            var ability = lovehexer.abilities.GetAbility(RS_DefOf.RS_PsychicEnthralling);
+            if (ability == null || !ability.CanCast)
+                return null;
+
+            var colonistsWithRoles = SimplePool<List<Pawn>>.Get();
+            var colonists = SimplePool<List<Pawn>>.Get();
+            var prisoners = SimplePool<List<Pawn>>.Get();
+
+            try
+            {
+                var pawns = lovehexer.Map.mapPawns.AllPawnsSpawned;
+                for (var i = 0; i < pawns.Count; i++)
+                {
+                    var pawn = pawns[i];
+                    // Find a different pawn of same faction, a prisoner, or a slave
+                    if (pawn != lovehexer && pawn.RaceProps.Humanlike && !pawn.IsLovehexer() && !pawn.IsLovethrall() && !pawn.IsBurning() && !pawn.InAggroMentalState && CompAbilityEffect_Menticide.CanEverBeTargeted(pawn, false, ability) && lovehexer.CanReserveAndReach(pawn, PathEndMode.Touch, Danger.Deadly))
+                    {
+                        if (pawn.IsPrisoner && pawn.guest.HostFaction == lovehexer.Faction || pawn.IsSlave && pawn.Faction == lovehexer.Faction)
+                            prisoners.Add(pawn);
+                        else if (pawn.Faction == lovehexer.Faction)
+                        {
+                            if (pawn.Ideo?.GetRole(pawn) != null)
+                                colonistsWithRoles.Add(pawn);
+                            else
+                                colonists.Add(pawn);
+                        }
+                    }
+                }
+
+                return colonistsWithRoles.RandomElementWithFallback() ?? colonists.RandomElementWithFallback() ?? prisoners.RandomElementWithFallback();
+            }
+            finally
+            {
+                colonistsWithRoles.Clear();
+                colonists.Clear();
+                prisoners.Clear();
+
+                SimplePool<List<Pawn>>.Return(colonistsWithRoles);
+                SimplePool<List<Pawn>>.Return(colonists);
+                SimplePool<List<Pawn>>.Return(prisoners);
+            }
         }
     }
 }

@@ -60,4 +60,6 @@ People with the psychic enthralling gene are able to manipulate others minds and
 	<!-- Thralls have gay/bisexual traits forced on them and asexual/gay traits suppressed so they find their masters appealing. -->
 	<!-- When an entrhallment is broken, there's a 10% chance that they keep those changes. This is the messages that is displayed. -->
 	<RS.EnthrallmentTraitChangesMessage>{PAWN} was released from enthrallment, but it seems that some changes caused by it still remain.</RS.EnthrallmentTraitChangesMessage>
+  <!-- Enthraller mental state -->
+  <RS.MessageEnthrallerChangedTarget>{PAWN_labelShort} has decided to change {PAWN_possessive} enthrallment target to {TARGET_label}.</RS.MessageEnthrallerChangedTarget>
 </LanguageData>

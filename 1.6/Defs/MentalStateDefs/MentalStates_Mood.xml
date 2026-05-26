@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MentalBreakDef>
+    <defName>RS_Enthraller</defName>
+    <mentalState>RS_Enthraller</mentalState>
+    <!-- Worker triples commonality if pawn has no thralls. -->
+    <workerClass>ReSpliceCharmweavers.MentalBreakWorker_Enthraller</workerClass>
+    <intensity>Major</intensity>
+    <baseCommonality>1</baseCommonality>
+  </MentalBreakDef>
+
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>RS_Enthraller</defName>
+    <stateClass>ReSpliceCharmweavers.MentalState_Enthraller</stateClass>
+    <!-- Worker prevents the break if a pawn has maxed out their thrall capacity. -->
+    <workerClass>ReSpliceCharmweavers.MentalStateWorker_Enthraller</workerClass>
+    <label>enthraller</label>
+    <category>Malicious</category>
+    <blockRandomInteraction>true</blockRandomInteraction>
+    <colonistsOnly>true</colonistsOnly>
+    <minTicksBeforeRecovery>100000</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>100000</maxTicksBeforeRecovery>
+    <recoverFromSleep>true</recoverFromSleep>
+    <nameColor>(0.9,0.2,0.5)</nameColor>
+    <moodRecoveryThought>Catharsis</moodRecoveryThought>
+    <blockNormalThoughts>true</blockNormalThoughts>
+    <recoveryMessage>{PAWN} is no longer attempting to enthrall others.</recoveryMessage>
+    <beginLetter>{PAWN} has had a mental breakdown and has decided to enthrall {TARGET}.</beginLetter>
+    <beginLetterDef>ThreatSmall</beginLetterDef>
+    <baseInspectLine>Mental state: Enthraller</baseInspectLine>
+    <allowBeatfire>true</allowBeatfire>
+  </MentalStateDef>
+
+</Defs>
