@@ -25,7 +25,7 @@ public static class FloatMenuUtility_DisableAttack_Patch
         // Check if the pawn is a lovethrall
         if (!pawn.IsLovethrall(out var master))
             return true;
-        // Check if the thrall is targetting their master
+        // Check if the thrall is targeting their master
         if (targetPawn != master)
             return true;
 

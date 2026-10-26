@@ -31,7 +31,7 @@ public static class Pawn_CheckForDisturbedSleep_Patch
             new CodeMatch(OpCodes.Ret)
         );
 
-        // Grab the argument index of the firs pawn
+        // Grab the argument index of the first pawn
         var firstPawnIndex = matcher.Instruction.ArgumentIndex();
         // Move forward and grab the second index
         matcher.Advance(1);

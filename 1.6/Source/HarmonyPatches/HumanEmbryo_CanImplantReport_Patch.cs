@@ -36,7 +36,7 @@ public static class HumanEmbryo_CanImplantReport_Patch
         {
             yield return instr;
 
-            // Baiscally, surround 'if (HasHediff())' call with 'if (IsMultiPregnancyDisallowed(HasHediff()), pawn)'
+            // Basically, surround 'if (HasHediff())' call with 'if (IsMultiPregnancyDisallowed(HasHediff()), pawn)'
             if (instr.Calls(targetMethod))
             {
                 yield return CodeInstruction.LoadArgument(1);

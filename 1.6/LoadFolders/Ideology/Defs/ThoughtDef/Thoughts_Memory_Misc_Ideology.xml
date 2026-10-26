@@ -17,7 +17,7 @@
 		<stages>
 			<li>
 				<label>Enthralled slave</label>
-				<description>I know it's more human than killing them, but it still feels wrong.</description>
+				<description>I know it's more humane than killing them, but it still feels wrong.</description>
 				<baseMoodEffect>-3</baseMoodEffect>
 			</li>
 		</stages>

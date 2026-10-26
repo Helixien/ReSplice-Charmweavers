@@ -11,7 +11,7 @@
 		<defName>RS_Divorce_Forbidden</defName>
 		<issue>RS_Issue_Divorce</issue>
 		<label>prohibited</label>
-		<description>Divorcing ones partner is prohibited.</description>
+		<description>Divorcing one's partner is prohibited.</description>
 		<impact>Low</impact>
 		<displayOrderInIssue>55</displayOrderInIssue>
 		<associatedMemes>
@@ -26,7 +26,7 @@
 		<defName>RS_Divorce_Abhorrent</defName>
 		<issue>RS_Issue_Divorce</issue>
 		<label>abhorrent</label>
-		<description>Divorcing ones partner is an disgusting act.</description>
+		<description>Divorcing one's partner is a disgusting act.</description>
 		<impact>Low</impact>
 		<displayOrderInIssue>45</displayOrderInIssue>
 		<associatedMemes>
@@ -52,7 +52,7 @@
 		<stages>
 			<li>
 				<label>divorced {0}</label>
-				<description>I ended my commitment with {OTHERPAWN}, I feel disgusted by myself.</description>
+				<description>I ended my commitment to {OTHERPAWN}. I feel disgusted with myself.</description>
 				<baseMoodEffect>-20</baseMoodEffect>
 			</li>
 		</stages>
@@ -76,7 +76,7 @@
 		<defName>RS_Divorce_Horrible</defName>
 		<issue>RS_Issue_Divorce</issue>
 		<label>horrible</label>
-		<description>Divorcing ones partner is a horrible thing to do under any circumstances.</description>
+		<description>Divorcing one's partner is a horrible thing to do under any circumstances.</description>
 		<impact>Low</impact>
 		<defaultSelectionWeight>1</defaultSelectionWeight>
 		<displayOrderInIssue>35</displayOrderInIssue>
@@ -97,7 +97,7 @@
 		<stages>
 			<li>
 				<label>divorced {0}</label>
-				<description>I ended my commitment with {OTHERPAWN}, I know I shouldn't have, but I saw now other way.</description>
+				<description>I ended my commitment to {OTHERPAWN}. I know I shouldn't have, but I saw no other way.</description>
 				<baseMoodEffect>-10</baseMoodEffect>
 			</li>
 		</stages>
@@ -121,7 +121,7 @@
 		<defName>RS_Divorce_Acceptable</defName>
 		<issue>RS_Issue_Divorce</issue>
 		<label>acceptable</label>
-		<description>Divorcing ones partner is ones own choice.</description>
+		<description>Divorcing one's partner is one's own choice.</description>
 		<impact>Low</impact>
 		<displayOrderInIssue>0</displayOrderInIssue>
 		<displayOrderInImpact>-1000</displayOrderInImpact>

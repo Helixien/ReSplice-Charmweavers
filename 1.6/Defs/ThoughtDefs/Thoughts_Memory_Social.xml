@@ -85,7 +85,7 @@
 		<stages>
 			<li>
 				<label>{0} became my master</label>
-				<description>I never saw {OTHERPAWN} for what {OTHERPAWN_pronoun} is, of course I should serve {OTHERPAWN_objective}!</description>
+				<description>I never saw {OTHERPAWN} for what {OTHERPAWN_pronoun} is. Of course I should serve {OTHERPAWN_objective}!</description>
 				<baseMoodEffect>8</baseMoodEffect>
 			</li>
 		</stages>
@@ -108,23 +108,23 @@
 		<workerClass>ReSpliceCharmweavers.ThoughtWorker_ThrallAmount</workerClass>
 		<stages>
 			<li>
-				<label>No thrall</label>
+				<label>No thralls</label>
 				<description>I don't have any thralls!</description>
 				<baseMoodEffect>-10</baseMoodEffect>
 			</li>
 			<li>
 				<label>One thrall</label>
-				<description>I have just one thrall, it's not enough for me!</description>
+				<description>I have just one thrall. It's not enough for me!</description>
 				<baseMoodEffect>-5</baseMoodEffect>
 			</li>
 			<li>
 				<label>Two thralls</label>
-				<description>I have only two thralls, it's something I guess.</description>
+				<description>I have only two thralls. It's something, I guess.</description>
 				<baseMoodEffect>0</baseMoodEffect>
 			</li>
 			<li>
-				<label>Three thrals</label>
-				<description>That's nice to have them at my disposal.</description>
+				<label>Three thralls</label>
+				<description>It's nice to have them at my disposal.</description>
 				<baseMoodEffect>5</baseMoodEffect>
 			</li>
 			<li>

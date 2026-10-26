@@ -13,7 +13,7 @@ public class ThoughtWorker_EnthralledSameMaster : ThoughtWorker
         // My thrall, don't care
         if (p == master)
             return false;
-        // If this pawn is a trhall under same master, active
+        // Active if this pawn is a thrall under the same master
         return p.IsLovethrall(out var otherMaster) && master == otherMaster;
     }
 }

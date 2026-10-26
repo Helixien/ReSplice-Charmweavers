@@ -6,7 +6,7 @@
 		<stages>
 			<li>
 				<label>Bonded with my master</label>
-				<description>I am able to bask in the presence of my master, life is good.</description>
+				<description>I am able to bask in the presence of my master. Life is good.</description>
 				<baseMoodEffect>18</baseMoodEffect>
 			</li>
 		</stages>

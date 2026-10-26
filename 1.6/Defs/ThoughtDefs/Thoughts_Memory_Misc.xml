@@ -19,7 +19,7 @@
 		<stackLimit>1</stackLimit>
 		<stages>
 			<li>
-				<label>Broken Enthrallment</label>
+				<label>Broken enthrallment</label>
 				<description>I am finally free and able to think for myself again!</description>
 				<baseMoodEffect>30</baseMoodEffect>
 			</li>
@@ -42,7 +42,7 @@
     <stages>
       <li>
         <label>Enthralled prisoner</label>
-        <description>I know it's more human than killing them, but it still feels wrong.</description>
+        <description>I know it's more humane than killing them, but it still feels wrong.</description>
         <baseMoodEffect>-3</baseMoodEffect>
       </li>
     </stages>
@@ -64,7 +64,7 @@
 		<stages>
 			<li>
 				<label>Enthralled colonist</label>
-				<description>We enthralled one of our own, it feels wrong.</description>
+				<description>We enthralled one of our own. It feels wrong.</description>
 				<baseMoodEffect>-6</baseMoodEffect>
 			</li>
 		</stages>

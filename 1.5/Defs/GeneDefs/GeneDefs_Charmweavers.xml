@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<!-- ================ Archnite Genes ================ -->
+	<!-- ================ Archite Genes ================ -->
 	<GeneDef>
 		<defName>RS_Matrianic</defName>
 		<label>matrianic</label>
@@ -14,7 +14,7 @@
 	<GeneDef>
 		<defName>RS_MultiPregnancy</defName>
 		<label>multi-pregnancy</label>
-		<description>Carriers of this gene have archites in their womb that allows them to have multiple pregnancies in different stages at the same time.</description>
+		<description>Carriers of this gene have archites in their wombs that allow them to have multiple pregnancies at different stages at the same time.</description>
 		<iconPath>UI/Icons/Genes/Gene_MultiPregnancy</iconPath>
 		<geneClass>VanillaGenesExpanded.GeneGendered</geneClass>
 		<displayCategory>Archite</displayCategory>
@@ -58,7 +58,7 @@
 		<description>Carriers of this gene are obsessed with lovin' and are extremely likely to engage in lovin' with their partner.</description>
 		<iconPath>UI/Icons/Genes/Gene_InsatiableLibido</iconPath>
 		<customEffectDescriptions>
-			<li>Extremely increases the chance of lovin'.</li>
+			<li>Greatly increases the chance of lovin'.</li>
 		</customEffectDescriptions>
 		<displayOrderInCategory>20</displayOrderInCategory>
 		<lovinMTBFactor>0.1</lovinMTBFactor>
@@ -93,7 +93,7 @@
 	<GeneDef ParentName="GeneBeautyBase">
 		<defName>RS_Beauty_Angelic</defName>
 		<label>extremely attractive</label>
-		<description>Carriers of this gene are inhumanly perfect in every way. Their features, skin and physique mirror those of the divine beings of old religions and tales.They are universally seen as angelic and considered irresistible.</description>
+		<description>Carriers of this gene are inhumanly perfect in every way. Their features, skin and physique mirror those of the divine beings of old religions and tales. They are universally seen as angelic and considered irresistible.</description>
 		<iconPath>UI/Icons/Genes/Gene_Extremely attractive</iconPath>
 		<displayOrderInCategory>30</displayOrderInCategory>
 		<statOffsets>
@@ -131,7 +131,7 @@
 	<GeneDef>
 		<defName>RS_Naturalist</defName>
 		<label>naturalist</label>
-		<description>Carriers of this gene prefer to not cover their skin with clothing or armour.</description>
+		<description>Carriers of this gene prefer not to cover their skin with clothing or armour.</description>
 		<iconPath>UI/Icons/Genes/Gene_Naturalist</iconPath>
 		<forcedTraits>
 			<li>
@@ -146,7 +146,7 @@
 		<defName>RS_LoveFeed</defName>
 		<label>love feed</label>
 		<labelShortAdj>draining</labelShortAdj>
-		<description>Carriers of this gene have special glands in their mouth that allows them to feed more effectively while they are engaged in lovin’ with another person.</description>
+		<description>Carriers of this gene have special glands in their mouths that allow them to feed more effectively while they are engaged in lovin’ with another person.</description>
 		<resourceLabel>hemogen</resourceLabel>
 		<geneClass>Gene_HemogenDrain</geneClass>
 		<iconPath>UI/Icons/Genes/Gene_Lovefeed</iconPath>
@@ -161,7 +161,7 @@
 	<GeneDef>
 		<defName>RS_Lovehexer</defName>
 		<label>lovehexer</label>
-		<description>Carriers of this gene have a special neural organ that makes them able to psychically enthral people for life. The enthralled person will be unable to resist or act against the carrier and fall into an addiction-like state with them. If they are physically separated, the enthralled person will fall into a berserk state, attacking anything and anyone around them.</description>
+		<description>Carriers of this gene have a special neural organ that enables them to psychically enthral people for life. The enthralled person will be unable to resist or act against the carrier and will fall into an addiction-like state with them. If they are physically separated, the enthralled person will fall into a berserk state, attacking anything and anyone around them.</description>
 		<iconPath>UI/Icons/Genes/Gene_PsychicalEnthralling</iconPath>
 		<geneClass>ReSpliceCharmweavers.Gene_PsychicEnthralling</geneClass>
 		<prerequisite>Hemogenic</prerequisite>
@@ -242,7 +242,7 @@
 	</GeneDef>
 	<GeneDef ParentName="RS_HornsBase">
 		<defName>RS_Headbone_RamHorns</defName>
-		<label>ram-horns</label>
+		<label>ram horns</label>
 		<description>Carriers of this gene grow two ram-like horns protruding from the forehead.</description>
 		<iconPath>UI/Icons/Genes/Gene_RamHorns</iconPath>
 		<renderNodeProperties>
@@ -265,7 +265,7 @@
 	</GeneDef>
 	<GeneDef ParentName="RS_HornsBase">
 		<defName>RS_Headbone_MediumHorns</defName>
-		<label>medium-horns</label>
+		<label>medium horns</label>
 		<description>Carriers of this gene grow two sizable horns protruding from the forehead.</description>
 		<iconPath>UI/Icons/Genes/Gene_MediumHorns</iconPath>
 		<renderNodeProperties>
@@ -288,7 +288,7 @@
 	</GeneDef>
 	<GeneDef ParentName="RS_HornsBase">
 		<defName>RS_Headbone_LargeHorns</defName>
-		<label>large-horns</label>
+		<label>large horns</label>
 		<description>Carriers of this gene grow two large horns protruding from the forehead.</description>
 		<iconPath>UI/Icons/Genes/Gene_LargeHorns</iconPath>
 		<renderNodeProperties>
@@ -319,8 +319,8 @@
 	</GeneDef>
 	<GeneDef ParentName="RS_GeneWingBase">
 		<defName>RS_Wing_Batlike</defName>
-		<label>bat-wings</label>
-		<description>Carriers of this gene have a pair of bat-like wings.”</description>
+		<label>bat wings</label>
+		<description>Carriers of this gene have a pair of bat-like wings.</description>
 		<iconPath>UI/Icons/Genes/Gene_BatWings</iconPath>
 		<iconColor>(0.75, 0.75, 0.75)</iconColor>
 		<displayOrderInCategory>1000</displayOrderInCategory>

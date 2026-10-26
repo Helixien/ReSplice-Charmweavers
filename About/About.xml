@@ -2,13 +2,13 @@
 <ModMetaData>
 	<name>ReSplice: Charmweavers</name>
 	<author>Helixien</author>
-	<description>ReSplice is the banner under which I will release any xenotype I feel like making. Similar to ReGrowth, I aim for my additions to be vanilla friendly in both artstyle and lore. Everything added was made to fit or mirror vanilla. From a simple UI texture to a new more complex system,being as performance and vanilla friendly is the main objective I have.
+	<description>ReSplice is the banner under which I will release any xenotype I feel like making. As with ReGrowth, I aim for my additions to fit vanilla in both art style and lore. Everything added was made to fit or mirror vanilla. From a simple UI texture to a new, more complex system, my main objective is to keep everything efficient and consistent with vanilla.
 
-Inspired by the well known Succubus (and Incubus), Charmweavers are a new archite powered xenotype you can encounter and add to your colonies. They are rare, similar to sanguophages, and quite unique, offering some interesting upsides and downsides.
+Inspired by the well-known succubus and incubus, charmweavers are a new xenotype powered by archites that you can encounter and add to your colonies. They are rare, like sanguophages, and quite unique, offering some interesting upsides and downsides.
 
 Charmweavers are a relatively simple xenotype. They should work fine in whatever load order you have and be a nice addition, if not for the xenotype itself, then for the genes they add.
 
-ReSplice is designed to be as lightweight as possible, adding the minimum of new code required for its additions to work.</description>
+ReSplice is designed to be as lightweight as possible, adding the minimum amount of new code required for its additions to work.</description>
 	<supportedVersions>
 		<li>1.4</li>
 		<li>1.5</li>

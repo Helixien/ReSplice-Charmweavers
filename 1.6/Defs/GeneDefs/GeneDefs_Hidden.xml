@@ -2,7 +2,7 @@
 <Defs>
 	<GeneDef Name="RS_LovethrallGeneBase" Abstract="True">
 		<label>Lovethrall</label>
-		<description>Carriers of this gene are a lovethrall, and this gene will be lost if they stop being one. It causes the carrier to be attracted to their master.</description>
+		<description>The carrier of this gene is a lovethrall and will lose it if they stop being one. It causes the carrier to be attracted to their master.</description>
 		<iconPath>UI/Icons/Genes/Gene_Lovethrall</iconPath>
 		<biostatCpx>0</biostatCpx>
 		<biostatMet>0</biostatMet>
@@ -42,7 +42,7 @@
 		</forcedTraits>
 	</GeneDef>
 
-	<!-- Bisexual relation, forces bbisexual and nullifies both asexual and gay (so bisexual takes precedence) -->
+	<!-- Bisexual relation, forces bisexual and nullifies both asexual and gay (so bisexual takes precedence) -->
 	<GeneDef ParentName="RS_LovethrallGeneBase">
 		<defName>RS_LovethrallBisexual</defName>
 		<forcedTraits>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<!-- ================================ Hisotry ====================== -->
+	<!-- ================================ History ====================== -->
 	<HistoryEventDef>
 		<defName>RS_LovehexerDied</defName>
 		<label>lovehexer died</label>
@@ -20,7 +20,7 @@
 		<defName>RS_Lovehexer_Revered</defName>
 		<issue>RS_Issue_Lovehexer</issue>
 		<label>revered</label>
-		<description>Lovehexer should be worshipped. Believers will be happy if there is a lovehexer in the colony.</description>
+		<description>Lovehexers should be worshipped. Believers will be happy if there is a lovehexer in the colony.</description>
 		<impact>Medium</impact>
 		<comps>
 			<li Class="PreceptComp_SituationalThought">
@@ -124,7 +124,7 @@
 		<defName>RS_Lovehexer_Reviled</defName>
 		<issue>RS_Issue_Lovehexer</issue>
 		<label>reviled</label>
-		<description>Anyone who enthralles another person and robs them of their free will is a monster.</description>
+		<description>Anyone who enthralls another person and robs them of their free will is a monster.</description>
 		<impact>Medium</impact>
 		<comps>
 			<li Class="PreceptComp_UnwillingToDo">
@@ -141,7 +141,7 @@
 			</li>
 			<li Class="PreceptComp_SituationalThought">
 				<thought>RS_Lovehexer_Reviled_IsLovehexer</thought>
-				<description>lovehexer self hatred</description>
+				<description>lovehexer self-hatred</description>
 			</li>
 			<li Class="PreceptComp_SituationalThought">
 				<thought>RS_LovehexerColonist_Reviled</thought>
@@ -180,7 +180,7 @@
 		<workerClass>ReSpliceCharmweavers.ThoughtWorker_Precept_IsLovehexer</workerClass>
 		<stages>
 			<li>
-				<label>lovehexer self hatred</label>
+				<label>lovehexer self-hatred</label>
 				<description>I am what I hate. I must rid myself of this curse.</description>
 				<baseMoodEffect>-8</baseMoodEffect>
 			</li>
@@ -207,7 +207,7 @@
 		<stages>
 			<li>
 				<label>lovehexer among us</label>
-				<description>One of them walks among us. We should expel the lovehexer from our home before we no longer can.</description>
+				<description>One of them walks among us. We should expel the lovehexer from our home before we can no longer do so.</description>
 				<baseMoodEffect>-8</baseMoodEffect>
 			</li>
 		</stages>

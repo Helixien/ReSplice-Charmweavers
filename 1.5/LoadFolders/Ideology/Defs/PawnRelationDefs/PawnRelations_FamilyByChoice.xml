@@ -44,8 +44,8 @@
 		<defName>RS_MyCoHusbandLost</defName>
 		<stages>
 			<li>
-				<label>my co-husband {0} lost</label>
-				<description>My co-husband has gone lost. I hope he will get back to us someday.</description>
+				<label>my co-husband {0} is lost</label>
+				<description>My co-husband has gone missing. I hope he will return to us someday.</description>
 				<baseMoodEffect>-5</baseMoodEffect>
 			</li>
 		</stages>
@@ -54,8 +54,8 @@
 		<defName>RS_MyCoWifeLost</defName>
 		<stages>
 			<li>
-				<label>my co-wife {0} lost</label>
-				<description>My co-wife has gone lost. I hope she will get back to us someday.</description>
+				<label>my co-wife {0} is lost</label>
+				<description>My co-wife has gone missing. I hope she will return to us someday.</description>
 				<baseMoodEffect>-5</baseMoodEffect>
 			</li>
 		</stages>
@@ -83,7 +83,7 @@
 			<li>
 				<label>co-spouse sold</label>
 				<labelSocial>sold my co-spouse</labelSocial>
-				<description>Someone who my loved one loves was sold to a trader like a piece of meat!</description>
+				<description>Someone my loved one loves was sold to a trader like a piece of meat!</description>
 				<baseOpinionOffset>-5</baseOpinionOffset>
 				<baseMoodEffect>-5</baseMoodEffect>
 			</li>

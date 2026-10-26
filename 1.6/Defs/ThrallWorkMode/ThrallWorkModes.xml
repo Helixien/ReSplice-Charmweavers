@@ -3,14 +3,14 @@
 	<ReSpliceCharmweavers.ThrallWorkModeDef>
 		<defName>RS_Work</defName>
 		<label>work</label>
-		<description>Work autonomously according to thrall’s job assignment. Automatically goes to fulfil their needs when needed.</description>
+		<description>Thralls work autonomously according to their job assignments and attend to their needs as necessary.</description>
 		<iconPath>UI/Icons/WorkMode/Work</iconPath>
 	</ReSpliceCharmweavers.ThrallWorkModeDef>
 	<ReSpliceCharmweavers.ThrallWorkModeDef>
 		<defName>RS_Escort</defName>
 		<label>escort</label>
 		<uiOrder>200</uiOrder>
-		<description>Stay near their master and fight nearby enemies. Follow their master even off the map.</description>
+		<description>Thralls stay near their master and fight nearby enemies. They follow their master even off the map.</description>
 		<iconPath>UI/Icons/WorkMode/Escort</iconPath>
 		<workerClass>ReSpliceCharmweavers.ThrallWorkModeDrawer_FollowMaster</workerClass>
 		<followMasterOnCaravans>true</followMasterOnCaravans>
@@ -25,7 +25,7 @@
 		<defName>RS_Worship</defName>
 		<label>worship</label>
 		<uiOrder>300</uiOrder>
-		<description>Stay near their master and entertain them socially to keep their mood up. Do not follow their master even off the map.</description>
+		<description>Thralls stay near their master and entertain them socially to keep their mood up. They do not follow their master off the map.</description>
 		<iconPath>UI/Icons/Gizmos/WorkMode/Worship</iconPath>
 		<workerClass>ReSpliceCharmweavers.ThrallWorkModeDrawer_FollowMaster</workerClass>
 		<!-- If a pawn is incapable of all the work tags on the list, display the following message. -->

@@ -103,7 +103,7 @@ public static class RJW_VFEPregnancyApproach_GetPreference_Patch
         if (approach == PregnancyApproach.TryForBaby)
             list.Add(Activator.CreateInstance(TypePreferenceType, IntToInteractionType(1), 4f));
         // When avoiding pregnancy, multiply the weight of a compatible interaction by 0.25.
-        // This will make this interaction less likely to happen, thus reducing pregnancy change. RWJ itself at the moment doesn't actually support this approach.
+        // This will make this interaction less likely to happen, thus reducing the chance of pregnancy. RJW itself does not currently support this approach.
         else if (approach == PregnancyApproach.AvoidPregnancy)
             list.Add(Activator.CreateInstance(TypePreferenceType, IntToInteractionType(1), 0.25f));
 

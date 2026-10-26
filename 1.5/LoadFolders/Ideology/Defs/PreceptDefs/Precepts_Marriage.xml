@@ -11,7 +11,7 @@
 		<defName>RS_Marriage_Abhorrent</defName>
 		<issue>RS_Issue_Marriage</issue>
 		<label>abhorrent</label>
-		<description>To commit to be with the same person forever is sinful.</description>
+		<description>To commit to being with the same person forever is sinful.</description>
 		<impact>High</impact>
 		<requiredMemes>
 			<li>RS_LoveLusting</li>
@@ -34,7 +34,7 @@
 		<stages>
 			<li>
 				<label>married to {0}</label>
-				<description>I am married to {0}, while I love them I know its sinful to be commited to them for life.</description>
+				<description>I am married to {0}. While I love them, I know it's sinful to be committed to them for life.</description>
 				<baseMoodEffect>-20</baseMoodEffect>
 			</li>
 		</stages>
@@ -57,18 +57,18 @@
 		<defName>RS_Marriage_Free</defName>
 		<issue>RS_Issue_Marriage</issue>
 		<label>free</label>
-		<description>Anyone may ask for their partners hand in marriage.</description>
+		<description>Anyone may ask for their partner's hand in marriage.</description>
 		<impact>Low</impact>
 		<displayOrderInIssue>0</displayOrderInIssue>
 		<displayOrderInImpact>-1000</displayOrderInImpact>
 		<defaultSelectionWeight>1</defaultSelectionWeight>
 	</PreceptDef>
-	<!-- ================================ Precepts - Divorce - Male ====================== -->
+	<!-- ================================ Precepts - Marriage - Male ====================== -->
 	<PreceptDef>
 		<defName>RS_Marriage_MaleOnly</defName>
 		<issue>RS_Issue_Marriage</issue>
 		<label>only men</label>
-		<description>Men may ask for their partners hand in marriage.</description>
+		<description>Men may ask for their partner's hand in marriage.</description>
 		<impact>Medium</impact>
 		<displayOrderInIssue>50</displayOrderInIssue>
 		<displayOrderInImpact>-100</displayOrderInImpact>
@@ -79,12 +79,12 @@
 			<li>FemaleSupremacy</li>
 		</conflictingMemes>
 	</PreceptDef>
-	<!-- ================================ Precepts - Divorce - Female ====================== -->
+	<!-- ================================ Precepts - Marriage - Female ====================== -->
 	<PreceptDef>
 		<defName>RS_Marriage_FemaleOnly</defName>
 		<issue>RS_Issue_Marriage</issue>
 		<label>only women</label>
-		<description>Women may ask for their partners hand in marriage.</description>
+		<description>Women may ask for their partner's hand in marriage.</description>
 		<impact>Medium</impact>
 		<displayOrderInIssue>60</displayOrderInIssue>
 		<displayOrderInImpact>-100</displayOrderInImpact>

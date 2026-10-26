@@ -2,7 +2,7 @@
 <Defs>
 	<VFECore.PregnancyApproachDef>
 		<defName>RS_LovinForHemogen</defName>
-		<label>Lovin’ for Hemogen (pregnancy chance x50%)</label>
+		<label>Lovin' for hemogen (pregnancy chance ×50%)</label>
 		<cancelLabel>Normal lovin'</cancelLabel>
 		<iconPath>UI/Icons/Pregnancyapproaches/RhythmMode_LovinForHemogen</iconPath>
 		<workerClass>ReSpliceCharmweavers.PregnancyApproach_LovinForHemogen</workerClass>

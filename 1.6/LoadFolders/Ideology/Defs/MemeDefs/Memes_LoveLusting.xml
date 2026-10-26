@@ -33,9 +33,9 @@
 				<li>memeAdjective->loving</li>
 				<li>memeAdjective->lusting</li>
 				<li>memeAdjective->desiring</li>
-				<li>memeLeaderNoun->lustful</li>
-				<li>memeLeaderNoun->passionate</li>
-				<li>memeLeaderNoun->libidinous</li>
+				<li>memeLeaderNoun->lustful one</li>
+				<li>memeLeaderNoun->passionate one</li>
+				<li>memeLeaderNoun->libidinous one</li>
 				<li>memeConcept->sensualism</li>
 				<li>memeLeaderAdjective->lusting</li>
 				<li>memeLeaderAdjective->loving</li>
@@ -46,8 +46,8 @@
 			<rules>
 				<rulesStrings>
 					<!-- theist myth -->
-					<li>creation(tag=meme_Lovelusting)        ->[deity0_name] granted us the pleasure of the flesh, that we may explore each others bodies to our hearts content.</li>
-					<li>episode(uses=1,tag=meme_Lovelusting)  ->humans indulge in their carnal desires, which pleased [deity0_objective].</li>
+					<li>creation(tag=meme_Lovelusting)        ->[deity0_name] granted us the pleasure of the flesh so that we may explore each other's bodies to our hearts' content.</li>
+					<li>episode(uses=1,tag=meme_Lovelusting)  ->humans indulged in their carnal desires, which pleased [deity0_objective].</li>
 				</rulesStrings>
 			</rules>
 		</descriptionMaker>

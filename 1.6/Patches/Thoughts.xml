@@ -9,7 +9,7 @@
 			<li Class="PatchOperationConditional">
 				<xpath>Defs/ThoughtDef[defName = "FedOn"]/nullifyingHediffs</xpath>
 				<match Class="PatchOperationAdd">
-					<xpath>Defs/ThoughtDef[defName = "FedOn"]</xpath>
+					<xpath>Defs/ThoughtDef[defName = "FedOn"]/nullifyingHediffs</xpath>
 					<value>
 						<li>RS_LoveThrall</li>
 					</value>
@@ -27,7 +27,7 @@
 			<li Class="PatchOperationConditional">
 				<xpath>Defs/ThoughtDef[defName = "FedOn_Social"]/nullifyingHediffs</xpath>
 				<match Class="PatchOperationAdd">
-					<xpath>Defs/ThoughtDef[defName = "FedOn_Social"]</xpath>
+					<xpath>Defs/ThoughtDef[defName = "FedOn_Social"]/nullifyingHediffs</xpath>
 					<value>
 						<li>RS_LoveThrall</li>
 					</value>
