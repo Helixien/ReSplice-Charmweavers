@@ -8,9 +8,12 @@ namespace ReSpliceCharmweavers
     public static class PregnancyUtility_ApplyBirthOutcome_Patch
     {
         public static Pawn mother;
-        public static void Prefix(Pawn geneticMother)
+        public static Pawn father;
+
+        public static void Prefix(Pawn geneticMother, Pawn father)
         {
             mother = geneticMother;
+            PregnancyUtility_ApplyBirthOutcome_Patch.father = father;
         }
 
         public static void Postfix(Thing birtherThing)
@@ -25,6 +28,7 @@ namespace ReSpliceCharmweavers
         public static void Finalizer()
         {
             mother = null;
+            father = null;
         }
     }
 }

@@ -98,19 +98,23 @@ namespace ReSpliceCharmweavers
                 for (var i = 0; i < pawns.Count; i++)
                 {
                     var pawn = pawns[i];
-                    // Find a different pawn of same faction, a prisoner, or a slave
-                    if (pawn != lovehexer && pawn.RaceProps.Humanlike && !pawn.IsLovehexer() && !pawn.IsLovethrall() && !pawn.IsBurning() && !pawn.InAggroMentalState && CompAbilityEffect_Menticide.CanEverBeTargeted(pawn, false, ability) && lovehexer.CanReserveAndReach(pawn, PathEndMode.Touch, Danger.Deadly))
-                    {
-                        if (pawn.IsPrisoner && pawn.guest.HostFaction == lovehexer.Faction || pawn.IsSlave && pawn.Faction == lovehexer.Faction)
-                            prisoners.Add(pawn);
-                        else if (pawn.Faction == lovehexer.Faction)
-                        {
-                            if (pawn.Ideo?.GetRole(pawn) != null)
-                                colonistsWithRoles.Add(pawn);
-                            else
-                                colonists.Add(pawn);
-                        }
-                    }
+                    if (pawn == lovehexer || !pawn.RaceProps.Humanlike || pawn.IsLovehexer() || pawn.IsLovethrall() || pawn.IsBurning() || pawn.InAggroMentalState)
+                        continue;
+
+                    var isPrisoner = pawn.IsPrisoner && pawn.guest.HostFaction == lovehexer.Faction;
+                    var isSlave = pawn.IsSlave && pawn.Faction == lovehexer.Faction;
+                    if (!isPrisoner && !isSlave && pawn.Faction != lovehexer.Faction)
+                        continue;
+
+                    if (!CompAbilityEffect_Menticide.CanEverBeTargeted(pawn, false, ability) || !lovehexer.CanReserveAndReach(pawn, PathEndMode.Touch, Danger.Deadly))
+                        continue;
+
+                    if (isPrisoner || isSlave)
+                        prisoners.Add(pawn);
+                    else if (pawn.Ideo?.GetRole(pawn) != null)
+                        colonistsWithRoles.Add(pawn);
+                    else
+                        colonists.Add(pawn);
                 }
 
                 return colonistsWithRoles.RandomElementWithFallback() ?? colonists.RandomElementWithFallback() ?? prisoners.RandomElementWithFallback();

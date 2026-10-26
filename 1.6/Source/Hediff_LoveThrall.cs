@@ -33,11 +33,11 @@ namespace ReSpliceCharmweavers
             base.PostAdd(dinfo);
             master.relations.AddDirectRelation(RS_DefOf.RS_Thrall, pawn);
             pawn.relations.AddDirectRelation(RS_DefOf.RS_Master, master);
-            foreach (var loveRel in LovePartnerRelationUtility.ExistingLovePartners(pawn))
+            foreach (var loveRel in LovePartnerRelationUtility.ExistingLovePartners(pawn, false))
             {
                 if (loveRel.otherPawn != master)
                 {
-                    pawn.interactions.TryInteractWith(loveRel.otherPawn, RS_DefOf.Breakup);
+                    RS_DefOf.Breakup.Worker.Interacted(pawn, loveRel.otherPawn, [], out _, out _, out _, out _);
                 }
             }
 
@@ -149,7 +149,7 @@ namespace ReSpliceCharmweavers
                 pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_BrokenEnthrallment);
                 pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(RS_DefOf.RS_EnthralledMe, master);
 
-                master.genes?.GetFirstGeneOfType<Gene_PsychicEnthralling>()?.GetControlGroup(pawn).TryUnassign(pawn);
+                master?.genes.GetFirstGeneOfType<Gene_PsychicEnthralling>()?.GetControlGroup(pawn)?.TryUnassign(pawn);
 
                 if (pawn.genes != null)
                 {

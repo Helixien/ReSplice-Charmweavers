@@ -1,10 +1,11 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using Verse;
+using Verse.AI;
 
 namespace ReSpliceCharmweavers
 {
@@ -34,7 +35,7 @@ namespace ReSpliceCharmweavers
             }
         }
 
-        public static void DoLovinResult(JobDriver_Lovin jobDriver, ref Thought_Memory thoughtDef)
+        public static void DoLovinResult(JobDriver jobDriver, ref Thought_Memory thoughtDef)
         {
             var thrallHediff = jobDriver.pawn.health.hediffSet.GetFirstHediffOfDef(RS_DefOf.RS_LoveThrall) as Hediff_LoveThrall;
             if (thrallHediff != null && jobDriver.TargetA.Pawn == thrallHediff.master)

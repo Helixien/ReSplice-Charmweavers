@@ -13,8 +13,13 @@ public class JobGiver_ExitMapFollowMaster : JobGiver_ExitMapBest
 
     public override Job TryGiveJob(Pawn pawn)
     {
+        var master = pawn.GetMaster();
         if (!CaravanExitMapUtility.CanExitMapAndJoinOrCreateCaravanNow(pawn))
             return null;
+        if (!(master.IsFormingCaravan() || master.CurJob?.exitMapOnArrival is true))
+        {
+            return null;
+        }
         return base.TryGiveJob(pawn);
     }
 }

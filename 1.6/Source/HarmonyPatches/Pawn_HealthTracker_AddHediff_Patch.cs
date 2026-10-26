@@ -1,6 +1,7 @@
 using HarmonyLib;
 using RimWorld;
 using System;
+using System.Linq;
 using Verse;
 
 namespace ReSpliceCharmweavers
@@ -35,13 +36,19 @@ namespace ReSpliceCharmweavers
             return true;
         }
 
+        public static bool allowPregnancyCooldownBypass;
+
         public static bool HandleHediffForMultiPregnancy(Pawn ___pawn, ref Hediff hediff)
         {
-            if (hediff.def == HediffDefOf.PregnantHuman)
+            if (hediff.def != HediffDefOf.PregnantHuman || !___pawn.HasActiveGene(RS_DefOf.RS_MultiPregnancy))
             {
-                return !___pawn.HasActiveGene(RS_DefOf.RS_MultiPregnancy) || !___pawn.health.hediffSet.HasHediff(RS_DefOf.RS_RecentImpregnation);
+                return true;
             }
-            return true;
+            if (___pawn.health.hediffSet.hediffs.Count(x => x.def == HediffDefOf.PregnantHuman) >= ReSpliceCharmweaversSettings.maxMultiPregnancyAmount)
+            {
+                return false;
+            }
+            return allowPregnancyCooldownBypass || !___pawn.health.hediffSet.HasHediff(RS_DefOf.RS_RecentImpregnation);
         }
     }
 }

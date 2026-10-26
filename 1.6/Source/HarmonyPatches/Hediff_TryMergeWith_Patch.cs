@@ -10,17 +10,9 @@ namespace ReSpliceCharmweavers
     {
         public static bool Prefix(Hediff __instance, Hediff other)
         {
-            if (other.def == HediffDefOf.PregnantHuman && __instance.def == HediffDefOf.PregnantHuman)
+            if (other.def == HediffDefOf.PregnantHuman && __instance.def == HediffDefOf.PregnantHuman && __instance.pawn.HasActiveGene(RS_DefOf.RS_MultiPregnancy))
             {
-                if (__instance.pawn.HasActiveGene(RS_DefOf.RS_MultiPregnancy))
-                {
-                    if (__instance.pawn.health.hediffSet.hediffs.Count(x => x.def == HediffDefOf.PregnantHuman) >= ReSpliceCharmweaversSettings.maxMultiPregnancyAmount)
-                    {
-                        return true;
-                    }
-                    __instance.pawn.health.AddHediff(RS_DefOf.RS_RecentImpregnation);
-                    return false;
-                }
+                return false;
             }
             return true;
         }

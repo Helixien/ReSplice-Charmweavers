@@ -21,6 +21,10 @@ public class JobGiver_WanderMaster : JobGiver_Wander
             return null;
 
         var job = base.TryGiveJob(pawn);
+        if (job is null)
+        {
+            return null;
+        }
         job.reportStringOverride = reportStringOverride.Formatted(target.Thing.Named("TARGET"));
         return job;
     }

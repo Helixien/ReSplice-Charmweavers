@@ -39,6 +39,7 @@ public static class RJW_VFEPregnancyApproach_IsPreferenceActive_Patch
         catch (Exception e)
         {
             Error($"Failed to initialize RJW compat, exception encountered:\n{e}");
+            return false;
         }
         
         return true;

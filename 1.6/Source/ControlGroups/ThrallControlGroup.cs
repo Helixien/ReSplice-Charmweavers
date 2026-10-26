@@ -2,6 +2,7 @@
 using RimWorld;
 using RimWorld.Planet;
 using Verse;
+using System.Linq;
 
 namespace ReSpliceCharmweavers;
 
@@ -11,17 +12,20 @@ public class ThrallControlGroup : IExposable
     private Gene_PsychicEnthralling gene;
     private ThrallWorkModeDef workMode;
     private GlobalTargetInfo target = GlobalTargetInfo.Invalid;
-    private List<Pawn> pawnsForReading;
+    private List<Pawn> pawnsForReading = [];
+    private bool thrallsForReadingDirty = true;
 
     public List<Pawn> ThrallsForReading
     {
         get
         {
-            pawnsForReading ??= [];
-            pawnsForReading.Clear();
+            if (thrallsForReadingDirty)
+            {
+                pawnsForReading.Clear();
 
-            foreach (var thrall in assignedThralls)
-                pawnsForReading.Add(thrall.pawn);
+                pawnsForReading.AddRange(assignedThralls.Select(thrall => thrall.pawn));
+                thrallsForReadingDirty = false;
+            }
             return pawnsForReading;
         }
     }
@@ -42,7 +46,15 @@ public class ThrallControlGroup : IExposable
         workMode = RS_DefOf.RS_Work;
     }
 
-    public bool TryUnassign(Pawn pawn) => assignedThralls.RemoveAll(x => x.pawn == pawn) > 0;
+    public bool TryUnassign(Pawn pawn)
+    {
+        var removed = assignedThralls.RemoveAll(x => x.pawn == pawn) > 0;
+        if (removed)
+        {
+            thrallsForReadingDirty = true;
+        }
+        return removed;
+    }
 
     public void Assign(Pawn pawn, bool showMessages = true)
     {
@@ -50,6 +62,7 @@ public class ThrallControlGroup : IExposable
             controlGroup.TryUnassign(pawn);
 
         assignedThralls.Add(new AssignedThrall(pawn));
+        thrallsForReadingDirty = true;
         SetWorkModeForPawn(pawn, workMode, showMessages);
     }
 
@@ -103,5 +116,6 @@ public class ThrallControlGroup : IExposable
         Scribe_TargetInfo.Look(ref target, nameof(target));
         if (Scribe.mode == LoadSaveMode.PostLoadInit)
             assignedThralls.RemoveAll(x => x.pawn == null || x.pawn.Dead || !x.pawn.IsLovethrall(out var master) || master != Gene.pawn);
+        thrallsForReadingDirty = true;
     }
 }

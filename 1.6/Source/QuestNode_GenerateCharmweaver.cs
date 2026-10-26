@@ -44,7 +44,15 @@ namespace ReSpliceCharmweavers
                         }
                     })
                 };
-                actions.RandomElementByWeight(x => x.chance).action();
+                Pawn_HealthTracker_AddHediff_Patch.allowPregnancyCooldownBypass = true;
+                try
+                {
+                    actions.RandomElementByWeight(x => x.chance).action();
+                }
+                finally
+                {
+                    Pawn_HealthTracker_AddHediff_Patch.allowPregnancyCooldownBypass = false;
+                }
             }
             if (storeAs.GetValue(slate) != null)
             {
