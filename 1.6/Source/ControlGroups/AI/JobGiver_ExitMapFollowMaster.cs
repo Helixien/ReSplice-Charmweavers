@@ -16,7 +16,7 @@ public class JobGiver_ExitMapFollowMaster : JobGiver_ExitMapBest
         var master = pawn.GetMaster();
         if (!CaravanExitMapUtility.CanExitMapAndJoinOrCreateCaravanNow(pawn))
             return null;
-        if (!(master.IsFormingCaravan() || master.CurJob?.exitMapOnArrival is true))
+        if (!(master.IsFormingCaravan() || master.IsCaravanMember() || master.CurJob?.exitMapOnArrival is true))
         {
             return null;
         }
