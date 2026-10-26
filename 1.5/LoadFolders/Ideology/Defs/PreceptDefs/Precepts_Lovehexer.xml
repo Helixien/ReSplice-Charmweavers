@@ -24,6 +24,10 @@
 		<impact>Medium</impact>
 		<comps>
 			<li Class="PreceptComp_SituationalThought">
+				<thought>RS_Lovehexer_Revered_IsThrall</thought>
+				<description>Enthralled</description>
+			</li>
+			<li Class="PreceptComp_SituationalThought">
 				<thought>RS_Lovehexer_Revered_Opinion_IsLovehexer</thought>
 				<description>Lovehexer</description>
 			</li>
@@ -130,6 +134,10 @@
 			<li Class="PreceptComp_UnwillingToDo">
 				<eventDef>RS_PropagateLovehexerGene</eventDef>
 				<description>Propagate lovehexer gene</description>
+			</li>
+			<li Class="PreceptComp_SituationalThought">
+				<thought>RS_Lovehexer_Reviled_IsThrall</thought>
+				<description>Enthralled</description>
 			</li>
 			<li Class="PreceptComp_SituationalThought">
 				<thought>RS_Lovehexer_Reviled_Opinion_IsLovehexer</thought>

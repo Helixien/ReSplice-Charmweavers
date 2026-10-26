@@ -10,7 +10,6 @@ Charmweavers are a relatively simple xenotype. They should work fine in whatever
 
 ReSplice is designed to be as lightweight as possible, adding the minimum amount of new code required for its additions to work.</description>
 	<supportedVersions>
-		<li>1.4</li>
 		<li>1.5</li>
 		<li>1.6</li>
 		<li>1.7</li>

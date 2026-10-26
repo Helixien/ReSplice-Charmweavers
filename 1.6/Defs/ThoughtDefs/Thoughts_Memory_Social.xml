@@ -9,6 +9,7 @@
 		<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
 		<nullifyingPrecepts>
 			<li MayRequire="Ludeon.RimWorld.Ideology">RS_Lovehexer_Revered</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology">RS_Lovehexer_Reviled</li>
 		</nullifyingPrecepts>
 		<stages>
 			<li>
