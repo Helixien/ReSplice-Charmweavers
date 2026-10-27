@@ -18,6 +18,13 @@
 	</HediffDef>
 
 	<HediffDef>
+		<defName>RS_FeedRejection</defName>
+		<label>feed rejection</label>
+		<hediffClass>ReSpliceCharmweavers.Hediff_FeedRejection</hediffClass>
+		<isBad>false</isBad>
+	</HediffDef>
+
+	<HediffDef>
 		<defName>RS_RecentImpregnation</defName>
 		<label>recent impregnation</label>
 		<description>This person was recently impregnated. Despite being able to support multiple pregnancies at once, they still need some time before they can get pregnant again.</description>

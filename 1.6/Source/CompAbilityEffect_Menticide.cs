@@ -87,8 +87,14 @@ namespace ReSpliceCharmweavers
                 {
                     QuestUtility.SendQuestTargetSignals(target.Pawn.Faction.questTags, "FactionMemberArrested", target.Pawn.Faction.Named("FACTION"));
                 }
+            }
+
+            if (target.Pawn.HomeFaction is not null && target.Pawn.HomeFaction != parent.pawn.Faction || target.Pawn.Faction != parent.pawn.Faction)
+            {
                 target.Pawn.GetLord()?.Notify_PawnAttemptArrested(target.Pawn);
                 target.Pawn.guest.SetGuestStatus(null);
+                hediff.previousFaction ??= target.Pawn.Faction;
+                hediff.restoreFaction = true;
                 if (target.Pawn.Faction != this.parent.pawn.Faction)
                 {
                     target.Pawn.SetFaction(this.parent.pawn.Faction, this.parent.pawn);

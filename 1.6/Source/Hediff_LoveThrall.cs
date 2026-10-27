@@ -10,6 +10,7 @@ namespace ReSpliceCharmweavers
     {
         public Pawn master;
         public Faction previousFaction;
+        public bool restoreFaction;
         public override bool ShouldRemove => master.DestroyedOrNull() || master.Dead;
 
         public override void CopyFrom(Hediff other)
@@ -18,6 +19,7 @@ namespace ReSpliceCharmweavers
             var otherHediff = other as Hediff_LoveThrall;
             master = otherHediff.master;
             previousFaction = otherHediff.previousFaction;
+            restoreFaction = otherHediff.restoreFaction;
 
             // If a pawn was duplicated, assign them to a control group
             var group = other.pawn.GetThrallControlGroup();
@@ -131,7 +133,7 @@ namespace ReSpliceCharmweavers
             try
             {
                 recursionTrap = true;
-                if (previousFaction != null && pawn.Faction != previousFaction)
+                if ((restoreFaction || previousFaction is not null) && pawn.Faction != previousFaction)
                 {
                     pawn.SetFaction(previousFaction);
                 }
@@ -178,6 +180,7 @@ namespace ReSpliceCharmweavers
             base.ExposeData();
             Scribe_References.Look(ref master, "master");
             Scribe_References.Look(ref previousFaction, "previousFaction");
+            Scribe_Values.Look(ref restoreFaction, "restoreFaction");
 
             if (Scribe.mode == LoadSaveMode.PostLoadInit && master != null)
             {

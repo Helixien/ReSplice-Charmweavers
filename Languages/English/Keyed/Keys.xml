@@ -62,4 +62,5 @@ People with the psychic enthralling gene are able to manipulate others' minds an
 	<RS.EnthrallmentTraitChangesMessage>{PAWN} was released from enthrallment, but it seems that some changes caused by it still remain.</RS.EnthrallmentTraitChangesMessage>
   <!-- Enthraller mental state -->
   <RS.MessageEnthrallerChangedTarget>{PAWN_labelShort} has decided to change {PAWN_possessive} enthrallment target to {TARGET_label}.</RS.MessageEnthrallerChangedTarget>
+ <RS.MessageFedOnAndroid>{PAWN_labelShort} tried to feed on {TARGET_labelShort}, but their synthetic body has no hemogen to take. The attempt left {PAWN_labelShort} retching neuroamine-laced vomit and they will not try to feed on {TARGET_possessive} blood again.</RS.MessageFedOnAndroid>
 </LanguageData>

@@ -1,3 +1,4 @@
+using HarmonyLib;
 using RimWorld;
 using VEF.Pawns;
 using Verse;
@@ -7,6 +8,9 @@ namespace ReSpliceCharmweavers
 {
     public class PregnancyApproach_LovinForHemogen : PregnancyApproachWorker
     {
+        private static readonly FastInvokeHandler isAndroidHandler = ModLister.AnyModActiveNoSuffix(["vanillaracesexpanded.android"])
+            ? MethodInvoker.GetHandler(AccessTools.DeclaredMethod("VREAndroids.Utils:IsAndroid", [typeof(Pawn)])) : null;
+
         private const float LoveBiteBloodLoss = JobDriver_PrisonerBloodfeed.BloodLoss / 2f;
         private const float HemogenGain = JobDriver_PrisonerBloodfeed.HemogenGain / 2f;
         private const float NutritionGain = JobDriver_PrisonerBloodfeed.NutritionGain / 2f;
@@ -29,8 +33,22 @@ namespace ReSpliceCharmweavers
             DoLoveFeed(pawn, partner);
         }
 
+        private static bool IsAndroid(Pawn pawn) => isAndroidHandler?.Invoke(null, pawn) is true;
+
         private static void DoLoveFeed(Pawn biter, Pawn target)
         {
+            if (IsAndroid(target))
+            {
+                if (!Hediff_FeedRejection.WasRejected(biter, target))
+                {
+                    Hediff_FeedRejection.NotifyRejected(biter, target);
+                    target.health.AddHediff(HediffDefOf.FoodPoisoning);
+                    FilthMaker.TryMakeFilth(biter.Position, biter.Map, RS_DefOf.RS_Filth_NeuroamineVomit);
+                    Messages.Message("RS.MessageFedOnAndroid".Translate(biter.Named("PAWN"), target.Named("TARGET")), biter, MessageTypeDefOf.NeutralEvent, false);
+                }
+                return;
+            }
+
             var percent = GetSafeHemogenAmountPercentage(biter, target);
             if (percent <= 0.01f)
                 return;

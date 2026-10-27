@@ -13,6 +13,7 @@ namespace ReSpliceCharmweavers
         [MayRequireIdeology] public static PawnRelationDef RS_CoSpouse;
         public static HediffDef RS_LoveThrall;
         public static HediffDef RS_RecentImpregnation;
+        public static HediffDef RS_FeedRejection;
         [MayRequireIdeology] public static HediffDef RS_RecentPregnancy;
         public static ThoughtDef RS_BecameThrallMood;
         public static ThoughtDef RS_GotSomeLovinThrall;
@@ -36,6 +37,7 @@ namespace ReSpliceCharmweavers
             RS_Marriage_MaleOnly, RS_Marriage_FemaleOnly, RS_Marriage_Abhorrent;
         [MayRequireIdeology] public static HistoryEventDef RS_PropagateLovehexerGene;
         public static ThingDef RS_EnthralledMote;
+        public static ThingDef RS_Filth_NeuroamineVomit;
         public static EffecterDef Bloodfeed_Warmup;
         public static ThrallWorkModeDef RS_Work;
         public static ThrallWorkModeDef RS_Escort;
