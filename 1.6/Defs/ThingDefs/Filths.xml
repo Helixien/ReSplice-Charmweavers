@@ -2,7 +2,7 @@
 <Defs>
 	<ThingDef ParentName="BaseFilth">
 		<defName>RS_Filth_NeuroamineVomit</defName>
-		<label>neuroamine-laced vomit</label>
+		<label>neutroamine-laced vomit</label>
 		<statBases>
 			<Beauty>-40</Beauty>
 			<Cleanliness>-15</Cleanliness>
