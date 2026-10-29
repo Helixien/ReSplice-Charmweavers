@@ -37,21 +37,21 @@ namespace ReSpliceCharmweavers
 
         private static void DoLoveFeed(Pawn biter, Pawn target)
         {
+            var percent = GetSafeHemogenAmountPercentage(biter, target);
+            if (percent <= 0.01f)
+                return;
+
             if (IsAndroid(target))
             {
                 if (!Hediff_FeedRejection.WasRejected(biter, target))
                 {
                     Hediff_FeedRejection.NotifyRejected(biter, target);
-                    target.health.AddHediff(HediffDefOf.FoodPoisoning);
+                    biter.health.AddHediff(HediffDefOf.FoodPoisoning);
                     FilthMaker.TryMakeFilth(biter.Position, biter.Map, RS_DefOf.RS_Filth_NeuroamineVomit);
                     Messages.Message("RS.MessageFedOnAndroid".Translate(biter.Named("PAWN"), target.Named("TARGET")), biter, MessageTypeDefOf.NeutralEvent, false);
                 }
                 return;
             }
-
-            var percent = GetSafeHemogenAmountPercentage(biter, target);
-            if (percent <= 0.01f)
-                return;
 
             SanguophageUtility.DoBite(biter, target, HemogenGain * percent, NutritionGain * percent, LoveBiteBloodLoss * percent, 1f,
                 IntRange.One, ThoughtDefOf.FedOn, ThoughtDefOf.FedOn_Social);
