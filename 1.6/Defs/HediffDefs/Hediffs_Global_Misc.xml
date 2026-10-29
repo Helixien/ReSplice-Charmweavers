@@ -20,6 +20,7 @@
 	<HediffDef>
 		<defName>RS_FeedRejection</defName>
 		<label>feed rejection</label>
+		<description>This person has discovered that an android's synthetic body cannot provide hemogen and will not attempt to feed on that android again.</description>
 		<hediffClass>ReSpliceCharmweavers.Hediff_FeedRejection</hediffClass>
 		<isBad>false</isBad>
 	</HediffDef>
